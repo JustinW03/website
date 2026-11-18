@@ -1,0 +1,34 @@
+# Holt alle 30 Minuten die Ranglisten vom Minecraft-Server und legt sie als daten/ranglisten.json ab.
+# Einmalig einrichten: GitHub -> Settings -> Secrets and variables -> Actions -> "New repository secret"
+#   Name:  SERVER_API_URL
+#   Wert:  deine Dashboard-Adresse + /api/ranglisten.json   (steht in README.md, Abschnitt "Ranglisten")
+name: Ranglisten aktualisieren
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  holen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ranglisten vom Server holen
+        env:
+          URL: ${{ secrets.SERVER_API_URL }}
+        run: |
+          mkdir -p daten
+          if curl -fsS --max-time 20 "$URL" -o neu.json && python3 -c "import json;d=json.load(open('neu.json'));assert 'coins' in d"; then
+            mv neu.json daten/ranglisten.json
+          else
+            echo "Server nicht erreichbar - alte Ranglisten bleiben stehen."
+            rm -f neu.json
+          fi
+      - name: Speichern
+        run: |
+          git config user.name "Ranglisten-Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add daten/ranglisten.json
+          git diff --cached --quiet || git commit -m "Ranglisten aktualisiert"
+          git push
