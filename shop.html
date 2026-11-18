@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop – JustinZocktCommunity</title>
+  <meta name="description" content="Der Spieler-Shop am Spawn: kaufen, verkaufen und Angebote verwalten mit Justin Coins.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shop – JustinZocktCommunity">
+  <meta property="og:description" content="Der Spieler-Shop am Spawn: kaufen, verkaufen und Angebote verwalten mit Justin Coins.">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
+        <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="beitreten.html">Beitreten</a></li>
+          <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="verzauberungen.html">Verzauberungen</a></li>
+          <li><a href="clans.html">Clans</a></li>
+          <li><a href="shop.html" aria-current="page">Shop</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="befehle.html">Befehle</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="ranglisten.html">Ranglisten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    <div class="page-head wrap">
+      <span class="eyebrow">Handel</span>
+      <h1>Spieler-Shop</h1>
+      <p class="lead">Der Marktplatz der Community: Du stellst deine Items mit deinem eigenen Preis ein, andere kaufen sie mit Justin Coins – auch wenn du offline bist.</p>
+    </div>
+    <div class="wrap">
+      <div class="callout"><p>📍 Der Shop ist <strong>nur am Spawn</strong> erreichbar. Bist du woanders, bringt dich <code>/spawn</code> hin. Im Kreativ- oder Zuschauermodus kannst du nichts einstellen, kaufen oder herausnehmen.</p></div>
+
+      <h2>Kaufen</h2>
+      <ol class="steps">
+        <li><h3>Marktplatz öffnen</h3><p>Gib am Spawn <code>/shop</code> ein. Du siehst alle Angebote mit Preis pro Stück und Lagerbestand.</p></li>
+        <li><h3>Suchen &amp; sortieren</h3><p>Sortiere nach „Neueste zuerst“ oder „Billigste zuerst“ und suche nach Item-Name oder Verkäufer.</p></li>
+        <li><h3>Menge wählen &amp; bestätigen</h3><p>Klick auf ein Angebot, wähle die Menge (feste Mengen oder eigene Menge im Chat eingeben) und bestätige. Du siehst vorher Gesamtpreis und dein Guthaben.</p></li>
+      </ol>
+
+      <h2>Verkaufen</h2>
+      <ol class="steps">
+        <li><h3>Item in die Hand nehmen</h3><p>Nimm das Item, das du verkaufen willst, in die Hand.</p></li>
+        <li><h3>Angebot erstellen</h3><p>Entweder im Shop-Menü auf „Verkaufen“ klicken und den Preis im Chat eingeben, oder direkt: <code>/shop verkaufen &lt;Preis pro Stück&gt; [Menge|alle]</code>. Der Preis liegt zwischen 1 und 10.000.000 JC pro Stück.</p></li>
+        <li><h3>Items sind im Shop</h3><p>Die eingestellten Items sind <strong>aus deinem Inventar weg</strong> und liegen im Shop-Lager – bis sie verkauft werden oder du sie wieder herausnimmst.</p></li>
+      </ol>
+
+      <h2>Deine Angebote verwalten</h2>
+      <p>Mit <code>/shop meine</code> (am Spawn) öffnest du deine Angebote. Dort kannst du:</p>
+      <ul>
+        <li><strong>Nachfüllen:</strong> weitere gleiche Items ins Lager legen (Name, Verzauberungen und Haltbarkeit müssen exakt gleich sein).</li>
+        <li><strong>Preis ändern</strong> – gilt sofort für alle Käufer.</li>
+        <li><strong>Items herausnehmen</strong> oder das Angebot <strong>löschen</strong> (Items gehen zurück ins Inventar).</li>
+        <li><strong>Rücklage abholen:</strong> Items, die nicht in dein Inventar gepasst haben oder die das Team entfernt hat, warten dort auf dich.</li>
+      </ul>
+      <p>Wird etwas verkauft, bekommst du die Coins sofort. Bist du online, siehst du eine Nachricht; warst du offline, bekommst du beim nächsten Join eine Übersicht aller Verkäufe.</p>
+
+      <h2>Befehle</h2>
+      <div class="table-wrap" role="region" aria-label="Shop-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
+<tr><td><code>/shop</code></td><td>Marktplatz öffnen (nur am Spawn)</td></tr>
+<tr><td><code>/shop verkaufen &lt;Preis&gt; [Menge|alle]</code></td><td>Item in der Hand zum Preis pro Stück einstellen</td></tr>
+<tr><td><code>/shop meine</code></td><td>Eigene Angebote verwalten, Rücklage abholen</td></tr>
+</tbody></table></div>
+
+      <div class="callout warn"><p><strong>Fair bleiben:</strong> Angebote müssen ehrlich sein. Irreführende Namen oder absichtlich falsche Preise, um andere zu täuschen, gelten als Betrug (<a href="regeln.html#r10-4">Regel 10.4</a>). Fehler im Shop dürfen nicht ausgenutzt werden (<a href="regeln.html#r10-1">10.1</a>). Handel gegen Echtgeld ist verboten (<a href="regeln.html#r7-2">7.2</a>).</p></div>
+      <p>Mehr zu Justin Coins findest du in den <a href="faq.html#coins">FAQ</a>.</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Server</h2>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+        </div>
+        <div>
+          <h2>Infos</h2>
+          <ul>
+            <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="befehle.html">Alle Befehle</a></li>
+            <li><a href="faq.html">Häufige Fragen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">Twitch<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rechtliches</h2>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="admin.html">Admin-Bereich</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin-Bereich – JustinZocktCommunity</title>
+  <meta name="description" content="Admin-Bereich: Server-Dashboard und Befehlsreferenz für das Team.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Admin-Bereich – JustinZocktCommunity">
+  <meta property="og:description" content="Admin-Bereich: Server-Dashboard und Befehlsreferenz für das Team.">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
+        <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="beitreten.html">Beitreten</a></li>
+          <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="verzauberungen.html">Verzauberungen</a></li>
+          <li><a href="clans.html">Clans</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="befehle.html">Befehle</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="ranglisten.html">Ranglisten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    <div class="page-head wrap">
+      <span class="eyebrow">Intern</span>
+      <h1>Admin-Bereich</h1>
+      <p class="lead">Der echte Admin-Bereich ist das <strong>Server-Dashboard</strong>. Diese Seite erklärt, wie du hineinkommst, was es kann, und listet alle Team-, Admin- und Owner-Befehle.</p>
+    </div>
+    <div class="wrap">
+      <div class="callout warn"><p>🔒 Diese Website hat <strong>keinen Login</strong> und speichert nichts. Das Dashboard läuft direkt auf dem Server und ist nur über einen persönlichen <strong>Einmal-Link</strong> erreichbar.</p></div>
+
+      <h2>So öffnest du das Dashboard</h2>
+      <ol class="steps">
+        <li><h3>Link anfordern</h3><p>Im Spiel <code>/justin dashboard</code> eingeben – oder im Discord <code>/dashboard</code>. Das geht nur als Server-Owner.</p></li>
+        <li><h3>Link anklicken</h3><p>Der Link gilt <strong>10 Minuten</strong> und <strong>nur einmal</strong>. Ohne gültigen Link gibt es nur „Nicht angemeldet“.</p></li>
+        <li><h3>Arbeiten</h3><p>Danach bleibst du <strong>12 Stunden</strong> angemeldet. Neue Daten holst du mit <strong>⟳ Aktualisieren</strong>, mit <strong>Abmelden</strong> beendest du die Sitzung sofort. Am besten zu Hause öffnen, nicht in öffentlichen WLANs.</p></li>
+      </ol>
+
+      <h2>Was das Dashboard kann</h2>
+      <div class="grid">
+        <div class="card"><span class="icon" aria-hidden="true">👥</span><h3>Alle Spieler</h3><p>Name (auch alte Namen), Whitelist seit/entfernt am, Twitch (+ Sub), Bann und Grund, Koordinaten, Coins, Spielzeit, Tode, Chunks, Sicherungen, zuletzt online – sortier- und durchsuchbar.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">➜</span><h3>Teleport-Knopf „➜ TP“</h3><p>Zu jedem Online-Spieler direkt teleportieren.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">⚖️</span><h3>Strafen &amp; Team-Aktionen</h3><p>Kicks, Mutes, Banns und Entbannungen mit Teamler und Grund im Überblick.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">💬</span><h3>Private Chats</h3><p>Clan-Chats und private Nachrichten zur Moderation.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🛒</span><h3>Shop</h3><p>Alle Angebote und Verkäufe.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans &amp; Skills</h3><p>Alle Clans mit Mitgliedern, Skill-Stände aller Spieler.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🪙</span><h3>Zahlungen &amp; Tode</h3><p>Die letzten Zahlungen, Spieler-Tode mit Ort und Ursache, getötete Tiere.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🚨</span><h3>Anticheat</h3><p>Meldungen, Kicks und Banns des Anticheats.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">💾</span><h3>Backups</h3><p>Überblick über die täglichen Sicherungen.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🗺️</span><h3>Karte</h3><p>Die komplette Welt-Karte – nur mit Anmeldung.</p></div>
+      </div>
+
+      <h2 id="befehle">Schnellreferenz: Team-, Admin- und Owner-Befehle</h2>
+      <p class="muted">Dauer-Angaben: <code>30m</code>, <code>2h</code>, <code>1d</code>, <code>1w</code> oder <code>perm</code> (nur Mod/Admin). Admins haben alle Team-Befehle, der Owner hat alles.</p>
+      <h3>Team (Sup, Mod)</h3>
+      <div class="table-wrap" role="region" aria-label="Team (Sup, Mod)" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
+<tr><td><code>/justin kick &lt;Name&gt; [Grund]</code></td><td>Spieler kicken.</td></tr>
+<tr><td><code>/justin mute &lt;Name&gt; &lt;Dauer&gt; [Grund]</code></td><td>Chat-Sperre. Entsperren: /justin unmute &lt;Name&gt;.</td></tr>
+<tr><td><code>/justin ban &lt;Name&gt; &lt;Dauer|perm&gt; &lt;Grund&gt;</code></td><td>Bann mit Grund (Sup max. 1 Tag). Aufheben: /justin unban &lt;Name&gt;.</td></tr>
+<tr><td><code>/justin ac &lt;Name&gt; | alerts</code></td><td>Anticheat: Client, Mods, Verstöße; Meldungen an/aus.</td></tr>
+<tr><td><code>/justin deaths &lt;Name&gt;</code></td><td>Todespunkte mit Datum, Uhrzeit, Ursache – Klick = Teleport.</td></tr>
+<tr><td><code>/justin kills &lt;Name&gt; | near [Radius]</code></td><td>Wer hat welches Tier getötet (letzte 20).</td></tr>
+<tr><td><code>/justin vanish</code></td><td>Unsichtbar (auch in der Tablist).</td></tr>
+<tr><td><code>/justin wo &lt;Name&gt; &lt;Zeit&gt;</code></td><td>Wo war jemand um 14:30 / vor 2h? (14 Tage Verlauf)</td></tr>
+<tr><td><code>/justin alts &lt;Name&gt;</code></td><td>Zweitaccounts (gleiche IP) ansehen.</td></tr>
+<tr><td><code>/justin tp &lt;x&gt; &lt;z&gt; [nether|end]</code></td><td>Zu Koordinaten teleportieren (z. B. von der Karte).</td></tr>
+<tr><td><code>/justin wp set|del|list|tp &lt;Name&gt;</code></td><td>Eigene Wegpunkte.</td></tr>
+<tr><td><code>[✖] vor Chatnachrichten</code></td><td>Nachricht für alle löschen (nur das Team sieht den Knopf).</td></tr>
+</tbody></table></div>
+      <h3>Admin</h3>
+      <div class="table-wrap" role="region" aria-label="Admin" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
+<tr><td><code>/justin nether|end on|off</code></td><td>Dimension öffnen oder sperren.</td></tr>
+<tr><td><code>/justin pvp on|off</code></td><td>PvP für alle an/aus.</td></tr>
+<tr><td><code>/justin whitelist add|remove|list [Name]</code></td><td>Whitelist von Hand.</td></tr>
+<tr><td><code>/justin build spawn [Höhe]</code></td><td>Spawn bauen (Standard 64).</td></tr>
+<tr><td><code>/justin build netherspawn [Höhe]</code></td><td>Nether-Spawn + Netherdach bauen.</td></tr>
+<tr><td><code>/justin tpto &lt;Name&gt;</code></td><td>Zu einem Spieler teleportieren (auch Klick auf [➜] im Chat).</td></tr>
+<tr><td><code>/justin tphere &lt;Name&gt;</code></td><td>Spieler zu dir holen.</td></tr>
+<tr><td><code>/justin makro add|del|list|&lt;Name&gt;</code></td><td>Häufige Befehle speichern und ausführen (je Person). Beispiel: /justin makro add tag time set day</td></tr>
+<tr><td><code>/justin baltop | playtimetop</code></td><td>Volle Ranglisten Coins / Spielzeit.</td></tr>
+<tr><td><code>/justin payments [Name]</code></td><td>Alle Zahlungen (optional von/an einen Spieler).</td></tr>
+<tr><td><code>/justin alts allow|deny &lt;Name&gt;</code></td><td>Zweitaccount-Ausnahmen.</td></tr>
+<tr><td><code>/justin vpn allow|deny &lt;Name&gt; | test &lt;IP&gt;</code></td><td>VPN-Ausnahmen und Test.</td></tr>
+<tr><td><code>/justin carry &lt;Name&gt; | drop</code></td><td>Spieler tragen (Schleichen + Rechtsklick).</td></tr>
+<tr><td><code>/justin traffic</code></td><td>Datenverkehr pro Tag + Hochrechnung.</td></tr>
+<tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten; für Spieler öffnen/sperren.</td></tr>
+<tr><td><code>/justin reload</code></td><td>Konfiguration neu laden.</td></tr>
+<tr><td><code>/claims &lt;Name&gt;</code></td><td>Claims und Sicherungen eines Spielers (Rechtsklick = Teleport).</td></tr>
+<tr><td><code>/clan admin aufloesen &lt;TAG&gt;</code></td><td>Clan löschen.</td></tr>
+<tr><td><code>/clan admin kick &lt;TAG&gt; &lt;Spieler&gt;</code></td><td>Spieler aus einem Clan entfernen.</td></tr>
+<tr><td><code>/shop admin entfernen &lt;AngebotsID&gt;</code></td><td>Shop-Angebot entfernen (IDs stehen für Admins in der Lore). Items gehen in die Rücklage des Verkäufers.</td></tr>
+</tbody></table></div>
+      <h3>Nur Owner</h3>
+      <div class="table-wrap" role="region" aria-label="Nur Owner" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
+<tr><td><code>/justin dashboard</code></td><td>Einmal-Link zum Dashboard (10 Minuten gültig, nur einmal).</td></tr>
+<tr><td><code>/justin eco summe</code></td><td>Überblick: Coins im Umlauf, Zahlungen.</td></tr>
+<tr><td><code>/justin eco top</code></td><td>Rangliste Coins.</td></tr>
+<tr><td><code>/justin eco info &lt;Name&gt;</code></td><td>Guthaben eines Spielers + Knöpfe.</td></tr>
+<tr><td><code>/justin eco give|take|set &lt;Name&gt; &lt;Betrag&gt;</code></td><td>Coins geben, abziehen oder setzen.</td></tr>
+<tr><td><code>/justin eco reset [Name]</code></td><td>Guthaben auf 10.000 JC (ohne Name: du selbst).</td></tr>
+<tr><td><code>/justin signieren [Spieler] &lt;Text&gt;</code></td><td>Gegenstand in der Hand signieren. Entfernen: /justin signieren entfernen [Spieler].</td></tr>
+<tr><td><code>/justin resetstats &lt;Name|alle&gt; tode|spielzeit|skills|coins|alles</code></td><td>Statistiken zurücksetzen („alle“ mit Bestätigung).</td></tr>
+<tr><td><code>/justin reset &lt;Name&gt;</code></td><td>Spieler komplett zurücksetzen (inkl. Bauten).</td></tr>
+<tr><td><code>/justin eventitem &lt;Name&gt; rahmen|leuchtrahmen|licht [Menge]</code></td><td>Event-Gegenstände vergeben (unsichtbare Rahmen, Leuchtrahmen, Licht-Blöcke).</td></tr>
+<tr><td><code>/justin npc events|minigames|entfernen</code></td><td>NPCs am Spawn setzen (an deine Position) oder entfernen.</td></tr>
+<tr><td><code>/clan spy</code></td><td>Clan-Chats und /msg mitlesen an/aus.</td></tr>
+<tr><td><code>/justin skill set &lt;Name&gt; &lt;Skill|alle&gt; &lt;level|xp&gt; &lt;Wert&gt;</code></td><td>Skill-Level oder XP setzen.</td></tr>
+<tr><td><code>/justin skill reset &lt;Name&gt; &lt;Skill|alle&gt;</code></td><td>Skills auf Level 1 zurücksetzen.</td></tr>
+<tr><td><code>/justin skill buch &lt;Name&gt; &lt;telekinese|holzfaeller|seelenbindung|reparatur&gt; [Stufe]</code></td><td>Seltenes Buch vergeben (für Events).</td></tr>
+<tr><td><code>/justin skill info &lt;Name&gt;</code></td><td>Skill-Stand eines Spielers.</td></tr>
+<tr><td><code>/justin skill reload</code></td><td>skills.yml neu laden.</td></tr>
+<tr><td><code>/justin advent stats</code></td><td>Wie viele Spieler welches Türchen geöffnet haben.</td></tr>
+<tr><td><code>/justin advent schild</code></td><td>Adventskalender-Schild an deine Position setzen.</td></tr>
+<tr><td><code>/justin live tiktok on|off</code></td><td>TikTok-Live von Hand setzen.</td></tr>
+<tr><td><code>/justin tiktokfollower &lt;Zahl&gt;</code></td><td>TikTok-Follower für die Serverliste.</td></tr>
+<tr><td><code>/justin twitchlogin</code></td><td>Einmalig: Twitch für Follow-/Sub-Prüfung verbinden.</td></tr>
+<tr><td><code>/justin setupranks</code></td><td>Teamgruppen in LuckPerms anlegen (ergänzt nur, löscht nichts).</td></tr>
+<tr><td><code>/justin backup [now|list|export]</code></td><td>Backups (täglich automatisch).</td></tr>
+<tr><td><code>/justin update [check|now]</code></td><td>Plugin-Updates (täglich automatisch).</td></tr>
+</tbody></table></div>
+
+      <h3>Weitere Werkzeuge (Plugins)</h3>
+      <div class="table-wrap" role="region" aria-label="Plugin-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
+<tr><td><code>/openinv &lt;Name&gt;</code> / <code>/openender &lt;Name&gt;</code></td><td>Inventar und Endertruhe ansehen/ändern (auch offline).</td></tr>
+<tr><td><code>/pr i</code></td><td>Prism-Inspektor an/aus, dann Block anklicken.</td></tr>
+<tr><td><code>/pr l p:Name since:1d</code></td><td>Aktionen eines Spielers nachsehen.</td></tr>
+<tr><td><code>/pr rollback p:Name since:1d r:50</code></td><td>Griefing zurücksetzen.</td></tr>
+<tr><td><code>/pr undo</code></td><td>Rollback rückgängig machen.</td></tr>
+<tr><td><code>lp user &lt;Name&gt; parent add &lt;rang&gt;</code></td><td>Rang vergeben (sup, mod, builder, dev, admin, premium). Entfernen: parent remove.</td></tr>
+</tbody></table></div>
+      <p class="muted small">Ausführliche Anleitungen liegen im Projektordner (nicht öffentlich). Diese Seite enthält bewusst keine Zugangsdaten, Server-Adressen außer <code>play.justinzockt.de</code> oder Links zum Dashboard.</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Server</h2>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+        </div>
+        <div>
+          <h2>Infos</h2>
+          <ul>
+            <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="befehle.html">Alle Befehle</a></li>
+            <li><a href="faq.html">Häufige Fragen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">Twitch<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rechtliches</h2>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="admin.html">Admin-Bereich</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>
