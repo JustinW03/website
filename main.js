@@ -155,6 +155,7 @@
       lists.push(['clans', '🛡 Clans', (d.clans && d.clans.length) ? '<div class="table-wrap"><table class="rank-table"><thead><tr><th scope="col">Platz</th><th scope="col">Clan</th><th scope="col">Mitglieder</th><th scope="col">Punkte</th><th scope="col">Gegründet</th></tr></thead><tbody>' +
         d.clans.map(function (c, i) { return '<tr' + (i < 3 ? ' class="top' + (i + 1) + '"' : '') + '><td>' + medal(i) + '</td><td><strong>[' + esc(c.tag) + ']</strong> ' + esc(c.name) + '</td><td>' + num(c.mitglieder) + '</td><td>' + num(c.punkte) + '</td><td>' + new Date(c.gegruendet).toLocaleDateString('de-DE') + '</td></tr>'; }).join('') +
         '</tbody></table></div>' : '<p class="muted">Noch keine Clans – gründe den ersten mit <code>/clan gruenden</code>!</p>']);
+      lists.push(['minigames', '🎮 Minigames', table(d.minigames, 'Punkte', num)]);
       lists.push(['tode', '💀 Tode', table(d.tode, 'Tode', num)]);
       var tabs = document.getElementById('rank-tabs');
       tabs.innerHTML = lists.map(function (l, i) { return '<button type="button" role="tab" class="rank-tab" aria-selected="' + (i === 0) + '" data-i="' + i + '">' + esc(l[1]) + '</button>'; }).join('');

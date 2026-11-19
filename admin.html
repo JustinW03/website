@@ -36,6 +36,7 @@
           <li><a href="befehle.html">Befehle</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="team.html">Team</a></li>
+          <li><a href="minigames.html">Minigames</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
         </ul>
       </nav>
@@ -104,7 +105,7 @@
 <tr><td><code>/justin vpn allow|deny &lt;Name&gt; | test &lt;IP&gt;</code></td><td>VPN-Ausnahmen und Test.</td></tr>
 <tr><td><code>/justin carry &lt;Name&gt; | drop</code></td><td>Spieler tragen (Schleichen + Rechtsklick).</td></tr>
 <tr><td><code>/justin traffic</code></td><td>Datenverkehr pro Tag + Hochrechnung.</td></tr>
-<tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten; für Spieler öffnen/sperren.</td></tr>
+<tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten (Bau-Team, ohne Inventar-Tausch im Kreativmodus); für Spieler öffnen/sperren.</td></tr>
 <tr><td><code>/justin reload</code></td><td>Konfiguration neu laden.</td></tr>
 <tr><td><code>/claims &lt;Name&gt;</code></td><td>Claims und Sicherungen eines Spielers (Rechtsklick = Teleport).</td></tr>
 <tr><td><code>/clan admin aufloesen &lt;TAG&gt;</code></td><td>Clan löschen.</td></tr>
@@ -124,7 +125,10 @@
 <tr><td><code>/justin resetstats &lt;Name|alle&gt; tode|spielzeit|skills|coins|alles</code></td><td>Statistiken zurücksetzen („alle“ mit Bestätigung).</td></tr>
 <tr><td><code>/justin reset &lt;Name&gt;</code></td><td>Spieler komplett zurücksetzen (inkl. Bauten).</td></tr>
 <tr><td><code>/justin eventitem &lt;Name&gt; rahmen|leuchtrahmen|licht [Menge]</code></td><td>Event-Gegenstände vergeben (unsichtbare Rahmen, Leuchtrahmen, Licht-Blöcke).</td></tr>
-<tr><td><code>/justin npc events|minigames|entfernen</code></td><td>NPCs am Spawn setzen (an deine Position) oder entfernen.</td></tr>
+<tr><td><code>/justin npc events|minigames|shop|skills</code></td><td>NPC mit schwebendem Schild an deine Position setzen.</td></tr>
+<tr><td><code>/justin npc schild &lt;typ&gt;</code></td><td>Nur das Schild eines NPCs an deine Position versetzen.</td></tr>
+<tr><td><code>/justin npc entfernen &lt;typ&gt;</code></td><td>NPC + Schild entfernen.</td></tr>
+<tr><td><code>/minigames bauen</code></td><td>Minigame-Welt (Spawn, Allee, alle Spielbereiche) neu bauen. Laufende Räume werden geschlossen.</td></tr>
 <tr><td><code>/clan spy</code></td><td>Clan-Chats und /msg mitlesen an/aus.</td></tr>
 <tr><td><code>/justin skill set &lt;Name&gt; &lt;Skill|alle&gt; &lt;level|xp&gt; &lt;Wert&gt;</code></td><td>Skill-Level oder XP setzen.</td></tr>
 <tr><td><code>/justin skill reset &lt;Name&gt; &lt;Skill|alle&gt;</code></td><td>Skills auf Level 1 zurücksetzen.</td></tr>

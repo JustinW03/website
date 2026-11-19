@@ -36,6 +36,7 @@
           <li><a href="befehle.html" aria-current="page">Befehle</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="team.html">Team</a></li>
+          <li><a href="minigames.html">Minigames</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
         </ul>
       </nav>
@@ -45,14 +46,14 @@
     <div class="page-head wrap">
       <span class="eyebrow">Übersicht</span>
       <h1>Alle Spieler-Befehle</h1>
-      <p class="lead">Alle 56 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+      <p class="lead">Alle 66 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
     </div>
     <div class="wrap">
       <div class="search" role="search">
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">56 von 56</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">66 von 66</span>
       </div>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
@@ -130,6 +131,19 @@
         <div class="cmd" data-keys="kaufen markt"><div><code>/shop</code></div><p>Spieler-Marktplatz öffnen (nur am Spawn).</p></div>
         <div class="cmd" data-keys="verkaufen"><div><code>/shop verkaufen &lt;Preis&gt; [Menge|alle]</code></div><p>Item in der Hand zum Preis pro Stück einstellen.</p></div>
         <div class="cmd" data-keys="angebote"><div><code>/shop meine</code></div><p>Eigene Angebote verwalten, nachfüllen, Preis ändern, Rücklage abholen.</p></div>
+      </section>
+      <section class="cmd-group" id="minigames" aria-labelledby="g-minigames">
+        <h2 id="g-minigames">Minigames</h2>
+        <div class="cmd" data-keys="spiele welt"><div><code>/minigames join</code><span class="alias">auch: /mg join</span></div><p>In die Minigame-Welt (dein Inventar wird gespeichert und kommt beim Verlassen zurück).</p></div>
+        <div class="cmd" data-keys="zurück"><div><code>/minigames leave</code><span class="alias">auch: /mg leave</span></div><p>Zurück an deinen letzten Ort in der Survival-Welt.</p></div>
+        <div class="cmd" data-keys="statistik liste"><div><code>/minigames anmelden</code></div><p>In die offizielle Liste eintragen – nur dann zählen Statistiken.</p></div>
+        <div class="cmd"><div><code>/minigames abmelden</code></div><p>Aus der offiziellen Liste austragen.</p></div>
+        <div class="cmd" data-keys="statistik"><div><code>/minigames stats [Name]</code></div><p>Statistiken: Lieblingsspiel, Siege, Niederlagen, Siegquote, Serien, Spielzeit.</p></div>
+        <div class="cmd" data-keys="rangliste"><div><code>/minigames top [Spiel]</code></div><p>Minigame-Rangliste (Punkte: Sieg 3, Unentschieden 1).</p></div>
+        <div class="cmd" data-keys="regeln hilfe"><div><code>/minigames anleitung &lt;Spiel&gt;</code></div><p>Anleitung eines Spiels als Buch.</p></div>
+        <div class="cmd" data-keys="raum"><div><code>/minigames beitreten &lt;Nr&gt; [Passwort]</code></div><p>Einem Raum beitreten.</p></div>
+        <div class="cmd" data-keys="mitspieler"><div><code>/minigames suchen</code></div><p>Im Chat Mitspieler für deinen Raum suchen.</p></div>
+        <div class="cmd" data-keys="menü"><div><code>Kompass (Slot 1)</code></div><p>In der Minigame-Welt: alle Spiele, Räume, Anleitungen, Statistiken.</p></div>
       </section>
       <section class="cmd-group" id="events" aria-labelledby="g-events">
         <h2 id="g-events">Events</h2>
