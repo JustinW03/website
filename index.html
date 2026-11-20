@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JustinZocktCommunity – Minecraft-Server von JustinZockt03</title>
-  <meta name="description" content="Minecraft-Community-Server von JustinZockt03: Adresse play.justinzockt.de, Live-Status, Skills, Clans, Shop, Events und Regeln.">
+  <meta name="description" content="Minecraft-Community-Server von JustinZockt03 für Java und Bedrock: Adresse play.justinzockt.de, Live-Status, Skills, Clans, Shop, Events, Voten und Regeln.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="JustinZocktCommunity – Minecraft-Server von JustinZockt03">
-  <meta property="og:description" content="Minecraft-Community-Server von JustinZockt03: Adresse play.justinzockt.de, Live-Status, Skills, Clans, Shop, Events und Regeln.">
+  <meta property="og:description" content="Minecraft-Community-Server von JustinZockt03 für Java und Bedrock: Adresse play.justinzockt.de, Live-Status, Skills, Clans, Shop, Events, Voten und Regeln.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
@@ -47,14 +48,20 @@
       <div class="hero-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <span class="eyebrow">Minecraft Java Edition · Community-Server · 18+</span>
+          <span class="eyebrow">Minecraft Java &amp; Bedrock · Community-Server · 18+</span>
           <h1><span class="line">Willkommen in der</span> <span class="line grad-text">JustinZocktCommunity</span></h1>
-          <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, über 25 Minigames, Events und ein Team, das aufpasst.</p>
+          <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, 25 Minigames, Events und ein Team, das aufpasst. <strong>Auch für Bedrock (Handy, Konsole, Windows).</strong></p>
           <div class="ip-box">
             <span class="label">Server-Adresse</span>
             <span class="ip" id="server-ip">play.justinzockt.de</span>
             <button class="btn btn-primary copy-btn" type="button" data-copy="play.justinzockt.de" aria-describedby="server-ip">📋 Kopieren</button>
           </div>
+          <div class="ip-box ip-bedrock">
+            <span class="label">Bedrock (Handy, Konsole, Windows)</span>
+            <span class="ip" id="bedrock-ip">bedrock.justinzockt.de <small class="port">Port 15314</small></span>
+            <button class="btn btn-ghost copy-btn" type="button" data-copy="bedrock.justinzockt.de" aria-describedby="bedrock-ip">📋 Kopieren</button>
+          </div>
+          <p class="small"><a href="beitreten.html#bedrock">So spielst du mit Bedrock – auch auf Xbox, PlayStation und Switch →</a></p>
           <p class="sr-only" id="copy-status" aria-live="polite"></p>
           <div class="status-card" id="server-status" data-host="play.justinzockt.de" aria-live="polite">
             <div class="status-line"><span class="dot" aria-hidden="true"></span><span class="status-text">Status wird geladen …</span></div>
@@ -77,28 +84,28 @@
       </div>
       <div class="wrap">
         <dl class="stats">
-          <div class="stat"><dt>Minigames</dt><dd><span data-count="26" data-info-len="minigames">26</span></dd></div>
+          <div class="stat"><dt>Minigames</dt><dd><span data-count="25" data-info-len="minigames">25</span></dd></div>
           <div class="stat"><dt>Skills</dt><dd><span data-count="6">6</span><small>bis Lvl 100</small></dd></div>
           <div class="stat"><dt>Coins pro Stunde</dt><dd><span data-count="500" data-info-count="coins_pro_stunde.spieler">500</span><small>JC</small></dd></div>
           <div class="stat"><dt>Gerade online</dt><dd><span data-online>–</span></dd></div>
         </dl>
       </div>
     </section>
-    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div style="display:flex"><span>6 Skills bis Level 100</span><span>Über 25 Minigames</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span></div><div aria-hidden="true" style="display:flex"><span>6 Skills bis Level 100</span><span>Über 25 Minigames</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span></div></div></div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div style="display:flex"><span>6 Skills bis Level 100</span><span>25 Minigames</span><span>Java &amp; Bedrock</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span><span>Erfolge &amp; Ranglisten</span></div><div aria-hidden="true" style="display:flex"><span>6 Skills bis Level 100</span><span>25 Minigames</span><span>Java &amp; Bedrock</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span><span>Erfolge &amp; Ranglisten</span></div></div></div>
 
     <section aria-labelledby="h-features">
       <div class="wrap">
         <h2 id="h-features">Was dich erwartet</h2>
         <div class="grid">
           <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Bergbauer, Holzfäller, Gräber, Landwirt, Angler und Kämpfer. Jedes Level gibt automatisch Coins, Verbesserungen, Gegenstände und Titel.</p><span class="more">Zu den Skills <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>Über 25 Minigames</h3><p>Von 4 Gewinnt, Schach und Kniffel bis Spleef, TNT-Run und Eisbootrennen – mit echten Tischen, Arenen und automatischer Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Sub &amp; Premium</h3><p>Mehr Coins pro Stunde, länger bis AFK, mobile Endertruhe (<code>/ec</code>), Werkbank (<code>/craft</code>) und für Premium <code>/tpa</code>.</p><span class="more">Alle Vorteile <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>25 Minigames</h3><p>Von 4 Gewinnt, Schach und Kniffel bis Spleef, TNT-Run und Eisbootrennen – mit echten Tischen, Arenen und automatischer Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Sub &amp; Premium</h3><p>Ein Home, keine Teleport-Abklingzeit, mehr Claims mit Rabatt, mehr Coins pro Stunde, <code>/ec</code>, <code>/craft</code> und für Premium <code>/tpa</code>.</p><span class="more">Alle Vorteile <span aria-hidden="true">→</span></span></a>
           <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Seelenbindung, Telekinese und Holzfäller I–III – und Reparatur (Mending) gibt es nur noch über Skills, Events und sehr seltene Funde.</p><span class="more">Zu den Verzauberungen <span aria-hidden="true">→</span></span></a>
           <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans <span aria-hidden="true">→</span></span></a>
           <a class="card" href="shop.html"><span class="icon" aria-hidden="true">🛒</span><h3>Spieler-Shop</h3><p>Verkaufe deine Items zu deinem eigenen Preis in Justin Coins – am Spawn mit <code>/shop</code>.</p><span class="more">Zum Shop <span aria-hidden="true">→</span></span></a>
           <a class="card" href="events.html#advent" data-season="advent" hidden><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender</h3><p>Vom 1. bis 24. Dezember jeden Tag ein Türchen mit <code>/justin advent</code> – mit Treue-Bonus für alle, die kein Türchen verpassen.</p><span class="more">Zum Kalender <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC pro aktiver Stunde. Sichere dein Gebiet für <span data-info="claims.preis" data-fmt="num">1.000</span> JC pro Chunk, Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="skills.html#erfolge"><span class="icon" aria-hidden="true">🏆</span><h3>Erfolge</h3><p>Ein eigener Reiter im Fortschritte-Menü (Taste L) mit vielen Erfolgen – von Minigames über Skills bis zum Adventskalender.</p><span class="more">Zu den Erfolgen <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC pro aktiver Stunde. Sichere dein Gebiet ab <span data-info="claims.preis" data-fmt="num">1.000</span> JC pro Chunk (Nether ×2, End ×3), Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="erfolge.html"><span class="icon" aria-hidden="true">🏆</span><h3>Erfolge</h3><p>Ein eigener Reiter im Fortschritte-Menü (Taste L) mit vielen Erfolgen – von 10.000 Minigame-Siegen über Skill-Level 100 bis 1.000 Stunden Spielzeit.</p><span class="more">Zu den Erfolgen <span aria-hidden="true">→</span></span></a>
           <a class="card" href="mods.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Fair Play</h3><p>Automatischer Anticheat, klare Mod-Liste und ein aufmerksames Team. PvP nur, wenn beide es eingeschaltet haben.</p><span class="more">Erlaubte Mods <span aria-hidden="true">→</span></span></a>
         </div>
       </div>
@@ -121,8 +128,18 @@
         <ol class="steps">
           <li><h3>Discord beitreten</h3><p>Tritt dem <a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord-Server<span class="sr-only"> (öffnet in neuem Tab)</span></a> bei und akzeptiere die Regeln (du musst 18+ sein).</p></li>
           <li><h3>Twitch verbinden &amp; folgen</h3><p>Verbinde im Kanal #freischalten deinen Twitch-Account und folge <a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">JustinZockt03<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p></li>
-          <li><h3>Code holen &amp; eingeben</h3><p>Verbinde dich mit <code>play.justinzockt.de</code> – du siehst einen persönlichen Code. Den gibst du im Discord ein, fertig. <a href="beitreten.html">Ausführliche Anleitung →</a></p></li>
+          <li><h3>Code holen &amp; eingeben</h3><p>Verbinde dich mit <code>play.justinzockt.de</code> (Java) oder <code>bedrock.justinzockt.de</code>, Port <code>15314</code> (Bedrock) – du siehst einen persönlichen Code. Den gibst du im Discord ein, fertig. <a href="beitreten.html">Ausführliche Anleitung →</a></p></li>
         </ol>
+      </div>
+    </section>
+
+    <section id="voten" aria-labelledby="h-voten">
+      <div class="wrap">
+        <h2 id="h-voten">🗳️ Für den Server voten</h2>
+        <div class="grid-2">
+          <div class="card"><span class="icon" aria-hidden="true">🗳️</span><h3>Vote auf der Serverliste</h3><p>Mit einem Vote hilfst du der Community, gefunden zu werden. Du bekommst dafür eine <strong>kleine Belohnung pro Vote – alle 24 Stunden</strong> einmal. Im Spiel zeigt dir <code>/vote</code> den Link.</p><div class="btn-row"><a class="btn btn-primary" href="https://minecraft-serverlist.net/serverlist" target="_blank" rel="noopener noreferrer" data-vote-link>Jetzt voten<span class="sr-only"> (öffnet in neuem Tab)</span></a></div></div>
+          <div class="card"><span class="icon" aria-hidden="true">🛠️</span><h3>Wartung</h3><p class="callout warn" data-wartung hidden>🛠️ <strong>Gerade läuft eine Wartung.</strong> Schau im Discord, wann es weitergeht.</p><p>Bei Updates schaltet das Team den <strong>Wartungsmodus</strong> ein. Dann kann nur das Team auf den Server, und in der Serverliste steht „Wartung“. Wann es weitergeht, steht im <a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p></div>
+        </div>
       </div>
     </section>
 
@@ -138,13 +155,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

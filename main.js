@@ -1,4 +1,4 @@
-/* JustinZocktCommunity – Menü, Kopieren, Live-Status, Suche, Ranglisten, Server-Infos (daten/info.json),
+/* JustinZocktCommunity – Menü, Kopieren, Live-Status, Suche, Ranglisten (mit Unterkategorien), Server-Infos (daten/info.json),
    Adventskalender, Animationen. Keine Bibliotheken, keine Cookies, kein Speichern im Browser. */
 (function () {
   'use strict';
@@ -14,6 +14,28 @@
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
   var afk = function (sec) { sec = Math.max(0, Math.round(Number(sec) || 0)); var m = Math.floor(sec / 60), s = sec % 60; return s ? m + ':' + pad(s) + ' Min.' : m + ' Min.'; };
   var get = function (obj, path) { return String(path).split('.').reduce(function (o, k) { return o == null ? undefined : o[k]; }, obj); };
+  // JSON von der eigenen Website laden: erst frisch (?t= gegen alte Zwischenspeicher), bei Fehler normal noch einmal.
+  var fetchJson = function (url, opts) {
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 10000);
+    if (ctrl) opts.signal = ctrl.signal;
+    return fetch(url, opts).then(function (r) { clearTimeout(timer); if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (d) { if (!d || typeof d !== 'object') throw new Error('kein JSON'); return d; }, function (e) { clearTimeout(timer); throw e; });
+  };
+  var loadJson = function (url) {
+    if (!window.fetch) return Promise.reject(new Error('kein fetch'));
+    return fetchJson(url + '?t=' + Date.now(), { cache: 'no-store' }).catch(function () { return fetchJson(url, {}); });
+  };
+  // "vor 3 Minuten", "vor 2 Stunden", "gerade eben"
+  var ago = function (ms) {
+    var m = Math.round((Date.now() - Number(ms)) / 60000);
+    if (m < 1) return 'gerade eben';
+    if (m < 60) return 'vor ' + m + (m === 1 ? ' Minute' : ' Minuten');
+    var h = Math.round(m / 60);
+    if (h < 48) return 'vor ' + h + (h === 1 ? ' Stunde' : ' Stunden');
+    var t = Math.round(h / 24);
+    return 'vor ' + t + ' Tagen';
+  };
 
   // Sekunden-Takt für alle Countdowns
   var tickers = [];
@@ -265,7 +287,7 @@
   setupSearch('mod-search', '.mod-list li', '.mod-card', 'mod-count', 'mod-none');
 
   // ---------- Minigames: Liste + Filter ----------
-  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['snake', '🐍'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶']];
+  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶']];
   var iconFor = function (name) { var n = String(name).toLowerCase(); for (var i = 0; i < ICONS.length; i++) if (n.indexOf(ICONS[i][0]) !== -1) return ICONS[i][1]; return '🎮'; };
   var mgList = doc.getElementById('mg-list');
   var mgFilter = 'alle';
@@ -354,9 +376,13 @@
       renderGames(d.minigames);
     }
     if (d.dimensionen) $$('[data-portal]').forEach(function (el) { renderPortal(el, d.dimensionen[el.getAttribute('data-portal')]); });
+    // Wartungsmodus und Vote-Link (Link nur, wenn der Server einen https-Link kennt)
+    $$('[data-wartung]').forEach(function (el) { el.hidden = !(d.wartung && d.wartung.aktiv); });
+    var vl = d.vote && Array.isArray(d.vote.links) && d.vote.links[0] && d.vote.links[0].url;
+    if (vl && /^https:\/\//.test(vl)) $$('[data-vote-link]').forEach(function (a) { a.href = vl; });
   }
-  if ($('[data-info], [data-info-count], [data-info-len], [data-info-list], [data-portal], [data-season], #mg-list')) {
-    fetch('daten/info.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(applyInfo).catch(function () { /* Fallback im HTML bleibt */ });
+  if ($('[data-info], [data-info-count], [data-info-len], [data-info-list], [data-portal], [data-season], [data-wartung], [data-vote-link], #mg-list')) {
+    loadJson('daten/info.json').then(applyInfo).catch(function () { /* Fallback im HTML bleibt */ });
   }
 
   // ---------- Ranglisten ----------
@@ -390,25 +416,35 @@
           return '<tr' + rowCls(i) + '><td>' + medal(i) + '</td><td>' + esc(r.name) + '</td><td class="num">' + num(r.siege || 0) + '</td><td class="num">' + num(r.spiele || 0) + '</td><td class="num">' + num(r.punkte || 0) + '</td>' + (best ? '<td class="num">' + (r.best_text ? esc(r.best_text) : bestFmt(g, id, r.best)) + '</td>' : '') + '</tr>';
         }).join('') + '</tbody></table></div>';
     };
-    fetch('daten/ranglisten.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+    var clanTable = function (rows, label, fmt) {
+      if (!rows || !rows.length) return '<p class="muted">Noch keine Clans – gründe den ersten mit <code>/clan gruenden</code>!</p>';
+      return '<div class="table-wrap"><table class="rank-table"><thead><tr><th scope="col">Platz</th><th scope="col">Clan</th><th scope="col">Mitglieder</th><th scope="col">' + esc(label) + '</th></tr></thead><tbody>' +
+        rows.map(function (c, i) { return '<tr' + rowCls(i) + '><td>' + medal(i) + '</td><td><strong>[' + esc(c.tag) + ']</strong> ' + esc(c.name) + '</td><td>' + num(c.mitglieder) + '</td><td>' + fmt(c) + '</td></tr>'; }).join('') +
+        '</tbody></table></div>';
+    };
+    var standEl = doc.getElementById('rank-stand');
+    loadJson('daten/ranglisten.json').then(function (d) {
+      var jc = function (v) { return num(v) + ' JC'; };
+      // Jede Gruppe: [Name, Inhalt, danach, Unterkategorien]
+      var skillSubs = [['Gesamt', function () { return table(d.skills_gesamt, 'Gesamtlevel', num); }]];
+      Object.keys(d.skills || {}).forEach(function (k) { skillSubs.push([k, function () { return table(d.skills[k], 'Level', num); }]); });
       var lists = [
-        ['💰 Justin Coins', function () { return table(d.coins, 'Justin Coins', function (v) { return num(v) + ' JC'; }); }],
+        ['💰 Justin Coins', function () { return table(d.coins, 'Justin Coins', jc); }],
         ['⏱ Spielzeit', function () { return table(d.spielzeit, 'Spielzeit', hours); }],
-        ['⭐ Skills gesamt', function () { return table(d.skills_gesamt, 'Gesamtlevel', num); }]
+        ['⭐ Skills', null, null, skillSubs]
       ];
-      Object.keys(d.skills || {}).forEach(function (k) { lists.push([k, function () { return table(d.skills[k], 'Level', num); }]); });
-      lists.push(['🛡 Clans', function () {
-        return (d.clans && d.clans.length) ? '<div class="table-wrap"><table class="rank-table"><thead><tr><th scope="col">Platz</th><th scope="col">Clan</th><th scope="col">Mitglieder</th><th scope="col">Punkte</th><th scope="col">Gegründet</th></tr></thead><tbody>' +
-          d.clans.map(function (c, i) { return '<tr' + rowCls(i) + '><td>' + medal(i) + '</td><td><strong>[' + esc(c.tag) + ']</strong> ' + esc(c.name) + '</td><td>' + num(c.mitglieder) + '</td><td>' + num(c.punkte) + '</td><td>' + new Date(c.gegruendet).toLocaleDateString('de-DE') + '</td></tr>'; }).join('') +
-          '</tbody></table></div>' : '<p class="muted">Noch keine Clans – gründe den ersten mit <code>/clan gruenden</code>!</p>';
-      }]);
-      lists.push(['🎮 Minigames gesamt', function () { return table(d.minigames, 'Punkte', num); }]);
+      if (Array.isArray(d.erfolge)) lists.push(['🏆 Erfolge', function () { return table(d.erfolge, 'Erfolge', num) + '<p class="muted small">Gezählt werden erledigte Minecraft-Fortschritte und <a href="erfolge.html">JZC-Erfolge</a> (ohne Rezepte), aktualisiert beim Join und bei jedem neuen Erfolg.</p>'; }]);
+      var clanSubs = [['Punkte', function () { return clanTable(d.clans, 'Punkte', function (c) { return num(c.punkte); }) + (d.clans && d.clans.length ? '<p class="muted small">Gegründet: ' + d.clans.map(function (c) { return '[' + esc(c.tag) + '] ' + new Date(c.gegruendet).toLocaleDateString('de-DE'); }).join(' · ') + '</p>' : ''); }]];
+      if (Array.isArray(d.clans_spielzeit)) clanSubs.push(['Spielzeit', function () { return clanTable(d.clans_spielzeit, 'Spielzeit', function (c) { return hours(c.spielzeit); }); }]);
+      lists.push(['🛡 Clans', null, null, clanSubs]);
+      var mgSubs = [['Punkte', function () { return table(d.minigames, 'Punkte', num); }]];
+      if (Array.isArray(d.minigames_siege)) mgSubs.push(['Siege', function () { return table(d.minigames_siege, 'Siege', num); }]);
       var spiele = d.minigames_spiele && typeof d.minigames_spiele === 'object' ? d.minigames_spiele : null;
       var ids = spiele ? Object.keys(spiele) : [];
       if (ids.length) {
         ids.sort(function (a, b) { return String(spiele[a].name || a).localeCompare(String(spiele[b].name || b), 'de'); });
         var picked = ids[0];
-        lists.push(['🎯 Je Minigame', function () {
+        mgSubs.push(['Je Spiel', function () {
           return '<div class="select"><label for="mg-pick"><strong>Spiel wählen:</strong></label><select id="mg-pick">' +
             ids.map(function (id) { return '<option value="' + esc(id) + '"' + (id === picked ? ' selected' : '') + '>' + esc(spiele[id].name || id) + ' (' + ((spiele[id].eintraege || []).length) + ')</option>'; }).join('') +
             '</select></div><div id="mg-out" aria-live="polite">' + gameTable(picked, spiele[picked]) + '</div>';
@@ -417,27 +453,72 @@
           if (sel) sel.addEventListener('change', function () { picked = sel.value; doc.getElementById('mg-out').innerHTML = gameTable(picked, spiele[picked]); });
         }]);
       }
+      lists.push(['🎮 Minigames', null, null, mgSubs]);
+      if (Array.isArray(d.votes)) {
+        var voteHint = '<p class="muted small">Gezählt werden belohnte Votes. <a href="index.html#voten">So votest du</a> – kleine Belohnung alle 24 Stunden.</p>';
+        var voteSubs = [['Gesamt', function () { return table(d.votes, 'Votes', num) + voteHint; }]];
+        if (Array.isArray(d.votes_30_tage)) voteSubs.push(['Letzte 30 Tage', function () { return table(d.votes_30_tage, 'Votes', num); }]);
+        lists.push(['🗳 Votes', null, null, voteSubs]);
+      }
       lists.push(['💀 Tode', function () { return table(d.tode, 'Tode', num); }]);
+
       var tabs = doc.getElementById('rank-tabs');
-      tabs.innerHTML = lists.map(function (l, i) { return '<button type="button" role="tab" class="rank-tab" id="rt-' + i + '" aria-controls="rank-out" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-i="' + i + '">' + esc(l[0]) + '</button>'; }).join('');
-      var show = function (i, focus) {
-        rankOut.innerHTML = '<h2>' + esc(lists[i][0]) + '</h2>' + lists[i][1]();
-        rankOut.setAttribute('aria-labelledby', 'rt-' + i);
-        if (lists[i][2]) lists[i][2]();
-        Array.prototype.forEach.call(tabs.children, function (b) { var on = b.getAttribute('data-i') === String(i); b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; if (on && focus) b.focus(); });
+      var subTabs = doc.getElementById('rank-subtabs');
+      var cur = 0, curSub = {};
+      var tabBtn = function (label, i, on, cls) { return '<button type="button" role="tab" class="' + cls + '" id="' + (cls === 'rank-tab' ? 'rt-' : 'rs-') + i + '" aria-controls="rank-out" aria-selected="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-i="' + i + '">' + esc(label) + '</button>'; };
+      tabs.innerHTML = lists.map(function (l, i) { return tabBtn(l[0], i, i === 0, 'rank-tab'); }).join('');
+      var mark = function (box, i, focus) { Array.prototype.forEach.call(box.children, function (b) { var on = b.getAttribute('data-i') === String(i); b.setAttribute('aria-selected', String(on)); b.tabIndex = on ? 0 : -1; if (on && focus) b.focus(); }); };
+      var show = function (i, focus, sub, subFocus) {
+        cur = i;
+        var l = lists[i];
+        var item = l, title = l[0];
+        if (l[3]) {
+          var s = typeof sub === 'number' ? sub : (curSub[i] || 0);
+          if (s >= l[3].length) s = 0;
+          curSub[i] = s;
+          subTabs.innerHTML = l[3].map(function (x, k) { return tabBtn(x[0], k, k === s, 'rank-tab rank-subtab'); }).join('');
+          subTabs.hidden = false;
+          item = l[3][s];
+          title = l[0] + ' – ' + item[0];
+          rankOut.setAttribute('aria-labelledby', 'rs-' + s);
+          if (subFocus) mark(subTabs, s, true);
+        } else {
+          subTabs.hidden = true;
+          subTabs.innerHTML = '';
+          rankOut.setAttribute('aria-labelledby', 'rt-' + i);
+        }
+        rankOut.innerHTML = '<h2>' + esc(title) + '</h2>' + item[1]();
+        if (item[2]) item[2]();
+        mark(tabs, i, focus);
+      };
+      var keys = function (box, count, go) {
+        box.addEventListener('keydown', function (e) {
+          var at = Number((doc.activeElement && doc.activeElement.getAttribute('data-i')) || 0);
+          if (e.key === 'ArrowRight') { e.preventDefault(); go((at + 1) % count(), true); }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); go((at - 1 + count()) % count(), true); }
+        });
       };
       tabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(Number(b.getAttribute('data-i'))); });
-      tabs.addEventListener('keydown', function (e) {
-        var cur = Number((doc.activeElement && doc.activeElement.getAttribute('data-i')) || 0);
-        if (e.key === 'ArrowRight') { e.preventDefault(); show((cur + 1) % lists.length, true); }
-        if (e.key === 'ArrowLeft') { e.preventDefault(); show((cur - 1 + lists.length) % lists.length, true); }
-      });
-      var want = location.hash === '#minigames' ? lists.length - 2 : 0;
-      show(ids.length ? want : 0);
-      doc.getElementById('rank-stand').textContent = d.stand ? 'Stand: ' + new Date(d.stand).toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' }) +
-        ' · ' + num(d.spieler) + ' Spieler · zusammen ' + hours(d.spielzeit_gesamt) + ' gespielt' : 'Die Ranglisten werden gerade zum ersten Mal vom Server geholt.';
+      subTabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(cur, false, Number(b.getAttribute('data-i'))); });
+      keys(tabs, function () { return lists.length; }, function (i, f) { show(i, f); });
+      keys(subTabs, function () { return (lists[cur][3] || [1]).length; }, function (k, f) { show(cur, false, k, f); });
+      // Direktlinks: ranglisten.html#minigames, #skills, #clans, #erfolge
+      var want = 0, h = location.hash.replace('#', '');
+      lists.forEach(function (l, i) { if (h && l[0].toLowerCase().indexOf(h) !== -1) want = i; });
+      show(want);
+
+      // Stand: "vor X Minuten" (läuft live weiter)
+      var renderStand = function () {
+        if (!d.stand) { standEl.textContent = 'Die Ranglisten werden gerade zum ersten Mal vom Server geholt.'; return; }
+        var t = new Date(d.stand);
+        var txt = 'Stand: ' + ago(d.stand) + ' (' + t.toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' }) + ') · ' + num(d.spieler) + ' Spieler · zusammen ' + hours(d.spielzeit_gesamt) + ' gespielt';
+        if (Date.now() - d.stand > 3 * 3600e3) txt += ' – der Server war länger nicht erreichbar, die Zahlen können veraltet sein.';
+        standEl.textContent = txt;
+      };
+      renderStand();
+      setInterval(renderStand, 30000);
     }).catch(function () {
-      doc.getElementById('rank-stand').textContent = 'Die Ranglisten sind gerade nicht verfügbar. Schau später nochmal vorbei.';
+      standEl.textContent = 'Die Ranglisten sind gerade nicht verfügbar. Schau später nochmal vorbei.';
     });
   }
 

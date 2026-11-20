@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ränge – JustinZocktCommunity</title>
-  <meta name="description" content="Ränge und Vorteile: Spieler, Twitch-Sub und Premium – Coins pro Stunde, AFK-Zeit, /ec, /craft und /tpa.">
+  <meta name="description" content="Ränge und Vorteile: Spieler, Twitch-Sub und Premium – Homes, Claims mit Rabatt, Clan-Farbe, Coins pro Stunde, AFK-Zeit, /ec, /craft und /tpa.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ränge – JustinZocktCommunity">
-  <meta property="og:description" content="Ränge und Vorteile: Spieler, Twitch-Sub und Premium – Coins pro Stunde, AFK-Zeit, /ec, /craft und /tpa.">
+  <meta property="og:description" content="Ränge und Vorteile: Spieler, Twitch-Sub und Premium – Homes, Claims mit Rabatt, Clan-Farbe, Coins pro Stunde, AFK-Zeit, /ec, /craft und /tpa.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html" aria-current="page">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
@@ -58,8 +59,9 @@
           <p class="price"><span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> <small>JC / Stunde</small></p>
           <ul>
             <li>AFK nach <span data-info="afk_sekunden.spieler" data-fmt="afk">5 Min.</span> ohne Eingabe</li>
-            <li>Skills, Clans, Shop, Claims und alle Minigames</li>
-            <li>1 Home, <code>/spawn</code>, <code>/ignore</code></li>
+            <li>Skills, Clans, Shop, alle Minigames</li>
+            <li>Bis zu 30 Claims (Chunks)</li>
+            <li><code>/spawn</code> (5 Min. Abklingzeit), <code>/ignore</code> – kein Home</li>
           </ul>
         </article>
         <article class="tier sub" aria-labelledby="t-sub">
@@ -70,6 +72,10 @@
           <p class="price"><span data-info="coins_pro_stunde.sub" data-fmt="num">600</span> <small>JC / Stunde</small></p>
           <ul>
             <li>AFK erst nach <span data-info="afk_sekunden.sub" data-fmt="afk">6 Min.</span></li>
+            <li>1 Home (<code>/sethome</code>, <code>/home</code>)</li>
+            <li>Keine Abklingzeit bei <code>/spawn</code> und <code>/home</code></li>
+            <li>Bis zu 50 Claims, 5 % Rabatt pro Chunk</li>
+            <li>Eigene Clan-Farbe (als Clan-Gründer)</li>
             <li><code>/ec</code> – mobile Endertruhe</li>
             <li><code>/craft</code> – mobile Werkbank</li>
             <li>Sub-Rang in Tablist, Chat und Scoreboard</li>
@@ -83,9 +89,14 @@
           <p class="price"><span data-info="coins_pro_stunde.premium" data-fmt="num">750</span> <small>JC / Stunde</small></p>
           <ul>
             <li>AFK erst nach <span data-info="afk_sekunden.premium" data-fmt="afk">7:30 Min.</span></li>
+            <li>1 Home (<code>/sethome</code>, <code>/home</code>)</li>
+            <li>Keine Abklingzeit bei <code>/spawn</code> und <code>/home</code></li>
+            <li>Bis zu 70 Claims, 10 % Rabatt pro Chunk</li>
+            <li>Eigene Clan-Farbe (als Clan-Gründer)</li>
             <li><code>/ec</code> – mobile Endertruhe</li>
             <li><code>/craft</code> – mobile Werkbank</li>
             <li><code>/tpa</code> – Teleport-Anfragen an andere Spieler</li>
+            <li>Premium-Rang in Tablist, Chat und Scoreboard</li>
           </ul>
         </article>
       </div>
@@ -94,12 +105,37 @@
       <div class="table-wrap" role="region" aria-label="Vergleich der Ränge" tabindex="0"><table><thead><tr><th scope="col">Vorteil</th><th scope="col">Spieler</th><th scope="col">Sub</th><th scope="col">Premium</th></tr></thead><tbody>
 <tr><th scope="row">Justin Coins pro aktiver Stunde</th><td><span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span></td><td><span data-info="coins_pro_stunde.sub" data-fmt="num">600</span></td><td><span data-info="coins_pro_stunde.premium" data-fmt="num">750</span></td></tr>
 <tr><th scope="row">AFK nach (ohne Eingabe)</th><td><span data-info="afk_sekunden.spieler" data-fmt="afk">5 Min.</span></td><td><span data-info="afk_sekunden.sub" data-fmt="afk">6 Min.</span></td><td><span data-info="afk_sekunden.premium" data-fmt="afk">7:30 Min.</span></td></tr>
+<tr><th scope="row">Homes (<code>/sethome</code>, <code>/home</code>)</th><td><span data-info="homes.spieler" data-fmt="num">0</span></td><td><span data-info="homes.sub" data-fmt="num">1</span></td><td><span data-info="homes.premium" data-fmt="num">1</span></td></tr>
+<tr><th scope="row">Abklingzeit <code>/spawn</code> / <code>/home</code></th><td>5 Min.</td><td>keine</td><td>keine</td></tr>
+<tr><th scope="row">Claims (Chunks) höchstens</th><td><span data-info="claims.max_chunks" data-fmt="num">30</span></td><td><span data-info="claims.max_chunks_sub" data-fmt="num">50</span></td><td><span data-info="claims.max_chunks_premium" data-fmt="num">70</span></td></tr>
+<tr><th scope="row">Rabatt pro Chunk</th><td>–</td><td><span data-info="claims.rabatt_sub_prozent" data-fmt="prozent">5 %</span></td><td><span data-info="claims.rabatt_premium_prozent" data-fmt="prozent">10 %</span></td></tr>
+<tr><th scope="row">Clan-Farbe ändern (als Gründer)</th><td>– (weiß)</td><td>✅</td><td>✅</td></tr>
 <tr><th scope="row">Mobile Endertruhe <code>/ec</code></th><td>–</td><td>✅</td><td>✅</td></tr>
 <tr><th scope="row">Mobile Werkbank <code>/craft</code></th><td>–</td><td>✅</td><td>✅</td></tr>
 <tr><th scope="row">Teleport-Anfragen <code>/tpa</code></th><td>–</td><td>–</td><td>✅</td></tr>
-<tr><th scope="row">Skills, Clans, Shop, Claims, Minigames</th><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><th scope="row">Rang in Tablist, Chat und Scoreboard</th><td>–</td><td>Sub</td><td>Premium</td></tr>
+<tr><th scope="row">Skills, Clans, Shop, Minigames, Erfolge</th><td>✅</td><td>✅</td><td>✅</td></tr>
 </tbody></table></div>
-      <p class="muted small">AFK heißt: Du hast eine Weile nichts gemacht. Dann zählt die Zeit nicht für Coins. Die Werte stellt das Team ein – diese Seite zeigt immer die aktuellen Zahlen vom Server.</p>
+      <p class="muted small">AFK heißt: Du hast eine Weile nichts gemacht. Dann zählt die Zeit nicht für Coins. Das Team (Owner, Admin, Dev, Mod, Builder, Sup) hat ebenfalls keine Teleport-Abklingzeit. Die Werte stellt das Team ein – Coins und AFK-Zeiten auf dieser Seite kommen direkt vom Server.</p>
+
+      <h2 id="claims">Claims: Preise und Grenzen</h2>
+      <div class="table-wrap" role="region" aria-label="Claim-Preise" tabindex="0"><table><thead><tr><th scope="col">Welt</th><th scope="col">Preis pro Chunk</th><th scope="col">Sub (−5 %)</th><th scope="col">Premium (−10 %)</th></tr></thead><tbody>
+<tr><th scope="row">Oberwelt</th><td>1.000 JC</td><td>950 JC</td><td>900 JC</td></tr>
+<tr><th scope="row">Nether (×2)</th><td>2.000 JC</td><td>1.900 JC</td><td>1.800 JC</td></tr>
+<tr><th scope="row">End (×3)</th><td>3.000 JC</td><td>2.850 JC</td><td>2.700 JC</td></tr>
+</tbody></table></div>
+      <p class="muted small">Grundpreis <span data-info="claims.preis" data-fmt="num">1.000</span> JC (Stand der Tabelle: Standardwerte). Die <strong>End-Mitte</strong> – 1.000 Blöcke um 0/0 rund um die Drachen-Insel – kann niemand claimen.</p>
+
+      <h2 id="neu">Außerdem neu in Version 1.9.0</h2>
+      <div class="grid">
+        <div class="card"><span class="icon" aria-hidden="true">🛏️</span><h3>Respawn am Spawn</h3><p>Nach dem Tod landest du immer am Spawn – außer du hast ein Bett oder einen Seelenanker gesetzt.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Clan-Name und -Tag sind nach der Gründung fest. Neue Clans sind weiß, die Farbe ändern Gründer mit Sub oder Premium. Die gemeinsame Clan-Spielzeit ist sichtbar (<code>/clan info</code>, <a href="ranglisten.html">Ranglisten</a>).</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">✍️</span><h3>Signierte Bücher</h3><p>Beim Signieren bekommt ein Buch automatisch Datum und Uhrzeit.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🥚</span><h3>Drachenei</h3><p>Das Ei bekommt, wer den Enderdrachen zuerst besiegt. Es ist unzerstörbar, nur der Besitzer kann es aufheben, und beim Platzieren wird der Chunk für ihn geclaimt.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🗳️</span><h3>Voten</h3><p>Mit <code>/vote</code> für den Server abstimmen – mit kleiner Belohnung, einmal alle 24 Stunden. <a href="index.html#voten">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🛠️</span><h3>Wartungsmodus</h3><p>Bei Updates gibt es einen eigenen Wartungsmodus: Dann kann nur das Team auf den Server.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">📱</span><h3>Bedrock</h3><p>Auch für Bedrock (Handy, Konsole, Windows) – <a href="beitreten.html#bedrock">so geht’s</a>.</p></div>
+      </div>
 
       <h2>So bekommst du den Rang</h2>
       <div class="grid-2">
@@ -114,13 +150,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

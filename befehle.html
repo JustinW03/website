@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
@@ -46,7 +47,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 73 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 75 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -54,10 +55,10 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">73 von 73</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">75 von 75</span>
       </div>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
-      <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit. Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
+      <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt bei <code>/spawn</code> <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
         <h2 id="g-allgemein">Allgemein &amp; Infos</h2>
         <div class="cmd" data-keys="hilfe help"><div><code>/justin</code></div><p>Übersicht aller Befehle im Spiel.</p></div>
@@ -69,6 +70,7 @@
         <div class="cmd"><div><code>/tiktok</code></div><p>Link zu TikTok.</p></div>
         <div class="cmd"><div><code>/youtube</code></div><p>Link zu YouTube.</p></div>
         <div class="cmd" data-keys="homepage seite internet"><div><code>/web</code><span class="alias">auch: /website, /webseite</span></div><p>Link zur Webseite www.justinzockt.de im Chat.</p></div>
+        <div class="cmd" data-keys="voten abstimmen belohnung serverliste"><div><code>/vote</code></div><p>Link zur Serverliste: Vote für den Server und bekomm eine kleine Belohnung (einmal alle 24 Stunden).</p></div>
         <div class="cmd" data-keys="partikel effekte spawn speed sprung"><div><code>/spawneffekte &lt;1|2|aus&gt;</code></div><p>Speed und Sprungkraft am Spawn (Overworld + Nether): Stufe 1, Stufe 2 oder aus. Standardmäßig aus, geht nur am Spawn.</p></div>
       </section>
       <section class="cmd-group" id="chat" aria-labelledby="g-chat">
@@ -86,9 +88,9 @@
       </section>
       <section class="cmd-group" id="teleport" aria-labelledby="g-teleport">
         <h2 id="g-teleport">Teleport, Home &amp; PvP</h2>
-        <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit.</p></div>
-        <div class="cmd" data-keys="zuhause"><div><code>/sethome</code></div><p>Dein Home setzen (genau 1 Home, nicht am Spawn).</p></div>
-        <div class="cmd" data-keys="zuhause teleport"><div><code>/home</code></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit.</p></div>
+        <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit (Sub, Premium und Team: keine Abklingzeit).</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome</code><span class="badge purple">Sub/Premium</span></div><p>Dein Home setzen (1 Home, nicht am Spawn).</p></div>
+        <div class="cmd" data-keys="zuhause teleport Sub/Premium"><div><code>/home</code><span class="badge purple">Sub/Premium</span></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), keine Abklingzeit.</p></div>
         <div class="cmd" data-keys="teleport anfrage Premium"><div><code>/tpa &lt;Spieler&gt;</code><span class="badge gold">Premium</span></div><p>Teleport-Anfrage an einen Spieler schicken.</p></div>
         <div class="cmd" data-keys="teleport annehmen"><div><code>/tpaccept</code></div><p>Eine Teleport-Anfrage annehmen.</p></div>
         <div class="cmd" data-keys="teleport ablehnen"><div><code>/tpdeny</code></div><p>Eine Teleport-Anfrage ablehnen.</p></div>
@@ -97,7 +99,7 @@
       </section>
       <section class="cmd-group" id="claims" aria-labelledby="g-claims">
         <h2 id="g-claims">Claims &amp; Truhenschutz</h2>
-        <div class="cmd" data-keys="grundstück schutz chunk"><div><code>/claim</code></div><p>Den Chunk kaufen, in dem du stehst (1.000 JC, maximal 30 Chunks).</p></div>
+        <div class="cmd" data-keys="grundstück schutz chunk"><div><code>/claim</code></div><p>Den Chunk kaufen, in dem du stehst (1.000 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt). Maximal 30 Chunks, Sub 50, Premium 70. Die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
         <div class="cmd"><div><code>/claim info</code></div><p>Wem gehört dieser Chunk?</p></div>
         <div class="cmd"><div><code>/claim list</code></div><p>Alle deine Chunks mit Koordinaten.</p></div>
         <div class="cmd" data-keys="grenzen sehen karte"><div><code>/claim show</code></div><p>Zeigt 10 Sekunden lang alle Claims in deiner Nähe als leuchtenden Rand (grün = deins, gelb = vertraut, rot = fremd, weiß = frei). Beim Betreten eines Claims leuchtet der Rand automatisch kurz auf und oben steht, wem er gehört. Auf der Karte sind alle Claims farbig.</p></div>
@@ -122,7 +124,7 @@
         <h2 id="g-clans">Clans &amp; Nachrichten</h2>
         <div class="cmd"><div><code>/clan hilfe</code><span class="alias">auch: /clans</span></div><p>Alle Clan-Befehle im Spiel.</p></div>
         <div class="cmd" data-keys="gründen erstellen"><div><code>/clan gruenden &lt;TAG&gt; &lt;Name&gt;</code></div><p>Clan gründen (Tag 3–4 Zeichen A–Z/0–9).</p></div>
-        <div class="cmd"><div><code>/clan info [TAG]</code></div><p>Infos zu deinem oder einem anderen Clan.</p></div>
+        <div class="cmd" data-keys="spielzeit"><div><code>/clan info [TAG]</code></div><p>Infos zu deinem oder einem anderen Clan – mit gemeinsamer Spielzeit.</p></div>
         <div class="cmd" data-keys="rangliste"><div><code>/clan top</code></div><p>Rangliste der Clans (Skill-Gesamtlevel + Spielstunden).</p></div>
         <div class="cmd"><div><code>/clan einladen &lt;Spieler&gt;</code></div><p>Spieler einladen (Gründer/Leiter, gilt 5 Minuten).</p></div>
         <div class="cmd"><div><code>/clan beitreten &lt;TAG&gt;</code></div><p>Einladung annehmen.</p></div>
@@ -132,7 +134,7 @@
         <div class="cmd" data-keys="befördern"><div><code>/clan befoerdern &lt;Spieler&gt;</code></div><p>Mitglied zum Leiter machen (Gründer).</p></div>
         <div class="cmd"><div><code>/clan degradieren &lt;Spieler&gt;</code></div><p>Leiter zum Mitglied machen (Gründer).</p></div>
         <div class="cmd" data-keys="übertragen"><div><code>/clan uebertragen &lt;Spieler&gt;</code></div><p>Gründerrolle abgeben (Gründer).</p></div>
-        <div class="cmd"><div><code>/clan farbe &lt;Farbe&gt;</code></div><p>Farbe des Clan-Tags (Gründer/Leiter).</p></div>
+        <div class="cmd" data-keys="farbe Sub/Premium"><div><code>/clan farbe &lt;Farbe&gt;</code><span class="badge purple">Sub/Premium</span></div><p>Farbe des Clan-Tags (Standard weiß). Nur Gründer mit Sub- oder Premium-Rang.</p></div>
         <div class="cmd" data-keys="auflösen löschen"><div><code>/clan aufloesen</code></div><p>Clan auflösen (Gründer, mit Bestätigung).</p></div>
         <div class="cmd" data-keys="clan chat"><div><code>/cc &lt;Nachricht&gt;</code><span class="alias">auch: /clanchat</span></div><p>Nachricht in den Clan-Chat.</p></div>
         <div class="cmd"><div><code>/clan chat</code></div><p>Normalen Chat auf Clan-Chat umschalten (an/aus).</p></div>
@@ -142,6 +144,7 @@
         <h2 id="g-vorteile">Sub- &amp; Premium-Vorteile</h2>
         <div class="cmd" data-keys="endertruhe enderchest Sub/Premium"><div><code>/ec</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Endertruhe öffnen – überall.</p></div>
         <div class="cmd" data-keys="werkbank crafting Sub/Premium"><div><code>/craft</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Werkbank öffnen – überall.</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome + /home</code><span class="badge purple">Sub/Premium</span></div><p>Ein eigenes Home (Spieler haben kein Home).</p></div>
       </section>
       <section class="cmd-group" id="shop" aria-labelledby="g-shop">
         <h2 id="g-shop">Shop</h2>
@@ -171,13 +174,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

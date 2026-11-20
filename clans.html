@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
@@ -46,28 +47,29 @@
       <div class="page-head wrap">
         <span class="eyebrow">Gemeinsam stark</span>
         <h1>Clans</h1>
-        <p class="lead">Gründe mit deinen Freunden einen Clan: eigener Tag im Chat, eigene Farbe, Clan-Chat und eine Rangliste, in der ihr euch mit anderen Clans messt.</p>
+        <p class="lead">Gründe mit deinen Freunden einen Clan: eigener Tag im Chat, Clan-Chat, gemeinsame Spielzeit und eine Rangliste, in der ihr euch mit anderen Clans messt.</p>
       </div>
     </div>
     <div class="wrap">
       <div class="grid">
-        <div class="card"><span class="icon" aria-hidden="true">🏷️</span><h3>Dein Clan-Tag</h3><p>3–4 Zeichen (A–Z, 0–9). Im Chat steht <strong>nur der Tag</strong> vor deinem Namen – in deiner Clan-Farbe.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🏷️</span><h3>Dein Clan-Tag</h3><p>3–4 Zeichen (A–Z, 0–9). Im Chat steht <strong>nur der Tag</strong> vor deinem Namen – in deiner Clan-Farbe. <strong>Tag und Name lassen sich nach der Gründung nicht mehr ändern</strong> – überleg sie dir also gut.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">👥</span><h3>Keine Größenbegrenzung</h3><p>Ein Clan kann beliebig viele Mitglieder haben. Jeder Spieler kann in genau einem Clan sein.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🏆</span><h3>Clan-Rangliste</h3><p><code>/clan top</code>: Punkte = <strong>Skill-Gesamtlevel + Spielstunden</strong> aller Mitglieder. Wird alle 5 Minuten aktualisiert.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">⏱</span><h3>Clan-Spielzeit</h3><p>Die Spielzeit aller Mitglieder wird zusammengezählt. Du siehst sie in <code>/clan info</code> und in der <a href="ranglisten.html">Clan-Spielzeit-Rangliste</a>.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">💬</span><h3>Clan-Chat</h3><p><code>/cc &lt;Nachricht&gt;</code> oder dauerhaft umschalten mit <code>/clan chat</code>. Andere Clans erreichst du mit <code>/clan msg &lt;TAG&gt;</code>.</p></div>
       </div>
 
       <h2>Ränge im Clan</h2>
       <div class="table-wrap" role="region" aria-label="Clan-Ränge" tabindex="0"><table><thead><tr><th scope="col">Rang</th><th scope="col">Darf</th></tr></thead><tbody>
-<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle Mitglieder entfernen, befördern, degradieren, Farbe ändern, Gründerrolle übertragen, Clan auflösen.</td></tr>
-<tr><td><strong>Leiter</strong></td><td>Einladen, normale Mitglieder entfernen, Farbe ändern.</td></tr>
+<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle Mitglieder entfernen, befördern, degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern nur mit Sub- oder Premium-Rang.</td></tr>
+<tr><td><strong>Leiter</strong></td><td>Einladen, normale Mitglieder entfernen.</td></tr>
 <tr><td><strong>Mitglied</strong></td><td>Clan-Chat, Clan-Nachrichten, Clan verlassen.</td></tr>
 </tbody></table></div>
 
       <h2>Alle Clan-Befehle</h2>
       <div class="table-wrap" role="region" aria-label="Clan-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th><th scope="col">Wer</th></tr></thead><tbody>
 <tr><td><code>/clan gruenden &lt;TAG&gt; &lt;Name&gt;</code></td><td>Clan gründen. Der Tag hat 3–4 Zeichen (A–Z, 0–9), der Name bis zu 32 Zeichen. Beispiel: /clan gruenden JZC Justins Crew</td><td>Alle</td></tr>
-<tr><td><code>/clan info [TAG]</code></td><td>Infos zu deinem oder einem anderen Clan: Gründer, Punkte, Mitglieder (wer online ist).</td><td>Alle</td></tr>
+<tr><td><code>/clan info [TAG]</code></td><td>Infos zu deinem oder einem anderen Clan: Gründer, Punkte, gemeinsame Spielzeit, Mitglieder (wer online ist).</td><td>Alle</td></tr>
 <tr><td><code>/clan top</code></td><td>Rangliste der Clans.</td><td>Alle</td></tr>
 <tr><td><code>/clan einladen &lt;Spieler&gt;</code></td><td>Spieler einladen. Die Einladung gilt 5 Minuten.</td><td>Gründer, Leiter</td></tr>
 <tr><td><code>/clan beitreten &lt;TAG&gt;</code></td><td>Einladung annehmen (oder im Chat auf den Knopf klicken).</td><td>Eingeladene</td></tr>
@@ -80,13 +82,13 @@
 <tr><td><code>/clan befoerdern &lt;Spieler&gt;</code></td><td>Mitglied zum Leiter machen.</td><td>Gründer</td></tr>
 <tr><td><code>/clan degradieren &lt;Spieler&gt;</code></td><td>Leiter wieder zum Mitglied machen.</td><td>Gründer</td></tr>
 <tr><td><code>/clan uebertragen &lt;Spieler&gt;</code></td><td>Gründerrolle abgeben (mit Sicherheitsabfrage).</td><td>Gründer</td></tr>
-<tr><td><code>/clan farbe &lt;Farbe&gt;</code></td><td>Farbe des Clan-Tags ändern.</td><td>Gründer, Leiter</td></tr>
+<tr><td><code>/clan farbe &lt;Farbe&gt;</code></td><td>Farbe des Clan-Tags ändern (Standard: weiß). Nur für Gründer mit Sub- oder Premium-Rang.</td><td>Gründer (Sub/Premium)</td></tr>
 <tr><td><code>/clan aufloesen</code></td><td>Clan auflösen (mit Bestätigung, nicht rückgängig zu machen).</td><td>Gründer</td></tr>
 </tbody></table></div>
       <p>Eine Übersicht bekommst du im Spiel auch mit <code>/clan hilfe</code>.</p>
 
       <h2>Clan-Farben</h2>
-      <p>Mit <code>/clan farbe &lt;Farbe&gt;</code> wählst du eine dieser Farben (Standard ist Gold):</p>
+      <p>Jeder neue Clan ist <strong>weiß</strong>. Ist der <strong>Gründer Sub oder Premium</strong>, kann er mit <code>/clan farbe &lt;Farbe&gt;</code> eine dieser Farben wählen (<a href="raenge.html">Ränge</a>):</p>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#ffaa00">[JZC]</span> <code>gold</code></div>
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#ffff55">[JZC]</span> <code>gelb</code></div>
@@ -110,6 +112,7 @@
         <p><strong>Regeln &amp; Datenschutz:</strong> Clan-Chat und private Nachrichten unterliegen denselben Regeln wie der normale Chat. Der <strong>automatische Filter gilt überall</strong>. Zur Moderation werden diese Nachrichten <strong>gespeichert</strong> und können vom Owner eingesehen werden (<a href="regeln.html#r10-6">Regel 10.6</a>, <a href="datenschutz.html">Datenschutz</a>).</p>
         <p>Clan-Tags und -Namen dürfen nicht beleidigend sein und keine Werbung enthalten – das Team darf unpassende Clans auflösen. Clan-Kriege nur im Rahmen der PvP-Regeln (<a href="regeln.html#r10-5">Regel 10.5</a>).</p>
       </div>
+      <div class="callout info"><p>🏠 <strong>Claims für den Clan:</strong> Jedes Mitglied claimt mit seinem eigenen Limit. Chunks im <strong>Nether kosten das Doppelte</strong>, im <strong>End das Dreifache</strong>; die End-Mitte (1.000 Blöcke um 0/0) kann niemand claimen. Mehr in den <a href="faq.html#claims">FAQ</a>.</p></div>
     </div>
   </main>
   <footer class="site-footer">
@@ -117,13 +120,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

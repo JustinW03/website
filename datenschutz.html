@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
@@ -56,7 +57,7 @@
       <h3>Welche Daten?</h3>
       <p>Für den Betrieb speichern wir:</p>
       <ul>
-        <li>Minecraft-Name und UUID, Discord-ID, Twitch-Name</li>
+        <li>Minecraft-Name und UUID, Discord-ID, Twitch-Name; bei Bedrock-Spielern zusätzlich Xbox-Gamertag und Xbox-ID</li>
         <li>IP-Adressen (<strong>90 Tage</strong>, zur Erkennung von Zweitaccounts und Bann-Umgehung)</li>
         <li><strong>Chat-Nachrichten – auch Clan-Chat und private Nachrichten (/msg)</strong></li>
         <li>Spielaktionen (Blöcke, Truhen, Positionen, Tode, Zahlungen), Spielzeit, Strafen</li>
@@ -77,9 +78,9 @@
       <ul>
         <li><strong>Hosting:</strong> Die Seite ist eine statische Website und wird über <strong>GitHub Pages</strong> bereitgestellt (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). GitHub verarbeitet beim Aufruf technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, aufgerufene Seite) in Server-Logs, um die Seite auszuliefern und vor Angriffen zu schützen (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO). Dabei können Daten in die USA übertragen werden; GitHub ist nach dem EU-US Data Privacy Framework zertifiziert. Mehr dazu in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</li>
         <li><strong>Keine Cookies, kein Tracking:</strong> Wir setzen keine Cookies, keine Analyse-Tools und laden keine externen Schriften.</li>
-        <li><strong>Ranglisten und Server-Infos:</strong> Einige Seiten laden die Dateien <code>daten/ranglisten.json</code> und <code>daten/info.json</code> direkt von dieser Website (kein Drittanbieter). Sie werden automatisch etwa alle 30 Minuten vom Minecraft-Server übernommen. <code>ranglisten.json</code> enthält die Minecraft-Namen freigeschalteter Spieler mit Spielwerten (z. B. Coins, Spielzeit, Tode, Skills, Clans, Minigame-Statistik). <code>info.json</code> enthält nur allgemeine Server-Werte (z. B. Version, Spielerzahl, Minigames, Öffnungszeiten von Nether und End) und keine personenbezogenen Daten.</li>
+        <li><strong>Ranglisten und Server-Infos:</strong> Einige Seiten laden die Dateien <code>daten/ranglisten.json</code> und <code>daten/info.json</code> direkt von dieser Website (kein Drittanbieter). Sie werden automatisch etwa alle 15 Minuten vom Minecraft-Server übernommen. <code>ranglisten.json</code> enthält die Minecraft-Namen freigeschalteter Spieler mit Spielwerten (z. B. Coins, Spielzeit, Tode, Skills, Erfolge, Votes, Clans, Minigame-Statistik). <code>info.json</code> enthält nur allgemeine Server-Werte (z. B. Version, Spielerzahl, Minigames, Öffnungszeiten von Nether und End) und keine personenbezogenen Daten.</li>
         <li><strong>Live-Status:</strong> Auf der Startseite fragt dein Browser den Server-Status bei <strong>api.mcsrvstat.us</strong> ab. Dabei wird deine IP-Adresse an diesen Dienst übertragen. Die Abfrage enthält nur die Server-Adresse <code>play.justinzockt.de</code>, keine weiteren Daten über dich.</li>
-        <li><strong>Externe Links</strong> (Discord, Twitch, TikTok, YouTube) öffnen sich erst, wenn du sie anklickst. Dort gelten die Datenschutzerklärungen der jeweiligen Anbieter.</li>
+        <li><strong>Externe Links</strong> (Discord, Twitch, TikTok, YouTube, die Serverliste zum Voten, BedrockConnect auf GitHub) öffnen sich erst, wenn du sie anklickst. Dort gelten die Datenschutzerklärungen der jeweiligen Anbieter.</li>
       </ul>
 
       <h2 id="rechte">3. Deine Rechte</h2>
@@ -92,13 +93,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

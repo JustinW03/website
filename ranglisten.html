@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ranglisten – JustinZocktCommunity</title>
-  <meta name="description" content="Ranglisten der Community: Coins, Spielzeit, Skills, Clans und jedes Minigame – automatisch aktualisiert.">
+  <meta name="description" content="Ranglisten der Community: Coins, Spielzeit, Skills, Erfolge, Clans, Clan-Spielzeit, Tode und jedes Minigame – automatisch aktualisiert.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ranglisten – JustinZocktCommunity">
-  <meta property="og:description" content="Ranglisten der Community: Coins, Spielzeit, Skills, Clans und jedes Minigame – automatisch aktualisiert.">
+  <meta property="og:description" content="Ranglisten der Community: Coins, Spielzeit, Skills, Erfolge, Clans, Clan-Spielzeit, Tode und jedes Minigame – automatisch aktualisiert.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -32,6 +32,7 @@
           <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
+          <li><a href="erfolge.html">Erfolge</a></li>
           <li><a href="minigames.html">Minigames</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html" aria-current="page">Ranglisten</a></li>
@@ -46,15 +47,16 @@
       <div class="page-head wrap">
         <span class="eyebrow">Community</span>
         <h1>Ranglisten</h1>
-        <p class="lead">Wer hat die meisten Coins, die meiste Spielzeit, die höchsten Skills, den stärksten Clan – und wer gewinnt welches Minigame? Die Listen werden automatisch alle 30 Minuten aktualisiert.</p>
+        <p class="lead">Wer hat die meisten Coins, die meiste Spielzeit, die höchsten Skills, die meisten Erfolge, den stärksten Clan – und wer gewinnt welches Minigame? Die Listen werden automatisch etwa alle 15 Minuten aktualisiert.</p>
       </div>
     </div>
     <div class="wrap">
       <p class="muted" id="rank-stand" aria-live="polite">Lade Ranglisten …</p>
       <div class="rank-tabs" role="tablist" aria-label="Ranglisten" id="rank-tabs"></div>
+      <div class="rank-tabs rank-subtabs" role="tablist" aria-label="Unterkategorien" id="rank-subtabs" hidden></div>
       <div id="rank-out" role="tabpanel"></div>
       <noscript><p class="callout">Für die Ranglisten wird JavaScript benötigt.</p></noscript>
-      <p class="muted">Es erscheinen nur freigeschaltete Spieler. Gezeigt werden die besten 50 je Liste. Clan-Punkte = Skill-Gesamtlevel aller Mitglieder + ihre Spielstunden. Minigame-Statistiken zählen <strong>automatisch</strong> für alle – unter „🎯 Je Minigame“ gibt es für jedes Spiel eine eigene Rangliste.</p>
+      <p class="muted">Es erscheinen nur freigeschaltete Spieler. Gezeigt werden die besten 50 je Liste. Clan-Punkte = Skill-Gesamtlevel aller Mitglieder + ihre Spielstunden; „Clan-Spielzeit“ zählt die Spielzeit aller Mitglieder zusammen. „Erfolge“ zählt erledigte Minecraft-Fortschritte und <a href="erfolge.html">JZC-Erfolge</a> (ohne Rezepte). Unter „⭐ Skills“ findest du Gesamt und jeden Skill einzeln. Minigame-Statistiken zählen <strong>automatisch</strong> für alle – unter „🎮 Minigames“ gibt es Punkte, Siege und für jedes Spiel eine eigene Rangliste („Je Spiel“).</p>
     </div>
   </main>
   <footer class="site-footer">
@@ -62,13 +64,15 @@
       <div class="footer-grid">
         <div>
           <h2>Server</h2>
-          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
           <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="index.html#voten">Für den Server voten</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
