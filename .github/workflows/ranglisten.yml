@@ -1,13 +1,15 @@
-# Holt alle 30 Minuten die Ranglisten und Server-Infos vom Minecraft-Server
+# Holt alle 15 Minuten die Ranglisten und Server-Infos vom Minecraft-Server
 # und legt sie als daten/ranglisten.json und daten/info.json ab.
 # Einmalig einrichten: GitHub -> Settings -> Secrets and variables -> Actions -> "New repository secret"
 #   Name:  SERVER_API_URL
 #   Wert:  deine Dashboard-Adresse + /api/ranglisten.json   (steht in README.md, Abschnitt "Ranglisten")
 # Die Adresse fuer info.json wird daraus abgeleitet (ranglisten.json -> info.json), ein zweites Secret ist nicht noetig.
+# Die Server-Adresse steht NUR im Secret - nie in dieser Datei, nie im Log (add-mask, curl ohne Fehlertext).
+# Ist der Server nicht erreichbar oder liefert Unsinn, bleiben die alten Dateien unveraendert stehen.
 name: Ranglisten aktualisieren
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -18,44 +20,80 @@ concurrency:
 jobs:
   holen:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - name: Daten vom Server holen
         env:
           URL: ${{ secrets.SERVER_API_URL }}
         run: |
+          set -u
           mkdir -p daten
+          if [ -z "${URL:-}" ]; then
+            echo "Secret SERVER_API_URL fehlt - nichts zu tun."
+            exit 0
+          fi
           INFO_URL="${URL%ranglisten.json}info.json"
+          echo "::add-mask::$URL"
           echo "::add-mask::$INFO_URL"
-          # -s ohne -S: keine Fehlermeldungen mit Server-Adresse im Log
-          if curl -fs --max-time 20 "$URL" -o neu.json && python3 -c "import json;d=json.load(open('neu.json'));assert 'coins' in d"; then
-            mv neu.json daten/ranglisten.json
-          else
-            echo "Ranglisten: Server nicht erreichbar - alte Datei bleibt stehen."
-            rm -f neu.json
-          fi
-          if curl -fs --max-time 20 "$INFO_URL" -o info-neu.json && python3 -c "import json;d=json.load(open('info-neu.json'));assert 'theme' in d and 'stand' in d"; then
-            mv info-neu.json daten/info.json
-          else
-            echo "Server-Infos: nicht erreichbar - alte Datei bleibt stehen."
-            rm -f info-neu.json
-          fi
+
+          # Holt eine Datei mit bis zu 4 Versuchen (Pausen 10/20/30 s) und prueft sie.
+          # $1 = Adresse, $2 = Zieldatei, $3 = Pruef-Ausdruck (Python) fuer das geladene JSON d
+          holen() {
+            local url="$1" ziel="$2" pruef="$3" tmp="${2}.neu"
+            for versuch in 1 2 3 4; do
+              # -s ohne -S: keine Fehlermeldungen mit Server-Adresse im Log
+              if curl -fs --connect-timeout 10 --max-time 30 -H 'Accept: application/json' "$url" -o "$tmp" \
+                 && python3 - "$tmp" "$ziel" "$pruef" 2>/dev/null <<'PY'
+          import json, sys
+          neu, ziel, pruef = sys.argv[1], sys.argv[2], sys.argv[3]
+          d = json.load(open(neu, encoding='utf-8'))
+          assert isinstance(d, dict) and eval(pruef, {}, {'d': d}), 'Inhalt unvollstaendig'
+          # nur speichern, wenn sich etwas geaendert hat (ohne Zeitstempel "stand")
+          # oder die alte Datei aelter als 60 Minuten ist (damit "Stand: vor X Minuten" aktuell bleibt)
+          try:
+              alt = json.load(open(ziel, encoding='utf-8'))
+          except Exception:
+              alt = None
+          def ohne(x):
+              return {k: v for k, v in x.items() if k != 'stand'} if isinstance(x, dict) else x
+          alt_stand = alt.get('stand', 0) if isinstance(alt, dict) else 0
+          if alt is not None and ohne(alt) == ohne(d) and d.get('stand', 0) - (alt_stand or 0) < 3600 * 1000:
+              print('unveraendert')
+              sys.exit(3)
+          json.dump(d, open(ziel, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+          PY
+              then
+                echo "$(basename "$ziel"): aktualisiert (Versuch $versuch)."
+                rm -f "$tmp"; return 0
+              else
+                code=$?
+                rm -f "$tmp"
+                if [ "$code" = "3" ]; then echo "$(basename "$ziel"): keine Aenderung."; return 0; fi
+              fi
+              [ "$versuch" -lt 4 ] && sleep $((versuch * 10))
+            done
+            echo "$(basename "$ziel"): Server nicht erreichbar oder Daten ungueltig - alte Datei bleibt stehen."
+            return 0
+          }
+
+          holen "$URL" daten/ranglisten.json "'coins' in d and 'stand' in d and isinstance(d.get('coins'), list)"
+          holen "$INFO_URL" daten/info.json "'theme' in d and 'stand' in d"
       - name: Speichern
         run: |
           git config user.name "Ranglisten-Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add daten/ranglisten.json
+          [ -f daten/ranglisten.json ] && git add daten/ranglisten.json
           [ -f daten/info.json ] && git add daten/info.json
-          # Commit auch dann, wenn sich nur info.json geaendert hat
           if git diff --cached --quiet; then
             echo "Keine Aenderungen."
             exit 0
           fi
-          git commit -m "Ranglisten und Server-Infos aktualisiert"
+          git commit -q -m "Ranglisten und Server-Infos aktualisiert"
           # Falls Justin in der Zwischenzeit etwas hochgeladen hat: erst holen, dann pushen (3 Versuche)
           for i in 1 2 3; do
             git pull --rebase --autostash -q && git push -q && exit 0
-            sleep 5
+            sleep $((i * 5))
           done
-          echo "Push fehlgeschlagen."
+          echo "Push fehlgeschlagen - beim naechsten Lauf wird es erneut versucht."
           exit 1
