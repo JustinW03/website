@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Overlay-Vorschau – JustinZockt Community</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root{--rot:#ff1f3d;--rotd:#b3001b;--bg:#0c0c10;--panel:#16161c;--line:rgba(255,255,255,.08);--grau:#a9a9b6;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,rgba(255,31,61,.16),transparent 60%),var(--bg);color:#fff;
+    font-family:"Montserrat","Segoe UI",Arial,sans-serif;min-height:100vh;}
+  header{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding:20px 28px;border-bottom:1px solid var(--line);}
+  h1{margin:0;font-size:20px;font-weight:900;letter-spacing:.3px;}
+  h1 span{color:var(--rot);}
+  .px{font-family:"Press Start 2P",monospace;font-size:10px;color:var(--rot);}
+  .gruppe{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .gruppe b{font-size:12px;color:var(--grau);font-weight:700;margin-right:4px;}
+  button{font:700 13px "Montserrat",Arial;color:#fff;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:7px 12px;cursor:pointer;}
+  button:hover{border-color:rgba(255,31,61,.6);}
+  button.an{background:linear-gradient(180deg,var(--rot),var(--rotd));border-color:transparent;box-shadow:0 0 12px rgba(255,31,61,.45);}
+  main{display:flex;flex-wrap:wrap;gap:28px;padding:26px 28px 40px;align-items:flex-start;}
+  .karte{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;}
+  .karte h2{margin:0 0 10px;font-size:14px;font-weight:800;display:flex;align-items:baseline;gap:10px;}
+  .karte h2 small{color:var(--grau);font-weight:600;}
+  .karte h2 a{margin-left:auto;color:var(--grau);font-weight:600;font-size:12px;}
+  #twWrap{flex:1 1 640px;min-width:300px;} #ttWrap{flex:0 1 380px;min-width:240px;}
+  .rahmen{position:relative;overflow:hidden;border-radius:8px;background:#000;}
+  .buehne{position:absolute;left:0;top:0;transform-origin:0 0;}
+  .buehne canvas,.buehne iframe{position:absolute;left:0;top:0;border:0;display:block;}
+  .buehne iframe{background:transparent;}
+  p.hinweis{color:var(--grau);font-size:13px;line-height:1.5;margin:10px 2px 0;max-width:900px;}
+  code{background:rgba(255,255,255,.07);padding:1px 6px;border-radius:5px;font-size:12px;color:#ffd0d7;}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="px">VORSCHAU</div><h1>JustinZockt <span>Community</span> – Stream-Overlays</h1></div>
+  <div class="gruppe" id="gHg"><b>Spielbild:</b>
+    <button data-hg="tag" class="an">Tag</button><button data-hg="schnee">Schnee (hell)</button><button data-hg="nacht">Nacht (dunkel)</button></div>
+  <div class="gruppe" id="gSl"><b>Botschaft:</b>
+    <button data-sl="" class="an">Animation</button><button data-sl="1">1</button><button data-sl="2">2</button>
+    <button data-sl="3">3</button><button data-sl="4">4</button><button data-sl="5">5</button></div>
+  <div class="gruppe" id="gEk"><b>Twitch-Ecke:</b>
+    <button data-ek="unten-links" class="an">unten links</button><button data-ek="unten-rechts">unten rechts</button>
+    <button data-ek="oben-links">oben links</button><button data-ek="oben-rechts">oben rechts</button></div>
+  <div class="gruppe"><b>TikTok:</b><button id="zonen">TikTok-Bedienfelder zeigen</button></div>
+</header>
+
+<main>
+  <section class="karte" id="twWrap">
+    <h2>Twitch / Streamlabs <small>1920 × 1080</small> <a href="twitch-overlay.html" target="_blank">einzeln öffnen</a></h2>
+    <div class="rahmen" id="twRahmen"><div class="buehne" id="twBuehne" style="width:1920px;height:1080px">
+      <canvas id="twCanvas" width="1920" height="1080"></canvas>
+      <iframe id="twFrame" width="1920" height="1080" allowtransparency="true" scrolling="no"></iframe></div></div>
+    <p class="hinweis">Der Hintergrund ist nur ein Beispiel-Spielbild – im Stream ist das Overlay durchsichtig.
+      Live-Spielerzahl kommt automatisch, sobald Internet da ist (bei Fehler oder 0 Spielern bleibt die Anzeige weg).
+      Mit URL-Parametern wie <code>?ecke=unten-rechts&amp;dauer=8&amp;farbe=ff1f3d</code> kannst du alles umstellen – siehe ANLEITUNG-OVERLAYS.md.</p>
+  </section>
+  <section class="karte" id="ttWrap">
+    <h2>TikTok LIVE Studio <small>1080 × 1920</small> <a href="tiktok-overlay.html" target="_blank">einzeln öffnen</a></h2>
+    <div class="rahmen" id="ttRahmen"><div class="buehne" id="ttBuehne" style="width:1080px;height:1920px">
+      <canvas id="ttCanvas" width="1080" height="1920"></canvas>
+      <iframe id="ttFrame" width="1080" height="1920" allowtransparency="true" scrolling="no"></iframe></div></div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var zustand = { hg: "tag", sl: "", ek: "unten-links", zonen: false };
+
+  // ---------- Minecraft-artiges Beispiel-Spielbild (selbst gezeichnet) ----------
+  function zufall(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
+  function schattiere(hex, f){ var n=parseInt(hex.slice(1),16), r=(n>>16)&255, g=(n>>8)&255, b=n&255;
+    r=Math.max(0,Math.min(255,r*f|0)); g=Math.max(0,Math.min(255,g*f|0)); b=Math.max(0,Math.min(255,b*f|0)); return "rgb("+r+","+g+","+b+")"; }
+  function block(ctx, x, y, s, farbe, rnd){
+    var p = s/8;
+    for(var i=0;i<8;i++) for(var j=0;j<8;j++){ ctx.fillStyle = schattiere(farbe, .82 + rnd()*.3); ctx.fillRect(x+i*p, y+j*p, p+.5, p+.5); }
+  }
+  function male(cv, modus){
+    var ctx = cv.getContext("2d"), W = cv.width, H = cv.height, s = 60, rnd = zufall(7);
+    var himmel = {tag:["#5aa9ff","#bfe2ff"], schnee:["#cfe6ff","#f6fbff"], nacht:["#05070f","#1a2440"]}[modus];
+    var g = ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,himmel[0]); g.addColorStop(1,himmel[1]);
+    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+    // Sonne / Mond
+    ctx.fillStyle = modus==="nacht" ? "#dfe6f5" : "#fff6b0"; ctx.fillRect(W*.72, H*.08, 110, 110);
+    if(modus==="nacht"){ for(var k=0;k<90;k++){ ctx.fillStyle="rgba(255,255,255,"+(.3+rnd()*.7)+")"; ctx.fillRect(rnd()*W, rnd()*H*.5, 4, 4);} }
+    // Wolken
+    ctx.fillStyle = modus==="nacht" ? "rgba(120,130,160,.18)" : "rgba(255,255,255,.85)";
+    for(var c=0;c<5;c++){ var cx=rnd()*W, cy=H*.06+rnd()*H*.2; ctx.fillRect(cx,cy,240,40); ctx.fillRect(cx+40,cy-30,140,30); }
+    // Gelände
+    var spalten = Math.ceil(W/s), basis = Math.floor(H/s*.55);
+    for(var x=0;x<spalten;x++){
+      var h = basis + Math.round(Math.sin(x*.35)*2 + Math.sin(x*.11+1)*2.5 + Math.sin(x*.9)*.6);
+      for(var y=h;y*s<H;y++){
+        var f;
+        if(y===h) f = modus==="schnee" ? "#f4f8fc" : (modus==="nacht" ? "#2f5a22" : "#5fae3a");
+        else if(y<h+3) f = modus==="nacht" ? "#3a2a1c" : "#8a5a36";
+        else f = modus==="nacht" ? "#3b3b40" : "#808086";
+        block(ctx, x*s, y*s, s, f, rnd);
+        if(y===h && modus!=="schnee"){ ctx.fillStyle = "rgba(0,0,0,.12)"; ctx.fillRect(x*s, y*s+s*.75, s, s*.25); }
+      }
+      // Bäume
+      if(x%7===3){ var th=h-1;
+        for(var t=0;t<3;t++) block(ctx, x*s, (th-t)*s, s, modus==="nacht"?"#3b2a18":"#6b4a2b", rnd);
+        for(var lx=-1;lx<=1;lx++) for(var ly=0;ly<2;ly++) block(ctx, (x+lx)*s, (th-3-ly)*s, s, modus==="schnee"?"#e8f0f4":(modus==="nacht"?"#1f3d18":"#3f8a2a"), rnd);
+      }
+    }
+    if(modus==="nacht"){ ctx.fillStyle="rgba(0,0,20,.35)"; ctx.fillRect(0,0,W,H); }
+  }
+
+  // ---------- Skalieren ----------
+  function skaliere(){
+    [["twRahmen","twBuehne",1920,1080],["ttRahmen","ttBuehne",1080,1920]].forEach(function(a){
+      var r = document.getElementById(a[0]), b = document.getElementById(a[1]);
+      var w = r.parentNode.clientWidth - 28, k = Math.min(1, w / a[2]);
+      if(a[0]==="ttRahmen") k = Math.min(k, (window.innerHeight - 170) / a[3], 1);
+      k = Math.max(k, .12);
+      b.style.transform = "scale("+k+")"; r.style.width = (a[2]*k)+"px"; r.style.height = (a[3]*k)+"px";
+    });
+  }
+
+  function lade(){
+    male(document.getElementById("twCanvas"), zustand.hg);
+    male(document.getElementById("ttCanvas"), zustand.hg);
+    var q = zustand.sl ? "slide="+zustand.sl+"&" : "";
+    document.getElementById("twFrame").src = "twitch-overlay.html?" + q + "ecke=" + zustand.ek;
+    document.getElementById("ttFrame").src = "tiktok-overlay.html?" + q + (zustand.zonen ? "zonen=1" : "");
+  }
+  function knoepfe(id, key){
+    var g = document.getElementById(id);
+    g.addEventListener("click", function(e){
+      var b = e.target.closest("button"); if(!b) return;
+      [].forEach.call(g.querySelectorAll("button"), function(x){ x.classList.remove("an"); }); b.classList.add("an");
+      zustand[key] = b.getAttribute("data-"+key); lade();
+    });
+  }
+  knoepfe("gHg","hg"); knoepfe("gSl","sl"); knoepfe("gEk","ek");
+  document.getElementById("zonen").addEventListener("click", function(){ zustand.zonen = !zustand.zonen; this.classList.toggle("an", zustand.zonen); lade(); });
+  window.addEventListener("resize", skaliere);
+  skaliere(); lade();
+})();
+</script>
+</body>
+</html>

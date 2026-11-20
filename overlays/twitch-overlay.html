@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>JustinZockt Server-Overlay (Twitch 1920x1080)</title>
+<meta name="viewport" content="width=1920, height=1080">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<script>
+/* =====================================================================
+   CONFIG  –  HIER KANNST DU ALLES ÄNDERN (ohne Programmierkenntnisse)
+   ---------------------------------------------------------------------
+   Regeln:
+   - Texte immer in "Anführungszeichen" lassen.
+   - Nach jeder Zeile steht ein Komma , – nicht löschen.
+   - true = an, false = aus.
+   - Text zwischen *Sternchen* wird in der Hauptfarbe (rot) geschrieben.
+   - Nach dem Speichern in Streamlabs: Quelle anklicken > "Aktualisieren"
+     (oder Rechtsklick > Eigenschaften > "Cache der aktuellen Seite
+     aktualisieren").
+   ===================================================================== */
+var CONFIG = {
+
+  // Wo steht die Karte?  "unten-links" | "unten-rechts" | "oben-links" | "oben-rechts"
+  ecke: "unten-links",
+
+  // Abstand zum Bildrand in Pixeln (bei 1920x1080)
+  abstandRand: 36,
+
+  // Größe: 1 = normal, 0.8 = kleiner, 1.2 = größer
+  skalierung: 1,
+
+  // Breite der Karte in Pixeln
+  breite: 600,
+
+  // Sekunden, die jede Botschaft sichtbar ist
+  dauer: 7,
+
+  // Nach einer kompletten Runde Karte für X Sekunden ausblenden (0 = immer sichtbar)
+  pauseNachRunde: 0,
+
+  // Farben (Hex-Code mit #)
+  farben: {
+    haupt:       "#ff1f3d",   // Rot
+    dunkel:      "#b3001b",   // Dunkelrot
+    hintergrund: "#0e0e12",   // Kartenhintergrund (Anthrazit/Schwarz)
+    text:        "#ffffff",
+    textGrau:    "#c6c6d0"
+  },
+
+  // Deckkraft des Kartenhintergrunds (0 = durchsichtig, 1 = komplett deckend)
+  deckkraft: 0.86,
+
+  // Obere Zeile (Pixel-Schrift)
+  ueberschrift: "SPIEL MIT AUF MEINEM SERVER",
+  // Kleines Abzeichen oben rechts in der Karte
+  badge: "JAVA & BEDROCK",
+
+  // Elemente an/aus
+  zeigeUeberschrift: true,
+  zeigeBadge:        true,
+  zeigeIcon:         true,   // Pixel-Würfel links
+  zeigePartikel:     true,   // Pixel-Funken
+  zeigeShine:        true,   // Glanz-Streifen
+  zeigeGlow:         true,   // pulsierendes Leuchten
+  zeigeFortschritt:  true,   // Zeitbalken + Punkte unten
+
+  // Die Botschaften, die sich abwechseln (an: false = wird übersprungen)
+  //   label = kleines rotes Schild,  text = große Zeile,  unter = kleine Zeile
+  botschaften: [
+    { an: true,  label: "JAVA",      text: "play.*justinzockt*.de",    unter: "Version Java 26.3 · ältere ab 1.21.5" },
+    { an: true,  label: "BEDROCK",   text: "bedrock.*justinzockt*.de", unter: "Port 15314 · Handy, Konsole & Windows" },
+    { an: true,  label: "WHITELIST", text: "Tippe *!discord* im Chat",  unter: "Discord: Link auf justinzockt.de · Twitch-Follow nötig" },
+    { an: true,  label: "FEATURES",  text: "Clans · Claims · *Skills*", unter: "Shop & Coins · 25+ Minigames · Adventskalender · Events" },
+    { an: false, label: "SUBS",      text: "*Sub-Rang* mit Vorteilen",  unter: "Twitch-Subs bekommen exklusive Extras auf dem Server" }
+  ],
+
+  // Kleine Live-Anzeige "Spieler online" über der Karte
+  serverStatus: {
+    an: true,
+    url: "https://api.mcsrvstat.us/3/play.justinzockt.de",   // muss JSON liefern
+    intervall: 60,                 // alle X Sekunden neu laden
+    text: "{n} Spieler online",    // {n} = Anzahl, {max} = Maximum
+    zeigeBeiNull: false            // auch "0 Spieler online" anzeigen? (false = dann ausblenden)
+  }
+};
+/* ====================== ENDE CONFIG – ab hier nichts ändern nötig ====================== */
+</script>
+
+<style>
+  :root{
+    --rot:#ff1f3d; --rot-rgb:255,31,61; --rotd:#b3001b;
+    --bg-rgb:14,14,18; --deck:.86; --txt:#fff; --grau:#c6c6d0;
+    --breite:600px; --dauer:7s; --skala:1; --rand:36px;
+  }
+  html,body{margin:0;padding:0;width:1920px;height:1080px;overflow:hidden;background:transparent;}
+  body{font-family:"Montserrat","Segoe UI",Arial,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased;}
+  body.testbg-dunkel{background:linear-gradient(160deg,#1b2433,#0b0f16 60%,#1d1410);}
+  body.testbg-hell{background:linear-gradient(180deg,#bfe3ff 0%,#eef7ff 55%,#ffffff 100%);}
+  body.testbg-mc{background:
+      linear-gradient(180deg,rgba(120,190,255,1) 0,rgba(170,215,255,1) 55%,transparent 55%),
+      repeating-linear-gradient(90deg,#5a9e3a 0 40px,#4f9132 40px 80px);}
+
+  /* ---------- Gesamt-Container (Ecke) ---------- */
+  #ov{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+      transform:scale(var(--skala));will-change:transform;}
+  #ov.unten-links {left:var(--rand);bottom:var(--rand);transform-origin:left bottom;}
+  #ov.unten-rechts{right:var(--rand);bottom:var(--rand);transform-origin:right bottom;align-items:flex-end;}
+  #ov.oben-links  {left:var(--rand);top:var(--rand);transform-origin:left top;flex-direction:column-reverse;justify-content:flex-end;}
+  #ov.oben-rechts {right:var(--rand);top:var(--rand);transform-origin:right top;align-items:flex-end;flex-direction:column-reverse;justify-content:flex-end;}
+
+  .flug{animation:einflugL 1s cubic-bezier(.16,1.25,.35,1) both;}
+  #ov.unten-rechts .flug,#ov.oben-rechts .flug{animation-name:einflugR;}
+  @keyframes einflugL{from{opacity:0;transform:translateX(-110%) skewX(-8deg);}60%{opacity:1;}to{opacity:1;transform:none;}}
+  @keyframes einflugR{from{opacity:0;transform:translateX(110%) skewX(8deg);}60%{opacity:1;}to{opacity:1;transform:none;}}
+  .weg{animation:ausflug .7s ease-in both !important;}
+  @keyframes ausflug{to{opacity:0;transform:translateY(30px) scale(.96);}}
+
+  /* ---------- Karte ---------- */
+  .karte{position:relative;width:var(--breite);box-sizing:border-box;padding:16px 20px 14px 16px;
+    display:flex;gap:16px;align-items:stretch;border-radius:16px;
+    background:linear-gradient(115deg,rgba(var(--bg-rgb),var(--deck)) 0%,rgba(var(--bg-rgb),var(--deck)) 55%,rgba(40,6,14,var(--deck)) 100%);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.09),inset 0 0 0 1px rgba(255,255,255,.06);
+    animation-delay:.1s;}
+  /* Leuchtrand (pulsiert, nur opacity -> performant) */
+  .glow{position:absolute;left:-1px;top:-1px;right:-1px;bottom:-1px;border-radius:17px;pointer-events:none;
+    border:1.5px solid rgba(var(--rot-rgb),.75);
+    box-shadow:0 0 18px rgba(var(--rot-rgb),.55),0 0 42px rgba(var(--rot-rgb),.25),inset 0 0 14px rgba(var(--rot-rgb),.18);
+    animation:puls 3.2s ease-in-out infinite;}
+  @keyframes puls{0%,100%{opacity:.45;}50%{opacity:1;}}
+  /* Akzent-Kante links */
+  .kante{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 4px 4px 0;
+    background:linear-gradient(180deg,var(--rot),var(--rotd));box-shadow:0 0 12px rgba(var(--rot-rgb),.8);}
+  /* Shine-Sweep */
+  .shine{position:absolute;left:0;top:0;right:0;bottom:0;border-radius:16px;overflow:hidden;pointer-events:none;}
+  .shine i{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.13) 45%,rgba(255,255,255,.22) 50%,rgba(255,255,255,.13) 55%,transparent);
+    transform:translateX(-160%) skewX(-22deg);animation:shine 9s ease-in-out 2.2s infinite;}
+  @keyframes shine{0%{transform:translateX(-160%) skewX(-22deg);}16%,100%{transform:translateX(420%) skewX(-22deg);}}
+
+  /* Icon */
+  .icon{position:relative;flex:0 0 auto;width:84px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(120% 90% at 30% 20%,rgba(var(--rot-rgb),.38),rgba(var(--rot-rgb),.08) 60%,rgba(0,0,0,0));
+    box-shadow:inset 0 0 0 1px rgba(var(--rot-rgb),.35);}
+  .icon svg{width:58px;height:58px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));animation:schweben 4s ease-in-out infinite;}
+  @keyframes schweben{0%,100%{transform:translateY(2px);}50%{transform:translateY(-3px);}}
+
+  /* Inhalt */
+  .inhalt{position:relative;flex:1 1 auto;min-width:0;display:flex;flex-direction:column;}
+  .kopf{display:flex;align-items:center;justify-content:space-between;gap:10px;height:18px;}
+  .kicker{font-family:"Press Start 2P",monospace;font-size:10.5px;letter-spacing:.5px;color:var(--rot);
+    text-shadow:0 0 10px rgba(var(--rot-rgb),.6);white-space:nowrap;}
+  .badge{font-size:10.5px;font-weight:800;letter-spacing:1.4px;padding:3px 8px;border-radius:5px;white-space:nowrap;
+    color:#fff;background:linear-gradient(180deg,var(--rot),var(--rotd));box-shadow:0 0 10px rgba(var(--rot-rgb),.5);}
+
+  .buehne{position:relative;height:66px;margin-top:8px;}
+  .slide{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;visibility:hidden;}
+  .slide.an{opacity:1;visibility:visible;}
+  .slide.aus{visibility:visible;animation:slideAus .45s ease-in both;}
+  @keyframes slideAus{to{opacity:0;transform:translateY(-14px);}}
+  .main{font-weight:900;font-size:32px;line-height:38px;height:38px;white-space:nowrap;overflow:hidden;letter-spacing:.2px;
+    text-shadow:0 2px 0 rgba(0,0,0,.55),0 0 18px rgba(0,0,0,.35);}
+  .main .hl{color:var(--rot);text-shadow:0 2px 0 rgba(0,0,0,.6),0 0 16px rgba(var(--rot-rgb),.55);}
+  .ch{display:inline-block;white-space:pre;}
+  .slide.an .ch{animation:chIn .55s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 18ms + 60ms);}
+  @keyframes chIn{from{opacity:0;transform:translateY(16px) scale(.6);}to{opacity:1;transform:none;}}
+  .zeile2{display:flex;align-items:center;gap:9px;margin-top:5px;height:22px;}
+  .lbl{flex:0 0 auto;font-family:"Press Start 2P",monospace;font-size:9px;line-height:9px;padding:6px 7px 5px;border-radius:4px;
+    color:var(--rot);background:rgba(var(--rot-rgb),.13);box-shadow:inset 0 0 0 1px rgba(var(--rot-rgb),.55);}
+  .sub{flex:1 1 auto;min-width:0;font-weight:700;font-size:15px;color:var(--grau);white-space:nowrap;overflow:hidden;
+    text-shadow:0 1px 0 rgba(0,0,0,.6);}
+  .slide.an .zeile2{animation:subIn .6s ease-out .25s both;}
+  @keyframes subIn{from{opacity:0;transform:translateX(-12px);}to{opacity:1;transform:none;}}
+
+  /* Fortschritt */
+  .fuss{display:flex;align-items:center;gap:10px;margin-top:10px;}
+  .balken{position:relative;flex:1 1 auto;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;}
+  .balken i{position:absolute;left:0;top:0;bottom:0;width:100%;transform-origin:left;transform:scaleX(0);
+    background:linear-gradient(90deg,var(--rotd),var(--rot));box-shadow:0 0 8px rgba(var(--rot-rgb),.9);}
+  .balken i.lauf{animation:lauf var(--dauer) linear both;}
+  @keyframes lauf{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  .punkte{display:flex;gap:5px;}
+  .punkte b{width:6px;height:6px;background:rgba(255,255,255,.22);transition:background .3s,box-shadow .3s;}
+  .punkte b.an{background:var(--rot);box-shadow:0 0 6px rgba(var(--rot-rgb),.9);}
+
+  /* Pixel-Funken */
+  .funken{position:absolute;left:10px;right:10px;top:0;height:0;pointer-events:none;}
+  .funken s{position:absolute;bottom:0;width:5px;height:5px;background:var(--rot);opacity:0;
+    animation:funke var(--d) linear var(--v) infinite;}
+  .funken s.w{background:#fff;}
+  .funken s.g{width:4px;height:4px;background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),var(--rot);}
+  @keyframes funke{0%{opacity:0;transform:translate(0,4px);}12%{opacity:1;}70%{opacity:.85;}
+    100%{opacity:0;transform:translate(var(--x),-58px);}}
+
+  /* Server-Status */
+  .status{position:relative;z-index:3;display:none;align-items:center;gap:9px;padding:7px 13px 7px 11px;border-radius:999px;
+    font-weight:800;font-size:14px;letter-spacing:.2px;white-space:nowrap;
+    background:rgba(var(--bg-rgb),var(--deck));box-shadow:0 6px 18px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.08);}
+  .status.da{display:flex;animation:einflugL .8s cubic-bezier(.16,1.25,.35,1) both;}
+  #ov.unten-rechts .status.da,#ov.oben-rechts .status.da{animation-name:einflugR;}
+  .status .led{position:relative;width:9px;height:9px;border-radius:50%;background:#2bd96b;box-shadow:0 0 8px #2bd96b;}
+  .status .led:after{content:"";position:absolute;left:-4px;top:-4px;width:17px;height:17px;border-radius:50%;
+    border:2px solid #2bd96b;box-sizing:border-box;animation:ring 2s ease-out infinite;}
+  @keyframes ring{from{opacity:.9;transform:scale(.4);}to{opacity:0;transform:scale(1.4);}}
+  .status .zahl{color:#fff;}
+  .status .rest{color:var(--grau);font-weight:700;}
+
+  /* aus-Schalter */
+  .ohne-icon .icon,.ohne-kicker .kicker,.ohne-badge .badge,.ohne-funken .funken,.ohne-shine .shine,
+  .ohne-glow .glow,.ohne-fuss .fuss{display:none !important;}
+  .ohne-kicker.ohne-badge .kopf{display:none;}
+  /* Fester Zustand für Vorschau/Screenshots */
+  .statisch .flug,.statisch .ch,.statisch .zeile2,.statisch .status.da{animation:none !important;}
+  .statisch .balken i{animation:none !important;transform:scaleX(.55);}
+</style>
+</head>
+<body>
+<div id="ov">
+  <div class="status" id="status"><span class="led"></span><span id="statusText"></span></div>
+  <div class="karte flug" id="karte">
+    <div class="glow"></div>
+    <div class="shine"><i></i></div>
+    <div class="kante"></div>
+    <div class="funken" id="funken"></div>
+    <div class="icon">
+      <!-- selbst gezeichneter Pixel-Block -->
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <polygon points="6,19 32,32 32,60 6,47" fill="#2b2b33"/>
+        <polygon points="58,19 32,32 32,60 58,47" fill="#1b1b21"/>
+        <polygon points="10,36 13,37.5 13,40.5 10,39" fill="#3d3d47"/><polygon points="20,46 23,47.5 23,50.5 20,49" fill="#1f1f26"/>
+        <polygon points="26,43 29,44.5 29,47.5 26,46" fill="#3d3d47"/><polygon points="14,45 17,46.5 17,49.5 14,48" fill="#3d3d47"/>
+        <polygon points="46,42 49,40.5 49,43.5 46,45" fill="#2c2c34"/><polygon points="38,50 41,48.5 41,51.5 38,53" fill="#111115"/>
+        <polygon points="53,37 56,35.5 56,38.5 53,40" fill="#2c2c34"/>
+        <polygon points="6,19 32,32 32,39 6,26" fill="var(--rotd)"/>
+        <polygon points="58,19 32,32 32,39 58,26" fill="var(--rotd)"/><polygon points="58,19 32,32 32,39 58,26" fill="#000" opacity=".38"/>
+        <polygon points="12,29 16,31 16,35 12,33" fill="var(--rotd)"/><polygon points="24,35 28,37 28,41 24,39" fill="var(--rotd)"/>
+        <polygon points="40,35 44,33 44,37 40,39" fill="var(--rotd)"/><polygon points="40,35 44,33 44,37 40,39" fill="#000" opacity=".38"/><polygon points="50,30 54,28 54,31 50,33" fill="var(--rotd)"/><polygon points="50,30 54,28 54,31 50,33" fill="#000" opacity=".38"/>
+        <polygon points="32,6 58,19 32,32 6,19" fill="var(--rot)"/>
+        <polygon points="32,10 40,14 32,18 24,14" fill="#fff" opacity=".32"/><polygon points="18,17 22,19 18,21 14,19" fill="#fff" opacity=".32"/>
+        <polygon points="46,17 50,19 46,21 42,19" fill="#000" opacity=".2"/><polygon points="34,23 38,25 34,27 30,25" fill="#000" opacity=".2"/>
+        <line x1="32" y1="32" x2="32" y2="60" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="inhalt">
+      <div class="kopf"><span class="kicker" id="kicker"></span><span class="badge" id="badge"></span></div>
+      <div class="buehne" id="buehne"></div>
+      <div class="fuss"><div class="balken"><i id="balken"></i></div><div class="punkte" id="punkte"></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var C = CONFIG, P = {};
+  // ---------- URL-Parameter lesen ----------
+  try { location.search.replace(/^\?/,"").split("&").forEach(function(kv){
+      if(!kv) return; var p = kv.split("="); P[decodeURIComponent(p[0]).toLowerCase()] = decodeURIComponent((p[1]||"").replace(/\+/g," ")); }); } catch(e){}
+  function an(v){ return !(v==="0"||v==="aus"||v==="false"||v==="nein"); }
+  function hex(v){ if(!v) return null; v = v.replace(/^#/,""); return /^[0-9a-fA-F]{6}$/.test(v) ? "#"+v : null; }
+  function rgb(h){ h=h.replace("#",""); return parseInt(h.substr(0,2),16)+","+parseInt(h.substr(2,2),16)+","+parseInt(h.substr(4,2),16); }
+
+  var ecke = (P.ecke || C.ecke || "unten-links").toLowerCase();
+  if(["unten-links","unten-rechts","oben-links","oben-rechts"].indexOf(ecke)<0) ecke="unten-links";
+  var dauer = Math.max(2, parseFloat(P.dauer) || C.dauer || 7);
+  var pause = P.pause!=null ? (parseFloat(P.pause)||0) : (C.pauseNachRunde||0);
+  var farbe = hex(P.farbe) || C.farben.haupt, farbe2 = hex(P.farbe2) || C.farben.dunkel;
+  var skala = parseFloat(P.skala) || C.skalierung || 1;
+  var rand = P.rand!=null ? parseFloat(P.rand) : C.abstandRand;
+  var breite = parseFloat(P.breite) || C.breite || 600;
+  var deck = P.deckkraft!=null ? parseFloat(P.deckkraft) : C.deckkraft;
+
+  var R = document.documentElement.style;
+  R.setProperty("--rot", farbe); R.setProperty("--rot-rgb", rgb(farbe)); R.setProperty("--rotd", farbe2);
+  R.setProperty("--bg-rgb", rgb(C.farben.hintergrund)); R.setProperty("--txt", C.farben.text); R.setProperty("--grau", C.farben.textGrau);
+  R.setProperty("--deck", isNaN(deck)?.86:deck); R.setProperty("--dauer", dauer+"s"); R.setProperty("--skala", skala);
+  R.setProperty("--rand", rand+"px"); R.setProperty("--breite", breite+"px");
+  if(P.testbg) document.body.className = "testbg-"+P.testbg;
+
+  var ov = document.getElementById("ov"); ov.className = ecke;
+  var cls = [];
+  if(!C.zeigeIcon || !an(P.icon==null?"1":P.icon)) cls.push("ohne-icon");
+  if(!C.zeigeUeberschrift) cls.push("ohne-kicker");
+  if(!C.zeigeBadge) cls.push("ohne-badge");
+  if(!C.zeigePartikel || (P.partikel!=null && !an(P.partikel))) cls.push("ohne-funken");
+  if(!C.zeigeShine || (P.shine!=null && !an(P.shine))) cls.push("ohne-shine");
+  if(!C.zeigeGlow || (P.glow!=null && !an(P.glow))) cls.push("ohne-glow");
+  if(!C.zeigeFortschritt) cls.push("ohne-fuss");
+  var statisch = P.slide != null;   // ?slide=2 -> fester Zustand (für Vorschau/Screenshots)
+  if(statisch) cls.push("statisch");
+  document.body.className += " " + cls.join(" ");
+
+  document.getElementById("kicker").textContent = P.titel || C.ueberschrift;
+  document.getElementById("badge").textContent = P.badge || C.badge;
+
+  // ---------- Botschaften bauen ----------
+  function zeichen(text, el){
+    var teile = String(text).split("*"), i = 0;
+    teile.forEach(function(t, n){
+      var box = el;
+      if(n % 2 === 1){ box = document.createElement("span"); box.className = "hl"; el.appendChild(box); }
+      for(var k=0;k<t.length;k++){ var s=document.createElement("span"); s.className="ch"; s.style.setProperty("--i", i++); s.textContent=t[k]; box.appendChild(s); }
+    });
+  }
+  var liste = C.botschaften.filter(function(b){ return b.an !== false; });
+  if(P.nur){ var w = P.nur.split(",").map(function(x){return parseInt(x,10)-1;});
+    liste = C.botschaften.filter(function(b,i){ return w.indexOf(i)>=0; }); }
+  if(!liste.length) liste = [C.botschaften[0]];
+  var buehne = document.getElementById("buehne"), punkte = document.getElementById("punkte"), slides = [];
+  liste.forEach(function(b){
+    var s = document.createElement("div"); s.className = "slide";
+    var m = document.createElement("div"); m.className = "main"; zeichen(b.text, m);
+    var z = document.createElement("div"); z.className = "zeile2";
+    var l = document.createElement("span"); l.className = "lbl"; l.textContent = b.label || "";
+    var u = document.createElement("span"); u.className = "sub"; u.textContent = b.unter || "";
+    if(b.label) z.appendChild(l); z.appendChild(u);
+    s.appendChild(m); s.appendChild(z); buehne.appendChild(s); slides.push(s);
+    punkte.appendChild(document.createElement("b"));
+  });
+  if(slides.length < 2) punkte.style.display = "none";
+
+  // Text automatisch verkleinern, falls zu lang (nie abgeschnitten)
+  function einpassen(){
+    slides.forEach(function(s){
+      var m = s.querySelector(".main"), u = s.querySelector(".sub"), f = 32;
+      m.style.fontSize = f+"px";
+      while(m.scrollWidth > m.clientWidth + 1 && f > 16){ f -= 1; m.style.fontSize = f+"px"; }
+      var g = 15; u.style.fontSize = g+"px";
+      while(u.scrollWidth > u.clientWidth + 1 && g > 10){ g -= .5; u.style.fontSize = g+"px"; }
+    });
+  }
+  einpassen();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(einpassen);
+  setTimeout(einpassen, 1500);
+
+  // ---------- Rotation ----------
+  var akt = -1, balken = document.getElementById("balken"), karte = document.getElementById("karte");
+  function zeige(n){
+    if(akt >= 0 && akt !== n){ var alt = slides[akt]; alt.classList.remove("an"); alt.classList.add("aus");
+      setTimeout(function(){ alt.classList.remove("aus"); }, 500); }
+    akt = n; var s = slides[n];
+    s.classList.remove("aus"); s.classList.remove("an"); void s.offsetWidth; s.classList.add("an");
+    var pk = punkte.children; for(var i=0;i<pk.length;i++) pk[i].className = (i===n?"an":"");
+    balken.classList.remove("lauf"); void balken.offsetWidth; balken.classList.add("lauf");
+  }
+  if(statisch){
+    zeige(Math.min(slides.length, Math.max(1, parseInt(P.slide,10)||1)) - 1);
+  } else {
+    zeige(0);
+    var tick = function(){
+      var next = (akt + 1) % slides.length;
+      if(next === 0 && pause > 0){
+        karte.classList.add("weg");
+        setTimeout(function(){ karte.classList.remove("weg"); karte.classList.remove("flug"); void karte.offsetWidth;
+          karte.classList.add("flug"); zeige(0); setTimeout(tick, dauer*1000); }, pause*1000 + 700);
+        return;
+      }
+      zeige(next); setTimeout(tick, dauer*1000);
+    };
+    setTimeout(tick, dauer*1000);
+  }
+
+  // ---------- Pixel-Funken (einmal erzeugt, danach reine CSS-Animation) ----------
+  if(cls.indexOf("ohne-funken") < 0){
+    var fu = document.getElementById("funken"), N = 16;
+    for(var i=0;i<N;i++){
+      var e = document.createElement("s"), r = Math.random();
+      e.className = r < .25 ? "w" : (r < .45 ? "g" : "");
+      e.style.left = (4 + Math.random()*92) + "%";
+      e.style.setProperty("--d", (2.6 + Math.random()*2.6).toFixed(2)+"s");
+      e.style.setProperty("--v", (-Math.random()*5).toFixed(2)+"s");
+      e.style.setProperty("--x", ((Math.random()-.5)*40).toFixed(0)+"px");
+      fu.appendChild(e);
+    }
+  }
+
+  // ---------- Server-Status ----------
+  var S = C.serverStatus || {}, st = document.getElementById("status"), stt = document.getElementById("statusText");
+  var statusAn = S.an && (P.status==null || an(P.status));
+  function setze(n, max){
+    if(n == null || (!S.zeigeBeiNull && n === 0)){ st.classList.remove("da"); return; }
+    var t = (S.text || "{n} Spieler online").replace("{max}", max!=null?max:"?").split("{n}");
+    stt.innerHTML = "";
+    var a = document.createElement("span"); a.className = "rest"; a.textContent = t[0] || ""; if(t[0]) stt.appendChild(a);
+    var z = document.createElement("span"); z.className = "zahl"; z.textContent = n; stt.appendChild(z);
+    var b = document.createElement("span"); b.className = "rest"; b.textContent = t[1] || ""; stt.appendChild(b);
+    if(!st.classList.contains("da")) st.classList.add("da");
+  }
+  if(P.statusdemo != null){ setze(parseInt(P.statusdemo,10)||0, 100); }
+  else if(statusAn && S.url && window.fetch){
+    var url = P.statusurl || S.url;
+    var lade = function(){
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var to = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 8000);
+      fetch(url, ctrl ? {signal: ctrl.signal, cache: "no-store"} : {cache: "no-store"})
+        .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+        .then(function(j){ clearTimeout(to);
+          var on = j && (j.online !== false) && j.players;
+          var n = on ? (j.players.online != null ? j.players.online : j.players.now) : null;
+          setze(typeof n === "number" ? n : null, on ? j.players.max : null); })
+        .catch(function(){ clearTimeout(to); st.classList.remove("da"); });   // Fehler -> unauffällig ausblenden
+    };
+    lade(); setInterval(lade, Math.max(20, S.intervall || 60) * 1000);
+  }
+})();
+</script>
+</body>
+</html>
