@@ -47,7 +47,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 81 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 87 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -55,7 +55,7 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">81 von 81</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">87 von 87</span>
       </div>
       <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
@@ -95,8 +95,8 @@
       <section class="cmd-group" id="teleport" aria-labelledby="g-teleport">
         <h2 id="g-teleport">Teleport, Home &amp; PvP</h2>
         <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit (Sub, Premium und Team: keine Abklingzeit).</p></div>
-        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome</code><span class="badge purple">Sub/Premium</span></div><p>Dein Home setzen (1 Home, nicht am Spawn).</p></div>
-        <div class="cmd" data-keys="zuhause teleport Sub/Premium"><div><code>/home</code><span class="badge purple">Sub/Premium</span></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), keine Abklingzeit.</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome [2]</code><span class="badge purple">Sub/Premium</span></div><p>Dein Home setzen (nicht am Spawn). Sub: 1 Home, Premium: 2 Homes – das zweite mit /sethome 2.</p></div>
+        <div class="cmd" data-keys="zuhause teleport Sub/Premium"><div><code>/home [2]</code><span class="badge purple">Sub/Premium</span></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), keine Abklingzeit. Premium: /home 2 für das zweite Home.</p></div>
         <div class="cmd" data-keys="teleport anfrage Premium"><div><code>/tpa &lt;Spieler&gt;</code><span class="badge gold">Premium</span></div><p>Teleport-Anfrage an einen Spieler schicken.</p></div>
         <div class="cmd" data-keys="teleport annehmen"><div><code>/tpaccept</code></div><p>Eine Teleport-Anfrage annehmen.</p></div>
         <div class="cmd" data-keys="teleport ablehnen"><div><code>/tpdeny</code></div><p>Eine Teleport-Anfrage ablehnen.</p></div>
@@ -151,11 +151,17 @@
         <h2 id="g-vorteile">Sub- &amp; Premium-Vorteile</h2>
         <div class="cmd" data-keys="endertruhe enderchest Sub/Premium"><div><code>/ec</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Endertruhe öffnen – überall.</p></div>
         <div class="cmd" data-keys="werkbank crafting Sub/Premium"><div><code>/craft</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Werkbank öffnen – überall.</p></div>
-        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome + /home</code><span class="badge purple">Sub/Premium</span></div><p>Ein eigenes Home (Spieler haben kein Home).</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome + /home</code><span class="badge purple">Sub/Premium</span></div><p>Ein eigenes Home (Spieler haben kein Home), Premium hat 2 Homes.</p></div>
+        <div class="cmd" data-keys="signatur unterschrift Premium"><div><code>/signieren &lt;Text&gt;</code><span class="badge gold">Premium</span><span class="alias">auch: /sign</span></div><p>Das Item in deiner Hand signieren – mit deinem Namen, Datum und Uhrzeit (Farben wie &amp;c erlaubt, /signieren entfernen nimmt deine Signatur wieder ab).</p></div>
+        <div class="cmd" data-keys="sortieren ordnen truhe Premium"><div><code>/invsort</code><span class="badge gold">Premium</span><span class="alias">auch: /sortieren</span></div><p>Inventar sortieren (Hotbar und Rüstung bleiben). Schaust du dabei auf eine Truhe, ein Fass oder eine Shulkerkiste, wird die sortiert. Java: Mittelklick auf einen leeren Platz in der offenen Truhe.</p></div>
+        <div class="cmd" data-keys="amboss umbenennen Premium"><div><code>/anvil</code><span class="badge gold">Premium</span><span class="alias">auch: /amboss</span></div><p>Mobiler Amboss – überall.</p></div>
+        <div class="cmd" data-keys="steinsäge Premium"><div><code>/stonecutter</code><span class="badge gold">Premium</span><span class="alias">auch: /steinsaege</span></div><p>Mobile Steinsäge – überall.</p></div>
+        <div class="cmd" data-keys="schleifstein entzaubern Premium"><div><code>/grindstone</code><span class="badge gold">Premium</span><span class="alias">auch: /schleifstein</span></div><p>Mobiler Schleifstein – überall.</p></div>
+        <div class="cmd" data-keys="webstuhl banner Premium"><div><code>/loom</code><span class="badge gold">Premium</span><span class="alias">auch: /webstuhl</span></div><p>Mobiler Webstuhl – überall.</p></div>
       </section>
       <section class="cmd-group" id="shop" aria-labelledby="g-shop">
         <h2 id="g-shop">Shop</h2>
-        <div class="cmd" data-keys="kaufen markt"><div><code>/shop</code></div><p>Spieler-Marktplatz öffnen (nur am Spawn).</p></div>
+        <div class="cmd" data-keys="kaufen markt"><div><code>/shop</code></div><p>Spieler-Marktplatz öffnen (am Spawn, mit Premium überall).</p></div>
         <div class="cmd" data-keys="verkaufen"><div><code>/shop verkaufen &lt;Preis&gt; [Menge|alle]</code></div><p>Item in der Hand zum Preis pro Stück einstellen.</p></div>
         <div class="cmd" data-keys="angebote"><div><code>/shop meine</code></div><p>Eigene Angebote verwalten, nachfüllen, Preis ändern, Rücklage abholen.</p></div>
       </section>
