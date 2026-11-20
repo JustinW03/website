@@ -10,7 +10,8 @@ Alle Dateien in diesem Ordner hochladen – fertig.
 | `regeln.html` | Alle Serverregeln mit Inhaltsverzeichnis (jede Regel verlinkbar, z. B. `regeln.html#r3-1`) |
 | `skills.html` | Skills, Belohnungen pro Level, Verbesserungen, XP-Tabellen, Titel |
 | `verzauberungen.html` | Seelenbindung, Telekinese, Holzfäller, Mending, seltene Bücher |
-| `clans.html`, `shop.html`, `events.html` | Clans, Spieler-Shop, Adventskalender |
+| `clans.html`, `shop.html`, `events.html` | Clans, Spieler-Shop, Adventskalender (Türchen öffnen sich erst am jeweiligen Tag; vom 25.12. bis 31.10. ausgeblendet, ab 1.11. Vorschau) |
+| `mods.html`, `raenge.html`, `minigames.html`, `ranglisten.html` | Erlaubte/verbotene Mods (aus `mod-liste.md`), Ränge & Vorteile, Minigames, Ranglisten |
 | `befehle.html` | Alle Spieler-Befehle mit Suche |
 | `faq.html`, `team.html` | Häufige Fragen, Ränge und Team-Rechte |
 | `datenschutz.html`, `impressum.html` | Rechtliches – **vor dem Veröffentlichen ausfüllen!** |
@@ -79,7 +80,7 @@ DNS-Änderungen brauchen meist 5–30 Minuten, manchmal bis zu 24 Stunden. HTTPS
 
 ## Gut zu wissen
 - **Live-Status** auf der Startseite: kommt von `api.mcsrvstat.us` (kostenlos, kein Konto). Der Wert wird dort zwischengespeichert und kann ein paar Minuten alt sein. Ist der Dienst nicht erreichbar, zeigt die Seite „Status gerade nicht abrufbar“.
-- **Keine Cookies, kein Tracking, keine externen Schriften** – das hält den Datenschutz einfach.
+- **Keine Cookies, kein Tracking, keine externen Schriften, kein Speichern im Browser** – das hält den Datenschutz einfach. Animationen werden bei „Bewegung reduzieren“ (Betriebssystem-Einstellung) abgeschaltet.
 - **Admin-Bereich:** `admin.html` hat keinen Login und enthält keine Geheimnisse. Das echte Admin-Werkzeug ist das Server-Dashboard (`/justin dashboard`). Die Seite ist für Suchmaschinen gesperrt (`noindex`), aber für jeden mit Link sichtbar.
 - **Inhalte ändern sich?** Wenn sich Regeln, Skills oder Befehle im Spiel ändern, muss auch die Website angepasst werden (z. B. `regeln.html`, `skills.html`, `befehle.html`).
 
@@ -94,6 +95,8 @@ Die Seite liest `daten/ranglisten.json`. Diese Datei holt ein GitHub-Automatismu
 3. Wert: deine Dashboard-Adresse aus der `config.yml` (`dashboard.url`) plus `/api/ranglisten.json`. Beispiel: `http://DEINE-SERVER-ADRESSE:PORT/api/ranglisten.json`. Diese Adresse gehört nur ins Secret, nirgends sonst ins Projekt.
 4. **Actions → „Ranglisten aktualisieren“ → Run workflow** einmal von Hand starten. Danach läuft es alle 30 Minuten von selbst.
 5. Wichtig: Der Ordner `.github` muss mit hochgeladen werden. Er ist unter Windows evtl. versteckt: im Explorer **Ansicht → Ausgeblendete Elemente** anhaken.
+
+**Server-Infos (`daten/info.json`):** Derselbe Automatismus holt auch `/api/info.json` (Version, Hauptfarbe, Coins pro Stunde je Rang, AFK-Zeiten, Nether/End-Öffnung, alle Minigames, Spielerzahl). Die Adresse wird aus dem Secret abgeleitet (`ranglisten.json` → `info.json`), ein zweites Secret ist nicht nötig. Fehlt die Datei oder ist sie leer (`"stand": 0`), zeigt die Website die eingebauten Standardwerte.
 
 Warum so? Die Website läuft mit HTTPS, der Minecraft-Server liefert nur HTTP. Browser blockieren das Mischen. GitHub holt die Daten deshalb im Hintergrund ab und legt sie direkt zur Website.
 Abschalten im Server: `dashboard.public-api: false` in der `config.yml`.

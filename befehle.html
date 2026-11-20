@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,34 +29,35 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html" aria-current="page">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html" aria-current="page">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Übersicht</span>
-      <h1>Alle Spieler-Befehle</h1>
-      <p class="lead">Alle 66 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Übersicht</span>
+        <h1>Alle Spieler-Befehle</h1>
+        <p class="lead">Alle 73 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+      </div>
     </div>
     <div class="wrap">
       <div class="search" role="search">
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">66 von 66</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">73 von 73</span>
       </div>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
+      <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit. Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
         <h2 id="g-allgemein">Allgemein &amp; Infos</h2>
         <div class="cmd" data-keys="hilfe help"><div><code>/justin</code></div><p>Übersicht aller Befehle im Spiel.</p></div>
@@ -66,18 +68,30 @@
         <div class="cmd"><div><code>/twitch</code></div><p>Link zu Twitch.</p></div>
         <div class="cmd"><div><code>/tiktok</code></div><p>Link zu TikTok.</p></div>
         <div class="cmd"><div><code>/youtube</code></div><p>Link zu YouTube.</p></div>
+        <div class="cmd" data-keys="homepage seite internet"><div><code>/web</code><span class="alias">auch: /website, /webseite</span></div><p>Link zur Webseite www.justinzockt.de im Chat.</p></div>
+        <div class="cmd" data-keys="partikel effekte spawn speed sprung"><div><code>/spawneffekte &lt;1|2|aus&gt;</code></div><p>Speed und Sprungkraft am Spawn (Overworld + Nether): Stufe 1, Stufe 2 oder aus. Standardmäßig aus, geht nur am Spawn.</p></div>
+      </section>
+      <section class="cmd-group" id="chat" aria-labelledby="g-chat">
+        <h2 id="g-chat">Chat &amp; Ruhe</h2>
+        <div class="cmd" data-keys="blockieren stumm ausblenden"><div><code>/ignore &lt;Spieler&gt;</code></div><p>Nachrichten eines Spielers ausblenden (Chat und private Nachrichten).</p></div>
+        <div class="cmd" data-keys="entblocken"><div><code>/unignore &lt;Spieler&gt;</code></div><p>Einen ignorierten Spieler wieder einblenden.</p></div>
+        <div class="cmd" data-keys="privat flüstern"><div><code>/msg &lt;Spieler&gt; &lt;Nachricht&gt;</code><span class="alias">auch: /tell, /w, /whisper, /pm</span></div><p>Private Nachricht.</p></div>
+        <div class="cmd" data-keys="antworten"><div><code>/r &lt;Nachricht&gt;</code><span class="alias">auch: /reply</span></div><p>Auf die letzte private Nachricht antworten.</p></div>
       </section>
       <section class="cmd-group" id="coins" aria-labelledby="g-coins">
         <h2 id="g-coins">Justin Coins &amp; Spielzeit</h2>
         <div class="cmd" data-keys="geld guthaben jc"><div><code>/balance</code><span class="alias">auch: /bal, /money, /coins</span></div><p>Dein Guthaben an Justin Coins.</p></div>
         <div class="cmd" data-keys="geld überweisen zahlen"><div><code>/pay &lt;Spieler&gt; &lt;Betrag&gt;</code></div><p>Coins an einen Spieler senden (nur ganze Zahlen, nicht ins Minus).</p></div>
-        <div class="cmd" data-keys="spielzeit"><div><code>/playtime</code></div><p>Deine Spielzeit und die Zeit bis zu den nächsten 1.000 JC.</p></div>
+        <div class="cmd" data-keys="spielzeit"><div><code>/playtime</code></div><p>Deine Spielzeit und die Zeit bis zur nächsten Stunden-Belohnung in Justin Coins.</p></div>
       </section>
       <section class="cmd-group" id="teleport" aria-labelledby="g-teleport">
         <h2 id="g-teleport">Teleport, Home &amp; PvP</h2>
-        <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn (3 Sekunden stillstehen, nicht im Kampf).</p></div>
+        <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit.</p></div>
         <div class="cmd" data-keys="zuhause"><div><code>/sethome</code></div><p>Dein Home setzen (genau 1 Home, nicht am Spawn).</p></div>
-        <div class="cmd" data-keys="zuhause teleport"><div><code>/home</code></div><p>Zu deinem Home teleportieren.</p></div>
+        <div class="cmd" data-keys="zuhause teleport"><div><code>/home</code></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit.</p></div>
+        <div class="cmd" data-keys="teleport anfrage Premium"><div><code>/tpa &lt;Spieler&gt;</code><span class="badge gold">Premium</span></div><p>Teleport-Anfrage an einen Spieler schicken.</p></div>
+        <div class="cmd" data-keys="teleport annehmen"><div><code>/tpaccept</code></div><p>Eine Teleport-Anfrage annehmen.</p></div>
+        <div class="cmd" data-keys="teleport ablehnen"><div><code>/tpdeny</code></div><p>Eine Teleport-Anfrage ablehnen.</p></div>
         <div class="cmd" data-keys="kampf"><div><code>/pvp on</code></div><p>PvP für dich einschalten (Start: aus).</p></div>
         <div class="cmd" data-keys="kampf"><div><code>/pvp off</code></div><p>PvP für dich ausschalten. Nach einem Kampf gilt eine Sperre von 30 Sekunden.</p></div>
       </section>
@@ -123,8 +137,11 @@
         <div class="cmd" data-keys="clan chat"><div><code>/cc &lt;Nachricht&gt;</code><span class="alias">auch: /clanchat</span></div><p>Nachricht in den Clan-Chat.</p></div>
         <div class="cmd"><div><code>/clan chat</code></div><p>Normalen Chat auf Clan-Chat umschalten (an/aus).</p></div>
         <div class="cmd" data-keys="nachricht"><div><code>/clan msg &lt;TAG&gt; &lt;Nachricht&gt;</code></div><p>Nachricht an einen anderen Clan.</p></div>
-        <div class="cmd" data-keys="privat flüstern"><div><code>/msg &lt;Spieler&gt; &lt;Nachricht&gt;</code><span class="alias">auch: /tell, /w, /whisper, /pm</span></div><p>Private Nachricht.</p></div>
-        <div class="cmd" data-keys="antworten"><div><code>/r &lt;Nachricht&gt;</code><span class="alias">auch: /reply</span></div><p>Auf die letzte private Nachricht antworten.</p></div>
+      </section>
+      <section class="cmd-group" id="vorteile" aria-labelledby="g-vorteile">
+        <h2 id="g-vorteile">Sub- &amp; Premium-Vorteile</h2>
+        <div class="cmd" data-keys="endertruhe enderchest Sub/Premium"><div><code>/ec</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Endertruhe öffnen – überall.</p></div>
+        <div class="cmd" data-keys="werkbank crafting Sub/Premium"><div><code>/craft</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Werkbank öffnen – überall.</p></div>
       </section>
       <section class="cmd-group" id="shop" aria-labelledby="g-shop">
         <h2 id="g-shop">Shop</h2>
@@ -136,9 +153,7 @@
         <h2 id="g-minigames">Minigames</h2>
         <div class="cmd" data-keys="spiele welt"><div><code>/minigames join</code><span class="alias">auch: /mg join</span></div><p>In die Minigame-Welt (dein Inventar wird gespeichert und kommt beim Verlassen zurück).</p></div>
         <div class="cmd" data-keys="zurück"><div><code>/minigames leave</code><span class="alias">auch: /mg leave</span></div><p>Zurück an deinen letzten Ort in der Survival-Welt.</p></div>
-        <div class="cmd" data-keys="statistik liste"><div><code>/minigames anmelden</code></div><p>In die offizielle Liste eintragen – nur dann zählen Statistiken.</p></div>
-        <div class="cmd"><div><code>/minigames abmelden</code></div><p>Aus der offiziellen Liste austragen.</p></div>
-        <div class="cmd" data-keys="statistik"><div><code>/minigames stats [Name]</code></div><p>Statistiken: Lieblingsspiel, Siege, Niederlagen, Siegquote, Serien, Spielzeit.</p></div>
+        <div class="cmd" data-keys="statistik"><div><code>/minigames stats [Name]</code></div><p>Statistiken (zählen automatisch): Lieblingsspiel, Siege, Niederlagen, Siegquote, Serien, Spielzeit.</p></div>
         <div class="cmd" data-keys="rangliste"><div><code>/minigames top [Spiel]</code></div><p>Minigame-Rangliste (Punkte: Sieg 3, Unentschieden 1).</p></div>
         <div class="cmd" data-keys="regeln hilfe"><div><code>/minigames anleitung &lt;Spiel&gt;</code></div><p>Anleitung eines Spiels als Buch.</p></div>
         <div class="cmd" data-keys="raum"><div><code>/minigames beitreten &lt;Nr&gt; [Passwort]</code></div><p>Einem Raum beitreten.</p></div>
@@ -147,7 +162,7 @@
       </section>
       <section class="cmd-group" id="events" aria-labelledby="g-events">
         <h2 id="g-events">Events</h2>
-        <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code></div><p>Adventskalender öffnen (nur vom 1. bis 24.12.2026).</p></div>
+        <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code></div><p>Adventskalender öffnen (nur vom 1. bis 24. Dezember).</p></div>
       </section>
     </div>
   </main>
@@ -157,14 +172,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

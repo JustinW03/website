@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mods – JustinZocktCommunity</title>
+  <meta name="description" content="Erlaubte und verbotene Mods und Clients auf der JustinZocktCommunity: Sodium, Iris, Minimaps ohne Radar – und was zum Bann führt.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mods – JustinZocktCommunity">
+  <meta property="og:description" content="Erlaubte und verbotene Mods und Clients auf der JustinZocktCommunity: Sodium, Iris, Minimaps ohne Radar – und was zum Bann führt.">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
+        <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="beitreten.html">Beitreten</a></li>
+          <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html" aria-current="page">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Fair Play</span>
+        <h1>Erlaubte &amp; verbotene Mods</h1>
+        <p class="lead">Welche Mods und Clients du auf der JustinZocktCommunity nutzen darfst – und welche sofort zum Bann führen. <strong>Alles, was hier nicht als erlaubt steht, ist verboten.</strong></p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="callout"><p>❓ <strong>Deine Mod ist nicht dabei?</strong> Dann frag <strong>vorher</strong> per Ticket im Discord-Kanal <strong>#tickets</strong> nach. Ausreden wie „Ich wusste nicht, dass die Mod verboten ist“ gelten nicht (<a href="regeln.html#r4-4">Regel 4.4</a>). Grundlage sind die <a href="regeln.html#r4">Regeln, Abschnitt 4</a>.</p></div>
+      <div class="search" role="search">
+        <label for="mod-search" class="sr-only">Mods durchsuchen</label>
+        <span aria-hidden="true">🔎</span>
+        <input id="mod-search" type="search" placeholder="Mod suchen, z. B. Sodium, Xaero, Freecam …" autocomplete="off">
+        <span class="cmd-count" id="mod-count" aria-live="polite"></span>
+      </div>
+      <p class="callout warn no-results" id="mod-none">Nicht in der Liste gefunden – das heißt: <strong>nicht erlaubt</strong>, solange das Team nichts anderes sagt. Frag vorher per Ticket in #tickets.</p>
+      <div class="mod-cols">
+        <div class="mod-col ok">
+          <h2>✅ Erlaubt</h2>
+          <div class="card mod-card"><h3><span aria-hidden="true">🧱</span> Grundlagen (Mod-Loader)</h3><ul class="mod-list"><li>Fabric Loader + Fabric API, Quilt, Forge / NeoForge (nur als Grundlage für erlaubte Mods)</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">⚡</span> Leistung und Grafik</h3><ul class="mod-list"><li>Sodium, Lithium, FerriteCore, ModernFix, ImmediatelyFast, EntityCulling, Krypton</li><li>Iris Shaders / OptiFine (inkl. Shader), Continuity, Indium</li><li>Distant Horizons</li><li>Dynamic FPS, Better FPS-Anzeigen</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">🖥️</span> Oberfläche und Komfort</h3><ul class="mod-list"><li>Mod Menu, Cloth Config, YetAnotherConfigLib</li><li>JEI / REI / EMI (nur Rezeptanzeige, <strong>ohne</strong> Cheat-Modus)</li><li>AppleSkin, Jade / WTHIT (ohne Erz-/Truhen-Anzeige durch Wände)</li><li>Mouse Tweaks, Inventory Profiles Next (nur Sortieren, <strong>keine</strong> Auto-Funktionen)</li><li>Zoomify / OK Zoomer</li><li>Better Third Person, Shoulder Surfing</li><li>Chat Heads, No Chat Reports, Chat Patches</li><li>Replay Mod</li><li><strong>CalcMod</strong> (Rechnen im Chat)</li><li>Simple Voice Chat</li><li>Toggle Sprint/Sneak (Vanilla-Funktion)</li><li>Server-Ressourcenpaket-Mods, Custom Skin Loader, Capes</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">🏗️</span> Bauen</h3><ul class="mod-list"><li><strong>Litematica</strong> – nur zum Anzeigen von Bauplänen. <strong>Verboten: Easy Place, Printer, Auto-Inventarwechsel</strong>. Der Server prüft Platziertempo, Reichweite und Slotwechsel.</li><li>MiniHUD – nur Koordinaten, Lichtlevel, Chunk-Grenzen. <strong>Verboten: Struktur-/Slime-Chunk-Overlays, die den Seed brauchen</strong></li><li>Axiom / WorldEdit-CUI – nur für das Team</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">🗺️</span> Karten</h3><ul class="mod-list"><li>Xaero's Minimap / Xaero's World Map / JourneyMap / VoxelMap – <strong>nur ohne</strong> Radar (Spieler-/Mob-Anzeige) und Höhlenanzeige (Cave-Mode) (der Server schickt das Sperrsignal, wer es umgeht, wird gebannt)</li></ul></div>
+        </div>
+        <div class="mod-col bad">
+          <h2>⛔ Verboten</h2>
+          <div class="card mod-card"><h3><span aria-hidden="true">☠️</span> Cheat-Clients</h3><ul class="mod-list"><li>Wurst, Meteor, Aristois, Impact, LiquidBounce, Future, RusherHack, Inertia, Thunderhack, Konas, Lambda, Salhack, Coffee, Ares, BleachHack, Sigma, Rise, Vape und alle anderen Hacked Clients</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">👁️</span> Sicht und Erkundung</h3><ul class="mod-list"><li>X-Ray (Mods und Ressourcenpakete), Cave Finder</li><li><strong>Freecam</strong>, Spectator-Hacks</li><li>Seed-Cracker / SeedcrackerX, Chunkbase-Anbindungen, Structure-Finder</li><li>ESP, Tracers, Entity-Radar, Truhen-/Spawner-Finder</li><li>Minimaps mit Spieler-, Mob- oder Höhlenanzeige</li><li>Fullbright nur als Grafikoption erlaubt, nicht in Kombination mit Höhlen-X-Ray</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">⚔️</span> Kampf und Bewegung</h3><ul class="mod-list"><li>Killaura, Reach, Hitbox-Vergrößerung, Criticals, Velocity/No-Knockback</li><li>Autoclicker (Software oder Maus-Makros), Auto-Totem, Auto-Armor, Auto-Eat, Auto-Pot</li><li>Fly, Speed, Jesus, No-Fall, Spider, Step, Elytra-Fly-Hacks, Timer</li><li>Baritone und andere Bots / Auto-Walk / Auto-Mine</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">🏗️</span> Bauen und Inventar</h3><ul class="mod-list"><li>Litematica Printer / Easy Place, Schematica-Printer</li><li>Auto-Tool, Auto-Craft, Auto-Fish, Item-Scroller-Massenfunktionen</li><li>Tweakeroo-Funktionen: Fast Place, Fast Right Click, Flexible Block Placement, Accurate Placement, Hand Restock, Tool Switch, No Fall</li></ul></div>
+          <div class="card mod-card"><h3><span aria-hidden="true">🚫</span> Sonstiges</h3><ul class="mod-list"><li>Duplizier-Mods, Packet-Manipulation, Anti-AFK-Makros</li><li>Mods, die den Server-Ressourcenpaket-Zwang umgehen</li><li>Jede Mod, die dir einen Vorteil gegenüber Vanilla-Spielern verschafft</li></ul></div>
+        </div>
+      </div>
+      <h2>Gut zu wissen</h2>
+      <p>Clients können ihre Mod-Liste verstecken. Der Server prüft deshalb nicht nur die Liste, sondern auch das Verhalten (Bewegung, Klickrate, Platziertempo, Blickrichtung). Erkannte Cheats führen zu automatischem Kick, Tempban oder Bann.</p>
+      <div class="card"><h3>So prüft der Server</h3><ul><li><strong>Client-Kennung und Mod-Kanäle</strong> werden beim Join gelesen. Bekannte Cheat-Clients und verbotene Mods → sofortiger Bann.</li><li><strong>Xaero's Minimap und VoxelMap</strong> werden automatisch auf Fair-Play gestellt: kein Radar, keine Höhlenansicht. Die Minimap selbst bleibt erlaubt.</li><li><strong>Autoklicker:</strong> mehr als 20 Klicks pro Sekunde oder unmenschlich gleichmäßige Klicks.</li><li><strong>Litematica:</strong> Anzeigen ist erlaubt. Easy Place und Printer (mehrere Blöcke pro Tick, automatischer Slotwechsel) werden erkannt.</li><li><strong>Grim</strong> prüft Bewegung, Reichweite, Hitboxen, Rückstoß, Pakete und Bots.</li><li><strong>Minecraft unter Version 1.21.5</strong> kann nicht joinen.</li><li>Strafen: Kick → Tempbann 1 Tag → 7 Tage → dauerhaft. Einspruch per Entbannungsantrag im Discord.</li></ul></div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Server</h2>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
+        </div>
+        <div>
+          <h2>Infos</h2>
+          <ul>
+            <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="befehle.html">Alle Befehle</a></li>
+            <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">Twitch<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rechtliches</h2>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="admin.html">Admin-Bereich</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>

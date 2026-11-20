@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,25 +29,25 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Intern</span>
-      <h1>Admin-Bereich</h1>
-      <p class="lead">Der echte Admin-Bereich ist das <strong>Server-Dashboard</strong>. Diese Seite erklärt, wie du hineinkommst, was es kann, und listet alle Team-, Admin- und Owner-Befehle.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Intern</span>
+        <h1>Admin-Bereich</h1>
+        <p class="lead">Der echte Admin-Bereich ist das <strong>Server-Dashboard</strong>. Diese Seite erklärt, wie du hineinkommst, was es kann, und listet alle Team-, Admin- und Owner-Befehle.</p>
+      </div>
     </div>
     <div class="wrap">
       <div class="callout warn"><p>🔒 Diese Website hat <strong>keinen Login</strong> und speichert nichts. Das Dashboard läuft direkt auf dem Server und ist nur über einen persönlichen <strong>Einmal-Link</strong> erreichbar.</p></div>
@@ -54,7 +55,7 @@
       <h2>So öffnest du das Dashboard</h2>
       <ol class="steps">
         <li><h3>Link anfordern</h3><p>Im Spiel <code>/justin dashboard</code> eingeben – oder im Discord <code>/dashboard</code>. Das geht nur als Server-Owner.</p></li>
-        <li><h3>Link anklicken</h3><p>Der Link gilt <strong>10 Minuten</strong> und <strong>nur einmal</strong>. Ohne gültigen Link gibt es nur „Nicht angemeldet“.</p></li>
+        <li><h3>Link kopieren und öffnen</h3><p>Der Link ist im Chat <strong>nicht anklickbar</strong> (stream-sicher): Kopiere ihn oder lass ihn dir per <strong>Discord-Direktnachricht</strong> schicken und öffne ihn im Browser. Er gilt <strong>10 Minuten</strong> und <strong>nur einmal</strong>. Ohne gültigen Link gibt es nur „Nicht angemeldet“.</p></li>
         <li><h3>Arbeiten</h3><p>Danach bleibst du <strong>12 Stunden</strong> angemeldet. Neue Daten holst du mit <strong>⟳ Aktualisieren</strong>, mit <strong>Abmelden</strong> beendest du die Sitzung sofort. Am besten zu Hause öffnen, nicht in öffentlichen WLANs.</p></li>
       </ol>
 
@@ -66,7 +67,7 @@
         <div class="card"><span class="icon" aria-hidden="true">💬</span><h3>Private Chats</h3><p>Clan-Chats und private Nachrichten zur Moderation.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛒</span><h3>Shop</h3><p>Alle Angebote und Verkäufe.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans &amp; Skills</h3><p>Alle Clans mit Mitgliedern, Skill-Stände aller Spieler.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🪙</span><h3>Zahlungen &amp; Tode</h3><p>Die letzten Zahlungen, Spieler-Tode mit Ort und Ursache, getötete Tiere.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🪙</span><h3>Zahlungen &amp; Tode</h3><p>Die letzten Zahlungen, Spieler-Tode mit Ort und Ursache und Tier-Tode – dort nur noch Tiere, die durch Spieler, TNT oder Feuer gestorben sind.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🚨</span><h3>Anticheat</h3><p>Meldungen, Kicks und Banns des Anticheats.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">💾</span><h3>Backups</h3><p>Überblick über die täglichen Sicherungen.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🗺️</span><h3>Karte</h3><p>Die komplette Welt-Karte – nur mit Anmeldung.</p></div>
@@ -87,6 +88,7 @@
 <tr><td><code>/justin alts &lt;Name&gt;</code></td><td>Zweitaccounts (gleiche IP) ansehen.</td></tr>
 <tr><td><code>/justin tp &lt;x&gt; &lt;z&gt; [nether|end]</code></td><td>Zu Koordinaten teleportieren (z. B. von der Karte).</td></tr>
 <tr><td><code>/justin wp set|del|list|tp &lt;Name&gt;</code></td><td>Eigene Wegpunkte.</td></tr>
+<tr><td><code>/justin minigames sperren &lt;Name&gt; [1h|3d|perm] [Grund]</code></td><td>Spieler für die Minigame-Welt sperren (Strafe). Aufheben: /justin minigames entsperren &lt;Name&gt;, Liste: /justin minigames gesperrt.</td></tr>
 <tr><td><code>[✖] vor Chatnachrichten</code></td><td>Nachricht für alle löschen (nur das Team sieht den Knopf).</td></tr>
 </tbody></table></div>
       <h3>Admin</h3>
@@ -114,7 +116,14 @@
 </tbody></table></div>
       <h3>Nur Owner</h3>
       <div class="table-wrap" role="region" aria-label="Nur Owner" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
-<tr><td><code>/justin dashboard</code></td><td>Einmal-Link zum Dashboard (10 Minuten gültig, nur einmal).</td></tr>
+<tr><td><code>/justin dashboard</code></td><td>Einmal-Link zum Dashboard (10 Minuten gültig, nur einmal). Der Link ist nicht mehr anklickbar: nur zum Kopieren oder per Discord-Direktnachricht – stream-sicher.</td></tr>
+<tr><td><code>/justin texte [overworld|nether|npc|eigene]</code></td><td>Alle schwebenden Texte mit Knöpfen: TP, an/aus, bearbeiten, hierher, reset. Rechtsklick auf einen Text öffnet das Bearbeiten-Menü.</td></tr>
+<tr><td><code>/justin text &lt;id&gt; verschieben [dx dy dz] | setzen &lt;Text&gt; | groesse &lt;Zahl&gt; | an | aus | reset | loeschen</code></td><td>Einen Text direkt ändern. Neuer eigener Text: /justin text neu &lt;id&gt; [Text].</td></tr>
+<tr><td><code>/justin portal nether|end &lt;TT.MM.JJJJ&gt; &lt;HH:MM&gt; | jetzt | zu</code></td><td>Öffnungs-Zeitpunkt für Nether/End setzen (öffnet automatisch, Countdown unter dem Portal).</td></tr>
+<tr><td><code>/justin farbe &lt;#rrggbb&gt; [#dunkel] | reset</code></td><td>Server-Hauptfarbe ändern (Chat, Menüs, Scoreboard, Serverliste, Webseite).</td></tr>
+<tr><td><code>/justin schlafen &lt;prozent&gt;% | &lt;anzahl&gt;</code></td><td>Wie viele Spieler schlafen müssen (Standard 25 %).</td></tr>
+<tr><td><code>/justin claims [limit &lt;wert&gt; | limit &lt;Name&gt; &lt;wert|reset&gt; | set &lt;key&gt; &lt;wert&gt;]</code></td><td>Claim-Limits, Preis, Erstattung, Truhen-Limit usw. ändern.</td></tr>
+<tr><td><code>/tpr [overworld|nether|end]</code></td><td>Zufälliger, sicherer Ort innerhalb der Weltgrenze.</td></tr>
 <tr><td><code>Dashboard → Karte: Rechtsklick</code></td><td>Hierhin teleportieren, Wegpunkt setzen, /tp kopieren. Unten rechts: Online-Spieler mit TP. Ebenen: Claims, Wegpunkte, Orte, Offline-Spieler, Homes, Tode (7 Tage). Oben in der Mitte: Knöpfe Oberwelt, Nether, End, Minigames.</td></tr>
 <tr><td><code>/justin eco summe</code></td><td>Überblick: Coins im Umlauf, Zahlungen.</td></tr>
 <tr><td><code>/justin eco top</code></td><td>Rangliste Coins.</td></tr>
@@ -122,7 +131,7 @@
 <tr><td><code>/justin eco give|take|set &lt;Name&gt; &lt;Betrag&gt;</code></td><td>Coins geben, abziehen oder setzen.</td></tr>
 <tr><td><code>/justin eco reset [Name]</code></td><td>Guthaben auf 10.000 JC (ohne Name: du selbst).</td></tr>
 <tr><td><code>/justin signieren [Spieler] &lt;Text&gt;</code></td><td>Gegenstand in der Hand signieren. Entfernen: /justin signieren entfernen [Spieler].</td></tr>
-<tr><td><code>/justin resetstats &lt;Name|alle&gt; tode|spielzeit|skills|coins|alles</code></td><td>Statistiken zurücksetzen („alle“ mit Bestätigung).</td></tr>
+<tr><td><code>/justin resetstats &lt;Name|alle&gt; tode|spielzeit|skills|coins|vanilla|alles</code></td><td>Statistiken zurücksetzen („vanilla“ = Minecraft-Statistiken, Advancements, Rezepte, Level; „alle“ mit Bestätigung).</td></tr>
 <tr><td><code>/justin reset &lt;Name&gt;</code></td><td>Spieler komplett zurücksetzen (inkl. Bauten).</td></tr>
 <tr><td><code>/justin eventitem &lt;Name&gt; rahmen|leuchtrahmen|licht [Menge]</code></td><td>Event-Gegenstände vergeben (unsichtbare Rahmen, Leuchtrahmen, Licht-Blöcke).</td></tr>
 <tr><td><code>/justin npc events|minigames|shop|skills</code></td><td>NPC mit schwebendem Schild an deine Position setzen.</td></tr>
@@ -135,13 +144,13 @@
 <tr><td><code>/justin skill buch &lt;Name&gt; &lt;telekinese|holzfaeller|seelenbindung|reparatur&gt; [Stufe]</code></td><td>Seltenes Buch vergeben (für Events).</td></tr>
 <tr><td><code>/justin skill info &lt;Name&gt;</code></td><td>Skill-Stand eines Spielers.</td></tr>
 <tr><td><code>/justin skill reload</code></td><td>skills.yml neu laden.</td></tr>
-<tr><td><code>/justin advent stats</code></td><td>Wie viele Spieler welches Türchen geöffnet haben.</td></tr>
+<tr><td><code>/justin advent stats</code></td><td>Wie viele Spieler welches Türchen geöffnet haben (nur 1.–24.12. für Spieler sichtbar).</td></tr>
 <tr><td><code>/justin advent schild</code></td><td>Adventskalender-Schild an deine Position setzen.</td></tr>
 <tr><td><code>/justin live tiktok on|off</code></td><td>TikTok-Live von Hand setzen.</td></tr>
 <tr><td><code>/justin tiktokfollower &lt;Zahl&gt;</code></td><td>TikTok-Follower für die Serverliste.</td></tr>
 <tr><td><code>/justin twitchlogin</code></td><td>Einmalig: Twitch für Follow-/Sub-Prüfung verbinden.</td></tr>
 <tr><td><code>/justin setupranks</code></td><td>Teamgruppen in LuckPerms anlegen (ergänzt nur, löscht nichts).</td></tr>
-<tr><td><code>/justin backup [now|list|export]</code></td><td>Backups (täglich automatisch).</td></tr>
+<tr><td><code>/justin backup [now|list|export] | delete &lt;Name|alle-ausser-neuestes&gt;</code></td><td>Backups (täglich automatisch); alte Backups löschen, um Speicher zu sparen.</td></tr>
 <tr><td><code>/justin update [check|now]</code></td><td>Plugin-Updates (täglich automatisch).</td></tr>
 </tbody></table></div>
 
@@ -163,14 +172,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

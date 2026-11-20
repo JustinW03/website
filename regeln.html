@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,27 +29,28 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html" aria-current="page">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Serverregeln</span>
-      <h1>Regeln der JustinZocktCommunity</h1>
-      <p class="lead">Diese Regeln musst du lesen und akzeptieren, bevor du auf die Whitelist kommst. Mit dem Klick auf "Akzeptieren" im Discord bestätigst du, dass du sie gelesen hast und einhältst.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Serverregeln</span>
+        <h1>Regeln der JustinZocktCommunity</h1>
+        <p class="lead">Diese Regeln musst du lesen und akzeptieren, bevor du auf die Whitelist kommst. Mit dem Klick auf "Akzeptieren" im Discord bestätigst du, dass du sie gelesen hast und einhältst.</p>
+      </div>
     </div>
     <div class="wrap">
+      <div class="callout info"><p>🧩 <strong>Mods:</strong> Welche Mods und Clients erlaubt oder verboten sind, steht ausführlich auf der Seite <a href="mods.html">Erlaubte &amp; verbotene Mods</a> (<a href="#r4">Regel 4</a>). Fragen, Meldungen, Entbannung und Bewerbungen laufen über den Discord-Kanal <strong>#tickets</strong>.</p></div>
       <nav class="toc" aria-labelledby="toc-h"><h2 id="toc-h">Inhalt</h2><ol><li><a href="#r1">Voraussetzungen für die Whitelist</a></li><li><a href="#r2">Verhalten</a></li><li><a href="#r3">Spielregeln</a></li><li><a href="#r4">Mods und Cheats</a></li><li><a href="#r5">Strafen und Entbannung</a></li><li><a href="#r6">Reports und Beweise</a></li><li><a href="#r7">Justin Coins, Claims, Handel</a></li><li><a href="#r8">Datenschutz (DSGVO)</a></li><li><a href="#r9">Sonstiges</a></li><li><a href="#r10">Skills, Events, Clans und Shop</a></li></ol></nav>
 <section class="rule-section" id="r1" aria-labelledby="rh1">
         <h2 id="rh1">1. Voraussetzungen für die Whitelist</h2>
@@ -65,7 +67,7 @@
         <h2 id="rh2">2. Verhalten</h2>
         <ol class="rules">
           <li id="r2-1"><a class="nr" href="#r2-1" aria-label="Regel 2.1 verlinken">2.1</a> Respektvoller Umgang. Keine Beleidigungen, Drohungen, Diskriminierung, Rassismus, Sexismus oder Hetze – weder im Chat, im Sprachchat, auf Schildern, Büchern noch in Bauwerken.</li>
-          <li id="r2-2"><a class="nr" href="#r2-2" aria-label="Regel 2.2 verlinken">2.2</a> Kein Spam, keine Werbung für andere Server, Kanäle oder Seiten.</li>
+          <li id="r2-2"><a class="nr" href="#r2-2" aria-label="Regel 2.2 verlinken">2.2</a> Kein Spam, keine Werbung für andere Server, Kanäle oder Seiten. Im Chat kannst du höchstens alle 5 Sekunden eine Nachricht schreiben.</li>
           <li id="r2-3"><a class="nr" href="#r2-3" aria-label="Regel 2.3 verlinken">2.3</a> Keine Weitergabe privater Daten anderer (Adresse, Telefonnummer, Bilder, echter Name ohne Zustimmung).</li>
           <li id="r2-4"><a class="nr" href="#r2-4" aria-label="Regel 2.4 verlinken">2.4</a> Keine sexuellen, gewaltverherrlichenden oder verbotenen Inhalte.</li>
           <li id="r2-5"><a class="nr" href="#r2-5" aria-label="Regel 2.5 verlinken">2.5</a> Anweisungen des Teams (Owner, Admin, Dev, Mod, Sup) sind zu befolgen. Wer eine Entscheidung unfair findet, klärt das per Ticket im Discord, nicht im Chat.</li>
@@ -86,8 +88,8 @@
 <section class="rule-section" id="r4" aria-labelledby="rh4">
         <h2 id="rh4">4. Mods und Cheats</h2>
         <ol class="rules">
-          <li id="r4-1"><a class="nr" href="#r4-1" aria-label="Regel 4.1 verlinken">4.1</a> Erlaubt sind nur Mods aus der Liste "Erlaubte Mods" im Discord. Alles andere ist verboten.</li>
-          <li id="r4-2"><a class="nr" href="#r4-2" aria-label="Regel 4.2 verlinken">4.2</a> Verboten sind u. a. Hacked Clients, X-Ray, Freecam, Autoclicker, Makros, Killaura, Fly, Speed, Seed-Cracker, Minimaps mit Spieler-/Höhlenanzeige, Litematica-Easy-Place/Printer.</li>
+          <li id="r4-1"><a class="nr" href="#r4-1" aria-label="Regel 4.1 verlinken">4.1</a> Erlaubt sind nur Mods aus der Mod-Liste auf <a href="mods.html">www.justinzockt.de/mods.html</a> (auch im Discord). Alles, was dort nicht als erlaubt steht, ist verboten. Bist du unsicher, frag vorher per Ticket im Discord-Kanal #tickets.</li>
+          <li id="r4-2"><a class="nr" href="#r4-2" aria-label="Regel 4.2 verlinken">4.2</a> Verboten sind u. a. Hacked Clients (z. B. Wurst, Meteor, Aristois), X-Ray, Freecam, Autoclicker, Makros, Killaura, Fly, Speed, Baritone, Seed-Cracker, Minimaps mit Spieler-/Mob-/Höhlenanzeige, Litematica-Easy-Place/Printer. Die vollständige Liste steht auf der Mod-Seite (<a href="#r4-1">4.1</a>).</li>
           <li id="r4-3"><a class="nr" href="#r4-3" aria-label="Regel 4.3 verlinken">4.3</a> Der Server prüft automatisch auf Cheats und unerlaubte Mods. Bei Erkennung folgt ein automatischer Kick, Tempban oder Bann.</li>
           <li id="r4-4"><a class="nr" href="#r4-4" aria-label="Regel 4.4 verlinken">4.4</a> Ausreden wie "Das war mein Bruder" oder "Ich wusste nicht, dass die Mod drin ist" gelten nicht. Du bist für deinen Account verantwortlich.</li>
         </ol>
@@ -95,16 +97,16 @@
 <section class="rule-section" id="r5" aria-labelledby="rh5">
         <h2 id="rh5">5. Strafen und Entbannung</h2>
         <ol class="rules">
-          <li id="r5-1"><a class="nr" href="#r5-1" aria-label="Regel 5.1 verlinken">5.1</a> Je nach Schwere: Verwarnung, Mute, Kick, Tempban, permanenter Bann, Zurücksetzen von Gebautem und Inventar.</li>
+          <li id="r5-1"><a class="nr" href="#r5-1" aria-label="Regel 5.1 verlinken">5.1</a> Je nach Schwere: Verwarnung, Mute, Minigame-Sperre, Kick, Tempban, permanenter Bann, Zurücksetzen von Gebautem und Inventar.</li>
           <li id="r5-2"><a class="nr" href="#r5-2" aria-label="Regel 5.2 verlinken">5.2</a> Der Grund steht beim Bann auf dem Bildschirm.</li>
-          <li id="r5-3"><a class="nr" href="#r5-3" aria-label="Regel 5.3 verlinken">5.3</a> Einen Antrag auf Entbannung stellst du im Discord im Kanal für Entbannungsanträge. Ein Antrag pro Bann, bitte ehrlich und sachlich.</li>
+          <li id="r5-3"><a class="nr" href="#r5-3" aria-label="Regel 5.3 verlinken">5.3</a> Einen Antrag auf Entbannung stellst du im Discord-Kanal #tickets (Knopf "Entbannung"). Ein Antrag pro Bann, bitte ehrlich und sachlich.</li>
           <li id="r5-4"><a class="nr" href="#r5-4" aria-label="Regel 5.4 verlinken">5.4</a> Das Umgehen eines Banns (Zweitaccount) führt zum permanenten Bann aller Accounts.</li>
         </ol>
       </section>
 <section class="rule-section" id="r6" aria-labelledby="rh6">
         <h2 id="rh6">6. Reports und Beweise</h2>
         <ol class="rules">
-          <li id="r6-1"><a class="nr" href="#r6-1" aria-label="Regel 6.1 verlinken">6.1</a> Verstöße meldest du per Ticket im Discord mit Zeit, Ort (Koordinaten) und beteiligten Spielern.</li>
+          <li id="r6-1"><a class="nr" href="#r6-1" aria-label="Regel 6.1 verlinken">6.1</a> Verstöße meldest du per Ticket im Discord-Kanal #tickets mit Zeit, Ort (Koordinaten) und beteiligten Spielern.</li>
           <li id="r6-2"><a class="nr" href="#r6-2" aria-label="Regel 6.2 verlinken">6.2</a> <strong>Wir empfehlen dringend, ein Aufnahmeprogramm mitlaufen zu lassen</strong> (z. B. OBS mit Replay-Puffer, NVIDIA ShadowPlay/Instant Replay, AMD ReLive, Xbox Game Bar). So kannst du Verstöße per Video beweisen.</li>
           <li id="r6-3"><a class="nr" href="#r6-3" aria-label="Regel 6.3 verlinken">6.3</a> Falsche Reports, um anderen zu schaden, werden bestraft.</li>
         </ol>
@@ -158,14 +160,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

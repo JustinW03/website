@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,25 +29,25 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Rechtliches</span>
-      <h1>Datenschutz</h1>
-      <p class="lead">Was wir speichern, warum und wie lange – für den Minecraft-Server, den Discord-Bot und diese Website.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Rechtliches</span>
+        <h1>Datenschutz</h1>
+        <p class="lead">Was wir speichern, warum und wie lange – für den Minecraft-Server, den Discord-Bot und diese Website.</p>
+      </div>
     </div>
     <div class="wrap">
       <div class="callout warn"><p><strong>Verantwortlich</strong> im Sinne der DSGVO ist die im <a href="impressum.html">Impressum</a> genannte Person. Kontakt für Datenschutzfragen: <a href="mailto:justinwachsmuth14@gmail.com">justinwachsmuth14@gmail.com</a> oder per Ticket im Discord.</p></div>
@@ -76,6 +77,7 @@
       <ul>
         <li><strong>Hosting:</strong> Die Seite ist eine statische Website und wird über <strong>GitHub Pages</strong> bereitgestellt (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). GitHub verarbeitet beim Aufruf technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, aufgerufene Seite) in Server-Logs, um die Seite auszuliefern und vor Angriffen zu schützen (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO). Dabei können Daten in die USA übertragen werden; GitHub ist nach dem EU-US Data Privacy Framework zertifiziert. Mehr dazu in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</li>
         <li><strong>Keine Cookies, kein Tracking:</strong> Wir setzen keine Cookies, keine Analyse-Tools und laden keine externen Schriften.</li>
+        <li><strong>Ranglisten und Server-Infos:</strong> Einige Seiten laden die Dateien <code>daten/ranglisten.json</code> und <code>daten/info.json</code> direkt von dieser Website (kein Drittanbieter). Sie werden automatisch etwa alle 30 Minuten vom Minecraft-Server übernommen. <code>ranglisten.json</code> enthält die Minecraft-Namen freigeschalteter Spieler mit Spielwerten (z. B. Coins, Spielzeit, Tode, Skills, Clans, Minigame-Statistik). <code>info.json</code> enthält nur allgemeine Server-Werte (z. B. Version, Spielerzahl, Minigames, Öffnungszeiten von Nether und End) und keine personenbezogenen Daten.</li>
         <li><strong>Live-Status:</strong> Auf der Startseite fragt dein Browser den Server-Status bei <strong>api.mcsrvstat.us</strong> ab. Dabei wird deine IP-Adresse an diesen Dienst übertragen. Die Abfrage enthält nur die Server-Adresse <code>play.justinzockt.de</code>, keine weiteren Daten über dich.</li>
         <li><strong>Externe Links</strong> (Discord, Twitch, TikTok, YouTube) öffnen sich erst, wenn du sie anklickst. Dort gelten die Datenschutzerklärungen der jeweiligen Anbieter.</li>
       </ul>
@@ -91,14 +93,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

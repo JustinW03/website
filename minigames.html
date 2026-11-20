@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minigames – JustinZocktCommunity</title>
-  <meta name="description" content="Die Minigame-Welt: 15 Spiele, Räume mit Passwort, Statistiken und Ranglisten.">
+  <meta name="description" content="Die Minigame-Welt: 26 Spiele von 4 Gewinnt bis Eisbootrennen, Räume mit Passwort, automatische Statistiken und Ranglisten.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Minigames – JustinZocktCommunity">
-  <meta property="og:description" content="Die Minigame-Welt: 15 Spiele, Räume mit Passwort, Statistiken und Ranglisten.">
+  <meta property="og:description" content="Die Minigame-Welt: 26 Spiele von 4 Gewinnt bis Eisbootrennen, Räume mit Passwort, automatische Statistiken und Ranglisten.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,63 +29,83 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html" aria-current="page">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Minigames</span>
-      <h1>Minigame-Welt</h1>
-      <p class="lead">Eine eigene Welt nur zum Spielen: 15 Spiele, mehrere Tische pro Spiel, offene Räume oder Räume mit Passwort und eine offizielle Statistik.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Minigames</span>
+        <h1>Minigame-Welt</h1>
+        <p class="lead">Eine eigene Welt nur zum Spielen: <span data-info-len="minigames">26</span> Spiele, mehrere Tische und Arenen pro Spiel, offene Räume oder Räume mit Passwort und eine Statistik, die automatisch mitzählt.</p>
+      </div>
     </div>
     <div class="wrap">
       <h2>So kommst du hin</h2>
-      <ol>
-        <li><code>/minigames join</code> eingeben oder den <strong>Minigames-NPC</strong> am Spawn anklicken.</li>
-        <li>Dein Survival-Inventar wird sicher gespeichert. Du bekommst nur einen <strong>Kompass</strong> (Spiele-Menü) und ein <strong>Bett</strong> (verlassen).</li>
-        <li>Lauf die Allee entlang – jedes Spiel hat einen eigenen Bereich mit mehreren Tischen. <strong>Klick auf einen freien Tisch</strong> = Raum erstellen, <strong>Klick auf einen Tisch mit Raum</strong> = beitreten.</li>
-        <li>Mit <code>/minigames leave</code> geht's zurück an deinen letzten Ort – mit deinem Inventar.</li>
+      <ol class="steps">
+        <li><h3>Rein in die Welt</h3><p><code>/minigames join</code> eingeben oder den <strong>Minigames-NPC</strong> am Spawn anklicken. Dein Survival-Inventar wird sicher gespeichert. Du bekommst nur einen <strong>Kompass</strong> (Spiele-Menü) und ein <strong>Bett</strong> (verlassen).</p></li>
+        <li><h3>Tisch aussuchen</h3><p>Lauf die Allee entlang – jedes Spiel hat einen eigenen Bereich. An den Tischen gibt es <strong>echte Sitze</strong>: Klick auf einen freien Tisch = Raum erstellen, Klick auf einen Tisch mit Raum = beitreten und Platz nehmen.</p></li>
+        <li><h3>Zurück ins Survival</h3><p>Mit <code>/minigames leave</code> (oder dem Bett) geht's zurück an deinen letzten Ort – mit deinem Inventar. Läuft gerade ein Spiel, fragt dich der Server vorher, ob du wirklich gehen willst.</p></li>
       </ol>
-      <p>Kein Schaden, kein Hunger, der Chat ist für alle sichtbar und deine Spielzeit läuft weiter.</p>
-      <h2>Die Spiele</h2>
-      <div class="table-wrap"><table><thead><tr><th scope="col">Spiel</th><th scope="col">Spieler</th><th scope="col">Worum geht's</th><th scope="col">Wo</th></tr></thead><tbody>
-<tr><td>4 Gewinnt</td><td>2</td><td>Vier Steine in eine Reihe – waagrecht, senkrecht oder schräg</td><td>Menü</td></tr>
-<tr><td>Tic-Tac-Toe</td><td>2</td><td>Drei Zeichen in eine Reihe – der schnelle Klassiker</td><td>Menü</td></tr>
-<tr><td>Schiffe versenken</td><td>2</td><td>Finde und versenke die gegnerische Flotte</td><td>Menü</td></tr>
-<tr><td>Memory</td><td>2–4</td><td>Finde die meisten Paare</td><td>Menü</td></tr>
-<tr><td>Mensch ärgere Dich nicht</td><td>2–4</td><td>Würfeln, rauswerfen, ärgern – alle 4 ins Ziel</td><td>echtes Brett</td></tr>
-<tr><td>Dame</td><td>2</td><td>Der Brettklassiker – schlagen ist Pflicht</td><td>echtes Brett</td></tr>
-<tr><td>Kniffel</td><td>1–4</td><td>Würfeln, halten, eintragen – wer schafft die meisten Punkte?</td><td>Menü</td></tr>
-<tr><td>Galgenmännchen</td><td>2–6</td><td>Wort ausdenken, Buchstaben raten – per Chat</td><td>Chat</td></tr>
-<tr><td>Spleef</td><td>2–8</td><td>Grab den anderen den Schnee unter den Füßen weg</td><td>Arena</td></tr>
-<tr><td>TNT-Run</td><td>2–8</td><td>Lauf! Der Boden verschwindet unter deinen Füßen</td><td>Arena</td></tr>
-<tr><td>Parkour</td><td>1–8</td><td>Spring als Erster die Spirale hinauf ins Ziel (Bestzeit)</td><td>Arena</td></tr>
-<tr><td>Schere, Stein, Papier</td><td>2</td><td>Wer zuerst 3 Runden gewinnt</td><td>Menü</td></tr>
-<tr><td>Blackjack</td><td>1–4</td><td>Komm näher an 21 als der Geber – ohne Geld</td><td>Menü</td></tr>
-<tr><td>Minesweeper</td><td>1</td><td>Alle sicheren Felder aufdecken (Bestzeit)</td><td>Menü</td></tr>
-<tr><td>Code-Knacker</td><td>1</td><td>Den geheimen Farbcode in 10 Versuchen knacken</td><td>Menü</td></tr>
-</tbody></table></div>
-      <p>Jedes Spiel hat im Spiel eine Anleitung als Buch (Kompass → Spiel → „📖 Anleitung“).</p>
+      <p>Kein Schaden, kein Hunger, der Chat ist für alle sichtbar und deine Spielzeit läuft weiter. Die Tische für Brett- und Kartenspiele sind kompakt gebaut – so liegt alles nah beieinander und du findest schnell einen freien Platz.</p>
+
+      <h2 id="spiele">Die Spiele</h2>
+      <div class="mg-filters" role="group" aria-label="Spiele filtern">
+        <button type="button" class="chip" data-f="alle" aria-pressed="true">Alle</button>
+        <button type="button" class="chip" data-f="tisch" aria-pressed="false">🎲 Tisch &amp; Brett</button>
+        <button type="button" class="chip" data-f="action" aria-pressed="false">⚡ Action-Arenen</button>
+      </div>
+      <ul class="games" id="mg-list">
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🔴</span><h3>4 Gewinnt</h3><p>Vier Steine in eine Reihe – waagrecht, senkrecht oder schräg</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">❌</span><h3>Tic-Tac-Toe</h3><p>Drei Zeichen in eine Reihe – der schnelle Klassiker</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🚢</span><h3>Schiffe versenken</h3><p>Setz deine Schiffe selbst und versenke die gegnerische Flotte</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🧠</span><h3>Memory</h3><p>Finde die meisten Paare</p><div class="g-meta"><span class="badge gray">👥 2–4</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🎲</span><h3>Mensch ärgere Dich nicht</h3><p>Würfeln, rauswerfen, ärgern – alle 4 ins Ziel</p><div class="g-meta"><span class="badge gray">👥 2–4</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">⚪</span><h3>Dame</h3><p>Der Brettklassiker – schlagen ist Pflicht</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">♟️</span><h3>Schach</h3><p>Das Spiel der Könige auf einem echten Brett</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🧱</span><h3>Barricade</h3><p>Würfeln, Barrikaden versetzen und als Erster ins Ziel</p><div class="g-meta"><span class="badge gray">👥 2–4</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🎲</span><h3>Kniffel</h3><p>Würfeln, halten, eintragen – wer schafft die meisten Punkte?</p><div class="g-meta"><span class="badge gray">👥 1–4</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🪢</span><h3>Galgenmännchen</h3><p>Wort ausdenken, Buchstaben raten – per Chat</p><div class="g-meta"><span class="badge gray">👥 2–6</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">✂️</span><h3>Schere-Stein-Papier</h3><p>Der Klassiker – die Anzahl der Runden ist wählbar</p><div class="g-meta"><span class="badge gray">👥 2</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🃏</span><h3>Blackjack</h3><p>Komm näher an 21 als der Geber – ohne Geld</p><div class="g-meta"><span class="badge gray">👥 1–4</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">💣</span><h3>Minesweeper</h3><p>Alle sicheren Felder aufdecken (Bestzeit)</p><div class="g-meta"><span class="badge gray">👥 1</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🔤</span><h3>Wordle</h3><p>Errate das Wort in sechs Versuchen</p><div class="g-meta"><span class="badge gray">👥 1</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🐍</span><h3>Snake</h3><p>Fressen, wachsen, nicht in dich selbst beißen</p><div class="g-meta"><span class="badge gray">👥 1</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🔢</span><h3>2048</h3><p>Zahlen verschieben und zusammenfügen bis 2048</p><div class="g-meta"><span class="badge gray">👥 1</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="tisch"><span class="g-ico" aria-hidden="true">🧳</span><h3>Ich packe meinen Koffer</h3><p>Merk dir alles, was schon im Koffer ist – und pack etwas dazu</p><div class="g-meta"><span class="badge gray">👥 2–6</span><span class="badge green">Tisch</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">❄️</span><h3>Spleef</h3><p>Grab den anderen den Schnee unter den Füßen weg</p><div class="g-meta"><span class="badge gray">👥 2–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🧨</span><h3>TNT-Run</h3><p>Lauf! Der Boden verschwindet unter deinen Füßen</p><div class="g-meta"><span class="badge gray">👥 2–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🏃</span><h3>Parkour</h3><p>Spring als Erster ins Ziel (Bestzeit)</p><div class="g-meta"><span class="badge gray">👥 1–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🥊</span><h3>Knockback-FFA</h3><p>Schubs alle anderen von der Plattform</p><div class="g-meta"><span class="badge gray">👥 2–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">☃️</span><h3>Schneeballschlacht</h3><p>Wer am meisten trifft, gewinnt</p><div class="g-meta"><span class="badge gray">👥 2–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🏹</span><h3>Bogen-Schießstand</h3><p>Triff die Ziele – je genauer, desto mehr Punkte</p><div class="g-meta"><span class="badge gray">👥 1–4</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">💧</span><h3>MLG-Wasser</h3><p>Spring in die Tiefe und rette dich mit dem Wassereimer</p><div class="g-meta"><span class="badge gray">👥 1–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🛠️</span><h3>Speed-Crafting</h3><p>Wer stellt die Rezepte am schnellsten her?</p><div class="g-meta"><span class="badge gray">👥 1–8</span><span class="badge">Arena</span></div></li>
+        <li class="game" data-kind="action"><span class="g-ico" aria-hidden="true">🛶</span><h3>Eisbootrennen</h3><p>Mit dem Boot über die Eisstrecke – als Erster ins Ziel</p><div class="g-meta"><span class="badge gray">👥 2–8</span><span class="badge">Arena</span></div></li>
+      </ul>
+      <p class="muted small">Jedes Spiel hat im Spiel eine Anleitung als Buch (Kompass → Spiel → „📖 Anleitung“ oder <code>/minigames anleitung &lt;Spiel&gt;</code>). Die Liste wird automatisch vom Server aktualisiert.</p>
+
       <h2>Räume &amp; Passwort</h2>
       <ul>
         <li><strong>Offener Raum:</strong> jeder darf beitreten.</li>
         <li><strong>Raum mit Passwort:</strong> nur wer das Passwort kennt – perfekt, wenn du mit einer bestimmten Person spielen willst.</li>
         <li><strong>„📣 Mitspieler suchen“</strong> postet einen Klick-Knopf in den Chat.</li>
-        <li>Wer 2 Minuten nicht zieht oder den Raum verlässt, verliert.</li>
+        <li>Manche Spiele haben Einstellungen, z. B. die <strong>Anzahl der Runden</strong> bei Schere-Stein-Papier.</li>
+        <li>Wer 2 Minuten nicht zieht oder den Raum verlässt, verliert. Damit das nicht aus Versehen passiert, gibt es beim Verlassen eine <strong>Sicherheitsabfrage</strong>.</li>
       </ul>
+
       <h2>Statistiken</h2>
-      <p>Mit <code>/minigames anmelden</code> trägst du dich in die <strong>offizielle Liste</strong> ein. Dann zählen: Lieblingsspiel, gespielt, gewonnen, verloren, unentschieden, Siegquote, beste Siegesserie, Punkte (Sieg 3, Unentschieden 1), Minigame-Spielzeit und Bestzeiten. Anzeigen mit <code>/minigames stats</code>, Rangliste mit <code>/minigames top</code> und auf der <a href="ranglisten.html">Ranglisten-Seite</a>.</p>
+      <p>Die Statistik zählt <strong>automatisch</strong> für alle Spieler – eine Anmeldung ist nicht mehr nötig. Gezählt werden: Lieblingsspiel, gespielt, gewonnen, verloren, unentschieden, Siegquote, beste Siegesserie, Punkte (Sieg 3, Unentschieden 1), Minigame-Spielzeit und Bestzeiten. Anzeigen mit <code>/minigames stats</code>, Rangliste mit <code>/minigames top [Spiel]</code> und auf der <a href="ranglisten.html">Ranglisten-Seite</a> – dort auch je Spiel.</p>
+      <div class="callout warn"><p><strong>Fair bleiben:</strong> Absichtliches Verlieren lassen, Absprachen zum Punkte-Schieben oder Ausnutzen von Fehlern sind verboten (<a href="regeln.html#r10-1">Regel 10.1</a>). Als Strafe ist auch eine <strong>Minigame-Sperre</strong> möglich.</p></div>
     </div>
   </main>
   <footer class="site-footer">
@@ -93,14 +114,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

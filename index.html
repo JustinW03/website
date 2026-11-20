@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,57 +29,88 @@
           <li><a href="index.html" aria-current="page">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
     <section class="hero">
-      <div class="wrap">
-        <span class="eyebrow">Minecraft Java Edition · Community-Server · 18+</span>
-        <h1>Willkommen in der <span>JustinZocktCommunity</span></h1>
-        <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, Events und ein Team, das aufpasst.</p>
-        <div class="ip-box">
-          <span class="label">Server-Adresse</span>
-          <span class="ip" id="server-ip">play.justinzockt.de</span>
-          <button class="btn btn-primary copy-btn" type="button" data-copy="play.justinzockt.de" aria-describedby="server-ip">📋 Kopieren</button>
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Minecraft Java Edition · Community-Server · 18+</span>
+          <h1><span class="line">Willkommen in der</span> <span class="line grad-text">JustinZocktCommunity</span></h1>
+          <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, über 25 Minigames, Events und ein Team, das aufpasst.</p>
+          <div class="ip-box">
+            <span class="label">Server-Adresse</span>
+            <span class="ip" id="server-ip">play.justinzockt.de</span>
+            <button class="btn btn-primary copy-btn" type="button" data-copy="play.justinzockt.de" aria-describedby="server-ip">📋 Kopieren</button>
+          </div>
+          <p class="sr-only" id="copy-status" aria-live="polite"></p>
+          <div class="status-card" id="server-status" data-host="play.justinzockt.de" aria-live="polite">
+            <div class="status-line"><span class="dot" aria-hidden="true"></span><span class="status-text">Status wird geladen …</span></div>
+            <div class="status-meta">Live-Abfrage über api.mcsrvstat.us</div>
+            <ul class="player-list" hidden aria-label="Spieler, die gerade online sind"></ul>
+            <noscript><p class="status-meta">Für den Live-Status wird JavaScript benötigt.</p></noscript>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="beitreten.html">So kommst du auf die Whitelist →</a>
+            <a class="btn btn-ghost" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Zum Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+          </div>
         </div>
-        <p class="sr-only" id="copy-status" aria-live="polite"></p>
-        <div class="status-card" id="server-status" data-host="play.justinzockt.de" aria-live="polite">
-          <div class="status-line"><span class="dot" aria-hidden="true"></span><span class="status-text">Status wird geladen …</span></div>
-          <div class="status-meta">Live-Abfrage über api.mcsrvstat.us</div>
-          <ul class="player-list" hidden aria-label="Spieler, die gerade online sind"></ul>
-          <noscript><p class="status-meta">Für den Live-Status wird JavaScript benötigt.</p></noscript>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="beitreten.html">So kommst du auf die Whitelist →</a>
-          <a class="btn btn-ghost" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Zum Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+        <div class="hero-scene" aria-hidden="true">
+          <div class="scene">
+            <div class="scene-glow"></div>
+            <div class="orbit"></div>
+            <div class="cube c1"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cube c2"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cube c3"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cube c4"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="cube c5"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
         </div>
       </div>
+      <div class="wrap">
+        <dl class="stats">
+          <div class="stat"><dt>Minigames</dt><dd><span data-count="26" data-info-len="minigames">26</span></dd></div>
+          <div class="stat"><dt>Skills</dt><dd><span data-count="6">6</span><small>bis Lvl 100</small></dd></div>
+          <div class="stat"><dt>Coins pro Stunde</dt><dd><span data-count="500" data-info-count="coins_pro_stunde.spieler">500</span><small>JC</small></dd></div>
+          <div class="stat"><dt>Gerade online</dt><dd><span data-online>–</span></dd></div>
+        </dl>
+      </div>
     </section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div style="display:flex"><span>6 Skills bis Level 100</span><span>Über 25 Minigames</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span></div><div aria-hidden="true" style="display:flex"><span>6 Skills bis Level 100</span><span>Über 25 Minigames</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span></div></div></div>
 
     <section aria-labelledby="h-features">
       <div class="wrap">
         <h2 id="h-features">Was dich erwartet</h2>
         <div class="grid">
-          <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Bergbauer, Holzfäller, Gräber, Landwirt, Angler und Kämpfer. Jedes Level gibt automatisch Coins, Verbesserungen, Gegenstände und Titel.</p><span class="more">Zu den Skills →</span></a>
-          <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Seelenbindung, Telekinese und Holzfäller I–III – und Reparatur (Mending) gibt es nur noch über Skills, Events und sehr seltene Funde.</p><span class="more">Zu den Verzauberungen →</span></a>
-          <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans →</span></a>
-          <a class="card" href="shop.html"><span class="icon" aria-hidden="true">🛒</span><h3>Spieler-Shop</h3><p>Verkaufe deine Items zu deinem eigenen Preis in Justin Coins – am Spawn mit <code>/shop</code>.</p><span class="more">Zum Shop →</span></a>
-          <a class="card" href="events.html"><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender 2026</h3><p>Vom 1. bis 24. Dezember jeden Tag ein Türchen mit <code>/justin advent</code> – mit Treue-Bonus für alle, die kein Türchen verpassen.</p><span class="more">Zu den Events →</span></a>
-          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, 1.000 JC pro aktiver Stunde. Sichere dein Gebiet für 1.000 JC pro Chunk, Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren →</span></a>
-          <a class="card" href="faq.html#spawn"><span class="icon" aria-hidden="true">🏰</span><h3>Sicherer Spawn</h3><p>Am Spawn in Overworld und Nether gibt es keinen Schaden, kein PvP und keine Monster. Dort findest du die NPCs „Events“ und „Minigames“.</p><span class="more">Mehr erfahren →</span></a>
-          <a class="card" href="regeln.html#r4"><span class="icon" aria-hidden="true">🛡️</span><h3>Fair Play</h3><p>Automatischer Anticheat, Mod-Prüfung und ein aufmerksames Team. PvP nur, wenn beide es eingeschaltet haben.</p><span class="more">Zu den Regeln →</span></a>
+          <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Bergbauer, Holzfäller, Gräber, Landwirt, Angler und Kämpfer. Jedes Level gibt automatisch Coins, Verbesserungen, Gegenstände und Titel.</p><span class="more">Zu den Skills <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>Über 25 Minigames</h3><p>Von 4 Gewinnt, Schach und Kniffel bis Spleef, TNT-Run und Eisbootrennen – mit echten Tischen, Arenen und automatischer Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Sub &amp; Premium</h3><p>Mehr Coins pro Stunde, länger bis AFK, mobile Endertruhe (<code>/ec</code>), Werkbank (<code>/craft</code>) und für Premium <code>/tpa</code>.</p><span class="more">Alle Vorteile <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Seelenbindung, Telekinese und Holzfäller I–III – und Reparatur (Mending) gibt es nur noch über Skills, Events und sehr seltene Funde.</p><span class="more">Zu den Verzauberungen <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="shop.html"><span class="icon" aria-hidden="true">🛒</span><h3>Spieler-Shop</h3><p>Verkaufe deine Items zu deinem eigenen Preis in Justin Coins – am Spawn mit <code>/shop</code>.</p><span class="more">Zum Shop <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="events.html#advent" data-season="advent" hidden><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender</h3><p>Vom 1. bis 24. Dezember jeden Tag ein Türchen mit <code>/justin advent</code> – mit Treue-Bonus für alle, die kein Türchen verpassen.</p><span class="more">Zum Kalender <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC pro aktiver Stunde. Sichere dein Gebiet für <span data-info="claims.preis" data-fmt="num">1.000</span> JC pro Chunk, Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="skills.html#erfolge"><span class="icon" aria-hidden="true">🏆</span><h3>Erfolge</h3><p>Ein eigener Reiter im Fortschritte-Menü (Taste L) mit vielen Erfolgen – von Minigames über Skills bis zum Adventskalender.</p><span class="more">Zu den Erfolgen <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="mods.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Fair Play</h3><p>Automatischer Anticheat, klare Mod-Liste und ein aufmerksames Team. PvP nur, wenn beide es eingeschaltet haben.</p><span class="more">Erlaubte Mods <span aria-hidden="true">→</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-welt">
+      <div class="wrap">
+        <h2 id="h-welt">Welt-Status</h2>
+        <p class="muted">Nether und End werden vom Team geöffnet. Steht schon ein Termin fest, läuft hier der Countdown.</p>
+        <div class="portals">
+          <article class="portal nether" data-portal="nether" aria-labelledby="pt-nether"><h3 id="pt-nether"><span aria-hidden="true">🔥</span> Nether <span class="portal-state">Status</span></h3><p class="portal-text">Ob der Nether offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
+          <article class="portal end" data-portal="end" aria-labelledby="pt-end"><h3 id="pt-end"><span aria-hidden="true">🌌</span> End <span class="portal-state">Status</span></h3><p class="portal-text">Ob das End offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
         </div>
       </div>
     </section>
@@ -97,7 +129,7 @@
     <section aria-labelledby="h-socials">
       <div class="wrap">
         <h2 id="h-socials">Folge Justin</h2>
-        <div class="socials"><a class="social" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:1.6rem">💬</span><span>Discord<small>Whitelist, Tickets, News</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:1.6rem">📺</span><span>Twitch<small>JustinZockt03 live</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:1.6rem">🎵</span><span>TikTok<small>@justinzockt03live</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="font-size:1.6rem">▶️</span><span>YouTube<small>@JustinZockt03</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a></div>
+        <div class="socials"><a class="social" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer"><span class="s-ico" aria-hidden="true">💬</span><span>Discord<small>Whitelist, Tickets, News</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer"><span class="s-ico" aria-hidden="true">📺</span><span>Twitch<small>JustinZockt03 live</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer"><span class="s-ico" aria-hidden="true">🎵</span><span>TikTok<small>@justinzockt03live</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a><a class="social" href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer"><span class="s-ico" aria-hidden="true">▶️</span><span>YouTube<small>@JustinZockt03</small></span><span class="sr-only"> (öffnet in neuem Tab)</span></a></div>
       </div>
     </section>
   </main>
@@ -107,14 +139,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

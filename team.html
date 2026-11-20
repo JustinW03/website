@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,25 +29,25 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html" aria-current="page">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html" aria-current="page">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Team</span>
-      <h1>Ränge &amp; Team-Rechte</h1>
-      <p class="lead">Wer im Team was darf – damit du weißt, an wen du dich wenden kannst. Namen stehen bewusst nicht hier, frag im Discord.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Team</span>
+        <h1>Ränge &amp; Team-Rechte</h1>
+        <p class="lead">Wer im Team was darf – damit du weißt, an wen du dich wenden kannst. Namen stehen bewusst nicht hier, frag im Discord.</p>
+      </div>
     </div>
     <div class="wrap">
       <h2>Die Ränge</h2>
@@ -57,8 +58,8 @@
 <tr><td><strong>Mod</strong></td><td>Moderation: Kicks, Mutes, Banns (auch dauerhaft), Entbannungen, Griefing prüfen.</td></tr>
 <tr><td><strong>Builder</strong></td><td>Baut am Spawn (mit Kreativ-Inventar und WorldEdit).</td></tr>
 <tr><td><strong>Sup</strong></td><td>Supporter: erste Ansprechperson, kann kicken, muten und bis zu 1 Tag bannen.</td></tr>
-<tr><td><strong>Premium</strong></td><td>Besonderer Spieler-Rang.</td></tr>
-<tr><td><strong>Sub</strong></td><td>Automatisch für Twitch-Subs von JustinZockt03.</td></tr>
+<tr><td><strong>Premium</strong></td><td>Besonderer Spieler-Rang mit /ec, /craft, /tpa und den meisten Coins pro Stunde – <a href="raenge.html">alle Vorteile</a>.</td></tr>
+<tr><td><strong>Sub</strong></td><td>Automatisch für Twitch-Subs von JustinZockt03: /ec, /craft und mehr Coins pro Stunde – <a href="raenge.html">alle Vorteile</a>.</td></tr>
 <tr><td><strong>Spieler</strong></td><td>Alle freigeschalteten Community-Mitglieder.</td></tr>
 </tbody></table></div>
       <p class="muted small">Vererbung: Mod hat automatisch alles von Sup. Admin hat alles von Mod, Builder und Dev.</p>
@@ -92,7 +93,19 @@
         <li>Auch Admins sind vom Anticheat <strong>nicht</strong> ausgenommen.</li>
         <li>Anweisungen des Teams sind zu befolgen. Findest du eine Entscheidung unfair, klär das per Ticket im Discord, nicht im Chat (<a href="regeln.html#r2-5">Regel 2.5</a>).</li>
       </ul>
-      <p>Strafdauern: <code>30m</code> = 30 Minuten, <code>2h</code> = 2 Stunden, <code>1d</code> = 1 Tag, <code>1w</code> = 1 Woche, <code>perm</code> = dauerhaft (nur Mod/Admin).</p>
+      <p>Strafdauern: <code>30m</code> = 30 Minuten, <code>2h</code> = 2 Stunden, <code>1d</code> = 1 Tag, <code>1w</code> = 1 Woche, <code>perm</code> = dauerhaft (nur Mod/Admin). Auch eine <strong>Minigame-Sperre</strong> ist als Strafe möglich.</p>
+
+      <h2 id="bewerben">Bewirb dich fürs Team</h2>
+      <p>Du willst mithelfen? Bewerbungen laufen über den Discord-Kanal <strong>#tickets</strong>: Klick dort auf den Knopf <strong>„Bewerbung“</strong> und schreib, wofür du dich bewirbst, was du kannst und wie oft du Zeit hast.</p>
+      <div class="grid">
+        <div class="card"><span class="icon" aria-hidden="true">✂️</span><h3>Cutter</h3><p>Schneidet Clips und Highlights aus Justins Streams für TikTok und YouTube.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🏗️</span><h3>Builder</h3><p>Baut am Spawn, an Event-Orten und in der Minigame-Welt.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">💻</span><h3>Dev</h3><p>Hilft bei Technik, Plugins und Konfiguration.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🎧</span><h3>Supporter</h3><p>Erste Ansprechperson für Fragen und Tickets.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">⚖️</span><h3>Mod</h3><p>Sorgt für Ordnung: Meldungen prüfen, Strafen, Entbannungen.</p></div>
+      </div>
+      <p class="muted small">Ob gerade für eine Rolle gesucht wird, steht im Discord. Bitte nur eine Bewerbung pro Rolle und kein Nachfragen im Chat – das Team meldet sich im Ticket.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Zum Discord (#tickets)<span class="sr-only"> (öffnet in neuem Tab)</span></a></div>
     </div>
   </main>
   <footer class="site-footer">
@@ -101,14 +114,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>

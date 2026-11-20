@@ -17,6 +17,7 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
   <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
@@ -28,25 +29,25 @@
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html" aria-current="page">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="mods.html">Mods</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="verzauberungen.html">Verzauberungen</a></li>
-          <li><a href="clans.html">Clans</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="befehle.html">Befehle</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="team.html">Team</a></li>
           <li><a href="minigames.html">Minigames</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
   </header>
   <main id="inhalt" tabindex="-1">
-    <div class="page-head wrap">
-      <span class="eyebrow">Whitelist</span>
-      <h1>So kommst du auf den Server</h1>
-      <p class="lead">Der Server ist nur für die Community: Du brauchst Discord, einen Twitch-Follow bei JustinZockt03 und musst mindestens 18 Jahre alt sein. Die Freischaltung dauert nur ein paar Minuten.</p>
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Whitelist</span>
+        <h1>So kommst du auf den Server</h1>
+        <p class="lead">Der Server ist nur für die Community: Du brauchst Discord, einen Twitch-Follow bei JustinZockt03 und musst mindestens 18 Jahre alt sein. Die Freischaltung dauert nur ein paar Minuten.</p>
+      </div>
     </div>
     <div class="wrap">
       <div class="callout"><p><strong>Das brauchst du:</strong> Minecraft <strong>Java Edition</strong> (aktuelle Version empfohlen, ältere Versionen unter 1.21.5 werden abgewiesen), einen Discord-Account, einen Twitch-Account und ein Alter von mindestens 18 Jahren.</p></div>
@@ -64,9 +65,9 @@
       <ul>
         <li><strong>Ein Account pro Person:</strong> Ein Discord-Konto = ein Twitch-Konto = ein Minecraft-Account. Zweitaccounts nur mit Erlaubnis des Teams.</li>
         <li><strong>Kein VPN/Proxy:</strong> VPNs und Proxys werden automatisch erkannt und abgewiesen. Spielen Geschwister oder Mitbewohner im selben Netz, meldet euch kurz per Ticket.</li>
-        <li><strong>Twitch-Subs</strong> bekommen automatisch den Sub-Rang (Tablist, Chat, Scoreboard).</li>
+        <li><strong>Twitch-Subs</strong> bekommen automatisch den Sub-Rang mit Vorteilen wie <code>/ec</code>, <code>/craft</code> und mehr Coins pro Stunde – alles auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</li>
         <li><strong>Gebannte Accounts</strong> können sich nicht freischalten.</li>
-        <li><strong>Mods:</strong> Nur Mods aus der Liste „Erlaubte Mods“ im Discord sind erlaubt – Überblick in den <a href="faq.html#mods">FAQ</a>.</li>
+        <li><strong>Mods:</strong> Nur Mods aus der <a href="mods.html">Mod-Liste</a> sind erlaubt. Unsicher? Frag vorher per Ticket in <strong>#tickets</strong>.</li>
       </ul>
 
       <h2>Dein erster Join</h2>
@@ -74,7 +75,7 @@
       <div class="grid">
         <a class="card" href="befehle.html"><span class="icon" aria-hidden="true">⌨️</span><h3>Wichtige Befehle</h3><p><code>/spawn</code>, <code>/sethome</code>, <code>/home</code>, <code>/claim</code>, <code>/justin skill</code> …</p><span class="more">Alle Befehle →</span></a>
         <a class="card" href="faq.html"><span class="icon" aria-hidden="true">❓</span><h3>Fragen?</h3><p>Die häufigsten Fragen und Antworten auf einen Blick.</p><span class="more">Zu den FAQ →</span></a>
-        <a class="card" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">🎫</span><h3>Hilfe im Discord</h3><p>Im Kanal #support gibt es Tickets für Fragen, Spieler-Meldungen und Entbannungsanträge.</p><span class="more">Zum Discord →</span><span class="sr-only"> (öffnet in neuem Tab)</span></a>
+        <a class="card" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">🎫</span><h3>Hilfe im Discord</h3><p>Im Kanal <strong>#tickets</strong> gibt es Tickets für Fragen, Spieler-Meldungen, Entbannungsanträge und Bewerbungen.</p><span class="more">Zum Discord →</span><span class="sr-only"> (öffnet in neuem Tab)</span></a>
       </div>
     </div>
   </main>
@@ -84,14 +85,18 @@
         <div>
           <h2>Server</h2>
           <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Adresse: <code>play.justinzockt.de</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
         </div>
         <div>
           <h2>Infos</h2>
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
           </ul>
         </div>
         <div>
