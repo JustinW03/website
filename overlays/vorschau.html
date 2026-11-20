@@ -45,7 +45,8 @@
   <div class="gruppe" id="gEk"><b>Twitch-Ecke:</b>
     <button data-ek="unten-links" class="an">unten links</button><button data-ek="unten-rechts">unten rechts</button>
     <button data-ek="oben-links">oben links</button><button data-ek="oben-rechts">oben rechts</button></div>
-  <div class="gruppe"><b>TikTok:</b><button id="zonen">TikTok-Bedienfelder zeigen</button></div>
+  <div class="gruppe" id="gFm"><b>TikTok-Format:</b><button data-fm="1:1" class="an">1:1</button><button data-fm="9:16">9:16</button><button data-fm="16:9">16:9</button></div>
+  <div class="gruppe"><b>TikTok:</b><button id="zonen">TikTok-Bedienfelder zeigen (9:16)</button></div>
 </header>
 
 <main>
@@ -59,16 +60,17 @@
       Mit URL-Parametern wie <code>?ecke=unten-rechts&amp;dauer=8&amp;farbe=ff1f3d</code> kannst du alles umstellen – siehe ANLEITUNG-OVERLAYS.md.</p>
   </section>
   <section class="karte" id="ttWrap">
-    <h2>TikTok LIVE Studio <small>1080 × 1920</small> <a href="tiktok-overlay.html" target="_blank">einzeln öffnen</a></h2>
-    <div class="rahmen" id="ttRahmen"><div class="buehne" id="ttBuehne" style="width:1080px;height:1920px">
-      <canvas id="ttCanvas" width="1080" height="1920"></canvas>
-      <iframe id="ttFrame" width="1080" height="1920" allowtransparency="true" scrolling="no"></iframe></div></div>
+    <h2>TikTok LIVE Studio <small id="ttMass">1080 × 1080</small> <a href="tiktok-overlay.html" target="_blank">einzeln öffnen</a></h2>
+    <div class="rahmen" id="ttRahmen"><div class="buehne" id="ttBuehne" style="width:1080px;height:1080px">
+      <canvas id="ttCanvas" width="1080" height="1080"></canvas>
+      <iframe id="ttFrame" width="1080" height="1080" allowtransparency="true" scrolling="no"></iframe></div></div>
   </section>
 </main>
 
 <script>
 (function(){
-  var zustand = { hg: "tag", sl: "", ek: "unten-links", zonen: false };
+  var zustand = { hg: "tag", sl: "", ek: "unten-links", zonen: false, fm: "1:1" };
+  var MASSE = { "1:1":[1080,1080], "9:16":[1080,1920], "16:9":[1920,1080] };
 
   // ---------- Minecraft-artiges Beispiel-Spielbild (selbst gezeichnet) ----------
   function zufall(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
@@ -112,7 +114,7 @@
 
   // ---------- Skalieren ----------
   function skaliere(){
-    [["twRahmen","twBuehne",1920,1080],["ttRahmen","ttBuehne",1080,1920]].forEach(function(a){
+    [["twRahmen","twBuehne",1920,1080],["ttRahmen","ttBuehne"].concat(MASSE[zustand.fm])].forEach(function(a){
       var r = document.getElementById(a[0]), b = document.getElementById(a[1]);
       var w = r.parentNode.clientWidth - 28, k = Math.min(1, w / a[2]);
       if(a[0]==="ttRahmen") k = Math.min(k, (window.innerHeight - 170) / a[3], 1);
@@ -123,10 +125,14 @@
 
   function lade(){
     male(document.getElementById("twCanvas"), zustand.hg);
-    male(document.getElementById("ttCanvas"), zustand.hg);
+    var m = MASSE[zustand.fm], tc = document.getElementById("ttCanvas"), tf = document.getElementById("ttFrame"), tb = document.getElementById("ttBuehne");
+    tc.width = m[0]; tc.height = m[1]; tf.width = m[0]; tf.height = m[1]; tb.style.width = m[0]+"px"; tb.style.height = m[1]+"px";
+    document.getElementById("ttMass").textContent = m[0] + " × " + m[1];
+    skaliere();
+    male(tc, zustand.hg);
     var q = zustand.sl ? "slide="+zustand.sl+"&" : "";
     document.getElementById("twFrame").src = "twitch-overlay.html?" + q + "ecke=" + zustand.ek;
-    document.getElementById("ttFrame").src = "tiktok-overlay.html?" + q + (zustand.zonen ? "zonen=1" : "");
+    document.getElementById("ttFrame").src = "tiktok-overlay.html?" + q + "format=" + zustand.fm + (zustand.zonen ? "&zonen=1" : "");
   }
   function knoepfe(id, key){
     var g = document.getElementById(id);
@@ -136,7 +142,7 @@
       zustand[key] = b.getAttribute("data-"+key); lade();
     });
   }
-  knoepfe("gHg","hg"); knoepfe("gSl","sl"); knoepfe("gEk","ek");
+  knoepfe("gHg","hg"); knoepfe("gSl","sl"); knoepfe("gEk","ek"); knoepfe("gFm","fm");
   document.getElementById("zonen").addEventListener("click", function(){ zustand.zonen = !zustand.zonen; this.classList.toggle("an", zustand.zonen); lade(); });
   window.addEventListener("resize", skaliere);
   skaliere(); lade();

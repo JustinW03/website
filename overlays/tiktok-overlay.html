@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>JustinZockt Server-Overlay (TikTok 1080x1920)</title>
-<meta name="viewport" content="width=1080, height=1920">
+<title>JustinZockt Server-Overlay (TikTok)</title>
+<meta name="viewport" content="width=1080">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -17,25 +17,27 @@
    - Nach jeder Zeile steht ein Komma , – nicht löschen.
    - true = an, false = aus.
    - Text zwischen *Sternchen* wird in der Hauptfarbe (rot) geschrieben.
-   - Hochformat 1080 x 1920. Die TikTok-Bedienelemente (oben Profil,
-     unten links Kommentare, rechts Herzen/Geschenke) bleiben frei.
+   - Format: "1:1" (quadratisch 1080 x 1080), "9:16" (Hochformat
+     1080 x 1920) oder "16:9" (Querformat 1920 x 1080).
+     Auch per Link umschaltbar: ...tiktok-overlay.html?format=9:16
+     Die Browserquelle in TikTok LIVE Studio muss dieselbe Größe haben.
    ===================================================================== */
 var CONFIG = {
 
-  // Abstand des Banners von oben (Pixel). Unter ~230 verdeckt die TikTok-Profilzeile das Banner.
-  bannerAbstandOben: 250,
+  // Format: "1:1", "9:16" oder "16:9"
+  format: "1:1",
 
-  // Abstand der wechselnden Karte von oben (Pixel). Nicht über ~900, sonst kommen die Kommentare.
-  karteAbstandOben: 470,
+  // Abstand von oben (Pixel) je Format. Bei 9:16 nicht unter ~230, sonst verdeckt die TikTok-Profilzeile alles.
+  abstandOben: { "1:1": 90, "9:16": 250, "16:9": 90 },
 
   // Größe: 1 = normal, 0.9 = kleiner, 1.1 = größer
   skalierung: 1,
 
   // Sekunden, die jede Karte sichtbar ist
-  dauer: 8,
+  dauer: 4,
 
   // Sekunden Pause zwischen zwei Karten (Karte ist dann weg, Bild frei). 0 = direkt wechseln
-  pauseZwischenKarten: 2,
+  pauseZwischenKarten: 0,
 
   // Farben (Hex-Code mit #)
   farben: {
@@ -68,12 +70,11 @@ var CONFIG = {
   botschaften: [
     { an: true, label: "SERVER-IP",       text: "play.*justinzockt*.de",    unter: "Java Edition 26.3 · ältere Versionen ab 1.21.5" },
     { an: true, label: "HANDY & KONSOLE", text: "bedrock.*justinzockt*.de", unter: "Bedrock · Port 15314 · Handy, Konsole & Windows" },
-    { an: true, label: "KOSTENLOS",       text: "*Java* & *Bedrock*",       unter: "Server-IP steht in meiner Bio & in den Kommentaren" },
     { an: true, label: "SO KOMMST DU REIN", text: "Whitelist über *Discord*", unter: "Discord-Link auf justinzockt.de · Twitch-Follow nötig" },
     { an: true, label: "FEATURES",        text: "*25+* Minigames",          unter: "Survival mit Clans, Claims, Skills, Shop & Coins · Events" }
   ],
 
-  // Live-Anzeige "Spieler online" (unter dem Banner). Bei Fehler verschwindet sie einfach.
+  // Live-Anzeige "Spieler online" (ganz oben, über dem Banner). Bei Fehler verschwindet sie einfach.
   serverStatus: {
     an: true,
     url: "https://api.mcsrvstat.us/3/play.justinzockt.de",
@@ -89,9 +90,9 @@ var CONFIG = {
   :root{
     --rot:#ff1f3d; --rot-rgb:255,31,61; --rotd:#b3001b;
     --bg-rgb:14,14,18; --deck:.88; --txt:#fff; --grau:#d2d2db;
-    --dauer:8s; --skala:1; --bannerTop:250px; --karteTop:470px;
+    --dauer:4s; --skala:1; --W:1080px; --H:1080px; --oben:90px; --spalte:960px;
   }
-  html,body{margin:0;padding:0;width:1080px;height:1920px;overflow:hidden;background:transparent;}
+  html,body{margin:0;padding:0;width:var(--W);height:var(--H);overflow:hidden;background:transparent;}
   body{font-family:"Montserrat","Segoe UI",Arial,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased;}
   body.testbg-dunkel{background:linear-gradient(170deg,#1b2433,#0b0f16 60%,#1d1410);}
   body.testbg-hell{background:linear-gradient(180deg,#bfe3ff 0%,#eef7ff 50%,#ffffff 100%);}
@@ -101,12 +102,15 @@ var CONFIG = {
   /* zeigt die TikTok-UI-Zonen (nur zum Testen: ?zonen=1) */
   .zone{position:absolute;background:rgba(0,180,255,.18);border:2px dashed rgba(0,180,255,.8);box-sizing:border-box;
     font:700 24px Arial;color:#09f;display:none;align-items:flex-start;justify-content:center;padding-top:8px;z-index:9;}
-  .zonen .zone{display:flex;}
+  .zonen.f916 .zone{display:flex;}
 
-  #ov{position:absolute;left:0;top:0;width:1080px;height:1920px;transform:scale(var(--skala));transform-origin:50% 0;}
+  #ov{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform:scale(var(--skala));transform-origin:50% 0;}
+  /* Spalte: Online-Anzeige, Banner, Karte untereinander */
+  #spalte{position:absolute;top:var(--oben);left:50%;width:var(--spalte);margin-left:calc(var(--spalte) / -2);
+    display:flex;flex-direction:column;align-items:stretch;gap:24px;}
 
   /* ---------- gemeinsamer Glas-Look ---------- */
-  .glas{position:absolute;left:60px;right:60px;box-sizing:border-box;border-radius:28px;
+  .glas{position:relative;box-sizing:border-box;border-radius:28px;
     background:linear-gradient(115deg,rgba(var(--bg-rgb),var(--deck)) 0%,rgba(var(--bg-rgb),var(--deck)) 55%,rgba(42,6,14,var(--deck)) 100%);
     box-shadow:0 18px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.06);}
   .glow{position:absolute;left:-2px;top:-2px;right:-2px;bottom:-2px;border-radius:30px;pointer-events:none;
@@ -121,7 +125,7 @@ var CONFIG = {
   @keyframes shine{0%{transform:translateX(-160%) skewX(-22deg);}18%,100%{transform:translateX(460%) skewX(-22deg);}}
 
   /* ---------- Banner ---------- */
-  #banner{top:var(--bannerTop);height:160px;padding:22px 28px 22px 24px;display:flex;align-items:center;gap:26px;
+  #banner{height:160px;padding:22px 28px 22px 24px;display:flex;align-items:center;gap:26px;
     animation:vonOben 1s cubic-bezier(.16,1.25,.35,1) both;}
   @keyframes vonOben{from{opacity:0;transform:translateY(-80px) scale(.94);}to{opacity:1;transform:none;}}
   .icon{position:relative;flex:0 0 auto;width:116px;height:116px;border-radius:22px;display:flex;align-items:center;justify-content:center;
@@ -141,8 +145,9 @@ var CONFIG = {
   @keyframes wackel{0%,86%,100%{transform:rotate(0) scale(1);}89%{transform:rotate(-4deg) scale(1.08);}92%{transform:rotate(4deg) scale(1.08);}95%{transform:rotate(-2deg) scale(1.04);}}
 
   /* ---------- Status ---------- */
-  .status{position:absolute;left:0;right:0;top:calc(var(--bannerTop) + 176px);display:none;justify-content:center;}
-  .status.da{display:flex;animation:vonOben .8s cubic-bezier(.16,1.25,.35,1) both;}
+  .status{height:54px;display:flex;justify-content:center;visibility:hidden;}
+  .ohne-status .status{display:none;}
+  .status.da{visibility:visible;animation:vonOben .8s cubic-bezier(.16,1.25,.35,1) both;}
   .status .pill{display:flex;align-items:center;gap:14px;padding:11px 24px 11px 20px;border-radius:999px;font-weight:800;font-size:26px;white-space:nowrap;
     background:rgba(var(--bg-rgb),var(--deck));box-shadow:0 8px 22px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.08);}
   .led{position:relative;width:14px;height:14px;border-radius:50%;background:#2bd96b;box-shadow:0 0 10px #2bd96b;}
@@ -151,7 +156,8 @@ var CONFIG = {
   .rest{color:var(--grau);font-weight:700;}
 
   /* ---------- Karte ---------- */
-  #karte{top:var(--karteTop);padding:30px 40px 30px;opacity:0;visibility:hidden;}
+  #banner{margin-top:6px;}
+  #karte{padding:30px 40px 30px;opacity:0;visibility:hidden;}
   #karte.rein{visibility:visible;animation:karteRein .85s cubic-bezier(.16,1.3,.35,1) both;}
   #karte.raus{visibility:visible;animation:karteRaus .5s ease-in both;}
   @keyframes karteRein{from{opacity:0;transform:translateY(60px) scale(.85) rotateX(30deg);}to{opacity:1;transform:none;}}
@@ -198,7 +204,9 @@ var CONFIG = {
 <div class="zone" style="left:840px;top:1000px;width:240px;height:740px;">Herzen / Geschenke</div>
 <div class="zone" style="left:0;top:1750px;width:1080px;height:170px;">Eingabe / Buttons</div>
 
-<div id="ov">
+<div id="ov"><div id="spalte">
+  <div class="status" id="status"><div class="pill"><span class="led"></span><span id="statusText"></span></div></div>
+
   <div class="glas" id="banner">
     <div class="glow"></div>
     <div class="shine"><i></i></div>
@@ -228,8 +236,6 @@ var CONFIG = {
     <div class="badge" id="badge"></div>
   </div>
 
-  <div class="status" id="status"><div class="pill"><span class="led"></span><span id="statusText"></span></div></div>
-
   <div class="glas" id="karte">
     <div class="glow"></div>
     <div class="shine"><i></i></div>
@@ -239,7 +245,7 @@ var CONFIG = {
     <div class="sub" id="sub"></div>
     <div class="fuss"><div class="balken"><i id="balken"></i></div><div class="punkte" id="punkte"></div></div>
   </div>
-</div>
+</div></div>
 
 <script>
 (function(){
@@ -251,7 +257,7 @@ var CONFIG = {
   function hex(v){ if(!v) return null; v = v.replace(/^#/,""); return /^[0-9a-fA-F]{6}$/.test(v) ? "#"+v : null; }
   function rgb(h){ h=h.replace("#",""); return parseInt(h.substr(0,2),16)+","+parseInt(h.substr(2,2),16)+","+parseInt(h.substr(4,2),16); }
 
-  var dauer = Math.max(3, parseFloat(P.dauer) || C.dauer || 8);
+  var dauer = Math.max(2, parseFloat(P.dauer) || C.dauer || 4);
   var pause = P.pause!=null ? (parseFloat(P.pause)||0) : (C.pauseZwischenKarten||0);
   var farbe = hex(P.farbe) || C.farben.haupt, farbe2 = hex(P.farbe2) || C.farben.dunkel;
   var skala = parseFloat(P.skala) || C.skalierung || 1;
@@ -260,10 +266,17 @@ var CONFIG = {
   R.setProperty("--rot", farbe); R.setProperty("--rot-rgb", rgb(farbe)); R.setProperty("--rotd", farbe2);
   R.setProperty("--bg-rgb", rgb(C.farben.hintergrund)); R.setProperty("--txt", C.farben.text); R.setProperty("--grau", C.farben.textGrau);
   R.setProperty("--deck", isNaN(deck)?.88:deck); R.setProperty("--dauer", dauer+"s"); R.setProperty("--skala", skala);
-  R.setProperty("--bannerTop", (parseFloat(P.oben) || C.bannerAbstandOben) + "px");
-  R.setProperty("--karteTop", (parseFloat(P.karte) || C.karteAbstandOben) + "px");
+  // Format: 1:1 / 9:16 / 16:9 (Link: ?format=9:16, 9x16, 916, hoch, quer, quadrat)
+  var fm = String(P.format || C.format || "1:1").toLowerCase().replace(/\s/g,"").replace(/[x\/_-]/g,":");
+  if(fm==="916"||fm==="hoch"||fm==="hochformat") fm="9:16";
+  if(fm==="169"||fm==="quer"||fm==="querformat") fm="16:9";
+  if(fm!=="9:16" && fm!=="16:9") fm="1:1";
+  var masse = { "1:1":[1080,1080,960], "9:16":[1080,1920,960], "16:9":[1920,1080,1180] }[fm];
+  var obenStd = (C.abstandOben && C.abstandOben[fm] != null) ? C.abstandOben[fm] : ({ "1:1":90, "9:16":250, "16:9":90 }[fm]);
+  R.setProperty("--W", masse[0]+"px"); R.setProperty("--H", masse[1]+"px"); R.setProperty("--spalte", masse[2]+"px");
+  R.setProperty("--oben", (P.oben!=null && !isNaN(parseFloat(P.oben)) ? parseFloat(P.oben) : obenStd) + "px");
 
-  var cls = [];
+  var cls = ["f" + fm.replace(":","")];
   if(P.testbg) cls.push("testbg-"+P.testbg);
   if(P.zonen && an(P.zonen)) cls.push("zonen");
   if(!C.zeigePartikel || (P.partikel!=null && !an(P.partikel))) cls.push("ohne-funken");
@@ -351,6 +364,7 @@ var CONFIG = {
 
   // ---------- Server-Status ----------
   var S = C.serverStatus || {}, st = document.getElementById("status"), stt = document.getElementById("statusText");
+  if(!S.an || (P.status!=null && !an(P.status) && P.statusdemo==null)) document.body.classList.add("ohne-status");
   function setze(n, max){
     if(n == null || (!S.zeigeBeiNull && n === 0)){ st.classList.remove("da"); return; }
     var t = (S.text || "{n} Spieler online").replace("{max}", max!=null?max:"?").split("{n}");
