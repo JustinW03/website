@@ -47,7 +47,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 75 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 81 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -55,22 +55,28 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">75 von 75</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">81 von 81</span>
       </div>
+      <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
       <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt bei <code>/spawn</code> <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
         <h2 id="g-allgemein">Allgemein &amp; Infos</h2>
-        <div class="cmd" data-keys="hilfe help"><div><code>/justin</code></div><p>Übersicht aller Befehle im Spiel.</p></div>
-        <div class="cmd" data-keys="stream twitch"><div><code>/justin live</code></div><p>Ist Justin gerade live? Mit klickbarem Link.</p></div>
-        <div class="cmd" data-keys="links"><div><code>/justin socials</code></div><p>Alle Kanäle von Justin.</p></div>
-        <div class="cmd"><div><code>/justin scoreboard</code><span class="alias">auch: /justin sb</span></div><p>Scoreboard rechts an- oder ausschalten.</p></div>
+        <div class="cmd" data-keys="hilfe help tab"><div><code>/justin</code><span class="alias">auch: /hilfe, /befehle</span></div><p>Übersicht aller Befehle im Spiel. Mit der Tab-Taste siehst du alle Befehle, die du nutzen darfst.</p></div>
+        <div class="cmd" data-keys="stream twitch"><div><code>/justin live</code><span class="alias">auch: /live</span></div><p>Ist Justin gerade live? Mit klickbarem Link.</p></div>
+        <div class="cmd" data-keys="links"><div><code>/justin socials</code><span class="alias">auch: /socials</span></div><p>Alle Kanäle von Justin.</p></div>
+        <div class="cmd" data-keys="termine event"><div><code>/justin events</code><span class="alias">auch: /events</span></div><p>Laufende und geplante Events.</p></div>
+        <div class="cmd"><div><code>/justin scoreboard</code><span class="alias">auch: /justin sb, /sb</span></div><p>Scoreboard rechts an- oder ausschalten.</p></div>
+        <div class="cmd" data-keys="bett nacht"><div><code>/justin schlafen</code><span class="alias">auch: /schlafen</span></div><p>Zeigt, wie viele Spieler schlafen müssen, damit es Tag wird.</p></div>
         <div class="cmd"><div><code>/discord</code></div><p>Link zum Discord.</p></div>
         <div class="cmd"><div><code>/twitch</code></div><p>Link zu Twitch.</p></div>
         <div class="cmd"><div><code>/tiktok</code></div><p>Link zu TikTok.</p></div>
         <div class="cmd"><div><code>/youtube</code></div><p>Link zu YouTube.</p></div>
         <div class="cmd" data-keys="homepage seite internet"><div><code>/web</code><span class="alias">auch: /website, /webseite</span></div><p>Link zur Webseite www.justinzockt.de im Chat.</p></div>
         <div class="cmd" data-keys="voten abstimmen belohnung serverliste"><div><code>/vote</code></div><p>Link zur Serverliste: Vote für den Server und bekomm eine kleine Belohnung (einmal alle 24 Stunden).</p></div>
+        <div class="cmd" data-keys="zeigen gegenstand chat"><div><code>/item</code><span class="alias">auch: /showitem, /zeigeitem</span></div><p>Das Item in deiner Hand im Chat zeigen – mit Tooltip zum Drüberfahren (kurze Abklingzeit).</p></div>
+        <div class="cmd" data-keys="abwesend pause"><div><code>/afk</code></div><p>Sofort AFK gehen – bis du dich wieder bewegst.</p></div>
+        <div class="cmd" data-keys="zweithand bedrock tauschen"><div><code>/offhand</code><span class="alias">auch: /oh, /zweithand</span></div><p>Item in der Hand mit der Zweithand tauschen (wie die Taste F – praktisch auf Bedrock).</p></div>
         <div class="cmd" data-keys="partikel effekte spawn speed sprung"><div><code>/spawneffekte &lt;1|2|aus&gt;</code></div><p>Speed und Sprungkraft am Spawn (Overworld + Nether): Stufe 1, Stufe 2 oder aus. Standardmäßig aus, geht nur am Spawn.</p></div>
       </section>
       <section class="cmd-group" id="chat" aria-labelledby="g-chat">
@@ -99,11 +105,12 @@
       </section>
       <section class="cmd-group" id="claims" aria-labelledby="g-claims">
         <h2 id="g-claims">Claims &amp; Truhenschutz</h2>
-        <div class="cmd" data-keys="grundstück schutz chunk"><div><code>/claim</code></div><p>Den Chunk kaufen, in dem du stehst (1.000 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt). Maximal 30 Chunks, Sub 50, Premium 70. Die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
+        <div class="cmd" data-keys="grundstück schutz chunk kaufen"><div><code>/claim chunk</code></div><p>Den Chunk kaufen, in dem du stehst (2.500 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt). Maximal 30 Chunks, Sub 50, Premium 70. Die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
+        <div class="cmd" data-keys="hilfe"><div><code>/claim</code></div><p>Zeigt die Hilfe zu Claims und Truhen (kauft nichts).</p></div>
         <div class="cmd"><div><code>/claim info</code></div><p>Wem gehört dieser Chunk?</p></div>
         <div class="cmd"><div><code>/claim list</code></div><p>Alle deine Chunks mit Koordinaten.</p></div>
         <div class="cmd" data-keys="grenzen sehen karte"><div><code>/claim show</code></div><p>Zeigt 10 Sekunden lang alle Claims in deiner Nähe als leuchtenden Rand (grün = deins, gelb = vertraut, rot = fremd, weiß = frei). Beim Betreten eines Claims leuchtet der Rand automatisch kurz auf und oben steht, wem er gehört. Auf der Karte sind alle Claims farbig.</p></div>
-        <div class="cmd"><div><code>/claim help</code></div><p>Kurzhilfe zu Claims.</p></div>
+        <div class="cmd"><div><code>/claim help</code></div><p>Kurzhilfe zu Claims (wie /claim).</p></div>
         <div class="cmd" data-keys="menü"><div><code>/claims</code></div><p>Menü mit allen deinen Claims und Sicherungen – direkt löschen per Doppelklick.</p></div>
         <div class="cmd"><div><code>/unclaim</code></div><p>Chunk freigeben, 50 % der Coins zurück.</p></div>
         <div class="cmd"><div><code>/unclaim all</code></div><p>Alle Chunks freigeben.</p></div>
@@ -115,7 +122,7 @@
       </section>
       <section class="cmd-group" id="skills" aria-labelledby="g-skills">
         <h2 id="g-skills">Skills</h2>
-        <div class="cmd" data-keys="level titel"><div><code>/justin skill</code><span class="alias">auch: /justin skills</span></div><p>Skill-Menü: Level, Belohnungen, Titel wählen.</p></div>
+        <div class="cmd" data-keys="level titel"><div><code>/justin skill</code><span class="alias">auch: /justin skills, /skill, /skills</span></div><p>Skill-Menü: Level, Belohnungen, Titel wählen.</p></div>
         <div class="cmd" data-keys="bergbau holz graben landwirt angeln kampf"><div><code>/justin skill &lt;Skill&gt;</code></div><p>Direkt einen Skill öffnen: bergbau, holz, graben, landwirt, angeln, kampf.</p></div>
         <div class="cmd" data-keys="rangliste"><div><code>/justin skill top</code></div><p>Rangliste nach Skill-Gesamtlevel (Top 10).</p></div>
         <div class="cmd" data-keys="rangliste"><div><code>/justin skill top &lt;Skill&gt;</code></div><p>Rangliste eines Skills (Top 10).</p></div>
@@ -165,7 +172,7 @@
       </section>
       <section class="cmd-group" id="events" aria-labelledby="g-events">
         <h2 id="g-events">Events</h2>
-        <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code></div><p>Adventskalender öffnen (nur vom 1. bis 24. Dezember).</p></div>
+        <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code><span class="alias">auch: /advent</span></div><p>Adventskalender öffnen (nur vom 1. bis 24. Dezember).</p></div>
       </section>
     </div>
   </main>

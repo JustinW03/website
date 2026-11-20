@@ -460,6 +460,25 @@
         if (Array.isArray(d.votes_30_tage)) voteSubs.push(['Letzte 30 Tage', function () { return table(d.votes_30_tage, 'Votes', num); }]);
         lists.push(['🗳 Votes', null, null, voteSubs]);
       }
+      // Minecraft-Statistiken (nur, wenn der Server sie schon liefert)
+      if (d.java && typeof d.java === 'object') {
+        var J = d.java;
+        var herzen = function (v) { return num(v) + ' ❤'; };
+        var strecke = function (m) { return m >= 1000 ? (m / 1000).toFixed(1).replace('.', ',') + ' km' : num(m) + ' m'; };
+        var javaHint = '<p class="muted small">Minecraft-Statistiken der freigeschalteten Spieler (ohne Minigame-Welt bei eigenen Zählern), aktualisiert alle paar Minuten und beim Verlassen des Servers.</p>';
+        var javaSubs = [
+          ['XP gesammelt', 'xp', 'XP', num], ['Nächte', 'naechte', 'Nächte durchgeschlafen', num],
+          ['Abgebaut', 'abgebaut', 'Blöcke abgebaut', num], ['Platziert', 'platziert', 'Blöcke platziert', num],
+          ['Schaden ausgeteilt', 'schaden_ausgeteilt', 'Herzen', herzen], ['Schaden erhalten', 'schaden_erhalten', 'Herzen', herzen],
+          ['Spieler-Kills', 'spieler_kills', 'Kills', num], ['Tode durch Spieler', 'spieler_tode', 'Tode', num],
+          ['Mob-Kills', 'mob_kills', 'Kills', num], ['Sprünge', 'spruenge', 'Sprünge', num],
+          ['Elytra-Flug', 'elytra', 'Strecke', strecke], ['Seltene Bücher', 'buecher', 'Bücher', num],
+          ['Elytras gefunden', 'elytras', 'Elytras', num], ['Coins gefunden', 'coins', 'Justin Coins', jc]
+        ].filter(function (x) { return Array.isArray(J[x[1]]); }).map(function (x) {
+          return [x[0], function () { return table(J[x[1]], x[2], x[3]) + javaHint; }];
+        });
+        if (javaSubs.length) lists.push(['☕ Java', null, null, javaSubs]);
+      }
       lists.push(['💀 Tode', function () { return table(d.tode, 'Tode', num); }]);
 
       var tabs = doc.getElementById('rank-tabs');
@@ -517,7 +536,12 @@
       };
       renderStand();
       setInterval(renderStand, 30000);
-    }).catch(function () {
+    }).catch(function (e) {
+      if (window.console && console.error) console.error('Ranglisten:', e);
+      if (location.protocol === 'file:') {
+        standEl.textContent = 'Diese Seite ist als Datei vom PC geöffnet – die Ranglisten laden nur online auf www.justinzockt.de/ranglisten.html.';
+        return;
+      }
       standEl.textContent = 'Die Ranglisten sind gerade nicht verfügbar. Schau später nochmal vorbei.';
     });
   }

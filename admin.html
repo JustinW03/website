@@ -76,6 +76,7 @@
 
       <h2 id="befehle">Schnellreferenz: Team-, Admin- und Owner-Befehle</h2>
       <p class="muted">Dauer-Angaben: <code>30m</code>, <code>2h</code>, <code>1d</code>, <code>1w</code> oder <code>perm</code> (nur Mod/Admin). Admins haben alle Team-Befehle, der Owner hat alles.</p>
+      <p class="muted">Jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/mute</code>, <code>/ac</code>, <code>/vanish</code>, <code>/wo</code> – und jeder normale Befehl auch als <code>/justin &lt;befehl&gt;</code>. Wo der Name schon Minecraft oder Paper gehört, mit j davor: <code>/jban</code>, <code>/jkick</code>, <code>/jtp</code>, <code>/jreset</code>, <code>/jreload</code> (außerdem <code>/wl</code> = whitelist, <code>/sb</code> = scoreboard, <code>/hilfe</code> = help). Mit <kbd>Tab</kbd> im Chat siehst du nur die Befehle, die du nutzen darfst.</p>
       <h3>Team (Sup, Mod)</h3>
       <div class="table-wrap" role="region" aria-label="Team (Sup, Mod)" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
 <tr><td><code>/justin kick &lt;Name&gt; [Grund]</code></td><td>Spieler kicken.</td></tr>
@@ -89,6 +90,9 @@
 <tr><td><code>/justin alts &lt;Name&gt;</code></td><td>Zweitaccounts (gleiche IP) ansehen.</td></tr>
 <tr><td><code>/justin tp &lt;x&gt; &lt;z&gt; [nether|end]</code></td><td>Zu Koordinaten teleportieren (z. B. von der Karte).</td></tr>
 <tr><td><code>/justin wp set|del|list|tp &lt;Name&gt;</code></td><td>Eigene Wegpunkte.</td></tr>
+<tr><td><code>/inv &lt;Name&gt; [ec]</code></td><td>Survival-Inventar (mit ec: Endertruhe) eines Spielers ansehen – live, auch offline und in der Minigame-Welt (Mod; ändern: Admin).</td></tr>
+<tr><td><code>/ec &lt;Name&gt;</code></td><td>Survival-Endertruhe eines Spielers ansehen (Mod).</td></tr>
+<tr><td><code>/rollback &lt;Name&gt;</code></td><td>Inventar-Sicherungen eines Spielers (Tod, Join, Quit, Weltwechsel …) ansehen (Sup); wiederherstellen, Items herausnehmen, zum Ort teleportieren (Mod).</td></tr>
 <tr><td><code>/justin minigames sperren &lt;Name&gt; [1h|3d|perm] [Grund]</code></td><td>Spieler für die Minigame-Welt sperren (Strafe). Aufheben: /justin minigames entsperren &lt;Name&gt;, Liste: /justin minigames gesperrt.</td></tr>
 <tr><td><code>[✖] vor Chatnachrichten</code></td><td>Nachricht für alle löschen (nur das Team sieht den Knopf).</td></tr>
 </tbody></table></div>
@@ -111,7 +115,15 @@
 <tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten (Bau-Team, ohne Inventar-Tausch im Kreativmodus); für Spieler öffnen/sperren.</td></tr>
 <tr><td><code>/justin reload</code></td><td>Konfiguration neu laden.</td></tr>
 <tr><td><code>Wartungsmodus</code></td><td>Eigener Wartungsmodus: nur das Team kann joinen, die Serverliste zeigt „Wartung“ (Befehl siehe /justin im Spiel).</td></tr>
+<tr><td><code>/rollback &lt;Name&gt; sichern</code></td><td>Von Hand eine Inventar-Sicherung anlegen.</td></tr>
+<tr><td><code>/clearinv &lt;Name&gt; | /clearender &lt;Name&gt;</code></td><td>Survival-Inventar bzw. Endertruhe leeren (vorher automatisch gesichert).</td></tr>
+<tr><td><code>/searchinv &lt;Item&gt; [Anzahl] | /searchender &lt;Item&gt; [Anzahl]</code></td><td>Online-Spieler mit einem bestimmten Item finden (Inventar / Endertruhe).</td></tr>
+<tr><td><code>/searchenchant &lt;Verzauberung&gt; [Stufe]</code></td><td>Online-Spieler mit einer Verzauberung finden.</td></tr>
+<tr><td><code>/searchcontainer &lt;Item&gt; [Chunk-Radius]</code></td><td>Truhen und andere Behälter mit einem Item in der Nähe finden.</td></tr>
+<tr><td><code>/silentcontainer [on|off] | /anycontainer [on|off]</code></td><td>Truhen leise öffnen (ohne Animation/Geräusch) bzw. blockierte Truhen öffnen.</td></tr>
 <tr><td><code>/claims &lt;Name&gt;</code></td><td>Claims und Sicherungen eines Spielers (Rechtsklick = Teleport).</td></tr>
+<tr><td><code>/claim list &lt;Name&gt;</code></td><td>Alle Claims eines Spielers mit Welt und Koordinaten – Klick = Teleport.</td></tr>
+<tr><td><code>/claim show &lt;Name&gt;</code></td><td>Grenzen der Claims eines Spielers in deiner Welt anzeigen (orange). /claim info zeigt bei fremden Claims Besitzer, Datum und Freunde.</td></tr>
 <tr><td><code>/clan admin aufloesen &lt;TAG&gt;</code></td><td>Clan löschen.</td></tr>
 <tr><td><code>/clan admin kick &lt;TAG&gt; &lt;Spieler&gt;</code></td><td>Spieler aus einem Clan entfernen.</td></tr>
 <tr><td><code>/shop admin entfernen &lt;AngebotsID&gt;</code></td><td>Shop-Angebot entfernen (IDs stehen für Admins in der Lore). Items gehen in die Rücklage des Verkäufers.</td></tr>
@@ -124,7 +136,7 @@
 <tr><td><code>/justin portal nether|end &lt;TT.MM.JJJJ&gt; &lt;HH:MM&gt; | jetzt | zu</code></td><td>Öffnungs-Zeitpunkt für Nether/End setzen (öffnet automatisch, Countdown unter dem Portal).</td></tr>
 <tr><td><code>/justin farbe &lt;#rrggbb&gt; [#dunkel] | reset</code></td><td>Server-Hauptfarbe ändern (Chat, Menüs, Scoreboard, Serverliste, Webseite).</td></tr>
 <tr><td><code>/justin schlafen &lt;prozent&gt;% | &lt;anzahl&gt;</code></td><td>Wie viele Spieler schlafen müssen (Standard 25 %).</td></tr>
-<tr><td><code>/justin claims [limit &lt;wert&gt; | limit &lt;Name&gt; &lt;wert|reset&gt; | set &lt;key&gt; &lt;wert&gt;]</code></td><td>Claim-Limits, Preis, Erstattung, Truhen-Limit usw. ändern.</td></tr>
+<tr><td><code>/justin claims [limit &lt;wert&gt; | limit &lt;Name&gt; &lt;wert|reset&gt; | set &lt;key&gt; &lt;wert&gt;]</code></td><td>Claim-Limits, Preis, Erstattung, Truhen-Limits je Rang usw. ändern.</td></tr>
 <tr><td><code>/tpr [overworld|nether|end]</code></td><td>Zufälliger, sicherer Ort innerhalb der Weltgrenze.</td></tr>
 <tr><td><code>Dashboard → Karte: Rechtsklick</code></td><td>Hierhin teleportieren, Wegpunkt setzen, /tp kopieren. Unten rechts: Online-Spieler mit TP. Ebenen: Claims, Wegpunkte, Orte, Offline-Spieler, Homes, Tode (7 Tage). Oben in der Mitte: Knöpfe Oberwelt, Nether, End, Minigames.</td></tr>
 <tr><td><code>/justin eco summe</code></td><td>Überblick: Coins im Umlauf, Zahlungen.</td></tr>
@@ -139,6 +151,8 @@
 <tr><td><code>/justin npc events|minigames|shop|skills</code></td><td>NPC mit schwebendem Schild an deine Position setzen.</td></tr>
 <tr><td><code>/justin npc schild &lt;typ&gt;</code></td><td>Nur das Schild eines NPCs an deine Position versetzen.</td></tr>
 <tr><td><code>/justin npc entfernen &lt;typ&gt;</code></td><td>NPC + Schild entfernen.</td></tr>
+<tr><td><code>/minigames reset &lt;Name|ich|alle&gt; [Spiel]</code></td><td>Minigame-Spielstände zurücksetzen (bei „alle“ mit Bestätigung).</td></tr>
+<tr><td><code>/justin webpush [jetzt]</code></td><td>Ranglisten und Server-Infos sofort auf die Website laden / Status anzeigen.</td></tr>
 <tr><td><code>/minigames bauen</code></td><td>Minigame-Welt (Spawn, Allee, alle Spielbereiche) neu bauen. Laufende Räume werden geschlossen.</td></tr>
 <tr><td><code>/clan spy</code></td><td>Clan-Chats und /msg mitlesen an/aus.</td></tr>
 <tr><td><code>/justin skill set &lt;Name&gt; &lt;Skill|alle&gt; &lt;level|xp&gt; &lt;Wert&gt;</code></td><td>Skill-Level oder XP setzen.</td></tr>
@@ -156,9 +170,10 @@
 <tr><td><code>/justin update [check|now]</code></td><td>Plugin-Updates (täglich automatisch).</td></tr>
 </tbody></table></div>
 
+      <p class="muted">Inventare und Sicherungen laufen über die eigenen Befehle <code>/inv</code>, <code>/ec &lt;Name&gt;</code> und <code>/rollback</code> (siehe oben).</p>
+
       <h3>Weitere Werkzeuge (Plugins)</h3>
       <div class="table-wrap" role="region" aria-label="Plugin-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
-<tr><td><code>/openinv &lt;Name&gt;</code> / <code>/openender &lt;Name&gt;</code></td><td>Inventar und Endertruhe ansehen/ändern (auch offline).</td></tr>
 <tr><td><code>/pr i</code></td><td>Prism-Inspektor an/aus, dann Block anklicken.</td></tr>
 <tr><td><code>/pr l p:Name since:1d</code></td><td>Aktionen eines Spielers nachsehen.</td></tr>
 <tr><td><code>/pr rollback p:Name since:1d r:50</code></td><td>Griefing zurücksetzen.</td></tr>

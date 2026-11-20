@@ -60,7 +60,7 @@
           <ul>
             <li>AFK nach <span data-info="afk_sekunden.spieler" data-fmt="afk">5 Min.</span> ohne Eingabe</li>
             <li>Skills, Clans, Shop, alle Minigames</li>
-            <li>Bis zu 30 Claims (Chunks)</li>
+            <li>Bis zu 30 Claims (Chunks), 128 Truhen-Sicherungen</li>
             <li><code>/spawn</code> (5 Min. Abklingzeit), <code>/ignore</code> – kein Home</li>
           </ul>
         </article>
@@ -75,6 +75,7 @@
             <li>1 Home (<code>/sethome</code>, <code>/home</code>)</li>
             <li>Keine Abklingzeit bei <code>/spawn</code> und <code>/home</code></li>
             <li>Bis zu 50 Claims, 5 % Rabatt pro Chunk</li>
+            <li>192 Truhen-Sicherungen</li>
             <li>Eigene Clan-Farbe (als Clan-Gründer)</li>
             <li><code>/ec</code> – mobile Endertruhe</li>
             <li><code>/craft</code> – mobile Werkbank</li>
@@ -92,6 +93,7 @@
             <li>1 Home (<code>/sethome</code>, <code>/home</code>)</li>
             <li>Keine Abklingzeit bei <code>/spawn</code> und <code>/home</code></li>
             <li>Bis zu 70 Claims, 10 % Rabatt pro Chunk</li>
+            <li>256 Truhen-Sicherungen</li>
             <li>Eigene Clan-Farbe (als Clan-Gründer)</li>
             <li><code>/ec</code> – mobile Endertruhe</li>
             <li><code>/craft</code> – mobile Werkbank</li>
@@ -109,6 +111,7 @@
 <tr><th scope="row">Abklingzeit <code>/spawn</code> / <code>/home</code></th><td>5 Min.</td><td>keine</td><td>keine</td></tr>
 <tr><th scope="row">Claims (Chunks) höchstens</th><td><span data-info="claims.max_chunks" data-fmt="num">30</span></td><td><span data-info="claims.max_chunks_sub" data-fmt="num">50</span></td><td><span data-info="claims.max_chunks_premium" data-fmt="num">70</span></td></tr>
 <tr><th scope="row">Rabatt pro Chunk</th><td>–</td><td><span data-info="claims.rabatt_sub_prozent" data-fmt="prozent">5 %</span></td><td><span data-info="claims.rabatt_premium_prozent" data-fmt="prozent">10 %</span></td></tr>
+<tr><th scope="row">Truhen-Sicherungen höchstens</th><td><span data-info="claims.truhen_spieler" data-fmt="num">128</span></td><td><span data-info="claims.truhen_sub" data-fmt="num">192</span></td><td><span data-info="claims.truhen_premium" data-fmt="num">256</span></td></tr>
 <tr><th scope="row">Clan-Farbe ändern (als Gründer)</th><td>– (weiß)</td><td>✅</td><td>✅</td></tr>
 <tr><th scope="row">Mobile Endertruhe <code>/ec</code></th><td>–</td><td>✅</td><td>✅</td></tr>
 <tr><th scope="row">Mobile Werkbank <code>/craft</code></th><td>–</td><td>✅</td><td>✅</td></tr>
@@ -120,11 +123,11 @@
 
       <h2 id="claims">Claims: Preise und Grenzen</h2>
       <div class="table-wrap" role="region" aria-label="Claim-Preise" tabindex="0"><table><thead><tr><th scope="col">Welt</th><th scope="col">Preis pro Chunk</th><th scope="col">Sub (−5 %)</th><th scope="col">Premium (−10 %)</th></tr></thead><tbody>
-<tr><th scope="row">Oberwelt</th><td>1.000 JC</td><td>950 JC</td><td>900 JC</td></tr>
-<tr><th scope="row">Nether (×2)</th><td>2.000 JC</td><td>1.900 JC</td><td>1.800 JC</td></tr>
-<tr><th scope="row">End (×3)</th><td>3.000 JC</td><td>2.850 JC</td><td>2.700 JC</td></tr>
+<tr><th scope="row">Oberwelt</th><td>2.500 JC</td><td>2.375 JC</td><td>2.250 JC</td></tr>
+<tr><th scope="row">Nether (×2)</th><td>5.000 JC</td><td>4.750 JC</td><td>4.500 JC</td></tr>
+<tr><th scope="row">End (×3)</th><td>7.500 JC</td><td>7.125 JC</td><td>6.750 JC</td></tr>
 </tbody></table></div>
-      <p class="muted small">Grundpreis <span data-info="claims.preis" data-fmt="num">1.000</span> JC (Stand der Tabelle: Standardwerte). Die <strong>End-Mitte</strong> – 1.000 Blöcke um 0/0 rund um die Drachen-Insel – kann niemand claimen.</p>
+      <p class="muted small">Grundpreis <span data-info="claims.preis" data-fmt="num">2.500</span> JC (Stand der Tabelle: Standardwerte). Kaufen mit <code>/claim chunk</code> – <code>/claim</code> allein zeigt nur die Hilfe. Die <strong>End-Mitte</strong> – 1.000 Blöcke um 0/0 rund um die Drachen-Insel – kann niemand claimen.</p>
 
       <h2 id="neu">Außerdem neu in Version 1.9.0</h2>
       <div class="grid">
