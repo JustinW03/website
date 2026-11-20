@@ -1,7 +1,9 @@
-# Holt alle 30 Minuten die Ranglisten vom Minecraft-Server und legt sie als daten/ranglisten.json ab.
+# Holt alle 30 Minuten die Ranglisten und Server-Infos vom Minecraft-Server
+# und legt sie als daten/ranglisten.json und daten/info.json ab.
 # Einmalig einrichten: GitHub -> Settings -> Secrets and variables -> Actions -> "New repository secret"
 #   Name:  SERVER_API_URL
 #   Wert:  deine Dashboard-Adresse + /api/ranglisten.json   (steht in README.md, Abschnitt "Ranglisten")
+# Die Adresse fuer info.json wird daraus abgeleitet (ranglisten.json -> info.json), ein zweites Secret ist nicht noetig.
 name: Ranglisten aktualisieren
 on:
   schedule:
@@ -9,26 +11,51 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+# nie zwei Laeufe gleichzeitig (sonst kollidieren die Commits)
+concurrency:
+  group: ranglisten
+  cancel-in-progress: false
 jobs:
   holen:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Ranglisten vom Server holen
+      - name: Daten vom Server holen
         env:
           URL: ${{ secrets.SERVER_API_URL }}
         run: |
           mkdir -p daten
-          if curl -fsS --max-time 20 "$URL" -o neu.json && python3 -c "import json;d=json.load(open('neu.json'));assert 'coins' in d"; then
+          INFO_URL="${URL%ranglisten.json}info.json"
+          echo "::add-mask::$INFO_URL"
+          # -s ohne -S: keine Fehlermeldungen mit Server-Adresse im Log
+          if curl -fs --max-time 20 "$URL" -o neu.json && python3 -c "import json;d=json.load(open('neu.json'));assert 'coins' in d"; then
             mv neu.json daten/ranglisten.json
           else
-            echo "Server nicht erreichbar - alte Ranglisten bleiben stehen."
+            echo "Ranglisten: Server nicht erreichbar - alte Datei bleibt stehen."
             rm -f neu.json
+          fi
+          if curl -fs --max-time 20 "$INFO_URL" -o info-neu.json && python3 -c "import json;d=json.load(open('info-neu.json'));assert 'theme' in d and 'stand' in d"; then
+            mv info-neu.json daten/info.json
+          else
+            echo "Server-Infos: nicht erreichbar - alte Datei bleibt stehen."
+            rm -f info-neu.json
           fi
       - name: Speichern
         run: |
           git config user.name "Ranglisten-Bot"
           git config user.email "actions@users.noreply.github.com"
           git add daten/ranglisten.json
-          git diff --cached --quiet || git commit -m "Ranglisten aktualisiert"
-          git push
+          [ -f daten/info.json ] && git add daten/info.json
+          # Commit auch dann, wenn sich nur info.json geaendert hat
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen."
+            exit 0
+          fi
+          git commit -m "Ranglisten und Server-Infos aktualisiert"
+          # Falls Justin in der Zwischenzeit etwas hochgeladen hat: erst holen, dann pushen (3 Versuche)
+          for i in 1 2 3; do
+            git pull --rebase --autostash -q && git push -q && exit 0
+            sleep 5
+          done
+          echo "Push fehlgeschlagen."
+          exit 1
