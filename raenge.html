@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html" aria-current="page">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -51,6 +48,7 @@
       </div>
     </div>
     <div class="wrap">
+      <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#t-spieler">🧑 Die Ränge</a><a href="#vergleich">📊 Im Vergleich</a><a href="#claims">🗺️ Claims</a><a href="#neu">✨ Neu in 1.9.0</a><a href="#rang-bekommen">🎟️ So bekommst du den Rang</a><a href="#premium-kaufen">👑 Premium kaufen</a></nav>
       <div class="tiers">
         <article class="tier" aria-labelledby="t-spieler">
           <span class="tier-ico" aria-hidden="true">🧑</span>
@@ -108,10 +106,11 @@
             <li>10 % höhere Chance auf seltene Funde (Bücher, Coins)</li>
             <li>Premium-Rang in Tablist, Chat und Scoreboard</li>
           </ul>
+          <a class="btn btn-gold" href="premium.html"><span aria-hidden="true">👑</span> Premium holen – ab 9,99 €</a>
         </article>
       </div>
 
-      <h2>Im Vergleich</h2>
+      <h2 id="vergleich">Im Vergleich</h2>
       <div class="table-wrap" role="region" aria-label="Vergleich der Ränge" tabindex="0"><table><thead><tr><th scope="col">Vorteil</th><th scope="col">Spieler</th><th scope="col">Sub</th><th scope="col">Premium</th></tr></thead><tbody>
 <tr><th scope="row">Justin Coins pro aktiver Stunde</th><td><span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span></td><td><span data-info="coins_pro_stunde.sub" data-fmt="num">600</span></td><td><span data-info="coins_pro_stunde.premium" data-fmt="num">750</span></td></tr>
 <tr><th scope="row">AFK nach (ohne Eingabe)</th><td><span data-info="afk_sekunden.spieler" data-fmt="afk">5 Min.</span></td><td><span data-info="afk_sekunden.sub" data-fmt="afk">6 Min.</span></td><td><span data-info="afk_sekunden.premium" data-fmt="afk">7:30 Min.</span></td></tr>
@@ -154,21 +153,21 @@
         <div class="card"><span class="icon" aria-hidden="true">📱</span><h3>Bedrock</h3><p>Auch für Bedrock (Handy, Konsole, Windows) – <a href="beitreten.html#bedrock">so geht’s</a>.</p></div>
       </div>
 
-      <h2>So bekommst du den Rang</h2>
+      <h2 id="rang-bekommen">So bekommst du den Rang</h2>
       <div class="grid-2">
         <div class="card"><span class="icon" aria-hidden="true">💜</span><h3>Sub</h3><p>Abonniere JustinZockt03 auf Twitch. Weil dein Twitch-Account beim Freischalten verbunden wurde, bekommst du den Sub-Rang <strong>automatisch</strong> – und verlierst ihn, wenn das Abo endet.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">👑</span><h3>Premium</h3><p>Premium kannst du im <a href="#premium-kaufen">Premium-Shop</a> kaufen. Im Spiel zeigt dir <code>/premium</code> deinen Status und den Link. Läuft die Zeit ab, enden Rang, Vorteile und Discord-Rolle automatisch.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">👑</span><h3>Premium</h3><p>Premium kannst du online im <a href="premium.html">Premium-Shop</a> kaufen. Im Spiel zeigt dir <code>/premium</code> deinen Status und den Link, <code>/kaufen</code> öffnet direkt den Shop-Link. Läuft die Zeit ab, enden Rang, Vorteile und Discord-Rolle automatisch. Das Team hat Premium <strong>nicht</strong> automatisch – Premium ist ein eigener Spieler-Rang.</p></div>
       </div>
 
       <h2 id="premium-kaufen">Premium kaufen</h2>
-      <p>Einführungspreise – Premium läuft für die gewählte Zeit und verlängert sich nicht von selbst, außer du wählst im Shop ausdrücklich ein Abo.</p>
-      <div class="grid-3">
-        <div class="card"><span class="icon" aria-hidden="true">👑</span><h3>1 Monat</h3><p class="price">9,99 €</p><p class="muted">monatlich</p></div><div class="card"><span class="icon" aria-hidden="true">👑</span><h3>6 Monate</h3><p class="price">49,99 €</p><p class="muted">= 8,33 € pro Monat · <strong>17 % günstiger</strong> als monatlich</p></div><div class="card"><span class="icon" aria-hidden="true">👑</span><h3>12 Monate</h3><p class="price">79,99 €</p><p class="muted">= 6,67 € pro Monat · <strong>33 % günstiger</strong> als monatlich</p></div>
+      <div class="premium-band">
+        <div>
+          <p><strong>Premium gibt es direkt hier auf der Website</strong> im Premium-Shop. Einführungspreise – Premium läuft für die gewählte Zeit und verlängert sich nicht von selbst, außer du wählst im Shop ausdrücklich ein Abo.</p>
+          <p class="muted small">Ablauf, Bezahlung über Tebex, Mehrwertsteuer und Rückbuchungen: alles auf der <a href="premium.html#ablauf">Premium-Seite</a>.</p>
+          <div class="btn-row"><a class="btn btn-gold" href="premium.html"><span aria-hidden="true">👑</span> Zur Premium-Seite</a><a href="https://justinzocktcommunity.tebex.store/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Direkt zum Shop<span class="sr-only"> (öffnet in neuem Tab)</span></a></div>
+        </div>
+        <ul class="price-chips" aria-label="Premium-Preise"><li><span>1 Monat<small>monatlich</small></span><b>9,99 €</b></li><li><span>6 Monate<small>8,33 € pro Monat · 17 % günstiger als monatlich</small></span><b>49,99 €</b></li><li class="best"><span>12 Monate<small>⭐ Bester Preis · 6,67 € pro Monat · 33 % günstiger als monatlich</small></span><b>79,99 €</b></li></ul>
       </div>
-      <p><span class="badge">Der Shop ist bald verfügbar</span></p>
-      <div class="callout info"><p><strong>So läuft der Kauf:</strong> Im Shop meldest du dich mit deinem <strong>Minecraft-Namen</strong> an (Bedrock: Xbox-Name, Leerzeichen als <code>_</code>). Der Rang kommt automatisch auf genau diesen Account – prüfe den Namen deshalb genau. Spätestens nach ein paar Minuten ist Premium aktiv, auch wenn du offline bist.</p>
-      <p>Verkäufer und Zahlungsabwickler ist <strong>Tebex</strong> (Tebex Limited) als Wiederverkäufer. Tebex stellt die Rechnung, berechnet die gesetzliche Mehrwertsteuer und es gelten die Bedingungen von Tebex, die du beim Kauf siehst. Alle Preise inkl. MwSt.</p>
-      <p>Wird eine Zahlung zurückgebucht oder erstattet, wird Premium sofort entfernt. Premium ist ein freiwilliger Vorteil – kein Anspruch auf bestimmte Funktionen, wenn sich der Server weiterentwickelt. Gekauftes Premium schützt nicht vor Strafen bei Regelverstößen.</p></div>
       <div class="callout info"><p>Das Team (Owner, Admin, Dev, Mod, Builder, Sup) und seine Rechte findest du auf der Seite <a href="team.html">Team</a>. Du willst selbst ins Team? <a href="team.html#bewerben">So bewirbst du dich</a>.</p></div>
     </div>
   </main>
@@ -189,6 +188,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -212,6 +212,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>

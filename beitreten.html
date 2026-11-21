@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html" aria-current="page">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -52,7 +49,7 @@
     </div>
     <div class="wrap">
       <div class="callout"><p><strong>Das brauchst du:</strong> Minecraft <strong>Java Edition</strong> (aktuelle Version empfohlen, ältere Versionen unter 1.21.5 werden abgewiesen) <strong>oder Minecraft Bedrock</strong> (Handy, Tablet, Windows, Xbox, PlayStation, Switch – immer die aktuelle Version), einen Discord-Account und einen Twitch-Account.</p></div>
-      <nav class="toc" aria-labelledby="bt-toc"><h2 id="bt-toc">Auf dieser Seite</h2><ol><li><a href="#whitelist">Auf die Whitelist (Java &amp; Bedrock)</a></li><li><a href="#bedrock">Mit Bedrock spielen</a></li><li><a href="#bedrock-handy">Handy &amp; Tablet</a></li><li><a href="#bedrock-windows">Windows-PC</a></li><li><a href="#bedrock-konsole">Xbox, PlayStation, Switch</a></li><li><a href="#gut-zu-wissen">Gut zu wissen</a></li></ol></nav>
+      <nav class="toc" aria-labelledby="bt-toc"><h2 id="bt-toc">Auf dieser Seite</h2><ol><li><a href="#whitelist">Auf die Whitelist (Java &amp; Bedrock)</a></li><li><a href="#bedrock">Mit Bedrock spielen</a></li><li><a href="#bedrock-handy">Handy &amp; Tablet</a></li><li><a href="#bedrock-windows">Windows-PC</a></li><li><a href="#bedrock-konsole">Xbox, PlayStation, Switch</a></li><li><a href="#gut-zu-wissen">Gut zu wissen</a></li><li><a href="#erster-join">Dein erster Join</a></li></ol></nav>
       <h2 id="whitelist">Auf die Whitelist</h2>
       <ol class="steps">
         <li><h3>Discord-Server beitreten</h3><p>Tritt dem <a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord der JustinZocktCommunity<span class="sr-only"> (öffnet in neuem Tab)</span></a> bei. Du musst Mitglied bleiben – wer den Discord verlässt, fliegt sofort von der Whitelist.</p></li>
@@ -120,7 +117,7 @@
         <li><strong>Mods:</strong> Nur Mods aus der <a href="mods.html">Mod-Liste</a> sind erlaubt. Unsicher? Frag vorher per Ticket in <strong>#tickets</strong>.</li>
       </ul>
 
-      <h2>Dein erster Join</h2>
+      <h2 id="erster-join">Dein erster Join</h2>
       <p>Du landest am Spawn und bekommst einen Start-Guide im Chat. Der Spawn ist komplett sicher: kein Schaden, kein PvP, keine Monster. Tipp: Lass ein Aufnahmeprogramm mitlaufen (z. B. OBS mit Replay-Puffer, NVIDIA ShadowPlay/Instant Replay, AMD ReLive, Xbox Game Bar), damit du Regelverstöße anderer beweisen kannst.</p>
       <div class="grid">
         <a class="card" href="befehle.html"><span class="icon" aria-hidden="true">⌨️</span><h3>Wichtige Befehle</h3><p><code>/spawn</code>, <code>/sethome</code>, <code>/home</code>, <code>/claim chunk</code>, <code>/justin skill</code> …</p><span class="more">Alle Befehle →</span></a>
@@ -146,6 +143,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -169,6 +167,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>

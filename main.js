@@ -50,22 +50,37 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
-  var sub = $('.has-sub');
-  var subBtn = sub && $('.sub-toggle', sub);
-  if (subBtn) {
-    if ($('a[aria-current="page"]', sub)) subBtn.setAttribute('aria-current', 'page');
-    subBtn.addEventListener('click', function (e) {
+  // Untermenüs ("Spielen", "Hilfe"): immer nur eins offen; Klick daneben oder Escape schließt.
+  var subs = $$('.has-sub').map(function (li) { return { li: li, btn: $('.sub-toggle', li) }; }).filter(function (s) { return s.btn; });
+  var setSub = function (s, open) { s.li.classList.toggle('open', open); s.btn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+  subs.forEach(function (s) {
+    if ($('a[aria-current="page"]', s.li)) s.btn.setAttribute('aria-current', 'page');
+    s.btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      var open = sub.classList.toggle('open');
-      subBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var open = !s.li.classList.contains('open');
+      subs.forEach(function (o) { if (o !== s) setSub(o, false); });
+      setSub(s, open);
     });
-    doc.addEventListener('click', function (e) { if (!sub.contains(e.target)) { sub.classList.remove('open'); subBtn.setAttribute('aria-expanded', 'false'); } });
-  }
+    // Tastatur: Pfeil runter öffnet und springt zum ersten Eintrag
+    s.btn.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowDown') return;
+      e.preventDefault();
+      subs.forEach(function (o) { if (o !== s) setSub(o, false); });
+      setSub(s, true);
+      var first = $('.sub a', s.li); if (first) first.focus();
+    });
+    // Mit Tab aus dem Untermenü heraus -> schließen
+    s.li.addEventListener('focusout', function (e) { if (e.relatedTarget && !s.li.contains(e.relatedTarget)) setSub(s, false); });
+  });
+  if (subs.length) doc.addEventListener('click', function (e) { subs.forEach(function (s) { if (!s.li.contains(e.target)) setSub(s, false); }); });
   doc.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (sub && sub.classList.contains('open')) { sub.classList.remove('open'); subBtn.setAttribute('aria-expanded', 'false'); subBtn.focus(); }
+    var openSub = subs.filter(function (s) { return s.li.classList.contains('open') || s.li.contains(doc.activeElement); })[0];
+    if (openSub) { setSub(openSub, false); openSub.btn.focus(); return; }
     if (nav && nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
   });
+  // Maus über ein anderes Untermenü -> das offene schließen (sonst wären zwei gleichzeitig sichtbar)
+  subs.forEach(function (s) { s.li.addEventListener('mouseenter', function () { subs.forEach(function (o) { if (o !== s) setSub(o, false); }); }); });
 
   // ---------- Kopfzeile beim Scrollen + Fortschrittsbalken ----------
   var headerEl = $('.site-header');

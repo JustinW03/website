@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html" aria-current="page">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -73,6 +70,7 @@
             <a class="btn btn-primary" href="beitreten.html">So kommst du auf die Whitelist →</a>
             <a class="btn btn-ghost" href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Zum Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a>
           </div>
+          <p class="hero-premium"><a href="premium.html"><span aria-hidden="true">👑</span> <strong>Premium</strong> kannst du jetzt direkt hier auf der Website kaufen <span aria-hidden="true">→</span></a></p>
         </div>
         <div class="hero-scene" aria-hidden="true">
           <div class="scene">
@@ -93,31 +91,15 @@
     </section>
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><div style="display:flex"><span>6 Skills bis Level 100</span><span>25 Minigames</span><span>Java &amp; Bedrock</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span><span>Erfolge &amp; Ranglisten</span></div><div aria-hidden="true" style="display:flex"><span>6 Skills bis Level 100</span><span>25 Minigames</span><span>Java &amp; Bedrock</span><span>Clans &amp; Clan-Rangliste</span><span>Spieler-Shop</span><span>Eigene Verzauberungen</span><span>Adventskalender</span><span>Claims &amp; Truhenschutz</span><span>Fair Play &amp; Anticheat</span><span>Twitch-Sub-Vorteile</span><span>Erfolge &amp; Ranglisten</span></div></div></div>
 
-    <section aria-labelledby="h-features">
+    <section id="premium" aria-labelledby="h-premium">
       <div class="wrap">
-        <h2 id="h-features">Was dich erwartet</h2>
-        <div class="grid">
-          <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Bergbauer, Holzfäller, Gräber, Landwirt, Angler und Kämpfer. Jedes Level gibt automatisch Coins, Verbesserungen, Gegenstände und Titel.</p><span class="more">Zu den Skills <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>25 Minigames</h3><p>Von 4 Gewinnt, Schach und Kniffel bis Spleef, TNT-Run und Eisbootrennen – mit echten Tischen, Arenen und automatischer Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Sub &amp; Premium</h3><p>Eigenes Home, keine Teleport-Abklingzeit, mehr Claims mit Rabatt, mehr Coins pro Stunde, <code>/ec</code>, <code>/craft</code> und für Premium 2 Homes, <code>/tpa</code>, <code>/signieren</code>, <code>/invsort</code> und <code>/anvil</code>.</p><span class="more">Alle Vorteile <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Seelenbindung, Telekinese und Holzfäller I–III – und Reparatur (Mending) gibt es nur noch über Skills, Events und sehr seltene Funde.</p><span class="more">Zu den Verzauberungen <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="shop.html"><span class="icon" aria-hidden="true">🛒</span><h3>Spieler-Shop</h3><p>Verkaufe deine Items zu deinem eigenen Preis in Justin Coins – am Spawn mit <code>/shop</code>.</p><span class="more">Zum Shop <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="events.html#advent" data-season="advent" hidden><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender</h3><p>Vom 1. bis 24. Dezember jeden Tag ein Türchen mit <code>/justin advent</code> – mit Treue-Bonus für alle, die kein Türchen verpassen.</p><span class="more">Zum Kalender <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC pro aktiver Stunde. Sichere dein Gebiet mit <code>/claim chunk</code> ab <span data-info="claims.preis" data-fmt="num">2.500</span> JC pro Chunk (Nether ×2, End ×3), Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="erfolge.html"><span class="icon" aria-hidden="true">🏆</span><h3>Erfolge</h3><p>Ein eigener Reiter im Fortschritte-Menü (Taste L) mit vielen Erfolgen – von 10.000 Minigame-Siegen über Skill-Level 100 bis 1.000 Stunden Spielzeit.</p><span class="more">Zu den Erfolgen <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="mods.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Fair Play</h3><p>Automatischer Anticheat, klare Mod-Liste und ein aufmerksames Team. PvP nur, wenn beide es eingeschaltet haben.</p><span class="more">Erlaubte Mods <span aria-hidden="true">→</span></span></a>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="h-welt">
-      <div class="wrap">
-        <h2 id="h-welt">Welt-Status</h2>
-        <p class="muted">Nether und End werden vom Team geöffnet. Steht schon ein Termin fest, läuft hier der Countdown.</p>
-        <div class="portals">
-          <article class="portal nether" data-portal="nether" aria-labelledby="pt-nether"><h3 id="pt-nether"><span aria-hidden="true">🔥</span> Nether <span class="portal-state">Status</span></h3><p class="portal-text">Ob der Nether offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
-          <article class="portal end" data-portal="end" aria-labelledby="pt-end"><h3 id="pt-end"><span aria-hidden="true">🌌</span> End <span class="portal-state">Status</span></h3><p class="portal-text">Ob das End offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
+        <div class="premium-band">
+          <div>
+            <h2 id="h-premium"><span aria-hidden="true">👑</span> Premium – direkt hier kaufen</h2>
+            <p>Der besondere Spieler-Rang: 2 Homes, <code>/tpa</code>, Endertruhe mit 54 Plätzen, <code>/signieren</code>, <code>/invsort</code>, mobile Arbeitsblöcke, <code>/shop</code> überall, 70 Claims mit 10 % Rabatt und <span data-info="coins_pro_stunde.premium" data-fmt="num">750</span> JC pro Stunde.</p>
+            <div class="btn-row"><a class="btn btn-gold" href="premium.html">Premium ansehen <span aria-hidden="true">→</span></a><a href="https://justinzocktcommunity.tebex.store/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Zum Premium-Shop<span class="sr-only"> (öffnet in neuem Tab)</span></a></div>
+          </div>
+          <ul class="price-chips" aria-label="Premium-Preise"><li><span>1 Monat<small>monatlich</small></span><b>9,99 €</b></li><li><span>6 Monate<small>8,33 € pro Monat · 17 % günstiger als monatlich</small></span><b>49,99 €</b></li><li class="best"><span>12 Monate<small>⭐ Bester Preis · 6,67 € pro Monat · 33 % günstiger als monatlich</small></span><b>79,99 €</b></li></ul>
         </div>
       </div>
     </section>
@@ -130,6 +112,41 @@
           <li><h3>Twitch verbinden &amp; folgen</h3><p>Verbinde im Kanal #freischalten deinen Twitch-Account und folge <a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">JustinZockt03<span class="sr-only"> (öffnet in neuem Tab)</span></a>.</p></li>
           <li><h3>Code holen &amp; eingeben</h3><p>Verbinde dich mit <code>play.justinzockt.de</code> (Java) oder <code>bedrock.justinzockt.de</code>, Port <code>15314</code> (Bedrock) – du siehst einen persönlichen Code. Den gibst du im Discord ein, fertig. <a href="beitreten.html">Ausführliche Anleitung →</a></p></li>
         </ol>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-features">
+      <div class="wrap">
+        <h2 id="h-features">Was dich erwartet</h2>
+        <div class="grid">
+          <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Bergbauer, Holzfäller, Gräber, Landwirt, Angler und Kämpfer – jedes Level bringt Coins, Verbesserungen, Items und Titel.</p><span class="more">Zu den Skills <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>25 Minigames</h3><p>Von 4 Gewinnt und Schach bis Spleef und Eisbootrennen – mit echten Tischen, Arenen und Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Ränge: Sub &amp; Premium</h3><p>Twitch-Subs bekommen automatisch Extras wie ein Home, <code>/ec</code> und <code>/craft</code>. Premium bringt noch mehr – z. B. 2 Homes und <code>/tpa</code>.</p><span class="more">Alle Ränge im Vergleich <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Seelenbindung, Telekinese und Holzfäller I–III. Mending gibt es nur über Skills, Events und seltene Funde.</p><span class="more">Zu den Verzauberungen <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="shop.html"><span class="icon" aria-hidden="true">🛒</span><h3>Spieler-Shop</h3><p>Verkaufe deine Items zu deinem eigenen Preis in Justin Coins – am Spawn mit <code>/shop</code>.</p><span class="more">Zum Shop <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="events.html#advent" data-season="advent" hidden><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender</h3><p>Vom 1. bis 24. Dezember jeden Tag ein Türchen mit <code>/justin advent</code> – mit Treue-Bonus für alle, die kein Türchen verpassen.</p><span class="more">Zum Kalender <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="faq.html#coins"><span class="icon" aria-hidden="true">🪙</span><h3>Justin Coins &amp; Claims</h3><p>10.000 JC zum Start, <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC pro aktiver Stunde. Gebiet sichern mit <code>/claim chunk</code> ab <span data-info="claims.preis" data-fmt="num">2.500</span> JC, Truhen sind automatisch geschützt.</p><span class="more">Mehr erfahren <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="erfolge.html"><span class="icon" aria-hidden="true">🏆</span><h3>Erfolge</h3><p>Eigener Reiter im Fortschritte-Menü (Taste L) – von Minigame-Siegen über Skill-Level 100 bis 1.000 Stunden Spielzeit.</p><span class="more">Zu den Erfolgen <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="mods.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Fair Play</h3><p>Automatischer Anticheat, klare Mod-Liste und ein aufmerksames Team. PvP nur, wenn beide es eingeschaltet haben.</p><span class="more">Erlaubte Mods <span aria-hidden="true">→</span></span></a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section aria-labelledby="h-welt">
+      <div class="wrap">
+        <h2 id="h-welt">Live: Welt-Status &amp; Ranglisten</h2>
+        <p class="muted">Nether und End werden vom Team geöffnet. Steht schon ein Termin fest, läuft hier der Countdown.</p>
+        <div class="portals">
+          <article class="portal nether" data-portal="nether" aria-labelledby="pt-nether"><h3 id="pt-nether"><span aria-hidden="true">🔥</span> Nether <span class="portal-state">Status</span></h3><p class="portal-text">Ob der Nether offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
+          <article class="portal end" data-portal="end" aria-labelledby="pt-end"><h3 id="pt-end"><span aria-hidden="true">🌌</span> End <span class="portal-state">Status</span></h3><p class="portal-text">Ob das End offen ist, erfährst du im Spiel und im Discord.</p><div class="countdown" hidden></div></article>
+        </div>
+        <div class="grid-2">
+          <a class="card" href="ranglisten.html"><span class="icon" aria-hidden="true">🏆</span><h3>Ranglisten</h3><p>Coins, Spielzeit, Skills, Erfolge, Clans und jedes Minigame – automatisch aktualisiert.</p><span class="more">Zu den Ranglisten <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="events.html"><span class="icon" aria-hidden="true">🎉</span><h3>Events</h3><p>Aktuelle Events, Event-Regeln und im Dezember der Adventskalender.</p><span class="more">Zu den Events <span aria-hidden="true">→</span></span></a>
+        </div>
       </div>
     </section>
 
@@ -167,6 +184,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -190,6 +208,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>

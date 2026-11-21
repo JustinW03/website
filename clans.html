@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html" aria-current="page">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html" aria-current="page">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -59,14 +56,15 @@
         <div class="card"><span class="icon" aria-hidden="true">💬</span><h3>Clan-Chat</h3><p><code>/cc &lt;Nachricht&gt;</code> oder dauerhaft umschalten mit <code>/clan chat</code>. Andere Clans erreichst du mit <code>/clan msg &lt;TAG&gt;</code>.</p></div>
       </div>
 
-      <h2>Ränge im Clan</h2>
+      <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#c-raenge">Ränge im Clan</a><a href="#c-befehle">Alle Clan-Befehle</a><a href="#c-farben">Clan-Farben</a><a href="#c-msg">Private Nachrichten</a></nav>
+      <h2 id="c-raenge">Ränge im Clan</h2>
       <div class="table-wrap" role="region" aria-label="Clan-Ränge" tabindex="0"><table><thead><tr><th scope="col">Rang</th><th scope="col">Darf</th></tr></thead><tbody>
 <tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle Mitglieder entfernen, befördern, degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern nur mit Sub- oder Premium-Rang.</td></tr>
 <tr><td><strong>Leiter</strong></td><td>Einladen, normale Mitglieder entfernen.</td></tr>
 <tr><td><strong>Mitglied</strong></td><td>Clan-Chat, Clan-Nachrichten, Clan verlassen.</td></tr>
 </tbody></table></div>
 
-      <h2>Alle Clan-Befehle</h2>
+      <h2 id="c-befehle">Alle Clan-Befehle</h2>
       <div class="table-wrap" role="region" aria-label="Clan-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th><th scope="col">Wer</th></tr></thead><tbody>
 <tr><td><code>/clan gruenden &lt;TAG&gt; &lt;Name&gt;</code></td><td>Clan gründen. Der Tag hat 3–4 Zeichen (A–Z, 0–9), der Name bis zu 32 Zeichen. Beispiel: /clan gruenden JZC Justins Crew</td><td>Alle</td></tr>
 <tr><td><code>/clan info [TAG]</code></td><td>Infos zu deinem oder einem anderen Clan: Gründer, Punkte, gemeinsame Spielzeit, Mitglieder (wer online ist).</td><td>Alle</td></tr>
@@ -87,7 +85,7 @@
 </tbody></table></div>
       <p>Eine Übersicht bekommst du im Spiel auch mit <code>/clan hilfe</code>.</p>
 
-      <h2>Clan-Farben</h2>
+      <h2 id="c-farben">Clan-Farben</h2>
       <p>Jeder neue Clan ist <strong>weiß</strong>. Ist der <strong>Gründer Sub oder Premium</strong>, kann er mit <code>/clan farbe &lt;Farbe&gt;</code> eine dieser Farben wählen (<a href="raenge.html">Ränge</a>):</p>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#ffaa00">[JZC]</span> <code>gold</code></div>
@@ -105,7 +103,7 @@
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#aaaaaa">[JZC]</span> <code>grau</code></div>
       </div>
 
-      <h2>Private Nachrichten</h2>
+      <h2 id="c-msg">Private Nachrichten</h2>
       <p>Mit <code>/msg &lt;Spieler&gt; &lt;Nachricht&gt;</code> schreibst du jemandem privat (auch <code>/tell</code>, <code>/w</code>, <code>/whisper</code>, <code>/pm</code>). Antworten geht mit <code>/r &lt;Nachricht&gt;</code> (auch <code>/reply</code>).</p>
 
       <div class="callout warn">
@@ -132,6 +130,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -155,6 +154,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>

@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html" aria-current="page">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html" aria-current="page">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -47,7 +44,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 87 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 89 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -55,9 +52,10 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">87 von 87</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">89 von 89</span>
       </div>
       <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
+      <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Truhenschutz</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a></nav>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
       <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt bei <code>/spawn</code> <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
@@ -158,6 +156,8 @@
         <div class="cmd" data-keys="steinsäge Premium"><div><code>/stonecutter</code><span class="badge gold">Premium</span><span class="alias">auch: /steinsaege</span></div><p>Mobile Steinsäge – überall.</p></div>
         <div class="cmd" data-keys="schleifstein entzaubern Premium"><div><code>/grindstone</code><span class="badge gold">Premium</span><span class="alias">auch: /schleifstein</span></div><p>Mobiler Schleifstein – überall.</p></div>
         <div class="cmd" data-keys="webstuhl banner Premium"><div><code>/loom</code><span class="badge gold">Premium</span><span class="alias">auch: /webstuhl</span></div><p>Mobiler Webstuhl – überall.</p></div>
+        <div class="cmd" data-keys="premium shop kaufen store buy"><div><code>/kaufen</code><span class="alias">auch: /store, /buy, /premiumshop, /webshop</span></div><p>Link zum Premium-Shop (Premium kaufen, auch auf premium.html der Website).</p></div>
+        <div class="cmd" data-keys="premium status rang"><div><code>/premium</code></div><p>Dein Premium-Status und der Link zum Premium-Shop.</p></div>
       </section>
       <section class="cmd-group" id="shop" aria-labelledby="g-shop">
         <h2 id="g-shop">Shop</h2>
@@ -199,6 +199,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -222,6 +223,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>

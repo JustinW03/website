@@ -23,21 +23,18 @@
         <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
         <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menü</button>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
       <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="beitreten.html">Beitreten</a></li>
           <li><a href="regeln.html">Regeln</a></li>
-          <li><a href="mods.html">Mods</a></li>
           <li><a href="raenge.html">Ränge</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="erfolge.html">Erfolge</a></li>
-          <li><a href="minigames.html">Minigames</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="ranglisten.html">Ranglisten</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html" aria-current="page">Team &amp; Bewerbung</a></li></ul></li>
           <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-more">Mehr</button><ul class="sub" id="nav-more"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li><li><a href="team.html" aria-current="page">Team &amp; Bewerbung</a></li></ul></li>
         </ul>
       </nav>
     </div>
@@ -51,7 +48,8 @@
       </div>
     </div>
     <div class="wrap">
-      <h2>Die Ränge</h2>
+      <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#t-raenge">Die Ränge</a><a href="#t-rechte">Wer darf was?</a><a href="#t-schutz">Schutzregeln</a><a href="#bewerben">Bewerben</a></nav>
+      <h2 id="t-raenge">Die Ränge</h2>
       <div class="table-wrap" role="region" aria-label="Ränge" tabindex="0"><table><thead><tr><th scope="col">Rang</th><th scope="col">Aufgabe</th></tr></thead><tbody>
 <tr><td><strong>Owner</strong></td><td>Der Server-Inhaber. Hat alle Rechte und verwaltet Coins, Updates, Backups und das Dashboard.</td></tr>
 <tr><td><strong>Admin</strong></td><td>Leitet das Team: alle Moderations-Rechte, Whitelist, Welten, Spawn und Einstellungen.</td></tr>
@@ -59,13 +57,13 @@
 <tr><td><strong>Mod</strong></td><td>Moderation: Kicks, Mutes, Banns (auch dauerhaft), Entbannungen, Griefing prüfen.</td></tr>
 <tr><td><strong>Builder</strong></td><td>Baut am Spawn (mit Kreativ-Inventar und WorldEdit).</td></tr>
 <tr><td><strong>Sup</strong></td><td>Supporter: erste Ansprechperson, kann kicken, muten und bis zu 1 Tag bannen.</td></tr>
-<tr><td><strong>Premium</strong></td><td>Besonderer Spieler-Rang mit 2 Homes, /ec, /craft, /tpa, /signieren, /invsort, /anvil, 70 Claims und den meisten Coins pro Stunde – <a href="raenge.html">alle Vorteile</a>.</td></tr>
+<tr><td><strong>Premium</strong></td><td>Besonderer Spieler-Rang mit 2 Homes, /ec, /craft, /tpa, /signieren, /invsort, /anvil, 70 Claims und den meisten Coins pro Stunde – <a href="raenge.html">alle Vorteile</a>, <a href="premium.html">Premium kaufen</a>. Kein Team-Rang: Teammitglieder haben Premium nicht automatisch.</td></tr>
 <tr><td><strong>Sub</strong></td><td>Automatisch für Twitch-Subs von JustinZockt03: Home, /ec, /craft, 50 Claims und mehr Coins pro Stunde – <a href="raenge.html">alle Vorteile</a>.</td></tr>
 <tr><td><strong>Spieler</strong></td><td>Alle freigeschalteten Community-Mitglieder.</td></tr>
 </tbody></table></div>
       <p class="muted small">Vererbung: Mod hat automatisch alles von Sup. Admin hat alles von Mod, Builder und Dev.</p>
 
-      <h2>Wer darf was?</h2>
+      <h2 id="t-rechte">Wer darf was?</h2>
       <div class="table-wrap" role="region" aria-label="Team-Rechte" tabindex="0"><table><thead><tr><th scope="col">Recht</th><th scope="col">Sup</th><th scope="col">Mod</th><th scope="col">Builder</th><th scope="col">Dev</th><th scope="col">Admin</th></tr></thead><tbody>
 <tr><th scope="row">Kicken</th><td>✅</td><td>✅</td><td><span aria-label="nein">–</span></td><td><span aria-label="nein">–</span></td><td>✅</td></tr>
 <tr><th scope="row">Muten / Entmuten</th><td>✅</td><td>✅</td><td><span aria-label="nein">–</span></td><td><span aria-label="nein">–</span></td><td>✅</td></tr>
@@ -85,7 +83,7 @@
 <tr><th scope="row">Vorladen der Welt, Karte, Wartungsmodus, Sprachchat-Verwaltung</th><td><span aria-label="nein">–</span></td><td><span aria-label="nein">–</span></td><td><span aria-label="nein">–</span></td><td><span aria-label="nein">–</span></td><td>✅</td></tr>
 </tbody></table></div>
 
-      <h2>Schutzregeln im Team</h2>
+      <h2 id="t-schutz">Schutzregeln im Team</h2>
       <ul>
         <li><strong>Teammitglieder kann nur ein Admin bestrafen</strong> – ein Sup kann also keinen Mod kicken.</li>
         <li><strong>Den Owner kann niemand kicken, muten oder bannen.</strong></li>
@@ -126,6 +124,7 @@
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
             <li><a href="befehle.html">Alle Befehle</a></li>
             <li><a href="faq.html">Häufige Fragen</a></li>
             <li><a href="team.html#bewerben">Bewerben</a></li>
@@ -149,6 +148,7 @@
           </ul>
         </div>
       </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
       <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
     </div>
   </footer>
