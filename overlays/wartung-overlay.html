@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>JustinZockt Wartungs-Countdown</title>
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<script>
+/* =====================================================================
+   CONFIG – HIER KANNST DU ALLES ÄNDERN
+   ---------------------------------------------------------------------
+   Das Overlay erscheint AUTOMATISCH, sobald auf dem Server der
+   Wartungsmodus mit Endzeit an ist (/justin wartung an 30m  oder  bis 18:30),
+   zählt bis 0 herunter und verschwindet dann von selbst.
+   Daten: daten/info.json der Website (lädt der Server bei jeder
+   Wartungs-Änderung sofort hoch; bis zur Anzeige ca. 1–2 Minuten).
+
+   Formate (Browserquelle in derselben Größe einstellen):
+     Twitch/Streamlabs:  ...wartung-overlay.html               (16:9, 1920 x 1080)
+     TikTok quadratisch: ...wartung-overlay.html?format=1:1    (1080 x 1080)
+     TikTok hochkant:    ...wartung-overlay.html?format=9:16   (1080 x 1920)
+   Testen: ?test=90  (zählt 90 Sekunden herunter, ohne Server)
+           ?immer=1  (immer sichtbar, zum Ausrichten)
+   ===================================================================== */
+var CONFIG = {
+  titel: "Server startet in:",
+  untertitel: "Wartungsarbeiten – gleich geht's weiter!",
+  ohneEndzeit: "Server startet bald",       // wenn die Wartung kein Ende hat
+  fertig: "Server ist wieder online!",      // kurz bei 0, dann verschwindet das Overlay
+  fertigSekunden: 8,
+  adresse: "play.*justinzockt*.de",         // unten klein, *...* = rot. "" = aus
+  datenUrl: "https://www.justinzockt.de/daten/info.json",
+  abfrageSekunden: 20,
+  format: "16:9",
+  // Position: "mitte", "oben", "unten"
+  position: "mitte",
+  skalierung: 1,
+  farben: { haupt: "#ff1f3d", dunkel: "#b3001b", hintergrund: "#0e0e12" },
+  deckkraft: 0.9
+};
+</script>
+
+<style>
+  :root{ --rot:#ff1f3d; --rot-rgb:255,31,61; --rotd:#b3001b; --bg-rgb:14,14,18; --deck:.9;
+         --W:1920px; --H:1080px; --skala:1; }
+  html,body{margin:0;padding:0;width:var(--W);height:var(--H);overflow:hidden;background:transparent;}
+  body{font-family:"Montserrat","Segoe UI",Arial,sans-serif;color:#fff;-webkit-font-smoothing:antialiased;}
+  body.testbg{background:linear-gradient(160deg,#20324a,#0b0f16 60%,#2a1410);}
+  #buehne{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;}
+  .pos-oben #buehne{align-items:flex-start;padding-top:80px;box-sizing:border-box;}
+  .pos-unten #buehne{align-items:flex-end;padding-bottom:80px;box-sizing:border-box;}
+  #karte{position:relative;min-width:760px;max-width:calc(var(--W) - 120px);box-sizing:border-box;padding:40px 64px 36px;
+    border-radius:32px;text-align:center;transform:scale(var(--skala));
+    background:linear-gradient(115deg,rgba(var(--bg-rgb),var(--deck)),rgba(var(--bg-rgb),var(--deck)) 55%,rgba(42,6,14,var(--deck)));
+    box-shadow:0 24px 70px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.06);
+    opacity:0;visibility:hidden;transition:opacity .8s ease,transform .8s cubic-bezier(.16,1.3,.35,1);}
+  #karte.da{opacity:1;visibility:visible;}
+  .glow{position:absolute;inset:-2px;border-radius:34px;pointer-events:none;border:3px solid rgba(var(--rot-rgb),.85);
+    box-shadow:0 0 34px rgba(var(--rot-rgb),.55),0 0 80px rgba(var(--rot-rgb),.25),inset 0 0 26px rgba(var(--rot-rgb),.18);
+    animation:puls 3s ease-in-out infinite;}
+  @keyframes puls{0%,100%{opacity:.5}50%{opacity:1}}
+  .kicker{display:inline-flex;align-items:center;gap:14px;font-family:"Press Start 2P",monospace;font-size:20px;color:var(--rot);
+    text-shadow:0 0 14px rgba(var(--rot-rgb),.6);}
+  .kicker .zahnrad{display:inline-block;animation:dreh 4s linear infinite;}
+  @keyframes dreh{to{transform:rotate(360deg)}}
+  .titel{font-weight:900;font-size:58px;line-height:1.1;margin-top:18px;text-shadow:0 4px 0 rgba(0,0,0,.55);}
+  .zeit{font-weight:900;font-size:150px;line-height:1;margin:18px 0 8px;letter-spacing:4px;font-variant-numeric:tabular-nums;
+    color:#fff;text-shadow:0 6px 0 rgba(0,0,0,.55),0 0 40px rgba(var(--rot-rgb),.55);}
+  .zeit .tr{color:var(--rot);}
+  .zeit.text{font-size:84px;letter-spacing:0;}
+  .zeit.letzte{animation:tick 1s ease-in-out infinite;}
+  @keyframes tick{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .sub{font-weight:700;font-size:30px;color:#d2d2db;}
+  .balken{position:relative;height:10px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:26px auto 0;max-width:900px;}
+  .balken i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--rotd),var(--rot));
+    box-shadow:0 0 12px rgba(var(--rot-rgb),.9);transition:width 1s linear;}
+  .adr{font-weight:800;font-size:28px;margin-top:20px;color:#fff;}
+  .adr .hl{color:var(--rot);}
+  /* Hochkant/quadratisch: kleiner */
+  .f11 #karte,.f916 #karte{min-width:0;width:calc(var(--W) - 100px);padding:34px 36px 30px;}
+  .f11 .titel,.f916 .titel{font-size:52px;}
+  .f11 .zeit,.f916 .zeit{font-size:132px;}
+  .f11 .zeit.text,.f916 .zeit.text{font-size:66px;}
+  .f11 .sub,.f916 .sub{font-size:28px;}
+</style>
+</head>
+<body>
+<div id="buehne">
+  <div id="karte">
+    <div class="glow"></div>
+    <div class="kicker"><span class="zahnrad">⚙</span> WARTUNG <span class="zahnrad">⚙</span></div>
+    <div class="titel" id="titel"></div>
+    <div class="zeit" id="zeit">--:--</div>
+    <div class="sub" id="sub"></div>
+    <div class="balken" id="balkenBox"><i id="balken"></i></div>
+    <div class="adr" id="adr"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var C = CONFIG, P = {};
+  try { location.search.replace(/^\?/,"").split("&").forEach(function(kv){ if(!kv) return; var p = kv.split("=");
+    P[decodeURIComponent(p[0]).toLowerCase()] = decodeURIComponent((p[1]||"").replace(/\+/g," ")); }); } catch(e){}
+  function rgb(h){ h=h.replace("#",""); return parseInt(h.substr(0,2),16)+","+parseInt(h.substr(2,2),16)+","+parseInt(h.substr(4,2),16); }
+
+  var fm = String(P.format || C.format || "16:9").toLowerCase().replace(/[x\/_-]/g,":");
+  if(fm==="916"||fm==="hoch") fm="9:16"; if(fm==="11"||fm==="quadrat") fm="1:1"; if(fm!=="9:16"&&fm!=="1:1") fm="16:9";
+  var masse = {"16:9":[1920,1080],"1:1":[1080,1080],"9:16":[1080,1920]}[fm];
+  var R = document.documentElement.style;
+  R.setProperty("--W", masse[0]+"px"); R.setProperty("--H", masse[1]+"px");
+  R.setProperty("--rot", C.farben.haupt); R.setProperty("--rot-rgb", rgb(C.farben.haupt)); R.setProperty("--rotd", C.farben.dunkel);
+  R.setProperty("--bg-rgb", rgb(C.farben.hintergrund)); R.setProperty("--deck", C.deckkraft);
+  R.setProperty("--skala", parseFloat(P.skala) || C.skalierung || 1);
+  var cls = ["f" + fm.replace(":",""), "pos-" + (P.position || C.position || "mitte")];
+  if(P.testbg) cls.push("testbg");
+  document.body.className = cls.join(" ");
+
+  var karte = document.getElementById("karte"), zeit = document.getElementById("zeit"), titel = document.getElementById("titel"),
+      sub = document.getElementById("sub"), balken = document.getElementById("balken"), adr = document.getElementById("adr");
+  titel.textContent = C.titel; sub.textContent = C.untertitel;
+  if(C.adresse){ String(C.adresse).split("*").forEach(function(t,n){ var s=document.createElement("span"); if(n%2) s.className="hl"; s.textContent=t; adr.appendChild(s); }); }
+  else adr.style.display = "none";
+
+  // Zustand: aktiv, bis (ms, 0 = offen), seit (ms)
+  var st = { aktiv:false, bis:0, seit:0 }, fertigBis = 0, warAktiv = false;
+  if(P.test){ var s = parseFloat(P.test) || 60; st = { aktiv:true, bis:Date.now()+s*1000, seit:Date.now() }; }
+  if(P.demo){ st = { aktiv:true, bis:0, seit:Date.now() }; }
+
+  function pad(n){ return (n<10?"0":"")+n; }
+  function zeige(an){ karte.classList.toggle("da", !!an); }
+  function setzeZeit(ms){
+    var s = Math.max(0, Math.ceil(ms/1000)), h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60;
+    zeit.className = "zeit" + (s <= 10 ? " letzte" : "");
+    zeit.innerHTML = (h>0 ? h+"<span class='tr'>:</span>"+pad(m) : pad(m)) + "<span class='tr'>:</span>" + pad(x);
+  }
+  function tick(){
+    var now = Date.now();
+    if(P.immer && !st.aktiv){ titel.textContent=C.titel; setzeZeit(15*60*1000); sub.textContent=C.untertitel; zeige(true); return; }
+    if(fertigBis > now){ return; }
+    if(st.aktiv && st.bis > 0 && st.bis > now){
+      warAktiv = true;
+      titel.textContent = C.titel; sub.textContent = C.untertitel;
+      document.getElementById("balkenBox").style.display = st.seit > 0 ? "" : "none";
+      if(st.seit > 0 && st.bis > st.seit) balken.style.width = Math.min(100, (now-st.seit)/(st.bis-st.seit)*100) + "%";
+      setzeZeit(st.bis - now); zeige(true); return;
+    }
+    if(st.aktiv && st.bis > 0 && st.bis <= now && warAktiv){
+      // 0 erreicht: kurz "wieder online", dann weg (auch wenn info.json noch "aktiv" sagt)
+      warAktiv = false; st.aktiv = false;
+      titel.textContent = ""; zeit.className = "zeit text"; zeit.textContent = C.fertig; sub.textContent = "";
+      balken.style.width = "100%"; zeige(true);
+      fertigBis = now + C.fertigSekunden*1000;
+      setTimeout(function(){ zeige(false); }, C.fertigSekunden*1000);
+      return;
+    }
+    if(st.aktiv && st.bis === 0){
+      titel.textContent = ""; zeit.className = "zeit text"; zeit.textContent = C.ohneEndzeit; sub.textContent = C.untertitel;
+      document.getElementById("balkenBox").style.display = "none"; zeige(true); return;
+    }
+    zeige(false);
+  }
+
+  function lade(){
+    if(P.test || P.demo || !window.fetch) return;
+    var url = (P.daten || C.datenUrl) + (/\?/.test(P.daten || C.datenUrl) ? "&" : "?") + "t=" + Date.now();
+    fetch(url, {cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+      var w = j && j.wartung ? j.wartung : {};
+      var neu = { aktiv: !!w.aktiv, bis: Number(w.bis)||0, seit: Number(w.seit)||0 };
+      // eine schon abgelaufene Endzeit nicht erneut anzeigen
+      if(neu.aktiv && neu.bis > 0 && neu.bis <= Date.now()) neu.aktiv = false;
+      st = neu; if(st.aktiv && st.bis > Date.now()) warAktiv = true;
+    }).catch(function(){ /* alter Stand bleibt */ });
+  }
+  lade(); setInterval(lade, Math.max(10, C.abfrageSekunden) * 1000);
+  tick(); setInterval(tick, 250);
+})();
+</script>
+</body>
+</html>
