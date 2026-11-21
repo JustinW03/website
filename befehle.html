@@ -44,7 +44,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 89 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 93 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -52,7 +52,7 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">89 von 89</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">93 von 93</span>
       </div>
       <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
       <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Truhenschutz</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a></nav>
@@ -115,8 +115,12 @@
         <div class="cmd" data-keys="freund"><div><code>/trust &lt;Name&gt;</code></div><p>Freund darf in alle deine Claims und Truhen.</p></div>
         <div class="cmd" data-keys="freund"><div><code>/untrust &lt;Name&gt;</code></div><p>Freund wieder entfernen.</p></div>
         <div class="cmd" data-keys="freund"><div><code>/trustlist</code></div><p>Deine Freunde anzeigen.</p></div>
-        <div class="cmd" data-keys="truhe sichern"><div><code>/lock</code></div><p>Angeschaute Truhe/Fass/Shulkerkiste von Hand schützen.</p></div>
-        <div class="cmd" data-keys="truhe"><div><code>/unlock</code></div><p>Schutz der angeschauten Truhe entfernen.</p></div>
+        <div class="cmd" data-keys="truhe sichern"><div><code>/lock</code></div><p>Angeschauten Block (Truhe, Fass, Ofen, Spender, Braustand, Endertruhe, Regal …) oder ein Truhenboot / eine Güterlore von Hand sichern.</p></div>
+        <div class="cmd" data-keys="truhe"><div><code>/unlock</code></div><p>Sicherung des angeschauten Blocks oder Fahrzeugs entfernen (auch /lock aus).</p></div>
+        <div class="cmd" data-keys="truhen liste sicherungen"><div><code>/lock liste [Seite]</code></div><p>Alle deine Sicherungen im Chat – sortiert nach Art, Welt und Koordinaten.</p></div>
+        <div class="cmd" data-keys="automatisch sichern einstellung"><div><code>/lock auto &lt;aus|an|standard|liste&gt;</code></div><p>Was beim Platzieren automatisch gesichert wird: aus, an (alle Arten), Standard (Kisten, Trichter, Öfen, Shulkerkisten, Fässer) oder Übersicht.</p></div>
+        <div class="cmd" data-keys="automatisch sichern gruppe"><div><code>/lock auto &lt;Gruppe&gt; &lt;an|aus&gt;</code></div><p>Einzelne Art an/aus, z. B. kisten, trichter, oefen, shulker, faesser, endertruhe, spender, braustand, werkbank, regale, krug, plattenspieler, lesepult, leuchtfeuer, fahrzeuge.</p></div>
+        <div class="cmd" data-keys="menü automatisch sichern"><div><code>/lock einstellungen</code></div><p>Menü mit grün/roten Schaltern für die Auto-Sicherung (auch über den Knopf in /claims, funktioniert auf Bedrock).</p></div>
       </section>
       <section class="cmd-group" id="skills" aria-labelledby="g-skills">
         <h2 id="g-skills">Skills</h2>
