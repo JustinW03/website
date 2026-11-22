@@ -86,6 +86,7 @@
 <tr><td><code>/justin wo &lt;Name&gt; &lt;Zeit&gt;</code></td><td>Wo war jemand um 14:30 / vor 2h? (14 Tage Verlauf)</td></tr>
 <tr><td><code>/justin alts &lt;Name&gt;</code></td><td>Zweitaccounts (gleiche IP) ansehen.</td></tr>
 <tr><td><code>/justin tp &lt;x&gt; &lt;z&gt; [nether|end]</code></td><td>Zu Koordinaten teleportieren (z. B. von der Karte).</td></tr>
+<tr><td><code>/tpoff &lt;Spieler&gt;</code></td><td>Zur letzten Position eines Spielers, auch wenn er offline ist (ab Moderator). Zum Owner nur per Anfrage.</td></tr>
 <tr><td><code>/justin wp set|del|list|tp &lt;Name&gt;</code></td><td>Eigene Wegpunkte.</td></tr>
 <tr><td><code>/inv &lt;Name&gt; [ec]</code></td><td>Survival-Inventar (mit ec: Endertruhe) eines Spielers ansehen – live, auch offline und in der Minigame-Welt (Mod; ändern: Admin).</td></tr>
 <tr><td><code>/ec &lt;Name&gt;</code></td><td>Survival-Endertruhe eines Spielers ansehen (Moderator).</td></tr>
@@ -98,8 +99,10 @@
 <tr><td><code>/justin nether|end on|off</code></td><td>Dimension öffnen oder sperren.</td></tr>
 <tr><td><code>/justin pvp on|off</code></td><td>PvP für alle an/aus.</td></tr>
 <tr><td><code>/justin whitelist add|remove|list [Name]</code></td><td>Whitelist von Hand.</td></tr>
-<tr><td><code>/justin build spawn [Höhe]</code></td><td>Spawn bauen (Standard 64).</td></tr>
-<tr><td><code>/justin build netherspawn [Höhe]</code></td><td>Nether-Spawn + Netherdach bauen.</td></tr>
+<tr><td><code>/justin build spawn [Höhe]</code></td><td>Spawn bauen (Standard 64): Zitadelle mit Turm und rotem Beacon-Strahl, Kuppel, Wassergraben, schwebenden Inseln, Toren und Portalen. Der vorherige Zustand wird gesichert.</td></tr>
+<tr><td><code>/justin build spawn reset</code></td><td>Letzten Spawn-Bau rückgängig machen (mit „bestaetigen“). Bis zu 5 Bauten zurück.</td></tr>
+<tr><td><code>/justin build netherspawn [Höhe]</code></td><td>Nether-Spawn + Netherdach bauen (vorheriger Zustand wird gesichert).</td></tr>
+<tr><td><code>/justin build netherspawn reset</code></td><td>Letzten Nether-Spawn-Bau rückgängig machen (mit „bestaetigen“).</td></tr>
 <tr><td><code>/justin tpto &lt;Name&gt;</code></td><td>Zu einem Spieler teleportieren (auch Klick auf [➜] im Chat).</td></tr>
 <tr><td><code>/justin tphere &lt;Name&gt;</code></td><td>Spieler zu dir holen.</td></tr>
 <tr><td><code>/justin makro add|del|list|&lt;Name&gt;</code></td><td>Häufige Befehle speichern und ausführen (je Person). Beispiel: /justin makro add tag time set day</td></tr>
@@ -109,7 +112,7 @@
 <tr><td><code>/justin vpn allow|deny &lt;Name&gt; | test &lt;IP&gt;</code></td><td>VPN-Ausnahmen und Test.</td></tr>
 <tr><td><code>/justin carry &lt;Name&gt; | drop</code></td><td>Spieler tragen (Schleichen + Rechtsklick).</td></tr>
 <tr><td><code>/justin traffic</code></td><td>Datenverkehr pro Tag + Hochrechnung.</td></tr>
-<tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten (Bau-Team, ohne Inventar-Tausch im Kreativmodus); für Spieler öffnen/sperren.</td></tr>
+<tr><td><code>/justin minigames [offen on|off]</code></td><td>Minigame-Welt betreten (Team, auch wenn sie geschlossen ist – Kreativ ist dort gesperrt); für Spieler öffnen/sperren.</td></tr>
 <tr><td><code>/justin reload</code></td><td>Konfiguration neu laden.</td></tr>
 <tr><td><code>Wartungsmodus</code></td><td>Eigener Wartungsmodus: nur das Team kann joinen, die Serverliste zeigt „Wartung“ (Befehl siehe /justin im Spiel).</td></tr>
 <tr><td><code>/rollback &lt;Name&gt; sichern</code></td><td>Von Hand eine Inventar-Sicherung anlegen.</td></tr>
@@ -128,7 +131,7 @@
       <h3>Nur Owner</h3>
       <div class="table-wrap" role="region" aria-label="Nur Owner" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
 <tr><td><code>/justin dashboard</code></td><td>Einmal-Link zum Dashboard (10 Minuten gültig, nur einmal). Der Link ist nicht mehr anklickbar: nur zum Kopieren oder per Discord-Direktnachricht – stream-sicher.</td></tr>
-<tr><td><code>/justin texte [overworld|nether|npc|eigene]</code></td><td>Alle schwebenden Texte mit Knöpfen: TP, an/aus, bearbeiten, hierher, reset. Rechtsklick auf einen Text öffnet das Bearbeiten-Menü.</td></tr>
+<tr><td><code>/justin texte [overworld|nether|npc|eigene|minigames]</code></td><td>Alle schwebenden Texte (auch die festen Texte der Minigame-Welt: Halle, Türen, Raumtitel, Spielfeld-Schilder) mit Knöpfen: TP, an/aus, bearbeiten, hierher, reset. Rechtsklick auf einen Text öffnet das Bearbeiten-Menü.</td></tr>
 <tr><td><code>/justin text &lt;id&gt; verschieben [dx dy dz] | setzen &lt;Text&gt; | groesse &lt;Zahl&gt; | an | aus | reset | loeschen</code></td><td>Einen Text direkt ändern. Neuer eigener Text: /justin text neu &lt;id&gt; [Text].</td></tr>
 <tr><td><code>/justin portal nether|end &lt;TT.MM.JJJJ&gt; &lt;HH:MM&gt; | jetzt | zu</code></td><td>Öffnungs-Zeitpunkt für Nether/End setzen (öffnet automatisch, Countdown unter dem Portal).</td></tr>
 <tr><td><code>/justin farbe &lt;#rrggbb&gt; [#dunkel] | reset</code></td><td>Server-Hauptfarbe ändern (Chat, Menüs, Scoreboard, Serverliste, Webseite).</td></tr>
@@ -140,7 +143,8 @@
 <tr><td><code>/justin eco top</code></td><td>Rangliste Coins.</td></tr>
 <tr><td><code>/justin eco info &lt;Name&gt;</code></td><td>Guthaben eines Spielers + Knöpfe.</td></tr>
 <tr><td><code>/justin eco give|take|set &lt;Name&gt; &lt;Betrag&gt;</code></td><td>Coins geben, abziehen oder setzen.</td></tr>
-<tr><td><code>/justin eco reset [Name]</code></td><td>Guthaben auf 10.000 JC (ohne Name: du selbst).</td></tr>
+<tr><td><code>/justin eco reset [Name]</code></td><td>Guthaben auf 5.000 JC (ohne Name: du selbst).</td></tr>
+<tr><td><code>/pausestats [an|aus|status]</code></td><td>Eigene Stats pausieren: Spielzeit, Coins pro Stunde, Tode, Kills, Skills, Minigames, Erfolge zählen nicht.</td></tr>
 <tr><td><code>/justin signieren [Spieler] &lt;Text&gt;</code></td><td>Gegenstand in der Hand signieren. Entfernen: /justin signieren entfernen [Spieler].</td></tr>
 <tr><td><code>/justin resetstats &lt;Name|alle&gt; tode|spielzeit|skills|coins|vanilla|alles</code></td><td>Statistiken zurücksetzen („vanilla“ = Minecraft-Statistiken, Advancements, Rezepte, Level; „alle“ mit Bestätigung).</td></tr>
 <tr><td><code>/justin reset &lt;Name&gt;</code></td><td>Spieler komplett zurücksetzen (inkl. Bauten).</td></tr>
@@ -148,9 +152,10 @@
 <tr><td><code>/justin npc events|minigames|shop|skills</code></td><td>NPC mit schwebendem Schild an deine Position setzen.</td></tr>
 <tr><td><code>/justin npc schild &lt;typ&gt;</code></td><td>Nur das Schild eines NPCs an deine Position versetzen.</td></tr>
 <tr><td><code>/justin npc entfernen &lt;typ&gt;</code></td><td>NPC + Schild entfernen.</td></tr>
-<tr><td><code>/minigames reset &lt;Name|ich|alle&gt; [Spiel]</code></td><td>Minigame-Spielstände zurücksetzen (bei „alle“ mit Bestätigung).</td></tr>
+<tr><td><code>/minigames reset &lt;Name|ich|alle&gt; [Spiel]</code></td><td>Minigame-Spielstände zurücksetzen – mit allen Ranglisten-Werten (Punkte, Kills, Zeiten, Höhen; bei „alle“ mit Bestätigung).</td></tr>
+<tr><td><code>/minigames beliebtheit reset [Spiel|alle] bestaetigen</code></td><td>Beliebtheit der Minigames (Sortierung im Kompass) neu zählen lassen; Statistiken bleiben.</td></tr>
 <tr><td><code>/justin webpush [jetzt]</code></td><td>Ranglisten und Server-Infos sofort auf die Website laden / Status anzeigen.</td></tr>
-<tr><td><code>/minigames bauen</code></td><td>Minigame-Welt (Spawn, Allee, alle Spielbereiche) neu bauen. Laufende Räume werden geschlossen.</td></tr>
+<tr><td><code>/minigames bauen</code></td><td>Minigame-Welt (Spawn-Halle mit Türen, alle Spielräume mit je 4 Spielfeldern) neu bauen. Laufende Räume werden geschlossen.</td></tr>
 <tr><td><code>/clan spy</code></td><td>Clan-Chats und /msg mitlesen an/aus.</td></tr>
 <tr><td><code>/justin skill set &lt;Name&gt; &lt;Skill|alle&gt; &lt;level|xp&gt; &lt;Wert&gt;</code></td><td>Skill-Level oder XP setzen.</td></tr>
 <tr><td><code>/justin skill reset &lt;Name&gt; &lt;Skill|alle&gt;</code></td><td>Skills auf Level 1 zurücksetzen.</td></tr>
