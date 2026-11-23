@@ -44,7 +44,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 93 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 111 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -52,10 +52,10 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">93 von 93</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">111 von 111</span>
       </div>
       <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
-      <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Truhenschutz</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a></nav>
+      <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Truhenschutz</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a><a href="#twitch">Twitch-Chat (im Stream)</a></nav>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
       <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt bei <code>/spawn</code> <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
@@ -183,6 +183,27 @@
       <section class="cmd-group" id="events" aria-labelledby="g-events">
         <h2 id="g-events">Events</h2>
         <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code><span class="alias">auch: /advent</span></div><p>Adventskalender öffnen (nur vom 1. bis 24. Dezember).</p></div>
+      </section>
+      <section class="cmd-group" id="twitch" aria-labelledby="g-twitch">
+        <h2 id="g-twitch">Twitch-Chat (im Stream)</h2>
+        <div class="cmd" data-keys="twitch stream chat bot"><div><code>!befehle</code><span class="alias">auch: !commands, !hilfe</span></div><p>Im Twitch-Chat von JustinZockt03: Liste aller Chat-Befehle.</p></div>
+        <div class="cmd" data-keys="twitch adresse beitreten"><div><code>!server</code><span class="alias">auch: !ip, !mc, !minecraft</span></div><p>Server-Adresse für Java und Bedrock und wie du freigeschaltet wirst.</p></div>
+        <div class="cmd" data-keys="twitch kaufen shop"><div><code>!premium</code><span class="alias">auch: !vip, !rang</span></div><p>Preise und Vorteile von Premium mit Shop-Link.</p></div>
+        <div class="cmd" data-keys="twitch"><div><code>!discord</code><span class="alias">auch: !dc</span></div><p>Link zum Discord-Server.</p></div>
+        <div class="cmd" data-keys="twitch"><div><code>!socials</code><span class="alias">auch: !links, !tiktok, !youtube, !instagram, !whatsapp</span></div><p>Alle Kanäle: Twitch, TikTok (Streams + Clips), YouTube, Instagram, WhatsApp-Kanal, Discord.</p></div>
+        <div class="cmd" data-keys="twitch"><div><code>!webseite</code><span class="alias">auch: !website, !web</span></div><p>Link zu dieser Webseite. Dazu !regeln, !faq und !shop.</p></div>
+        <div class="cmd" data-keys="twitch streamer"><div><code>!justin</code><span class="alias">auch: !ueber, !about</span></div><p>Infos über Justin.</p></div>
+        <div class="cmd" data-keys="twitch live zeit"><div><code>!uptime</code></div><p>Wie lange der Stream schon läuft.</p></div>
+        <div class="cmd" data-keys="twitch zuschauen zeit"><div><code>!watchtime [Name]</code><span class="alias">auch: !wt</span></div><p>Wie lange du (oder jemand anders) schon im Stream zuschaust, mit Platz in der Rangliste. Gezählt wird nur, während Justin live ist.</p></div>
+        <div class="cmd" data-keys="twitch rangliste"><div><code>!top</code></div><p>Die 5 Zuschauer mit der meisten Watchtime.</p></div>
+        <div class="cmd" data-keys="twitch folgen"><div><code>!followage [Name]</code><span class="alias">auch: !follow</span></div><p>Seit wann du (oder jemand anders) Justin folgst.</p></div>
+        <div class="cmd" data-keys="twitch"><div><code>!titel</code><span class="alias">auch: !title, !game</span></div><p>Aktueller Stream-Titel. Mit !kategorie die aktuelle Kategorie.</p></div>
+        <div class="cmd" data-keys="twitch minecraft"><div><code>!spieler</code><span class="alias">auch: !online</span></div><p>Wer gerade auf dem Minecraft-Server online ist.</p></div>
+        <div class="cmd" data-keys="twitch spaß"><div><code>!lurk</code><span class="alias">auch: !hug</span></div><p>Sag Bescheid, dass du still zuschaust. Und mit !hug &lt;Name&gt; umarmst du jemanden.</p></div>
+        <div class="cmd" data-keys="twitch mod Twitch-Mod"><div><code>!so &lt;Kanal&gt;</code><span class="badge purple">Twitch-Mod</span><span class="alias">auch: !shoutout</span></div><p>Shoutout für einen anderen Kanal.</p></div>
+        <div class="cmd" data-keys="twitch mod link Twitch-Mod"><div><code>!permit &lt;Name&gt;</code><span class="badge purple">Twitch-Mod</span></div><p>Der Zuschauer darf 60 Sekunden lang einen Link posten.</p></div>
+        <div class="cmd" data-keys="twitch mod befehl Twitch-Mod"><div><code>!addcom !name &lt;Text&gt;</code><span class="badge purple">Twitch-Mod</span><span class="alias">auch: !editcom, !delcom</span></div><p>Eigenen Chat-Befehl anlegen. Ändern mit !editcom, löschen mit !delcom.</p></div>
+        <div class="cmd" data-keys="twitch mod sperren Twitch-Mod"><div><code>!blacklist add|remove &lt;Wort&gt;</code><span class="badge purple">Twitch-Mod</span></div><p>Wort im Twitch-Chat sperren oder freigeben.</p></div>
       </section>
     </div>
   </main>
