@@ -456,7 +456,11 @@
       out += '<p class="muted small rank-none" hidden>Kein Treffer in dieser Liste.</p>';
       return out;
     };
+    // Summe der gerade gezeigten Rangliste fuer die Stand-Zeile ("zusammen ...")
+    var curTotal = null;
+    var NO_SUM = { 'Siege in Folge': 1, 'Verschiedene Spiele': 1 };
     var table = function (rows, label, fmt) {
+      curTotal = NO_SUM[label] ? null : { rows: rows || [], label: label, fmt: fmt, val: function (r) { return Number(r[1]) || 0; } };
       return rankView(rows, function (r) { return { name: r[0], val: fmt(r[1]) }; }, [['Spieler'], [label, true]],
         function (r) { return ['<td>' + avatar(r[0]) + esc(r[0]) + '</td>', '<td class="num">' + fmt(r[1]) + '</td>']; }, function (r) { return r[0]; });
     };
@@ -481,6 +485,7 @@
         }, function (r) { return r.name; }, 'Für dieses Spiel gibt es noch keine Einträge.');
     };
     var clanTable = function (rows, label, fmt) {
+      curTotal = null;
       // Gruender: Skin auf dem Podest, Kopf + Name in der Tabelle
       return rankView(rows, function (c) { return { name: '[' + c.tag + '] ' + c.name, skinName: c.gruender || '', nameHtml: '<span class="pod-tag">[' + esc(c.tag) + ']</span> ' + esc(c.name), val: fmt(c), sub: (c.gruender ? 'Gründer: ' + esc(c.gruender) + ' · ' : '') + num(c.mitglieder) + ' Mitglieder' }; },
         [['Clan'], ['Gründer'], ['Mitglieder', true], [label, true]],
@@ -498,6 +503,7 @@
       var none = $('.rank-none', rankOut); if (none) none.hidden = hits > 0;
     });
     var standEl = doc.getElementById('rank-stand');
+    var renderStand = null;
     loadJson('daten/ranglisten.json').then(function (d) {
       var jc = function (v) { return num(v) + ' JC'; };
       // Jede Gruppe: [Name, Inhalt, danach, Unterkategorien]
@@ -587,9 +593,11 @@
           subTabs.innerHTML = '';
           rankOut.setAttribute('aria-labelledby', 'rt-' + i);
         }
+        curTotal = null;
         rankOut.innerHTML = '<h2>' + esc(title) + '</h2>' + item[1]();
         if (item[2]) item[2]();
         mark(tabs, i, focus);
+        if (typeof renderStand === 'function') renderStand();
       };
       var keys = function (box, count, go) {
         box.addEventListener('keydown', function (e) {
@@ -608,10 +616,21 @@
       show(want);
 
       // Stand: "vor X Minuten" (läuft live weiter)
-      var renderStand = function () {
+      renderStand = function () {
         if (!d.stand) { standEl.textContent = 'Die Ranglisten werden gerade zum ersten Mal vom Server geholt.'; return; }
         var t = new Date(d.stand);
-        var txt = 'Stand: ' + ago(d.stand) + ' (' + t.toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' }) + ') · ' + num(d.spieler) + ' Spieler · zusammen ' + hours(d.spielzeit_gesamt) + ' gespielt';
+        var txt = 'Stand: ' + ago(d.stand) + ' (' + t.toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' }) + ') · ' + num(d.spieler) + ' Spieler';
+        // Summe passend zur gezeigten Rangliste (Spielzeit: alle Spieler; sonst die angezeigten Plaetze)
+        if (curTotal) {
+          var sum = 0;
+          curTotal.rows.forEach(function (r) { sum += curTotal.val(r); });
+          var part;
+          if (curTotal.label === 'Spielzeit') part = hours(typeof d.spielzeit_gesamt === 'number' ? d.spielzeit_gesamt : sum) + ' gespielt';
+          else if (curTotal.fmt === num) part = num(sum) + ' ' + curTotal.label;
+          else if (curTotal.fmt === hours) part = hours(sum) + ' ' + curTotal.label;
+          else part = curTotal.fmt(sum) + (curTotal.fmt === jc ? '' : ' ' + curTotal.label);
+          txt += ' · zusammen ' + part + (curTotal.label !== 'Spielzeit' && curTotal.rows.length >= RANK_MAX ? ' (Top ' + RANK_MAX + ')' : '');
+        }
         if (Date.now() - d.stand > 3 * 3600e3) txt += ' – der Server war länger nicht erreichbar, die Zahlen können veraltet sein.';
         standEl.textContent = txt;
       };
