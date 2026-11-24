@@ -44,7 +44,7 @@
       <div class="page-head wrap">
         <span class="eyebrow">Übersicht</span>
         <h1>Alle Spieler-Befehle</h1>
-        <p class="lead">Alle 111 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
+        <p class="lead">Alle 126 Befehle für Spieler auf einen Blick – einfach oben suchen. Werte in &lt;spitzen Klammern&gt; musst du ausfüllen, Werte in [eckigen Klammern] sind optional.</p>
       </div>
     </div>
     <div class="wrap">
@@ -52,15 +52,16 @@
         <label for="cmd-search" class="sr-only">Befehle durchsuchen</label>
         <span aria-hidden="true">🔎</span>
         <input id="cmd-search" type="search" placeholder="Suchen, z. B. home, clan, coins …" autocomplete="off">
-        <span class="cmd-count" id="cmd-count" aria-live="polite">111 von 111</span>
+        <span class="cmd-count" id="cmd-count" aria-live="polite">126 von 126</span>
       </div>
       <div class="callout info"><p>⌨️ <strong>Tipp:</strong> Jeder Befehl geht auch als <code>/justin &lt;befehl&gt;</code> – zum Beispiel <code>/playtime</code> oder <code>/justin playtime</code>. Und jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/live</code> oder <code>/skill</code>. Drück im Chat die <kbd>Tab</kbd>-Taste: Dann siehst du alle Befehle, die du nutzen darfst.</p></div>
-      <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Truhenschutz</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a><a href="#twitch">Twitch-Chat (im Stream)</a></nav>
+      <nav class="skill-nav jump-nav" aria-label="Befehls-Gruppen"><a href="#allgemein">Allgemein &amp; Infos</a><a href="#chat">Chat &amp; Ruhe</a><a href="#coins">Justin Coins &amp; Spielzeit</a><a href="#teleport">Teleport, Home &amp; PvP</a><a href="#claims">Claims &amp; Kistenschutz</a><a href="#freunde">Freunde</a><a href="#skills">Skills</a><a href="#clans">Clans &amp; Nachrichten</a><a href="#vorteile">Sub- &amp; Premium-Vorteile</a><a href="#shop">Shop</a><a href="#minigames">Minigames</a><a href="#events">Events</a><a href="#twitch">Twitch-Chat (im Stream)</a></nav>
       <p class="callout no-results" id="no-results">Kein Befehl gefunden. Versuch es mit einem anderen Wort.</p>
-      <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> und <code>/home</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt bei <code>/spawn</code> <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
+      <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Bei <code>/home</code> gilt für Subs 5 Sekunden Wartezeit und 5 Minuten Abklingzeit, Premium kommt sofort hin. Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
         <h2 id="g-allgemein">Allgemein &amp; Infos</h2>
         <div class="cmd" data-keys="hilfe help tab"><div><code>/justin</code><span class="alias">auch: /hilfe, /befehle</span></div><p>Übersicht aller Befehle im Spiel. Mit der Tab-Taste siehst du alle Befehle, die du nutzen darfst.</p></div>
+        <div class="cmd" data-keys="geburtstag event glückwunsch"><div><code>/gratulieren [Nachricht|top]</code></div><p>Gratulieren – nur während eines passenden Events (z. B. Geburtstag).</p></div>
         <div class="cmd" data-keys="stream twitch"><div><code>/justin live</code><span class="alias">auch: /live</span></div><p>Ist Justin gerade live? Mit klickbarem Link.</p></div>
         <div class="cmd" data-keys="links"><div><code>/justin socials</code><span class="alias">auch: /socials</span></div><p>Alle Kanäle von Justin.</p></div>
         <div class="cmd" data-keys="termine event"><div><code>/justin events</code><span class="alias">auch: /events</span></div><p>Laufende und geplante Events.</p></div>
@@ -71,7 +72,8 @@
         <div class="cmd"><div><code>/tiktok</code></div><p>Link zu TikTok.</p></div>
         <div class="cmd"><div><code>/youtube</code></div><p>Link zu YouTube.</p></div>
         <div class="cmd" data-keys="homepage seite internet"><div><code>/web</code><span class="alias">auch: /website, /webseite</span></div><p>Link zur Webseite www.justinzockt.de im Chat.</p></div>
-        <div class="cmd" data-keys="voten abstimmen belohnung serverliste"><div><code>/vote</code></div><p>Link zur Serverliste: Vote für den Server und bekomm eine kleine Belohnung (einmal alle 24 Stunden).</p></div>
+        <div class="cmd" data-keys="voten abstimmen belohnung serverliste tagesbonus"><div><code>/vote</code><span class="alias">auch: /votes</span></div><p>Link zur Serverliste: Vote für den Server – pro Seite alle 24 Stunden 150 Justin Coins, 5 Erfahrungsfläschchen und ein Tagesbonus. Zeigt auch, wie oft du schon gevotet hast.</p></div>
+        <div class="cmd" data-keys="glücksrad belohnung täglich daily rad drehen"><div><code>/rewards</code><span class="alias">auch: /belohnungen, /gluecksrad, /daily</span></div><p>Tägliche Belohnungen: Glücksrad für alle, dazu Sub-Rad und Premium-Rad für den jeweiligen Rang. Jedes Rad einmal am Tag, neu um 0:00 Uhr. Mit Vote-Knopf.</p></div>
         <div class="cmd" data-keys="zeigen gegenstand chat"><div><code>/item</code><span class="alias">auch: /showitem, /zeigeitem</span></div><p>Das Item in deiner Hand im Chat zeigen – mit Tooltip zum Drüberfahren (kurze Abklingzeit).</p></div>
         <div class="cmd" data-keys="abwesend pause"><div><code>/afk</code></div><p>Sofort AFK gehen – bis du dich wieder bewegst.</p></div>
         <div class="cmd" data-keys="zweithand bedrock tauschen"><div><code>/offhand</code><span class="alias">auch: /oh, /zweithand</span></div><p>Item in der Hand mit der Zweithand tauschen (wie die Taste F – praktisch auf Bedrock).</p></div>
@@ -93,41 +95,57 @@
       <section class="cmd-group" id="teleport" aria-labelledby="g-teleport">
         <h2 id="g-teleport">Teleport, Home &amp; PvP</h2>
         <div class="cmd" data-keys="teleport"><div><code>/spawn</code></div><p>Zum Spawn: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit (Sub, Premium und Team: keine Abklingzeit).</p></div>
-        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome [2]</code><span class="badge purple">Sub/Premium</span></div><p>Dein Home setzen (nicht am Spawn). Sub: 1 Home, Premium: 2 Homes – das zweite mit /sethome 2.</p></div>
-        <div class="cmd" data-keys="zuhause teleport Sub/Premium"><div><code>/home [2]</code><span class="badge purple">Sub/Premium</span></div><p>Zu deinem Home: 5 Sekunden stillstehen (nicht im Kampf), keine Abklingzeit. Premium: /home 2 für das zweite Home.</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome</code><span class="badge purple">Sub/Premium</span></div><p>Dein Home setzen (nicht am Spawn). Sub und Premium haben je 1 Home.</p></div>
+        <div class="cmd" data-keys="zuhause teleport Sub/Premium"><div><code>/home</code><span class="badge purple">Sub/Premium</span></div><p>Zu deinem Home. Sub: 5 Sekunden stillstehen (nicht im Kampf), danach 5 Minuten Abklingzeit. Premium: sofort, ohne Wartezeit und ohne Abklingzeit.</p></div>
         <div class="cmd" data-keys="teleport anfrage Premium"><div><code>/tpa &lt;Spieler&gt;</code><span class="badge gold">Premium</span></div><p>Teleport-Anfrage an einen Spieler schicken.</p></div>
-        <div class="cmd" data-keys="teleport annehmen"><div><code>/tpaccept</code></div><p>Eine Teleport-Anfrage annehmen.</p></div>
-        <div class="cmd" data-keys="teleport ablehnen"><div><code>/tpdeny</code></div><p>Eine Teleport-Anfrage ablehnen.</p></div>
+        <div class="cmd" data-keys="teleport annehmen"><div><code>/tpaccept</code><span class="alias">auch: /tpyes</span></div><p>Eine Teleport-Anfrage annehmen.</p></div>
+        <div class="cmd" data-keys="teleport ablehnen"><div><code>/tpdeny</code><span class="alias">auch: /tpno</span></div><p>Eine Teleport-Anfrage ablehnen.</p></div>
         <div class="cmd" data-keys="kampf"><div><code>/pvp on</code></div><p>PvP für dich einschalten (Start: aus).</p></div>
         <div class="cmd" data-keys="kampf"><div><code>/pvp off</code></div><p>PvP für dich ausschalten. Nach einem Kampf gilt eine Sperre von 30 Sekunden.</p></div>
       </section>
       <section class="cmd-group" id="claims" aria-labelledby="g-claims">
-        <h2 id="g-claims">Claims &amp; Truhenschutz</h2>
-        <div class="cmd" data-keys="grundstück schutz chunk kaufen"><div><code>/claim chunk</code></div><p>Den Chunk kaufen, in dem du stehst (2.500 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt). Maximal 30 Chunks, Sub 50, Premium 70. Die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
-        <div class="cmd" data-keys="hilfe"><div><code>/claim</code></div><p>Zeigt die Hilfe zu Claims und Truhen (kauft nichts).</p></div>
-        <div class="cmd"><div><code>/claim info</code></div><p>Wem gehört dieser Chunk?</p></div>
-        <div class="cmd"><div><code>/claim list</code></div><p>Alle deine Chunks mit Koordinaten.</p></div>
-        <div class="cmd" data-keys="grenzen sehen karte"><div><code>/claim show</code></div><p>Zeigt 10 Sekunden lang alle Claims in deiner Nähe als leuchtenden Rand (grün = deins, gelb = vertraut, rot = fremd, weiß = frei). Beim Betreten eines Claims leuchtet der Rand automatisch kurz auf und oben steht, wem er gehört. Auf der Karte sind alle Claims farbig.</p></div>
-        <div class="cmd"><div><code>/claim help</code></div><p>Kurzhilfe zu Claims (wie /claim).</p></div>
-        <div class="cmd" data-keys="menü"><div><code>/claims</code></div><p>Menü mit allen deinen Claims und Sicherungen – direkt löschen per Doppelklick.</p></div>
-        <div class="cmd"><div><code>/unclaim</code></div><p>Chunk freigeben, 50 % der Coins zurück.</p></div>
+        <h2 id="g-claims">Claims &amp; Kistenschutz</h2>
+        <div class="cmd" data-keys="grundstück schutz chunk kaufen"><div><code>/claim chunk</code><span class="alias">auch: /claim kaufen</span></div><p>Kauf-Angebot für den Chunk, in dem du stehst: Fläche, Gesamtkosten, Strukturzuschlag (Bauwerke wie Dörfer machen ihn teurer) und deine Ersparnis mit Sub/Premium. Bestätigen mit dem Knopf in deiner Hotbar, im Chat oder mit /claim bestaetigen (30 Sekunden Zeit). Grundpreis 2.500 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt. Maximal 30 Chunks, Sub 50, Premium 70. Claimen geht erst ab 250 Blöcken Abstand von 0/0 (alle Dimensionen), die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
+        <div class="cmd" data-keys="kaufen bestätigen"><div><code>/claim bestaetigen</code><span class="alias">auch: /claim ja</span></div><p>Das offene Kauf-Angebot annehmen (wie der grüne Knopf in der Hotbar).</p></div>
+        <div class="cmd" data-keys="abbrechen"><div><code>/claim abbrechen</code><span class="alias">auch: /claim nein</span></div><p>Das offene Kauf-Angebot abbrechen (wie der rote Knopf).</p></div>
+        <div class="cmd" data-keys="mitglieder rechte menü einstellungen"><div><code>/claim bearbeiten</code><span class="alias">auch: /claim mitglieder, /claim rechte</span></div><p>Menü für deinen Claim: Name, Rechte für „Alle anderen“ und Freunde, Mitglieder mit Stufe Besucher, Benutzen oder Bauen, und alle Flags. Geht auch auf Bedrock.</p></div>
+        <div class="cmd" data-keys="flags einstellungen explosion feuer"><div><code>/claim flags</code></div><p>Direkt zu den Flags deines Claims (z. B. Kistenzugriff, Türen, Explosionen, Feuer, Pflanzenwachstum, Schneefall).</p></div>
+        <div class="cmd" data-keys="name umbenennen"><div><code>/claim name &lt;Name&gt;</code></div><p>Namen für den Chunk setzen (bis 32 Zeichen). Mit /claim name entfernen wieder löschen. Für alle verbundenen Chunks geht es im Menü.</p></div>
+        <div class="cmd" data-keys="bossbar anzeige name"><div><code>/claim anzeige [an|aus]</code><span class="alias">auch: /claim bossbar</span></div><p>Den Claim-Namen oben als Leiste (BossBar) ein- oder ausschalten. Ohne an/aus wird umgeschaltet.</p></div>
+        <div class="cmd" data-keys="hilfe"><div><code>/claim</code><span class="alias">auch: /claim hilfe</span></div><p>Zeigt die Hilfe zu Claims und Kisten (kauft nichts).</p></div>
+        <div class="cmd"><div><code>/claim info</code></div><p>Wem gehört dieser Chunk, wie heißt er und welche Rechte hast du hier?</p></div>
+        <div class="cmd"><div><code>/claim list</code><span class="alias">auch: /claim liste</span></div><p>Alle deine Chunks mit Koordinaten.</p></div>
+        <div class="cmd" data-keys="grenzen sehen karte"><div><code>/claim show</code><span class="alias">auch: /claim zeigen</span></div><p>Zeigt 10 Sekunden lang die Claims in deiner Nähe als leuchtenden Rand (grün = deins, gelb = du bist Mitglied, rot = fremd, weiß = frei). Auf der Karte sind alle Claims farbig.</p></div>
+        <div class="cmd" data-keys="menü"><div><code>/claims</code></div><p>Menü mit allen deinen Claims und Sicherungen – bearbeiten, löschen per Doppelklick, Knöpfe für Freunde, Claim-Anzeige und Auto-Sicherung.</p></div>
+        <div class="cmd"><div><code>/unclaim</code></div><p>Chunk freigeben, 50 % des Grundpreises zurück (der Strukturzuschlag wird nicht erstattet).</p></div>
         <div class="cmd"><div><code>/unclaim all</code></div><p>Alle Chunks freigeben.</p></div>
-        <div class="cmd" data-keys="freund"><div><code>/trust &lt;Name&gt;</code></div><p>Freund darf in alle deine Claims und Truhen.</p></div>
-        <div class="cmd" data-keys="freund"><div><code>/untrust &lt;Name&gt;</code></div><p>Freund wieder entfernen.</p></div>
-        <div class="cmd" data-keys="freund"><div><code>/trustlist</code></div><p>Deine Freunde anzeigen.</p></div>
-        <div class="cmd" data-keys="truhe sichern"><div><code>/lock</code></div><p>Angeschauten Block (Truhe, Fass, Ofen, Spender, Braustand, Endertruhe, Regal …) oder ein Truhenboot / eine Güterlore von Hand sichern.</p></div>
+        <div class="cmd" data-keys="freund vertrauen"><div><code>/trust &lt;Name&gt;</code></div><p>Volles Vertrauen: Der Spieler darf in allen deinen Claims bauen und in allen Kisten reinlegen und rausnehmen.</p></div>
+        <div class="cmd" data-keys="freund"><div><code>/untrust &lt;Name&gt;</code></div><p>Volles Vertrauen wieder entfernen.</p></div>
+        <div class="cmd" data-keys="freund"><div><code>/trustlist</code></div><p>Alle Spieler mit vollem Vertrauen anzeigen.</p></div>
+        <div class="cmd" data-keys="truhe kiste sichern"><div><code>/lock</code></div><p>Angeschauten Block (Truhe, Fass, Ofen, Spender, Braustand, Endertruhe, Regal …) oder ein Truhenboot / eine Güterlore von Hand sichern. Am Spawn geht das nicht.</p></div>
+        <div class="cmd" data-keys="kiste bearbeiten mitglieder rechte name"><div><code>/lock bearbeiten</code></div><p>Menü für die angeschaute gesicherte Kiste: Name, Mitglieder mit Stufe (Kein Zugriff, Nur reinlegen, Nur rausnehmen, Reinlegen &amp; rausnehmen), „Alle anderen“, Freunde, öffentlich an/aus und Flags (Trichter, Redstone). Schneller: Schleichen + Rechtsklick mit leerer Hand auf deine Kiste (Bedrock: Schleichen + Schlagen).</p></div>
         <div class="cmd" data-keys="truhe"><div><code>/unlock</code></div><p>Sicherung des angeschauten Blocks oder Fahrzeugs entfernen (auch /lock aus).</p></div>
         <div class="cmd" data-keys="truhen liste sicherungen"><div><code>/lock liste [Seite]</code></div><p>Alle deine Sicherungen im Chat – sortiert nach Art, Welt und Koordinaten.</p></div>
         <div class="cmd" data-keys="automatisch sichern einstellung"><div><code>/lock auto &lt;aus|an|standard|liste&gt;</code></div><p>Was beim Platzieren automatisch gesichert wird: aus, an (alle Arten), Standard (Kisten, Trichter, Öfen, Shulkerkisten, Fässer) oder Übersicht.</p></div>
         <div class="cmd" data-keys="automatisch sichern gruppe"><div><code>/lock auto &lt;Gruppe&gt; &lt;an|aus&gt;</code></div><p>Einzelne Art an/aus, z. B. kisten, trichter, oefen, shulker, faesser, endertruhe, spender, braustand, werkbank, regale, krug, plattenspieler, lesepult, leuchtfeuer, fahrzeuge.</p></div>
         <div class="cmd" data-keys="menü automatisch sichern"><div><code>/lock einstellungen</code></div><p>Menü mit grün/roten Schaltern für die Auto-Sicherung (auch über den Knopf in /claims, funktioniert auf Bedrock).</p></div>
       </section>
+      <section class="cmd-group" id="freunde" aria-labelledby="g-freunde">
+        <h2 id="g-freunde">Freunde</h2>
+        <div class="cmd" data-keys="freunde menü rechte"><div><code>/freunde</code><span class="alias">auch: /freund, /friends, /friend</span></div><p>Freunde-Menü: Anfragen, Freundesliste (wer online ist), Freund hinzufügen und die pauschalen Rechte für Freunde in deinen Kisten und Claims. Geht auch auf Bedrock.</p></div>
+        <div class="cmd" data-keys="anfrage hinzufügen einladen"><div><code>/freunde add &lt;Name&gt;</code><span class="alias">auch: /freunde &lt;Name&gt;</span></div><p>Freundschaftsanfrage schicken (auch an Offline-Spieler). Hat dir der andere schon eine geschickt, nimmst du sie damit an.</p></div>
+        <div class="cmd" data-keys="annehmen akzeptieren"><div><code>/freunde annehmen [Name]</code></div><p>Anfrage annehmen. Ohne Name, wenn nur eine offen ist.</p></div>
+        <div class="cmd" data-keys="ablehnen"><div><code>/freunde ablehnen [Name]</code></div><p>Anfrage ablehnen.</p></div>
+        <div class="cmd" data-keys="entfernen löschen"><div><code>/freunde entfernen &lt;Name&gt;</code></div><p>Freundschaft beenden.</p></div>
+        <div class="cmd" data-keys="liste"><div><code>/freunde liste</code></div><p>Alle Freunde, wer online ist, steht in Grün.</p></div>
+        <div class="cmd" data-keys="anfragen"><div><code>/freunde anfragen</code></div><p>Offene Anfragen mit Knöpfen zum Annehmen und Ablehnen. Anfragen verfallen nach 7 Tagen.</p></div>
+      </section>
       <section class="cmd-group" id="skills" aria-labelledby="g-skills">
         <h2 id="g-skills">Skills</h2>
-        <div class="cmd" data-keys="level titel"><div><code>/justin skill</code><span class="alias">auch: /justin skills, /skill, /skills</span></div><p>Skill-Menü: Level, Belohnungen, Titel wählen.</p></div>
-        <div class="cmd" data-keys="bergbau holz graben landwirt angeln kampf"><div><code>/justin skill &lt;Skill&gt;</code></div><p>Direkt einen Skill öffnen: bergbau, holz, graben, landwirt, angeln, kampf.</p></div>
-        <div class="cmd" data-keys="rangliste"><div><code>/justin skill top</code></div><p>Rangliste nach Skill-Gesamtlevel (Top 10).</p></div>
-        <div class="cmd" data-keys="rangliste"><div><code>/justin skill top &lt;Skill&gt;</code></div><p>Rangliste eines Skills (Top 10).</p></div>
+        <div class="cmd" data-keys="level titel"><div><code>/skill</code><span class="alias">auch: /skills, /justin skill</span></div><p>Skill-Menü: Level, Belohnungen, Titel wählen.</p></div>
+        <div class="cmd" data-keys="mining woodcutting excavation farming fishing combat bergbau holz graben landwirt angeln kampf"><div><code>/skill &lt;Skill&gt;</code></div><p>Direkt einen Skill öffnen: mining, woodcutting, excavation, farming, fishing, combat (die deutschen Namen gehen auch).</p></div>
+        <div class="cmd" data-keys="rangliste"><div><code>/skill top</code></div><p>Rangliste nach Skill-Gesamtlevel (Top 10).</p></div>
+        <div class="cmd" data-keys="rangliste"><div><code>/skill top &lt;Skill&gt;</code></div><p>Rangliste eines Skills (Top 10).</p></div>
       </section>
       <section class="cmd-group" id="clans" aria-labelledby="g-clans">
         <h2 id="g-clans">Clans &amp; Nachrichten</h2>
@@ -135,13 +153,13 @@
         <div class="cmd" data-keys="gründen erstellen"><div><code>/clan gruenden &lt;TAG&gt; &lt;Name&gt;</code></div><p>Clan gründen (Tag 3–4 Zeichen A–Z/0–9).</p></div>
         <div class="cmd" data-keys="spielzeit"><div><code>/clan info [TAG]</code></div><p>Infos zu deinem oder einem anderen Clan – mit gemeinsamer Spielzeit.</p></div>
         <div class="cmd" data-keys="rangliste"><div><code>/clan top</code></div><p>Rangliste der Clans (Skill-Gesamtlevel + Spielstunden).</p></div>
-        <div class="cmd"><div><code>/clan einladen &lt;Spieler&gt;</code></div><p>Spieler einladen (Gründer/Leiter, gilt 5 Minuten).</p></div>
+        <div class="cmd"><div><code>/clan einladen &lt;Spieler&gt;</code></div><p>Spieler einladen (Gründer, Leiter, Ältester; gilt 5 Minuten).</p></div>
         <div class="cmd"><div><code>/clan beitreten &lt;TAG&gt;</code></div><p>Einladung annehmen.</p></div>
         <div class="cmd"><div><code>/clan ablehnen &lt;TAG&gt;</code></div><p>Einladung ablehnen.</p></div>
         <div class="cmd"><div><code>/clan verlassen</code></div><p>Clan verlassen.</p></div>
-        <div class="cmd" data-keys="rauswerfen"><div><code>/clan kick &lt;Spieler&gt;</code></div><p>Mitglied entfernen (Gründer; Leiter nur Mitglieder).</p></div>
-        <div class="cmd" data-keys="befördern"><div><code>/clan befoerdern &lt;Spieler&gt;</code></div><p>Mitglied zum Leiter machen (Gründer).</p></div>
-        <div class="cmd"><div><code>/clan degradieren &lt;Spieler&gt;</code></div><p>Leiter zum Mitglied machen (Gründer).</p></div>
+        <div class="cmd" data-keys="rauswerfen"><div><code>/clan kick &lt;Spieler&gt;</code></div><p>Mitglied entfernen (Gründer alle; Leiter Älteste und Mitglieder; Älteste nur Mitglieder).</p></div>
+        <div class="cmd" data-keys="befördern ältester leiter"><div><code>/clan befoerdern &lt;Spieler&gt; [stufe]</code></div><p>Eine Stufe höher: Mitglied → Ältester (Gründer, Leiter), Ältester → Leiter (Gründer). Stufe: aeltester oder leiter.</p></div>
+        <div class="cmd" data-keys="ältester mitglied"><div><code>/clan degradieren &lt;Spieler&gt; [stufe]</code></div><p>Eine Stufe tiefer: Leiter → Ältester (Gründer), Ältester → Mitglied (Gründer, Leiter). Stufe: aeltester oder mitglied.</p></div>
         <div class="cmd" data-keys="übertragen"><div><code>/clan uebertragen &lt;Spieler&gt;</code></div><p>Gründerrolle abgeben (Gründer).</p></div>
         <div class="cmd" data-keys="farbe Sub/Premium"><div><code>/clan farbe &lt;Farbe&gt;</code><span class="badge purple">Sub/Premium</span></div><p>Farbe des Clan-Tags (Standard weiß). Nur Gründer mit Sub- oder Premium-Rang.</p></div>
         <div class="cmd" data-keys="auflösen löschen"><div><code>/clan aufloesen</code></div><p>Clan auflösen (Gründer, mit Bestätigung).</p></div>
@@ -153,13 +171,13 @@
         <h2 id="g-vorteile">Sub- &amp; Premium-Vorteile</h2>
         <div class="cmd" data-keys="endertruhe enderchest Sub/Premium"><div><code>/ec</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Endertruhe öffnen – überall.</p></div>
         <div class="cmd" data-keys="werkbank crafting Sub/Premium"><div><code>/craft</code><span class="badge purple">Sub/Premium</span></div><p>Mobile Werkbank öffnen – überall.</p></div>
-        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome + /home</code><span class="badge purple">Sub/Premium</span></div><p>Ein eigenes Home (Spieler haben kein Home), Premium hat 2 Homes.</p></div>
+        <div class="cmd" data-keys="zuhause Sub/Premium"><div><code>/sethome + /home</code><span class="badge purple">Sub/Premium</span></div><p>Ein eigenes Home. Sub: 5 Sekunden Wartezeit und 5 Minuten Abklingzeit. Premium: sofort, ohne Wartezeit und Abklingzeit.</p></div>
         <div class="cmd" data-keys="signatur unterschrift Premium"><div><code>/signieren &lt;Text&gt;</code><span class="badge gold">Premium</span><span class="alias">auch: /sign</span></div><p>Das Item in deiner Hand signieren – mit deinem Rang, Namen, Datum und Uhrzeit (Farben wie &amp;c erlaubt, /signieren entfernen nimmt deine Signatur wieder ab).</p></div>
         <div class="cmd" data-keys="sortieren ordnen truhe Premium"><div><code>/invsort</code><span class="badge gold">Premium</span><span class="alias">auch: /sortieren</span></div><p>Inventar sortieren (Hotbar und Rüstung bleiben). Schaust du dabei auf eine Truhe, ein Fass oder eine Shulkerkiste, wird die sortiert. Java: Mittelklick auf einen leeren Platz in der offenen Truhe.</p></div>
-        <div class="cmd" data-keys="amboss umbenennen Premium"><div><code>/anvil</code><span class="badge gold">Premium</span><span class="alias">auch: /amboss</span></div><p>Mobiler Amboss – überall.</p></div>
-        <div class="cmd" data-keys="steinsäge Premium"><div><code>/stonecutter</code><span class="badge gold">Premium</span><span class="alias">auch: /steinsaege</span></div><p>Mobile Steinsäge – überall.</p></div>
-        <div class="cmd" data-keys="schleifstein entzaubern Premium"><div><code>/grindstone</code><span class="badge gold">Premium</span><span class="alias">auch: /schleifstein</span></div><p>Mobiler Schleifstein – überall.</p></div>
-        <div class="cmd" data-keys="webstuhl banner Premium"><div><code>/loom</code><span class="badge gold">Premium</span><span class="alias">auch: /webstuhl</span></div><p>Mobiler Webstuhl – überall.</p></div>
+        <div class="cmd" data-keys="amboss umbenennen Sub/Premium"><div><code>/anvil</code><span class="badge purple">Sub/Premium</span><span class="alias">auch: /amboss</span></div><p>Mobiler Amboss – überall (nicht in der Minigame-Welt).</p></div>
+        <div class="cmd" data-keys="steinsäge Sub/Premium"><div><code>/stonecutter</code><span class="badge purple">Sub/Premium</span><span class="alias">auch: /steinsaege</span></div><p>Mobile Steinsäge – überall.</p></div>
+        <div class="cmd" data-keys="schleifstein entzaubern Sub/Premium"><div><code>/grindstone</code><span class="badge purple">Sub/Premium</span><span class="alias">auch: /schleifstein</span></div><p>Mobiler Schleifstein – überall.</p></div>
+        <div class="cmd" data-keys="webstuhl banner Sub/Premium"><div><code>/loom</code><span class="badge purple">Sub/Premium</span><span class="alias">auch: /webstuhl</span></div><p>Mobiler Webstuhl – überall.</p></div>
         <div class="cmd" data-keys="premium shop kaufen store buy"><div><code>/kaufen</code><span class="alias">auch: /store, /buy, /premiumshop, /webshop</span></div><p>Link zum Premium-Shop (Premium kaufen, auch auf premium.html der Website).</p></div>
         <div class="cmd" data-keys="premium status rang"><div><code>/premium</code></div><p>Dein Premium-Status und der Link zum Premium-Shop.</p></div>
       </section>
@@ -182,7 +200,7 @@
       </section>
       <section class="cmd-group" id="events" aria-labelledby="g-events">
         <h2 id="g-events">Events</h2>
-        <div class="cmd" data-keys="weihnachten türchen"><div><code>/justin advent</code><span class="alias">auch: /advent</span></div><p>Adventskalender öffnen (nur vom 1. bis 24. Dezember).</p></div>
+        <div class="cmd" data-keys="weihnachten türchen geschenk"><div><code>/justin advent</code><span class="alias">auch: /advent</span></div><p>Adventskalender: dein Fortschritt, Anleitung, Countdown und Adventskerzen (ab November sichtbar). Die Türchen öffnest du, indem du am Weihnachts-Spawn das Geschenk mit der Zahl des Tages anklickst.</p></div>
       </section>
       <section class="cmd-group" id="twitch" aria-labelledby="g-twitch">
         <h2 id="g-twitch">Twitch-Chat (im Stream)</h2>

@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Clans – JustinZocktCommunity</title>
-  <meta name="description" content="Clans gründen, Ränge, Clan-Chat, Clan-Rangliste und private Nachrichten.">
+  <meta name="description" content="Clans gründen, Ränge (Gründer, Leiter, Ältester, Mitglied), Clan-Chat, Clan-Rangliste und private Nachrichten.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Clans – JustinZocktCommunity">
-  <meta property="og:description" content="Clans gründen, Ränge, Clan-Chat, Clan-Rangliste und private Nachrichten.">
+  <meta property="og:description" content="Clans gründen, Ränge (Gründer, Leiter, Ältester, Mitglied), Clan-Chat, Clan-Rangliste und private Nachrichten.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -49,7 +49,7 @@
     </div>
     <div class="wrap">
       <div class="grid">
-        <div class="card"><span class="icon" aria-hidden="true">🏷️</span><h3>Dein Clan-Tag</h3><p>3–4 Zeichen (A–Z, 0–9). Im Chat steht <strong>nur der Tag</strong> vor deinem Namen – in deiner Clan-Farbe. <strong>Tag und Name lassen sich nach der Gründung nicht mehr ändern</strong> – überleg sie dir also gut.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🏷️</span><h3>Dein Clan-Tag</h3><p>3–4 Zeichen (A–Z, 0–9). Im Chat steht <strong>nur der Tag</strong> vor deinem Namen – in deiner Clan-Farbe. Über deinem Kopf sehen den Tag <strong>nur Mitglieder deines eigenen Clans</strong>. <strong>Tag und Name lassen sich nach der Gründung nicht mehr ändern</strong> – überleg sie dir also gut.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">👥</span><h3>Keine Größenbegrenzung</h3><p>Ein Clan kann beliebig viele Mitglieder haben. Jeder Spieler kann in genau einem Clan sein.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🏆</span><h3>Clan-Rangliste</h3><p><code>/clan top</code>: Punkte = <strong>Skill-Gesamtlevel + Spielstunden</strong> aller Mitglieder. Wird alle 5 Minuten aktualisiert.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">⏱</span><h3>Clan-Spielzeit</h3><p>Die Spielzeit aller Mitglieder wird zusammengezählt. Du siehst sie in <code>/clan info</code> und in der <a href="ranglisten.html">Clan-Spielzeit-Rangliste</a>.</p></div>
@@ -58,10 +58,12 @@
 
       <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#c-raenge">Ränge im Clan</a><a href="#c-befehle">Alle Clan-Befehle</a><a href="#c-farben">Clan-Farben</a><a href="#c-msg">Private Nachrichten</a></nav>
       <h2 id="c-raenge">Ränge im Clan</h2>
+      <p>Die Reihenfolge: <strong>Gründer &gt; Leiter &gt; Ältester &gt; Mitglied</strong>. Den eigenen Rang kann niemand selbst ändern.</p>
       <div class="table-wrap" role="region" aria-label="Clan-Ränge" tabindex="0"><table><thead><tr><th scope="col">Rang</th><th scope="col">Darf</th></tr></thead><tbody>
-<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle Mitglieder entfernen, befördern, degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern nur mit Sub- oder Premium-Rang.</td></tr>
-<tr><td><strong>Leiter</strong></td><td>Einladen, normale Mitglieder entfernen.</td></tr>
-<tr><td><strong>Mitglied</strong></td><td>Clan-Chat, Clan-Nachrichten, Clan verlassen.</td></tr>
+<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle entfernen, jeden zwischen Mitglied und Leiter befördern oder degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern nur mit Sub- oder Premium-Rang.</td></tr>
+<tr><td><strong>Leiter</strong></td><td>Einladen, Älteste und Mitglieder entfernen, Mitglieder zum Ältesten befördern und Älteste wieder zum Mitglied machen.</td></tr>
+<tr><td><strong>Ältester</strong></td><td>Einladen und normale Mitglieder entfernen.</td></tr>
+<tr><td><strong>Mitglied</strong></td><td>Clan-Chat, Clan-Nachrichten, Infos und Rangliste, Clan verlassen.</td></tr>
 </tbody></table></div>
 
       <h2 id="c-befehle">Alle Clan-Befehle</h2>
@@ -69,17 +71,17 @@
 <tr><td><code>/clan gruenden &lt;TAG&gt; &lt;Name&gt;</code></td><td>Clan gründen. Der Tag hat 3–4 Zeichen (A–Z, 0–9), der Name bis zu 32 Zeichen. Beispiel: /clan gruenden JZC Justins Crew</td><td>Alle</td></tr>
 <tr><td><code>/clan info [TAG]</code></td><td>Infos zu deinem oder einem anderen Clan: Gründer, Punkte, gemeinsame Spielzeit, Mitglieder (wer online ist).</td><td>Alle</td></tr>
 <tr><td><code>/clan top</code></td><td>Rangliste der Clans.</td><td>Alle</td></tr>
-<tr><td><code>/clan einladen &lt;Spieler&gt;</code></td><td>Spieler einladen. Die Einladung gilt 5 Minuten.</td><td>Gründer, Leiter</td></tr>
+<tr><td><code>/clan einladen &lt;Spieler&gt;</code></td><td>Spieler einladen. Die Einladung gilt 5 Minuten.</td><td>Gründer, Leiter, Ältester</td></tr>
 <tr><td><code>/clan beitreten &lt;TAG&gt;</code></td><td>Einladung annehmen (oder im Chat auf den Knopf klicken).</td><td>Eingeladene</td></tr>
 <tr><td><code>/clan ablehnen &lt;TAG&gt;</code></td><td>Einladung ablehnen.</td><td>Eingeladene</td></tr>
 <tr><td><code>/clan verlassen</code></td><td>Clan verlassen. Als Gründer musst du die Rolle vorher übertragen; als letztes Mitglied löst du den Clan auf.</td><td>Mitglieder</td></tr>
 <tr><td><code>/cc &lt;Nachricht&gt;</code></td><td>Nachricht in den Clan-Chat (auch /clanchat).</td><td>Mitglieder</td></tr>
 <tr><td><code>/clan chat</code></td><td>Deinen normalen Chat auf Clan-Chat umschalten (an/aus).</td><td>Mitglieder</td></tr>
 <tr><td><code>/clan msg &lt;TAG&gt; &lt;Nachricht&gt;</code></td><td>Nachricht an einen anderen Clan.</td><td>Mitglieder</td></tr>
-<tr><td><code>/clan kick &lt;Spieler&gt;</code></td><td>Mitglied entfernen. Leiter dürfen nur normale Mitglieder entfernen.</td><td>Gründer, Leiter</td></tr>
-<tr><td><code>/clan befoerdern &lt;Spieler&gt;</code></td><td>Mitglied zum Leiter machen.</td><td>Gründer</td></tr>
-<tr><td><code>/clan degradieren &lt;Spieler&gt;</code></td><td>Leiter wieder zum Mitglied machen.</td><td>Gründer</td></tr>
-<tr><td><code>/clan uebertragen &lt;Spieler&gt;</code></td><td>Gründerrolle abgeben (mit Sicherheitsabfrage).</td><td>Gründer</td></tr>
+<tr><td><code>/clan kick &lt;Spieler&gt;</code></td><td>Mitglied entfernen. Leiter entfernen Älteste und Mitglieder, Älteste nur Mitglieder.</td><td>Gründer, Leiter, Ältester</td></tr>
+<tr><td><code>/clan befoerdern &lt;Spieler&gt; [aeltester|leiter]</code></td><td>Eine Stufe höher: Mitglied → Ältester (Gründer oder Leiter), Ältester → Leiter (nur Gründer). Mit Stufe direkt dorthin.</td><td>Gründer, Leiter</td></tr>
+<tr><td><code>/clan degradieren &lt;Spieler&gt; [aeltester|mitglied]</code></td><td>Eine Stufe tiefer: Leiter → Ältester (nur Gründer), Ältester → Mitglied (Gründer oder Leiter).</td><td>Gründer, Leiter</td></tr>
+<tr><td><code>/clan uebertragen &lt;Spieler&gt;</code></td><td>Gründerrolle abgeben (mit Sicherheitsabfrage). Der alte Gründer wird Leiter.</td><td>Gründer</td></tr>
 <tr><td><code>/clan farbe &lt;Farbe&gt;</code></td><td>Farbe des Clan-Tags ändern (Standard: weiß). Nur für Gründer mit Sub- oder Premium-Rang.</td><td>Gründer (Sub/Premium)</td></tr>
 <tr><td><code>/clan aufloesen</code></td><td>Clan auflösen (mit Bestätigung, nicht rückgängig zu machen).</td><td>Gründer</td></tr>
 </tbody></table></div>
@@ -110,7 +112,7 @@
         <p><strong>Regeln &amp; Datenschutz:</strong> Clan-Chat und private Nachrichten unterliegen denselben Regeln wie der normale Chat. Der <strong>automatische Filter gilt überall</strong>. Zur Moderation werden diese Nachrichten <strong>gespeichert</strong> und können vom Owner eingesehen werden (<a href="regeln.html#r10-6">Regel 10.6</a>, <a href="datenschutz.html">Datenschutz</a>).</p>
         <p>Clan-Tags und -Namen dürfen nicht beleidigend sein und keine Werbung enthalten – das Team darf unpassende Clans auflösen. Clan-Kriege nur im Rahmen der PvP-Regeln (<a href="regeln.html#r10-5">Regel 10.5</a>).</p>
       </div>
-      <div class="callout info"><p>🏠 <strong>Claims für den Clan:</strong> Jedes Mitglied claimt mit seinem eigenen Limit. Chunks im <strong>Nether kosten das Doppelte</strong>, im <strong>End das Dreifache</strong>; die End-Mitte (1.000 Blöcke um 0/0) kann niemand claimen. Mehr in den <a href="faq.html#claims">FAQ</a>.</p></div>
+      <div class="callout info"><p>🏠 <strong>Claims für den Clan:</strong> Jedes Mitglied claimt mit seinem eigenen Limit. Chunks im <strong>Nether kosten das Doppelte</strong>, im <strong>End das Dreifache</strong>. Claimen geht erst ab 250 Blöcken Abstand von 0/0, und die End-Mitte (1.000 Blöcke um 0/0) kann niemand claimen. Clan-Freunde trägst du am einfachsten über <code>/freunde</code> oder als Mitglied in <code>/claim bearbeiten</code> ein. Mehr in den <a href="faq.html#claims">FAQ</a>.</p></div>
     </div>
   </main>
   <footer class="site-footer">

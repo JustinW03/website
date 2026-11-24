@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events – JustinZocktCommunity</title>
-  <meta name="description" content="Adventskalender mit 24 Türchen (jedes öffnet erst an seinem Tag), Event-Regeln und Minigames.">
+  <meta name="description" content="Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn – mit Koordinaten –, Fest-Grüße, Event-Regeln und Minigames.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Events – JustinZocktCommunity">
-  <meta property="og:description" content="Adventskalender mit 24 Türchen (jedes öffnet erst an seinem Tag), Event-Regeln und Minigames.">
+  <meta property="og:description" content="Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn – mit Koordinaten –, Fest-Grüße, Event-Regeln und Minigames.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -44,12 +44,12 @@
       <div class="page-head wrap">
         <span class="eyebrow">Events</span>
         <h1>Events &amp; Adventskalender</h1>
-        <p class="lead">Am Spawn steht der NPC „Events“ – Rechtsklick zeigt dir die aktuellen Events. Das große Event im Dezember: der Adventskalender mit 24 Türchen.</p>
+        <p class="lead">Am Spawn steht der NPC „Events“ – Rechtsklick zeigt dir die aktuellen Events mit Anleitung. Das große Event im Dezember: der Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn.</p>
       </div>
     </div>
     <div class="wrap">
       <div class="callout info" data-season="advent-aus" hidden><p>🎄 <strong>Der Adventskalender ist gerade nicht aktiv.</strong> Er kommt jedes Jahr am 1. Dezember zurück – ab November siehst du hier schon die Vorschau.</p></div>
-      <noscript><p class="callout">Für den Adventskalender auf dieser Seite wird JavaScript benötigt. Im Spiel öffnest du ihn mit <code>/justin advent</code>.</p></noscript>
+      <noscript><p class="callout">Für den Adventskalender auf dieser Seite wird JavaScript benötigt. Die Verstecke stehen trotzdem in der Tabelle unten.</p></noscript>
 
       <section class="advent-wrap" id="advent" data-season="advent" hidden aria-labelledby="h-advent">
         <div class="snow" aria-hidden="true"></div>
@@ -57,34 +57,66 @@
         <p class="advent-status" id="advent-status" aria-live="polite">Kalender wird vorbereitet …</p>
         <div class="kv">
           <div><b>1.–24.12.<span data-advent-year>2026</span></b><span>jeweils 00:00 bis 23:59 Uhr (deutsche Zeit)</span></div>
-          <div><b><code>/justin advent</code></b><span>öffnet den Kalender im Spiel</span></div>
+          <div><b>🎁 Geschenk suchen</b><span>am Weihnachts-Spawn liegt jeden Tag ein Geschenk mit der Zahl des Tages</span></div>
           <div><b>1 Türchen pro Tag</b><span>nur das von heute – Verpasstes verfällt</span></div>
           <div><b>Treue-Bonus</b><span>eine besondere Überraschung für alle 24 Türchen</span></div>
-          <div><b>4 Adventskerzen</b><span>an den vier Adventssonntagen – Rechtsklick = anzünden</span></div>
+          <div><b>4 Adventskerzen</b><span>an den Adventssonntagen – Rechtsklick = anzünden</span></div>
         </div>
-        <p class="muted small">Hier auf der Website kannst du schon einmal reinschauen: Jedes Türchen lässt sich erst an seinem Tag öffnen. Abholen musst du die Geschenke im Spiel.</p>
+        <p class="muted small">Hier auf der Website kannst du schon einmal reinschauen: Jede Karte lässt sich erst an ihrem Tag umdrehen und zeigt dann, wo das Geschenk liegt. Öffnen musst du das Geschenk im Spiel.</p>
         <p class="advent-msg" id="advent-msg" aria-live="polite"></p>
         <div class="advent" id="advent-grid"></div>
-        <script type="text/plain" id="advent-daten">=0VXiMXYthnIs0lIpkUSJBCdpV2ayFmY0xWYIhCIcCo4sV2Z8OMbG1icllGduVmUeCo4gEmc0lHbFBiOuVmYhhGI0VmbmZmtDX2Zg4WZoNmc8OMVgQjMgUGbsFGIllGZgwSZsxWYgIHvDbGIyVnbgMXdu9mQtUWdlJHVgAZriLCLismcldnclVXZGBycl95wvJ3RiwiIDpEIwADMuATMiwiIulGdzVnSg42b2BiZllmcCBSbl5WalBCZuVHIn5Wdk5Wai5WZsVWZTBCajVnQgU5kfCPIs4WZoNme0R6wsBFIyMDIs4WZ0V2ahJFI0YDIs4WZyJXYiRXayVGa0VmTgEDIs4WZ05WYtFWaEBiNxACLsVmZwFEIyVmblRGbvdEIyVGdyVmY1FmeyVmVgwSKyVHdhJXYwVmUgwSSJlEIrNGvDz2RgwSSJlEI0lWZrJXYiRHbhhEIsYFI65WZppXamZWRoACnAKuclRmb1d3c0h2Yh5GapV2VeCo4gU2ajFGa6RXawNHduFWbhlGRgoDdp1GIcCo49p0egsmblh2YzV2ZzRHajFmbolWZXByculGdzVnSeCo4gUGdzl2ayV2asVHaTBSZ09mUisFLiQmblJWYnlGbpVGSiwCNysFLdJiIs0lIDpEIwAzMiwiIsVmZwR4wgUmblRGbvdEIyICLikSSJlEI0lWZrJXYiRHbhhEIsYVSgoHd1h2YThCIlpHd8OcbzRHajFmbolWZXBSZ09mUisFLiECZuVmYhdWaslWZIBCdzlGIuV2Zy9WTiwyMysFLdJiIs0lIDpEIwAzMiwiIlt2Y2OMbi5WZzlWRgIjIsISZnFGby9mdlRWZp1GajNVL0lmclhGdl5kIsIiblRHdhxGc0lmclhGdl5EIyIyWsICdlNVLlRWZp1GajNlIsIjMbxSXiICLdJyQKBCMwIjIsISZrNmtDzmQtQHajlGTgIzMiwiIuVmYyFmRgkWZyRGIulGIyVGdoNWash2Yz9mcGBiNxASZKJyWsISZ0RXZrJXZ0h2YpxkIsEjMbxSXiwWYpNWZwNnIs0lIrJXZ3JXZ1VmRiwiIDpEIwADMuMjIsIiblRnbh1WYpREI1ICLiUmeyV2azRnblZHZBBiL0Ayj4++rV+J8iwiIJlEIyVGbsR6wmpHbvhEIoNWdCBSlT+J8iwiIcCo4sV2ZuVme0VHajNlnAKOItVGdvRlIbxiI05WZ2RWQg4CNiwCMysFLdJiIs0lIDpEIwAjMiwiIJlEIu9Wa0Fmcl5WZnVmUgIXZkByauFmcUJCLikyZuFGboAieuVGdzl2clJnclVXZGBiclRGIltmbkOscUBiMiwiIpcmbhxGKgQHajl2c0h2Yh5EIyVGZgU2auR6wyRFIyIyWsISZ0h2YkOsbyVGdul2VgU2ZuFGTiwSOxsFLdJiIs0lIDpEIwAzMiwiIlR3byJEI4ICLiUGZnFmch12UgQjMisFLiQ3ayFWbzRHajFmbolWZXJCL4EzWs0lIiwSXiMkSgADMyICLiU2ajZ7wsJmblR3bOBiMiwiIlRHdhxGcsxWYoN2UgU2ZpxGbkOsZ1plIsIiclxWZpB3cuVGd0FGbQJyWsIyapNXdtNHdoNWYuhWaldlIscTMbxSXiICLdJyQKBCM1EjIsISSJlEI0lWZrJXYiRHbhhEIoNWdCJCLi4WZoNGajNHpDzmZzdmb1JHahZmcFBCOiwiIpxWd6FGbzlGchxEI2EjIsISZsF2ZlJnclh2Y8OsQggjIbxiItJXd3JXZoNGvDLkIsYTMbxSXiwWYpNWZwNnIs0lIDpEIwADMuUDIyVGZvBCajVnQtIXd0FmchBXZSBCLuVGduFWbhlGRggDIswWZmBHhDDSZuVGZs92RgMDIsQXaltGajlGbiJXZ0NnbVBiclRGItVGdvRFI642b2FGZgMnbpVGInlGbsR6wmVnWisFLiMnclRmbhBiblRWZqBic8OsZgMJgiDyZuVHajNXYyJXZix5wiwSNxsFLdJiIs0lIDpEIwUTMiwiIyVmdsVHc6JXY3h2YTBCOiwiIpMDIyVWdhR2Z1xmRoAiblRXZrFmUgIzMisFLiIXZ0NXZ2xWaTBic8OsZg4WZ0V2ahJlIsQTMbxSXiwWYpNWZwNnIs0lIrJXZ3JXZ1VmRiwiIDpEIwADMuIjIsIiblRnbh1WYpREIlJXZ0lWZ3BCNiwiIlpnclt2c05WZ2RWQg4yMg8Iuv/alfCvIsISasVnehx2cpBXYMBiNxICLiUGZnFmch12UggjIsIiblRnbh1WYpREIzIyWsICduVmdkFEIuMjIsMTMbxSXiICLdJyQKBCM1EjIsISZsxGpDLWZl5GajNFI2EjIsIycpJmc8O8SgIXZ0pHdp5GajNXZHJCLiMXalVXYsJEI4ICLiMXalt2YhBFIyMjIsISZrNmtDzmYlVmboN2UgIzMisFLiQXZzVXYC1ibuFWblVmboN2UiwiMxsFLdJiIs0lIDpEIwUTMiwiIlNHajFGTgUmblRXYyJWZHBiMxICLikSSJlEI0lWZrJXYiRHbhhEIskUSJBiclRmtDvEIskUSJByclJXZl1EIzVGZgs2Y8OMbHhCIcCo4sV2ZuF2cpVknAKOIsV2ZuFkIbxiIuxWZn5WYzlWRiwSMxsFLdJiIs0lIDpEIwATNuIjIsIyaj9GbiRGbvdkIbxiIkxWZnNHdoNWYuhWaldlIsATMbxSXiICLdJyQKBCMwIjIsIyc0RXZsVGdvtWZulWZ3h2YTBSZuVGdhJnYldEI2EjIsIibsV2ajFmRgIzMiwiIsVmZwFEIyVmblRGbvdkIsIiblxmclBnclRmbFBCNisFLiwWZ0VXZiV2cpVmUiwSObxSXiICLdJyQKBCM1EjIsIibl1GahJFIlJXYiRHajl2cuVHI2EjIsIicltmckOMdzJXZW1SZu9GdzRWZSBCNiwiIyVGdoNWYi9WZCBCNiwiIyVGdoNWayRFI0ICLiUmbvR3ckVmUgIzMisFLiQXZrFGUtIXZsRnZ8OMViwCObxSXiICLdJyQKBCMwIjIsIiblRHdvJXYLBSZuVGZs92RggjIsIiblxGbhJWdlhEI4ICLiwWZ0RXYTJCLi4WZulWZMBiMiwiIyVGZslGajN3cuVWbh5EIyIyWsISZyVWa05WZSBSZulWZkBic8OsRiwyNbxSXiwWYpNWZwNnIs0lIrJXZ3JXZ1VmRiwiIDpEIwATNuIjIsIiblRnbh1WYpREIzICLiUmeyV2azRnblZHZBBiLyAyj4++rV+J8iwiIlNXZul2alxWZUBCajVnQgU5kfCvIsISKuVmclVmYfOMvDPFI4ACLuVGduFWbhlGRgQDIswWZmBXQgIXZuVGZs92Rgwyc1FGbvtWaO1ybr9GajNFI6wWZk5GvDLEKgs2YhNVLzVXYs92ap5kIsISKJlUSgQXaltmchJGdsFGSgwSSJlEIsxWYmJXZkVmRgwSSJlEI6RXdoN2UoACblZWZpR3UtMXdhx2brlmTgUGdvJlIbxiI05WZ2RWQg4iMgsCIzVXYs92ap5kIsYzWs0lIiwSXiMkSgADMyICLi4WZyVWZiRHajVXZMBiNxICLiwJgij2Yz5WdwJXZk5WaL5JgiDiblh2YoN2ckOMbmN3ZuVncoFmZyVEI2EjIsIiblRHdvJXYLBSZuVGZs92RgITMisFLiQmblJWQtg2Yz5WdQJCL1sFLdJiIs0lIDpEIwUTMiwiIuVmeyV2SgU2nDnWZXBCNiwiIuVmbyVGdhxEI2EjIsIiY1FGbuVGdoNWaGBiMzICLiUWbtR6w0NnblRHajlmRgQjNisFLi4WZ1FmYyVmYsV2Ug0Wd6BSb1FmYuVmbuFGViwCNbxSXiICLdJyQKBCM1EjIsIiblJnchJmblNXaFBiNiwiIuxWZrNWYGBiMzICLikSSJBCdpV2ayFmY0xWYIBCLJlUSgonbllmepZmZFhCIcCo4lt2Yhhme0lGcT1CblRHajl2VeCo4gU2ajFGa6RXawNnblNXaFJyWsIyZ1VmerJXZX1CblRHajl2ViwyMbxSXiICLdJyQKBCM1EjIsIiblxGbvR3c0NXayh2QggjIsIiblh2Y1t2c0h2Yh5GapV2ViwiIztWYlR3UgYTMisFLiQXYyJ3b2JXZ05WaXJCLysFLdJCbhl2YlB3ciwSXismcldnclVXZGJCLiMkSgADM14SMiwiIuVGduFWbhlGRgIjIsISZ6JXZrNHduVmdkFEIuEDIPi77vW5nwLCLi4WZ0R3byF2SgUmblRGbvdEI0ICLi4Gblt2YhZEIyMjIsICnAKublh2Y6RHpDzGUgMXYt9knAKOI2EjIbxiI05WZ2RWQg4SMgsCI0JXY0NHduVmdFJCLxs1W</script>
+        <script type="text/plain" id="advent-daten">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</script>
+
+        <h3 id="advent-orte">📍 Wo liegen die Geschenke?</h3>
+        <p>Alle 24 Geschenk-Köpfe liegen am <strong>Weihnachts-Spawn</strong>. Die Koordinaten sind <strong>X Y Z</strong> – auf Java siehst du deine Position mit <kbd>F3</kbd>, auf Bedrock schaltest du in den Welt-Einstellungen „Koordinaten anzeigen“ ein. Manche liegen offen, andere gut versteckt – ein paar erreichst du nur per Parkour.</p>
+        <div class="table-wrap" role="region" aria-label="Verstecke der Geschenke" tabindex="0"><table><thead><tr><th scope="col" class="num">Tag</th><th scope="col">Koordinaten (X Y Z)</th><th scope="col">Hinweis</th></tr></thead><tbody>
+<tr><td class="num"><strong>1</strong></td><td><code>2 63 7</code></td><td>Rotunde, neben dem Spawnpunkt</td></tr>
+<tr><td class="num"><strong>2</strong></td><td><code>13 63 -14</code></td><td>unter dem Tannenbaum im Nordosten</td></tr>
+<tr><td class="num"><strong>3</strong></td><td><code>18 63 13</code></td><td>unter dem Tannenbaum im Südosten</td></tr>
+<tr><td class="num"><strong>4</strong></td><td><code>-13 63 18</code></td><td>unter dem Tannenbaum im Südwesten</td></tr>
+<tr><td class="num"><strong>5</strong></td><td><code>-18 63 -13</code></td><td>unter dem Tannenbaum im Nordwesten</td></tr>
+<tr><td class="num"><strong>6</strong></td><td><code>6 65 -25</code></td><td>im Schlitten (Norden)</td></tr>
+<tr><td class="num"><strong>7</strong></td><td><code>8 63 16</code></td><td>hinter dem Schneemann im Südosten</td></tr>
+<tr><td class="num"><strong>8</strong></td><td><code>-8 63 -16</code></td><td>hinter dem Schneemann im Nordwesten</td></tr>
+<tr><td class="num"><strong>9</strong></td><td><code>-10 63 30</code></td><td>auf dem Eis am gefrorenen Wasserfall (Südwest)</td></tr>
+<tr><td class="num"><strong>10</strong></td><td><code>26 63 3</code></td><td>End-Schrein, hinter einer Purpursäule</td></tr>
+<tr><td class="num"><strong>11</strong></td><td><code>-23 63 0</code></td><td>hinter dem Nether-Portal</td></tr>
+<tr><td class="num"><strong>12</strong></td><td><code>5 63 34</code></td><td>am Brückenpfosten im Süden</td></tr>
+<tr><td class="num"><strong>13</strong></td><td><code>-28 64 28</code></td><td>im Südwest-Turm (geheime Tür zur Platzseite)</td></tr>
+<tr><td class="num"><strong>14</strong></td><td><code>16 67 -36</code></td><td>oben auf der Mauer im Nordosten (Eis-Parkour)</td></tr>
+<tr><td class="num"><strong>15</strong></td><td><code>-38 63 -5</code></td><td>Westtor, neben dem Banner</td></tr>
+<tr><td class="num"><strong>16</strong></td><td><code>34 63 -13</code></td><td>in der Schneewehe im Osten</td></tr>
+<tr><td class="num"><strong>17</strong></td><td><code>6 65 -17</code></td><td>auf Rudolphs Rücken</td></tr>
+<tr><td class="num"><strong>18</strong></td><td><code>12 63 -2</code></td><td>hinter einer Rotunden-Säule (Osten)</td></tr>
+<tr><td class="num"><strong>19</strong></td><td><code>-24 63 -11</code></td><td>hinter einer Laterne im Westen</td></tr>
+<tr><td class="num"><strong>20</strong></td><td><code>-4 64 -45</code></td><td>vor dem Nordtor an der Straßenlaterne</td></tr>
+<tr><td class="num"><strong>21</strong></td><td><code>32 63 -32</code></td><td>außerhalb der Mauer hinter dem Nordost-Turm</td></tr>
+<tr><td class="num"><strong>22</strong></td><td><code>11 65 -11</code></td><td>oben auf dem Geschenkeberg (Nordost)</td></tr>
+<tr><td class="num"><strong>23</strong></td><td><code>-8 63 13</code></td><td>im Iglu (Südwest)</td></tr>
+<tr><td class="num"><strong>24</strong></td><td><code>31 85 12</code></td><td>auf der schwebenden Insel im Osten (Eis-Spirale)</td></tr>
+</tbody></table></div>
 
         <details>
           <summary>So funktioniert der Kalender im Spiel</summary>
           <div class="details-body">
             <ul>
-              <li>Am Spawn schwebt ein Schild mit dem Event. Ab dem 1.12. steht dort „Heute offen: Türchen X“ – und es schneit drumherum.</li>
-              <li><code>/justin advent</code> öffnet ein Menü mit 24 Türchen: <strong>Heute</strong> = leuchtende Truhe, <strong>Geöffnet</strong> = grünes Glas, <strong>Verpasst</strong> = graues Glas, <strong>Später</strong> = eine Tür mit Datum und Countdown.</li>
-              <li>Die vier Ecken des Menüs sind nur Glasscheiben, dort steckt kein Türchen.</li>
+              <li>Vom <strong>1. Dezember bis 1. Januar</strong> verwandelt sich der Spawn in den <strong>Weihnachts-Spawn</strong> mit Tannenbäumen, Schnee, Geschenken, Schlitten und Schneefall. Danach ist automatisch wieder der normale Spawn da.</li>
+              <li>Am Weihnachts-Spawn sind <strong>24 Geschenk-Köpfe</strong> mit den Zahlen 1–24 versteckt. Such das Geschenk mit der <strong>heutigen Zahl</strong> und klick es an (Rechts- oder Linksklick, auf Bedrock antippen oder schlagen). Das geht nur am jeweiligen Tag und einmal pro Spieler.</li>
+              <li>Der <strong>Event-NPC</strong> am Spawn und <code>/justin advent</code> (auch <code>/advent</code>) zeigen dir nur noch den Stand: wie viele Türchen du schon hast, die Anleitung, den Countdown und deine Adventskerzen. Türchen öffnen geht dort nicht mehr.</li>
               <li>Pro Tag gibt es <strong>ein</strong> Türchen, nur das von <strong>heute</strong>. Verpasste Tage verfallen.</li>
               <li>Geschenke kommen ins Inventar. Ist es voll, fällt der Rest vor deine Füße – <strong>nur du</strong> kannst es aufheben.</li>
-              <li><strong>Adventskerzen:</strong> An den vier Adventssonntagen (1., 6., 13. und 20.12.) steckt im Türchen zusätzlich eine rote Adventskerze. Sie lässt sich <strong>nicht aufstellen</strong>. Ein <strong>Rechtsklick</strong> zündet sie an und gibt <strong>250 Justin Coins</strong> plus eine kleine Belohnung (Plätzchen, Goldene Karotten, Erfahrungsfläschchen oder Goldene Äpfel). Hast du <strong>alle 4 Kerzen</strong> angezündet, bekommst du den <strong>Adventskranz-Bonus</strong>: 3.000 Justin Coins und einen Verzauberten Goldenen Apfel. Jede Kerze brennt nur für ihren Besitzer.</li>
+              <li><strong>Adventskerzen:</strong> An den Adventssonntagen steckt im Türchen zusätzlich eine rote Adventskerze (fällt der 1. Advent in den November, kommt die erste Kerze am 1.12.). Sie lässt sich <strong>nicht aufstellen</strong>. Ein <strong>Rechtsklick</strong> zündet sie an und gibt <strong>250 Justin Coins</strong> plus eine kleine Belohnung. Hast du <strong>alle 4 Kerzen</strong> angezündet, bekommst du den <strong>Adventskranz-Bonus</strong>: 3.000 Justin Coins und einen Verzauberten Goldenen Apfel. Jede Kerze brennt nur für ihren Besitzer.</li>
+              <li><strong>Türchen 24:</strong> Die Weihnachts-Spitzhacke hat dieses Jahr zusätzlich <strong>Telekinesis</strong>.</li>
               <li>Beim Öffnen gibt es Titel, Sound und Schneeflocken, an besonderen Tagen Feuerwerk. Das Feuerwerk macht keinen Schaden.</li>
               <li>Beim Joinen erinnert dich der Server an dein Türchen, um 0 Uhr bekommen alle Online-Spieler Bescheid.</li>
-              <li>Der Kalender läuft nur vom 1. bis 24.12. Außerhalb dieser Zeit sind Schild und Befehl <code>/justin advent</code> ausgeblendet.</li>
             </ul>
             <p class="muted small">Zum Vergleich: 1 Stunde aktiv spielen = <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC, 1 Chunk-Claim = 2.500 JC.</p>
           </div>
         </details>
       </section>
+
+      <h2 id="feiertage">🎉 Fest-Grüße</h2>
+      <p>Beim ersten Join des Tages begrüßt dich der Server zu besonderen Tagen: an den <strong>Adventssonntagen</strong> mit „Schönen 1./2./3./4. Advent!“, vom <strong>24. bis 26. Dezember</strong> mit „Frohe Weihnachten!“ und im neuen Jahr mit „Frohes Neues Jahr!“.</p>
 
       <h2 id="event-regeln">Event-Regeln</h2>
       <ul>
@@ -93,6 +125,9 @@
         <li><strong>Handeln erlaubt:</strong> Event-Gegenstände dürfen gehandelt werden – aber nie gegen Echtgeld (<a href="regeln.html#r10-7">10.7</a>, <a href="regeln.html#r7-2">7.2</a>).</li>
         <li>Es gilt wie immer: ein Minecraft-Account pro Person, Zweitaccounts nur mit Erlaubnis des Teams (<a href="regeln.html#r1-4">1.4</a>).</li>
       </ul>
+
+      <h2 id="taeglich">🎡 Jeden Tag: Glücksräder &amp; Voten</h2>
+      <p>Auch außerhalb von Events lohnt sich jeder Tag: Mit <code>/rewards</code> drehst du dein tägliches Glücksrad, und mit <code>/vote</code> holst du dir die Vote-Belohnung mit Tagesbonus. Alles dazu auf der <a href="index.html#rewards">Startseite</a>.</p>
 
       <h2 id="minigames">🎮 Minigames</h2>
       <p>Am Spawn steht auch der NPC „Minigames“ – Rechtsklick oder <code>/minigames join</code> bringt dich in die Minigame-Welt mit 26 Spielen. Alles dazu auf der Seite <a href="minigames.html">Minigames</a>.</p>

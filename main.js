@@ -334,6 +334,10 @@
     var set = function (cls, label, t) { state.className = 'portal-state ' + cls; state.textContent = label; text.textContent = t; };
     if (!d) return;
     if (d.offen) { set('open', 'Offen', name + ' ist offen – viel Spaß und pass auf dich auf!'); cd.hidden = true; return; }
+    // Geheimer Termin (Server liefert geheim: true und kein Datum): nur "???" zeigen, nie ein Datum
+    if (d.geheim || (el.getAttribute('data-portal') === 'nether' && !d.oeffnet_ms)) {
+      set('closed', '???', 'Wann ' + (name === 'Das End' ? 'das End' : 'der Nether') + ' öffnet, bleibt ein Geheimnis: ??? – lass dich überraschen!'); cd.hidden = true; return;
+    }
     var at = Number(d.oeffnet_ms) || 0;
     if (at > Date.now()) {
       var when = new Date(at).toLocaleString('de-DE', { timeZone: 'Europe/Berlin', weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -349,7 +353,8 @@
     } else if (at) {
       set('soon', 'In Kürze', name + ' wird in Kürze geöffnet.'); cd.hidden = true;
     } else {
-      set('closed', 'Gesperrt', name + ' ist noch gesperrt. Den Termin gibt es im Discord.'); cd.hidden = true;
+      // Kein Termin vom Server: den Text aus der Seite stehen lassen (dort steht der angekündigte Termin)
+      cd.hidden = true;
     }
   }
 
@@ -668,7 +673,7 @@
       wrap.classList.add('open');
       btn.tabIndex = -1;
       btn.setAttribute('aria-label', 'Türchen ' + d + ' (geöffnet)');
-      if (msg) msg.textContent = '🎉 Türchen ' + d + ' ist offen! Abholen kannst du es im Spiel mit /justin advent.';
+      if (msg) msg.textContent = '🎉 Türchen ' + d + ' ist offen! Such im Spiel am Weihnachts-Spawn das Geschenk mit der Zahl ' + d + ' und klick es an.';
       sparkle(btn, 26);
       setTimeout(function () { var b = $('.door-back', wrap); if (b) b.focus({ preventScroll: true }); }, reduce ? 0 : 600);
     });
