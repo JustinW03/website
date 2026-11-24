@@ -32,9 +32,9 @@
           <li><a href="regeln.html">Regeln</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="claims.html">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
           <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
-          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
         </ul>
       </nav>
     </div>
@@ -60,7 +60,9 @@
       <h2>Was das Dashboard kann</h2>
       <div class="grid">
         <div class="card"><span class="icon" aria-hidden="true">👥</span><h3>Alle Spieler</h3><p>Name (auch alte Namen), Whitelist seit/entfernt am, Twitch (+ Sub), Bann und Grund, Koordinaten, Coins, Spielzeit, Tode, Chunks, Sicherungen, zuletzt online – sortier- und durchsuchbar.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">➜</span><h3>Teleport-Knopf „➜ TP“</h3><p>Zu jedem Online-Spieler direkt teleportieren.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">➜</span><h3>Teleport: „➜ TP“, „➜ Hin-TP“, „⤓ Holen“</h3><p>Zu Spielern teleportieren – auch zur letzten Position von Offline-Spielern – und Spieler zu dir holen. Offline-Spieler werden beim nächsten Join geholt.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🗑️</span><h3>Gelöschte Nachrichten</h3><p>Welche Chat-Nachricht wer aus dem Team wann gelöscht hat – mit Absender und Text.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🔎</span><h3>Suche in allem</h3><p>Jede Liste zeigt die neuesten 500 Einträge, die Suche findet aber jeden gespeicherten Eintrag.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">⚖️</span><h3>Strafen &amp; Team-Aktionen</h3><p>Kicks, Mutes, Banns und Entbannungen mit Teamler und Grund im Überblick.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">💬</span><h3>Private Chats</h3><p>Clan-Chats und private Nachrichten zur Moderation.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛒</span><h3>Shop</h3><p>Alle Angebote und Verkäufe.</p></div>
@@ -68,12 +70,21 @@
         <div class="card"><span class="icon" aria-hidden="true">🪙</span><h3>Zahlungen &amp; Tode</h3><p>Die letzten Zahlungen, Spieler-Tode mit Ort und Ursache und Tier-Tode – dort nur noch Tiere, die durch Spieler, TNT oder Feuer gestorben sind.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🚨</span><h3>Anticheat</h3><p>Meldungen, Kicks und Banns des Anticheats.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">💾</span><h3>Backups</h3><p>Überblick über die täglichen Sicherungen.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🗺️</span><h3>Karte</h3><p>Die komplette Welt-Karte – nur mit Anmeldung.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🗺️</span><h3>Karte</h3><p>Die komplette Welt-Karte – nur mit Anmeldung. Claims anklicken: Besitzer, Mitglieder, Teleport und Löschen (einzeln oder alle eines Spielers).</p></div>
       </div>
 
       <h2 id="befehle">Schnellreferenz: Team-, Admin- und Owner-Befehle</h2>
       <p class="muted">Dauer-Angaben: <code>30m</code>, <code>2h</code>, <code>1d</code>, <code>1w</code> oder <code>perm</code> (nur Mod/Admin). Admins haben alle Team-Befehle, der Owner hat alles. Die Owner-Befehle stehen bewusst nicht auf der Website, sondern nur in der internen Befehlsliste.</p>
       <p class="muted">Jeder <code>/justin</code>-Befehl geht auch ohne /justin, z. B. <code>/mute</code>, <code>/ac</code>, <code>/vanish</code>, <code>/wo</code> – und jeder normale Befehl auch als <code>/justin &lt;befehl&gt;</code>. Wo der Name schon Minecraft oder Paper gehört, mit j davor: <code>/jban</code>, <code>/jkick</code>, <code>/jtp</code>, <code>/jreset</code>, <code>/jreload</code> (außerdem <code>/wl</code> = whitelist, <code>/sb</code> = scoreboard, <code>/hilfe</code> = help). Mit <kbd>Tab</kbd> im Chat siehst du nur die Befehle, die du nutzen darfst.</p>
+      <div class="search" role="search">
+        <label for="admin-search" class="sr-only">Team-, Admin- und Plugin-Befehle durchsuchen</label>
+        <span aria-hidden="true">🔎</span>
+        <input id="admin-search" type="search" placeholder="Befehle suchen, z. B. mute, bann, vanish, rollback …" autocomplete="off">
+        <span class="cmd-count" id="admin-count" aria-live="polite"></span>
+      </div>
+      <p class="muted" id="admin-none" style="display:none">Kein Befehl gefunden – versuch ein anderes Wort.</p>
+      <div id="admin-cmds">
+      <div class="admin-group">
       <h3>Team (Sup, Mod)</h3>
       <div class="table-wrap" role="region" aria-label="Team (Sup, Mod)" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
 <tr><td><code>/justin kick &lt;Name&gt; [Grund]</code></td><td>Spieler kicken.</td></tr>
@@ -94,6 +105,8 @@
 <tr><td><code>/justin minigames sperren &lt;Name&gt; [1h|3d|perm] [Grund]</code></td><td>Spieler für die Minigame-Welt sperren (Strafe). Aufheben: /justin minigames entsperren &lt;Name&gt;, Liste: /justin minigames gesperrt.</td></tr>
 <tr><td><code>[✖] vor Chatnachrichten</code></td><td>Nachricht für alle löschen (nur das Team sieht den Knopf).</td></tr>
 </tbody></table></div>
+      </div>
+      <div class="admin-group">
       <h3>Admin</h3>
       <div class="table-wrap" role="region" aria-label="Admin" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
 <tr><td><code>/justin nether|end on|off</code></td><td>Dimension öffnen oder sperren.</td></tr>
@@ -128,9 +141,11 @@
 <tr><td><code>/clan admin kick &lt;TAG&gt; &lt;Spieler&gt;</code></td><td>Spieler aus einem Clan entfernen.</td></tr>
 <tr><td><code>/shop admin entfernen &lt;AngebotsID&gt;</code></td><td>Shop-Angebot entfernen (IDs stehen für Admins in der Lore). Items gehen in die Rücklage des Verkäufers.</td></tr>
 </tbody></table></div>
+      </div>
 
       <p class="muted">Inventare und Sicherungen laufen über die eigenen Befehle <code>/inv</code>, <code>/ec &lt;Name&gt;</code> und <code>/rollback</code> (siehe oben).</p>
 
+      <div class="admin-group">
       <h3>Weitere Werkzeuge (Plugins)</h3>
       <div class="table-wrap" role="region" aria-label="Plugin-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was passiert</th></tr></thead><tbody>
 <tr><td><code>/pr i</code></td><td>Prism-Inspektor an/aus, dann Block anklicken.</td></tr>
@@ -139,6 +154,8 @@
 <tr><td><code>/pr undo</code></td><td>Rollback rückgängig machen.</td></tr>
 <tr><td><code>lp user &lt;Name&gt; parent add &lt;rang&gt;</code></td><td>Rang vergeben (sup, mod, builder, dev, admin, premium). Entfernen: parent remove.</td></tr>
 </tbody></table></div>
+      </div>
+      </div>
       <p class="muted small">Ausführliche Anleitungen liegen im Projektordner (nicht öffentlich). Diese Seite enthält bewusst keine Zugangsdaten, Server-Adressen außer <code>play.justinzockt.de</code> oder Links zum Dashboard.</p>
     </div>
   </main>
@@ -155,7 +172,8 @@
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
-            <li><a href="index.html#voten">Für den Server voten</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

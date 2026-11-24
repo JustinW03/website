@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claims – JustinZocktCommunity</title>
+  <meta name="description" content="Claims, Kistenschutz und Freunde: Chunks kaufen mit /claim chunk, Preise, Limits, Rollen, alle Flags, Claim-Anzeige, /lock und /freunde.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Claims – JustinZocktCommunity">
+  <meta property="og:description" content="Claims, Kistenschutz und Freunde: Chunks kaufen mit /claim chunk, Preise, Limits, Rollen, alle Flags, Claim-Anzeige, /lock und /freunde.">
+  <meta property="og:locale" content="de_DE">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="JustinZocktCommunity – Startseite">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#fff" d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" opacity=".25"/><path fill="#fff" d="M12 3 4 7.5 12 12l8-4.5z"/><path fill="#fff" d="M12 12v9l-8-4.5v-9z" opacity=".7"/></svg></span>
+        <span>JustinZocktCommunity<small>Minecraft-Server</small></span>
+      </a>
+      <a class="header-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> <span class="nav-toggle-text">Menü</span></button>
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="beitreten.html">Beitreten</a></li>
+          <li><a href="regeln.html">Regeln</a></li>
+          <li><a href="raenge.html">Ränge</a></li>
+          <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="claims.html" aria-current="page">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    <div class="page-hero">
+      <div class="page-head wrap">
+        <span class="eyebrow">Dein Gebiet</span>
+        <h1>Claims, Kistenschutz &amp; Freunde</h1>
+        <p class="lead">Sichere dein Grundstück, schütze deine Kisten und gib deinen Freunden mit einem Klick die passenden Rechte. Alles geht auch auf Bedrock.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#kaufen">🏠 Chunk kaufen</a><a href="#preise">🪙 Preise &amp; Limits</a><a href="#rollen">👥 Rollen &amp; Mitglieder</a><a href="#flags">⚑ Flags</a><a href="#anzeige">👀 Anzeige</a><a href="#befehle">⌨️ Befehle</a><a href="#freunde">🤝 Freunde</a><a href="#kisten">🔒 Kistenschutz</a></nav>
+      <div class="callout info"><p>🛡️ <strong>Nicht verwechseln:</strong> Hier geht es um <strong>Claims</strong> (geschützte Grundstücke). Gemeinschaften mit Tag und Clan-Chat findest du bei den <a href="clans.html">Clans</a>.</p></div>
+
+      <section id="kaufen" aria-labelledby="h-kaufen">
+        <h2 id="h-kaufen">🏠 Einen Chunk kaufen: <code>/claim chunk</code></h2>
+        <p>Ein Claim ist immer ein ganzer <strong>Chunk</strong> (16 × 16 Blöcke, die ganze Höhe). Stell dich in den Chunk und schreib <code>/claim chunk</code>. Du bekommst ein Kauf-Angebot im Chat:</p>
+        <ul>
+          <li><strong>Fläche:</strong> 256 Blöcke² (16 × 16) mit Chunk-Nummer – der Rand leuchtet orange.</li>
+          <li><strong>Gesamtkosten</strong> für genau diesen Chunk.</li>
+          <li><strong>Strukturzuschlag:</strong> Liegt ein Bauwerk im Chunk (z. B. Dorf, Tempel, Festung, Prüfungskammer), kostet er mehr. Ohne Bauwerk ist der Zuschlag 0.</li>
+          <li><strong>Ersparnis mit Sub/Premium:</strong> was du mit Rang sparen würdest bzw. sparst.</li>
+        </ul>
+        <p>Zum Kaufen drückst du den <strong>grünen Knopf in deiner Hotbar</strong> (der rote bricht ab), klickst den Knopf im Chat oder schreibst <code>/claim bestaetigen</code>. Abbrechen: <code>/claim abbrechen</code>. Das Angebot gilt 30 Sekunden. Ist die Hotbar voll, bestätigst du im Chat. Auf Bedrock tippst du den Knopf an oder nutzt den Befehl.</p>
+        <p class="muted small"><code>/claim</code> allein zeigt nur die Hilfe und kauft nichts.</p>
+      </section>
+
+      <section id="preise" aria-labelledby="h-preise">
+        <h2 id="h-preise">🪙 Preise &amp; Limits</h2>
+        <div class="table-wrap" role="region" aria-label="Claim-Preise" tabindex="0"><table><thead><tr><th scope="col">Welt</th><th scope="col">Grundpreis pro Chunk</th><th scope="col">Sub (−5 %)</th><th scope="col">Premium (−10 %)</th></tr></thead><tbody>
+<tr><th scope="row">Oberwelt</th><td>2.000 JC</td><td>1.900 JC</td><td>1.800 JC</td></tr>
+<tr><th scope="row">Nether</th><td>4.000 JC</td><td>3.800 JC</td><td>3.600 JC</td></tr>
+<tr><th scope="row">End</th><td>6.000 JC</td><td>5.700 JC</td><td>5.400 JC</td></tr>
+</tbody></table></div>
+        <p class="muted small">Grundpreis in der Oberwelt <span data-info="claims.preis" data-fmt="num">2.000</span> JC, im Nether das Doppelte, im End das Dreifache. Sub und Premium bekommen ihren Rabatt auf diesen Preis (auch auf einen Strukturzuschlag).</p>
+        <div class="grid">
+          <div class="card"><span class="icon" aria-hidden="true">📦</span><h3>Wie viele Chunks?</h3><p>Spieler bis <strong><span data-info="claims.max_chunks" data-fmt="num">30</span></strong>, Sub bis <strong><span data-info="claims.max_chunks_sub" data-fmt="num">50</span></strong>, Premium bis <strong><span data-info="claims.max_chunks_premium" data-fmt="num">70</span></strong> Chunks.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">📍</span><h3>Wo darf ich claimen?</h3><p>Erst ab <strong>250 Blöcken Abstand von 0/0</strong> (X oder Z) – in Oberwelt, Nether und End gleich. Am Spawn geht es nicht.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">↩️</span><h3>Wieder freigeben</h3><p><code>/unclaim</code> gibt den Chunk frei, in dem du stehst. Du bekommst die <strong>Hälfte des Chunk-Preises</strong> zurück – der Strukturzuschlag wird nicht erstattet.</p></div>
+        </div>
+        <p class="muted small">Unbenutzte Claims können nach längerer Inaktivität freigegeben werden.</p>
+      </section>
+
+      <section id="rollen" aria-labelledby="h-rollen">
+        <h2 id="h-rollen">👥 Rollen, Mitglieder &amp; Name</h2>
+        <p>In <code>/claim bearbeiten</code> stellst du alles für den Chunk ein, in dem du stehst – mit Knöpfen, also auch auf Bedrock. Es gibt drei Stufen:</p>
+        <div class="table-wrap" role="region" aria-label="Claim-Stufen" tabindex="0"><table><thead><tr><th scope="col">Stufe</th><th scope="col">Was darf man?</th></tr></thead><tbody>
+<tr><th scope="row"><strong>Besucher</strong></th><td>Nur das, was die Besucher-Flags erlauben.</td></tr>
+<tr><th scope="row"><strong>Benutzen</strong></th><td>Türen, Knöpfe, ungesicherte Kisten, Betten, Ernten, Tiere füttern, Handel … – aber nicht bauen.</td></tr>
+<tr><th scope="row"><strong>Bauen</strong></th><td>Alles: bauen, abbauen, Rahmen, Rüstungsständer, Tiere, Fahrzeuge.</td></tr>
+</tbody></table></div>
+        <ul>
+          <li><strong>Alle anderen:</strong> Welche Stufe alle haben, die kein Mitglied sind (Standard: Besucher).</li>
+          <li><strong>Mitglieder:</strong> „+ Mitglied hinzufügen“ – Online-Spieler, Freunde oder per Name. Jedes Mitglied bekommt eine eigene Stufe.</li>
+          <li><strong>Freunde:</strong> Welche Stufe alle deine <a href="#freunde">Freunde</a> hier haben – „Standard“ nimmt die Einstellung aus dem Freunde-Menü.</li>
+          <li><strong>Name:</strong> Gib deinem Grundstück einen Namen (bis 32 Zeichen) – im Menü oder mit <code>/claim name &lt;Name&gt;</code>.</li>
+          <li><strong>Übertragen:</strong> Name, Mitglieder, Rechte und Flags mit einem Knopf auf alle verbundenen Chunks oder auf alle deine Chunks übernehmen.</li>
+        </ul>
+        <p class="muted small">Du als Besitzer darfst immer alles. Wer per <code>/trust &lt;Name&gt;</code> volles Vertrauen hat, darf ebenfalls in all deinen Claims bauen und an all deine Kisten.</p>
+      </section>
+
+      <section id="flags" aria-labelledby="h-flags">
+        <h2 id="h-flags">⚑ Alle Flags</h2>
+        <p>Flags schaltest du in <code>/claim bearbeiten</code> (oder <code>/claim flags</code>) mit einem Klick an oder aus. „Standard“ zeigt, wie ein neuer Claim eingestellt ist.</p>
+        <h3 id="flags-besucher">Besucher-Rechte</h3>
+        <p class="muted small">Gelten für alle, deren Stufe zu niedrig ist. Mitglieder mit genug Rechten dürfen es immer.</p>
+        <div class="table-wrap" role="region" aria-label="Besucher-Flags" tabindex="0"><table><thead><tr><th scope="col">Flag</th><th scope="col">Was es erlaubt</th><th scope="col">Standard</th><th scope="col">Mitglieder</th></tr></thead><tbody>
+<tr><th scope="row"><strong>Kistenzugriff</strong><br><code>kisten</code></th><td>Ungesicherte Kisten, Fässer, Öfen … öffnen</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Block-Nutzung</strong><br><code>benutzen</code></th><td>Türen, Falltüren, Zauntore, Hebel, Knöpfe, Arbeitsblöcke</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Druckplatten &amp; Stolperdrähte</strong><br><code>druckplatten</code></th><td>Druckplatten, Stolperdrähte, Zielblöcke auslösen</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Betten &amp; Seelenanker</strong><br><code>bett</code></th><td>In Betten schlafen, Seelenanker benutzen</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Boote &amp; Loren benutzen</strong><br><code>fahrzeuge</code></th><td>Boote und Loren einsteigen und platzieren</td><td><span class="badge green">an</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Boote &amp; Loren zerstören</strong><br><code>fahrzeuge-zerstoeren</code></th><td>Fremde Boote und Loren im Claim kaputt schlagen</td><td><span class="badge gray">aus</span></td><td>nur Bauen</td></tr>
+<tr><th scope="row"><strong>Rahmen &amp; Gemälde</strong><br><code>rahmen</code></th><td>Rahmen drehen, Items herausnehmen, Gemälde abnehmen</td><td><span class="badge gray">aus</span></td><td>nur Bauen</td></tr>
+<tr><th scope="row"><strong>Rüstungsständer</strong><br><code>ruestungsstaender</code></th><td>Rüstungsständer benutzen oder zerstören</td><td><span class="badge gray">aus</span></td><td>nur Bauen</td></tr>
+<tr><th scope="row"><strong>Tiere verletzen/töten</strong><br><code>tiere-toeten</code></th><td>Tiere und Dorfbewohner angreifen</td><td><span class="badge gray">aus</span></td><td>nur Bauen</td></tr>
+<tr><th scope="row"><strong>Tiere füttern/züchten</strong><br><code>tiere-fuettern</code></th><td>Füttern, züchten, scheren, melken, reiten</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Leinen</strong><br><code>leinen</code></th><td>Tiere anleinen oder losmachen</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Handel mit Dorfbewohnern</strong><br><code>handel</code></th><td>Mit Dorfbewohnern und Händlern handeln</td><td><span class="badge green">an</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>Ernten &amp; Düngen</strong><br><code>ernten</code></th><td>Reife Pflanzen ernten, neu anpflanzen, Knochenmehl</td><td><span class="badge gray">aus</span></td><td>ab Benutzen</td></tr>
+<tr><th scope="row"><strong>PvP</strong><br><code>pvp</code></th><td>Spieler dürfen sich hier angreifen (sonst nie) – gilt für alle, auch Mitglieder</td><td><span class="badge green">an</span></td><td>gilt für alle</td></tr>
+</tbody></table></div>
+        <h3 id="flags-umwelt">Umwelt</h3>
+        <p class="muted small">Gelten für alles im Claim – egal wer dort ist.</p>
+        <div class="table-wrap" role="region" aria-label="Umwelt-Flags" tabindex="0"><table><thead><tr><th scope="col">Flag</th><th scope="col">Was passiert, wenn es an ist</th><th scope="col">Standard</th></tr></thead><tbody>
+<tr><th scope="row"><strong>Creeper-Explosionen</strong><br><code>creeper</code></th><td>Creeper zerstören Blöcke</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>TNT</strong><br><code>tnt</code></th><td>TNT und TNT-Loren zerstören Blöcke</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Wither</strong><br><code>wither</code></th><td>Wither und Wither-Schädel zerstören Blöcke</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Feuerbälle (Ghast)</strong><br><code>feuerball</code></th><td>Ghast-Feuerbälle zerstören Blöcke</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Andere Explosionen</strong><br><code>explosionen</code></th><td>Betten, Seelenanker, Kristalle, Windkugeln …</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Feuerausbreitung</strong><br><code>feuer</code></th><td>Feuer breitet sich aus und verbrennt Blöcke</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Wasser/Lava von außen</strong><br><code>fluss</code></th><td>Flüssigkeiten fließen von außen herein</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Kolben von außen</strong><br><code>kolben</code></th><td>Kolben außerhalb dürfen Blöcke hinein- oder herausschieben</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Enderman-Griefing</strong><br><code>enderman</code></th><td>Enderman nehmen Blöcke mit</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Verwüster</strong><br><code>ravager</code></th><td>Verwüster zerstören Pflanzen und Laub</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Zombies brechen Türen</strong><br><code>zombies</code></th><td>Zombies schlagen Türen ein</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Sonstiges Mob-Griefing</strong><br><code>mobs</code></th><td>Silberfische, Füchse, Hasen, Wither-Blöcke …</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Schafe fressen Gras</strong><br><code>schafe</code></th><td>Schafe fressen Gras (wichtig für Wolle)</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Dorfbewohner farmen</strong><br><code>dorfbewohner</code></th><td>Bauern-Dorfbewohner ernten und pflanzen</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Ackerboden zertrampeln</strong><br><code>trampeln</code></th><td>Ackerboden wird zu Erde (auch durch dich selbst)</td><td><span class="badge gray">aus</span></td></tr>
+<tr><th scope="row"><strong>Monster spawnen</strong><br><code>monster</code></th><td>Monster spawnen natürlich im Claim</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Gras-/Myzel-Ausbreitung</strong><br><code>gras</code></th><td>Gras, Myzel und Nezel breiten sich aus</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Ranken &amp; Tropfstein</strong><br><code>ranken</code></th><td>Ranken, Höhlenranken, Seetang und Tropfstein wachsen</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Sculk-Ausbreitung</strong><br><code>sculk</code></th><td>Sculk breitet sich aus</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Pflanzenwachstum</strong><br><code>pflanzen</code></th><td>Pflanzen und Setzlinge wachsen</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Laub zerfällt</strong><br><code>laub</code></th><td>Laub ohne Stamm zerfällt</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Korallen vertrocknen</strong><br><code>korallen</code></th><td>Korallen ohne Wasser sterben ab</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Beton härtet aus</strong><br><code>beton</code></th><td>Betonpulver wird an Wasser zu Beton</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Schneegolem-Spuren</strong><br><code>schneemann</code></th><td>Schneegolems hinterlassen Schnee</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Schneefall &amp; Eis</strong><br><code>schneefall</code></th><td>Schnee fällt, Wasser friert</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Schnee/Eis schmilzt</strong><br><code>schmelzen</code></th><td>Schnee und Eis tauen</td><td><span class="badge green">an</span></td></tr>
+<tr><th scope="row"><strong>Fallende Blöcke</strong><br><code>fallende-bloecke</code></th><td>Sand, Kies, Ambosse … fallen herunter</td><td><span class="badge green">an</span></td></tr>
+</tbody></table></div>
+      </section>
+
+      <section id="anzeige" aria-labelledby="h-anzeige">
+        <h2 id="h-anzeige">👀 Claim-Anzeige &amp; Grenzen</h2>
+        <div class="grid">
+          <div class="card"><span class="icon" aria-hidden="true">🏷️</span><h3>Name als Leiste</h3><p>Oben am Bildschirm zeigt eine Leiste (BossBar), in wessen Claim du gerade bist – mit Namen, falls er einen hat. Ausschalten: <code>/claim anzeige aus</code>, wieder an: <code>/claim anzeige an</code>.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">✨</span><h3>Grenzen sehen</h3><p><code>/claim show</code> zeigt 10 Sekunden lang die Claims in deiner Nähe mit farbigen Blöcken und Partikeln: <strong>grün</strong> = deins, <strong>gelb</strong> = du hast Rechte, <strong>rot</strong> = fremd, <strong>weiß</strong> = frei.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">🚪</span><h3>Beim Betreten</h3><p>Betrittst du einen Claim, gibt es eine kurze Meldung, einen leisen Ton und einen leuchtenden Rand. Beim Kauf leuchtet der Chunk orange.</p></div>
+        </div>
+      </section>
+
+      <section id="befehle" aria-labelledby="h-befehle">
+        <h2 id="h-befehle">⌨️ Claim-Befehle</h2>
+        <div class="table-wrap" role="region" aria-label="Claim-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was es macht</th></tr></thead><tbody>
+<tr><td><code>/claim chunk</code></td><td>Kauf-Angebot für den Chunk, in dem du stehst.</td></tr>
+<tr><td><code>/claim bestaetigen</code></td><td>Offenes Angebot kaufen (wie der grüne Knopf). Auch /claim ja.</td></tr>
+<tr><td><code>/claim abbrechen</code></td><td>Offenes Angebot abbrechen (wie der rote Knopf). Auch /claim nein.</td></tr>
+<tr><td><code>/claim bearbeiten</code></td><td>Menü für deinen Claim: Name, Mitglieder, Rechte und Flags.</td></tr>
+<tr><td><code>/claim flags</code></td><td>Öffnet dasselbe Menü – dort geht es zu den Flags.</td></tr>
+<tr><td><code>/claim name &lt;Name&gt;</code></td><td>Namen setzen (bis 32 Zeichen), „-“ entfernt ihn wieder.</td></tr>
+<tr><td><code>/claim anzeige an|aus</code></td><td>Claim-Name als Leiste oben ein- oder ausschalten.</td></tr>
+<tr><td><code>/claim info</code></td><td>Wem gehört der Chunk und welche Rechte hast du hier?</td></tr>
+<tr><td><code>/claim list</code></td><td>Alle deine Chunks mit Koordinaten.</td></tr>
+<tr><td><code>/claim show</code></td><td>Grenzen der Claims in deiner Nähe für 10 Sekunden zeigen.</td></tr>
+<tr><td><code>/claims</code></td><td>Menü mit allen Claims und Sicherungen.</td></tr>
+<tr><td><code>/unclaim</code></td><td>Chunk freigeben. /unclaim all gibt alle frei.</td></tr>
+<tr><td><code>/claim</code></td><td>Zeigt nur die Hilfe – kauft nichts.</td></tr>
+</tbody></table></div>
+        <p class="muted small">Alle Befehle mit Suche: <a href="befehle.html#claims">Befehle → Claims &amp; Kistenschutz</a>.</p>
+      </section>
+
+      <section id="freunde" aria-labelledby="h-freunde">
+        <h2 id="h-freunde">🤝 Freunde: <code>/freunde</code></h2>
+        <p>Freunde bekommen <strong>pauschale Rechte</strong> in all deinen Kisten und Claims – einmal einstellen, überall gültig. <code>/freunde</code> öffnet das Menü mit Anfragen, Freundesliste (wer online ist) und den Rechten. Geht auch auf Bedrock.</p>
+        <div class="table-wrap" role="region" aria-label="Freunde-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was es macht</th></tr></thead><tbody>
+<tr><td><code>/freunde add &lt;Name&gt;</code></td><td>Freundschaftsanfrage schicken (auch an Offline-Spieler).</td></tr>
+<tr><td><code>/freunde annehmen [Name]</code></td><td>Anfrage annehmen – auf Java auch per Klick im Chat.</td></tr>
+<tr><td><code>/freunde ablehnen [Name]</code></td><td>Anfrage ablehnen.</td></tr>
+<tr><td><code>/freunde entfernen &lt;Name&gt;</code></td><td>Freundschaft beenden.</td></tr>
+<tr><td><code>/freunde liste</code></td><td>Alle Freunde, wer online ist, steht in Grün.</td></tr>
+<tr><td><code>/freunde anfragen</code></td><td>Offene Anfragen mit Knöpfen zum Annehmen und Ablehnen.</td></tr>
+</tbody></table></div>
+        <ul>
+          <li><strong>Freunde in deinen Kisten:</strong> Kein Zugriff, Nur reinlegen, Nur rausnehmen oder Reinlegen &amp; rausnehmen.</li>
+          <li><strong>Freunde in deinen Claims:</strong> Keine Rechte (Besucher), Benutzen oder Bauen.</li>
+          <li>Am Anfang haben Freunde <strong>keine</strong> Rechte – du entscheidest. Für einzelne Kisten und Claims kannst du es trotzdem anders einstellen.</li>
+          <li>Anfragen verfallen nach 7 Tagen. Du kannst bis zu 100 Freunde haben.</li>
+        </ul>
+      </section>
+
+      <section id="kisten" aria-labelledby="h-kisten">
+        <h2 id="h-kisten">🔒 Kistenschutz: <code>/lock</code></h2>
+        <p><strong>Kisten, Trichter, Öfen, Shulkerkisten und Fässer</strong> werden beim Platzieren automatisch gesichert – auch außerhalb von Claims. Alles andere, was sich sichern lässt, sicherst du von Hand: Block anschauen und <code>/lock</code>. Am Spawn geht das nicht.</p>
+        <p class="muted small">Sicherbar: Kisten, Trichter, Öfen, Shulkerkisten, Fässer, Endertruhen, Spender &amp; Werfer, Braustände, Automatische Werkbank, Bücherregale &amp; Regale, Dekorierte Krüge, Plattenspieler, Lesepulte, Leuchtfeuer, Truhenboote &amp; Loren.</p>
+        <h3 id="kisten-bearbeiten">Kiste bearbeiten</h3>
+        <p>Öffne das Menü deiner Kiste mit <strong>Schleichen + Rechtsklick mit leerer Hand</strong> – auf Bedrock auch <strong>Schleichen + Schlagen</strong> – oder schau sie an und schreib <code>/lock bearbeiten</code>.</p>
+        <ul>
+          <li><strong>Mitglieder</strong> mit eigener Stufe: <strong>Kein Zugriff</strong>, <strong>Nur reinlegen</strong>, <strong>Nur rausnehmen</strong> oder <strong>Reinlegen &amp; rausnehmen</strong>. „Nur reinlegen“ ist zum Beispiel perfekt für eine Spendenkiste.</li>
+          <li><strong>Alle anderen:</strong> welche Stufe alle haben, die kein Mitglied sind.</li>
+          <li><strong>Freunde:</strong> Stufe für alle deine Freunde – „Standard“ nimmt die Einstellung aus <code>/freunde</code>.</li>
+          <li><strong>Öffentlich:</strong> Jeder darf reinlegen und rausnehmen. Abbauen darf trotzdem nur der Besitzer.</li>
+          <li><strong>Name:</strong> Gib der Kiste einen Namen (bis 32 Zeichen).</li>
+          <li><strong>Flags:</strong> <em>Trichter erlauben</em> (Trichter dürfen Items herausziehen und hineinfüllen – aus: nur deine eigenen gesicherten Trichter) und <em>Redstone</em> (Spender und Werfer dürfen per Redstone auswerfen). Beide sind am Anfang an.</li>
+          <li><strong>Sicherung entfernen:</strong> zweimal klicken – der Block bleibt stehen, ist dann aber ungesichert.</li>
+        </ul>
+        <div class="grid">
+          <div class="card"><span class="icon" aria-hidden="true">🔔</span><h3>Sounds</h3><p>Beim Sichern hörst du einen kurzen Ton. Ist dein Limit voll, kommt ein anderer, tiefer Ton. Darfst du eine Kiste nicht öffnen, klingt sie verschlossen.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">📦</span><h3>Limits</h3><p>Spieler bis <strong><span data-info="claims.truhen_spieler" data-fmt="num">128</span></strong>, Sub bis <strong><span data-info="claims.truhen_sub" data-fmt="num">192</span></strong>, Premium bis <strong><span data-info="claims.truhen_premium" data-fmt="num">256</span></strong> Sicherungen. Eine Doppeltruhe zählt 2. Ältere Sicherungen über dem Limit bleiben erhalten.</p></div>
+          <div class="card"><span class="icon" aria-hidden="true">⚙️</span><h3>Auto-Sicherung</h3><p>Mit <code>/lock einstellungen</code> (Menü mit Schaltern) oder <code>/lock auto</code> legst du fest, was beim Platzieren automatisch gesichert wird.</p></div>
+        </div>
+        <div class="table-wrap" role="region" aria-label="Kistenschutz-Befehle" tabindex="0"><table><thead><tr><th scope="col">Befehl</th><th scope="col">Was es macht</th></tr></thead><tbody>
+<tr><td><code>/lock</code></td><td>Angeschauten Block oder ein Truhenboot / eine Güterlore sichern.</td></tr>
+<tr><td><code>/unlock</code></td><td>Sicherung entfernen (auch /lock aus).</td></tr>
+<tr><td><code>/lock bearbeiten</code></td><td>Menü: Mitglieder, Stufen, Freunde, öffentlich, Name, Flags.</td></tr>
+<tr><td><code>/lock liste [Seite]</code></td><td>Alle deine Sicherungen, nach Art sortiert.</td></tr>
+<tr><td><code>/lock einstellungen</code></td><td>Menü: was automatisch gesichert wird.</td></tr>
+<tr><td><code>/lock auto aus|an|standard|liste</code></td><td>Auto-Sicherung aus, für alles an, Standard oder Übersicht.</td></tr>
+<tr><td><code>/lock auto &lt;Gruppe&gt; an|aus</code></td><td>Einzelne Art an oder aus, z. B. kisten, trichter, spender.</td></tr>
+<tr><td><code>/claims</code></td><td>Menü mit allen Claims und Sicherungen.</td></tr>
+</tbody></table></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2>Server</h2>
+          <p>JustinZocktCommunity – der Minecraft-Community-Server von JustinZockt03.<br>Java: <code>play.justinzockt.de</code><br>Bedrock: <code>bedrock.justinzockt.de</code> · Port <code>15314</code></p>
+          <p class="small">Hilfe, Meldungen, Entbannung und Bewerbungen: Discord-Kanal <strong>#tickets</strong>.</p>
+        </div>
+        <div>
+          <h2>Infos</h2>
+          <ul>
+            <li><a href="beitreten.html">So kommst du auf den Server</a></li>
+            <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
+            <li><a href="regeln.html">Serverregeln</a></li>
+            <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
+            <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
+            <li><a href="premium.html">👑 Premium kaufen</a></li>
+            <li><a href="befehle.html">Alle Befehle</a></li>
+            <li><a href="faq.html">Häufige Fragen</a></li>
+            <li><a href="team.html#bewerben">Bewerben</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Community</h2>
+          <ul>
+            <li><a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://twitch.tv/JustinZockt03" target="_blank" rel="noopener noreferrer">Twitch<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.tiktok.com/@justinzockt03live" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+            <li><a href="https://www.youtube.com/@JustinZockt03" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (öffnet in neuem Tab)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rechtliches</h2>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="admin.html">Admin-Bereich</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Wichtige Links"><a class="fl-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a><a href="regeln.html">Regeln</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      <p class="footer-note">© <span data-year>2026</span> JustinZocktCommunity. Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt und nicht mit Mojang oder Microsoft verbunden.</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>

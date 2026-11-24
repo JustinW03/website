@@ -32,9 +32,9 @@
           <li><a href="regeln.html">Regeln</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
-          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html" aria-current="page">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html" aria-current="page">Clans</a></li><li><a href="claims.html">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
           <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
-          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
         </ul>
       </nav>
     </div>
@@ -60,7 +60,7 @@
       <h2 id="c-raenge">Ränge im Clan</h2>
       <p>Die Reihenfolge: <strong>Gründer &gt; Leiter &gt; Ältester &gt; Mitglied</strong>. Den eigenen Rang kann niemand selbst ändern.</p>
       <div class="table-wrap" role="region" aria-label="Clan-Ränge" tabindex="0"><table><thead><tr><th scope="col">Rang</th><th scope="col">Darf</th></tr></thead><tbody>
-<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle entfernen, jeden zwischen Mitglied und Leiter befördern oder degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern nur mit Sub- oder Premium-Rang.</td></tr>
+<tr><td><strong>Gründer</strong></td><td>Alles: einladen, alle entfernen, jeden zwischen Mitglied und Leiter befördern oder degradieren, Gründerrolle übertragen, Clan auflösen. Farbe ändern mit Sub oder Premium, Farbverlauf nur mit Premium.</td></tr>
 <tr><td><strong>Leiter</strong></td><td>Einladen, Älteste und Mitglieder entfernen, Mitglieder zum Ältesten befördern und Älteste wieder zum Mitglied machen.</td></tr>
 <tr><td><strong>Ältester</strong></td><td>Einladen und normale Mitglieder entfernen.</td></tr>
 <tr><td><strong>Mitglied</strong></td><td>Clan-Chat, Clan-Nachrichten, Infos und Rangliste, Clan verlassen.</td></tr>
@@ -82,13 +82,19 @@
 <tr><td><code>/clan befoerdern &lt;Spieler&gt; [aeltester|leiter]</code></td><td>Eine Stufe höher: Mitglied → Ältester (Gründer oder Leiter), Ältester → Leiter (nur Gründer). Mit Stufe direkt dorthin.</td><td>Gründer, Leiter</td></tr>
 <tr><td><code>/clan degradieren &lt;Spieler&gt; [aeltester|mitglied]</code></td><td>Eine Stufe tiefer: Leiter → Ältester (nur Gründer), Ältester → Mitglied (Gründer oder Leiter).</td><td>Gründer, Leiter</td></tr>
 <tr><td><code>/clan uebertragen &lt;Spieler&gt;</code></td><td>Gründerrolle abgeben (mit Sicherheitsabfrage). Der alte Gründer wird Leiter.</td><td>Gründer</td></tr>
-<tr><td><code>/clan farbe &lt;Farbe&gt;</code></td><td>Farbe des Clan-Tags ändern (Standard: weiß). Nur für Gründer mit Sub- oder Premium-Rang.</td><td>Gründer (Sub/Premium)</td></tr>
+<tr><td><code>/clan farbe &lt;Farbe&gt;</code></td><td>Farbe des Clan-Tags ändern (Standard: weiß): benannte Farbe oder #RRGGBB (Sub/Premium), Farbverlauf #RRGGBB:#RRGGBB (nur Premium). Siehe Farbwähler unten.</td><td>Gründer (Sub/Premium)</td></tr>
 <tr><td><code>/clan aufloesen</code></td><td>Clan auflösen (mit Bestätigung, nicht rückgängig zu machen).</td><td>Gründer</td></tr>
 </tbody></table></div>
       <p>Eine Übersicht bekommst du im Spiel auch mit <code>/clan hilfe</code>.</p>
 
       <h2 id="c-farben">Clan-Farben</h2>
-      <p>Jeder neue Clan ist <strong>weiß</strong>. Ist der <strong>Gründer Sub oder Premium</strong>, kann er mit <code>/clan farbe &lt;Farbe&gt;</code> eine dieser Farben wählen (<a href="raenge.html">Ränge</a>):</p>
+      <p>Jeder neue Clan ist <strong>weiß</strong>. Die Farbe ändert nur der <strong>Gründer</strong> – mit <code>/clan farbe …</code> im Chat:</p>
+      <div class="table-wrap" role="region" aria-label="Clan-Farbe ändern" tabindex="0"><table><thead><tr><th scope="col">So geht’s</th><th scope="col">Befehl</th><th scope="col">Wer</th></tr></thead><tbody>
+<tr><th scope="row">Benannte Farbe</th><td><code>/clan farbe &lt;Name&gt;</code></td><td>Gründer mit Sub oder Premium</td></tr>
+<tr><th scope="row">Eigene Farbe</th><td><code>/clan farbe #RRGGBB</code></td><td>Gründer mit Sub oder Premium</td></tr>
+<tr><th scope="row">Farbverlauf (2 oder 3 Farben)</th><td><code>/clan farbe #RRGGBB:#RRGGBB</code><br><code>/clan farbe #RRGGBB:#RRGGBB:#RRGGBB</code></td><td>Gründer mit <a href="premium.html">Premium</a></td></tr>
+</tbody></table></div>
+      <p class="muted small">Ein paar benannte Farben (im Spiel zeigt <code>/clan farbe</code> alle):</p>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#ffaa00">[JZC]</span> <code>gold</code></div>
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#ffff55">[JZC]</span> <code>gelb</code></div>
@@ -105,6 +111,32 @@
         <div class="card" style="padding:12px 14px"><span style="font-family:var(--mono);font-weight:800;color:#aaaaaa">[JZC]</span> <code>grau</code></div>
       </div>
 
+      <section class="clan-picker card" id="clan-picker" aria-labelledby="h-picker">
+        <h3 id="h-picker">🎨 Farbwähler: So sieht dein Clan-Tag aus</h3>
+        <noscript><p>Für den Farbwähler wird JavaScript benötigt. Das Format im Spiel: <code>/clan farbe #RRGGBB</code> für eine Farbe oder <code>/clan farbe #RRGGBB:#RRGGBB</code> (bis zu 3 Farben) für einen Verlauf.</p></noscript>
+        <div class="cp-body" hidden>
+          <div class="cp-row">
+            <label for="cp-tag"><strong>Clan-Tag</strong> <span class="muted small">(nur Vorschau)</span></label>
+            <input id="cp-tag" type="text" maxlength="5" value="JZC" autocomplete="off" spellcheck="false">
+          </div>
+          <fieldset class="cp-mode">
+            <legend><strong>Art</strong></legend>
+            <label><input type="radio" name="cp-mode" value="eins" checked> Eine Farbe</label>
+            <label><input type="radio" name="cp-mode" value="verlauf"> Verlauf <span class="badge gold">Premium</span></label>
+          </fieldset>
+          <div class="cp-colors">
+            <label>Farbe 1 <input type="color" id="cp-c1" value="#ff1f3d"></label>
+            <label class="cp-grad">Farbe 2 <input type="color" id="cp-c2" value="#ffd700"></label>
+            <label class="cp-grad"><input type="checkbox" id="cp-3"> 3. Farbe <input type="color" id="cp-c3" value="#5599ff"></label>
+          </div>
+          <div class="cp-presets" id="cp-presets" aria-label="Vorschläge"></div>
+          <div class="cp-preview" aria-live="polite"><span class="cp-b">[</span><span id="cp-out">JZC</span><span class="cp-b">]</span> <span class="cp-name">DeinName</span><span class="cp-msg">: Hallo zusammen!</span></div>
+          <p class="cp-hint muted small" id="cp-hint"></p>
+          <div class="cp-cmd"><code id="cp-cmd">/clan farbe #ff1f3d</code><button class="btn btn-primary" type="button" id="cp-copy" data-copy="/clan farbe #ff1f3d">📋 Kopieren</button></div>
+          <p class="muted small">Im Spiel in den Chat eingeben. Auf Bedrock tippst du den Befehl einfach ab. Die Seite speichert nichts.</p>
+        </div>
+      </section>
+
       <h2 id="c-msg">Private Nachrichten</h2>
       <p>Mit <code>/msg &lt;Spieler&gt; &lt;Nachricht&gt;</code> schreibst du jemandem privat (auch <code>/tell</code>, <code>/w</code>, <code>/whisper</code>, <code>/pm</code>). Antworten geht mit <code>/r &lt;Nachricht&gt;</code> (auch <code>/reply</code>).</p>
 
@@ -112,7 +144,7 @@
         <p><strong>Regeln &amp; Datenschutz:</strong> Clan-Chat und private Nachrichten unterliegen denselben Regeln wie der normale Chat. Der <strong>automatische Filter gilt überall</strong>. Zur Moderation werden diese Nachrichten <strong>gespeichert</strong> und können vom Owner eingesehen werden (<a href="regeln.html#r10-6">Regel 10.6</a>, <a href="datenschutz.html">Datenschutz</a>).</p>
         <p>Clan-Tags und -Namen dürfen nicht beleidigend sein und keine Werbung enthalten – das Team darf unpassende Clans auflösen. Clan-Kriege nur im Rahmen der PvP-Regeln (<a href="regeln.html#r10-5">Regel 10.5</a>).</p>
       </div>
-      <div class="callout info"><p>🏠 <strong>Claims für den Clan:</strong> Jedes Mitglied claimt mit seinem eigenen Limit. Chunks im <strong>Nether kosten das Doppelte</strong>, im <strong>End das Dreifache</strong>. Claimen geht erst ab 250 Blöcken Abstand von 0/0, und die End-Mitte (1.000 Blöcke um 0/0) kann niemand claimen. Clan-Freunde trägst du am einfachsten über <code>/freunde</code> oder als Mitglied in <code>/claim bearbeiten</code> ein. Mehr in den <a href="faq.html#claims">FAQ</a>.</p></div>
+      <div class="callout info"><p>🏠 <strong>Claims für den Clan:</strong> Jedes Mitglied claimt mit seinem eigenen Limit. Clan-Mitglieder bekommen <strong>nicht automatisch</strong> Zugriff auf deine Claims und Kisten – das entscheidest du selbst: über <code>/freunde</code>, als Mitglied in <code>/claim bearbeiten</code> oder in <code>/lock bearbeiten</code>. Preise, Rollen und Flags: <a href="claims.html">Claims &amp; Kistenschutz</a>.</p></div>
     </div>
   </main>
   <footer class="site-footer">
@@ -128,7 +160,8 @@
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
-            <li><a href="index.html#voten">Für den Server voten</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

@@ -32,9 +32,9 @@
           <li><a href="regeln.html">Regeln</a></li>
           <li><a href="raenge.html" aria-current="page">Ränge</a></li>
           <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="claims.html">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
           <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
-          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
         </ul>
       </nav>
     </div>
@@ -144,25 +144,25 @@
 
       <h2 id="claims">Claims: Preise und Grenzen</h2>
       <div class="table-wrap" role="region" aria-label="Claim-Preise" tabindex="0"><table><thead><tr><th scope="col">Welt</th><th scope="col">Preis pro Chunk</th><th scope="col">Sub (−5 %)</th><th scope="col">Premium (−10 %)</th></tr></thead><tbody>
-<tr><th scope="row">Oberwelt</th><td>2.500 JC</td><td>2.375 JC</td><td>2.250 JC</td></tr>
-<tr><th scope="row">Nether (×2)</th><td>5.000 JC</td><td>4.750 JC</td><td>4.500 JC</td></tr>
-<tr><th scope="row">End (×3)</th><td>7.500 JC</td><td>7.125 JC</td><td>6.750 JC</td></tr>
+<tr><th scope="row">Oberwelt</th><td>2.000 JC</td><td>1.900 JC</td><td>1.800 JC</td></tr>
+<tr><th scope="row">Nether (×2)</th><td>4.000 JC</td><td>3.800 JC</td><td>3.600 JC</td></tr>
+<tr><th scope="row">End (×3)</th><td>6.000 JC</td><td>5.700 JC</td><td>5.400 JC</td></tr>
 </tbody></table></div>
-      <p class="muted small">Grundpreis <span data-info="claims.preis" data-fmt="num">2.500</span> JC (Stand der Tabelle: Standardwerte). Liegt ein Bauwerk im Chunk (z. B. Dorf, Tempel, Festung), kommt ein <strong>Strukturzuschlag</strong> dazu – der Rabatt gilt auch dafür. Kaufen mit <code>/claim chunk</code> und dem grünen Knopf in der Hotbar – <code>/claim</code> allein zeigt nur die Hilfe. Claimen geht erst ab <strong>250 Blöcken Abstand von 0/0</strong> (alle Dimensionen). Die <strong>End-Mitte</strong> – 1.000 Blöcke um 0/0 rund um die Drachen-Insel – kann niemand claimen.</p>
+      <p class="muted small">Grundpreis für Spieler <span data-info="claims.preis" data-fmt="num">2.000</span> JC – Sub und Premium bekommen ihren Rabatt auf diesen Preis (Stand der Tabelle: Standardwerte). Liegt ein Bauwerk im Chunk (z. B. Dorf, Tempel, Festung), kommt ein <strong>Strukturzuschlag</strong> dazu – der Rabatt gilt auch dafür. Kaufen mit <code>/claim chunk</code> und dem grünen Knopf in der Hotbar – <code>/claim</code> allein zeigt nur die Hilfe. Claimen geht erst ab <strong>250 Blöcken Abstand von 0/0</strong> (alle Dimensionen). Alles zu Claims, Flags und Kistenschutz: <a href="claims.html">Claims &amp; Kistenschutz</a>.</p>
 
       <h2 id="neu">Neu auf dem Server</h2>
       <div class="grid">
-        <div class="card"><span class="icon" aria-hidden="true">🎡</span><h3>Tägliche Glücksräder</h3><p><code>/rewards</code>: Jeden Tag ein Gratis-Dreh für alle, dazu Sub- und Premium-Rad. <a href="index.html#rewards">Mehr</a></p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🤝</span><h3>Freunde</h3><p>Freundschaftsanfragen mit <code>/freunde</code> und mit einem Klick Rechte für alle Freunde in Kisten und Claims. <a href="faq.html#freunde">Mehr</a></p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🔒</span><h3>Kisten bearbeiten</h3><p>Schleichen + Rechtsklick mit leerer Hand (Bedrock: Schleichen + Schlagen): Mitglieder mit „Nur reinlegen“ oder „Nur rausnehmen“, Name, Trichter, Redstone. <a href="faq.html#truhen">Mehr</a></p></div>
-        <div class="card"><span class="icon" aria-hidden="true">⚑</span><h3>Bessere Claims</h3><p>Kauf-Angebot mit Bestätigung, Rollen Besucher/Benutzen/Bauen, über 40 Flags und der Claim-Name als Leiste oben. <a href="faq.html#claims">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🎡</span><h3>Tägliche Glücksräder</h3><p><code>/rewards</code>: Jeden Tag ein Gratis-Dreh für alle, dazu Sub- und Premium-Rad. <a href="belohnungen.html">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🤝</span><h3>Freunde</h3><p>Freundschaftsanfragen mit <code>/freunde</code> und mit einem Klick Rechte für alle Freunde in Kisten und Claims. <a href="claims.html#freunde">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🔒</span><h3>Kisten bearbeiten</h3><p>Schleichen + Rechtsklick mit leerer Hand (Bedrock: Schleichen + Schlagen): Mitglieder mit „Nur reinlegen“ oder „Nur rausnehmen“, Name, Trichter, Redstone. <a href="claims.html#kisten">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">⚑</span><h3>Bessere Claims</h3><p>Kauf-Angebot mit Bestätigung, Rollen Besucher/Benutzen/Bauen, über 40 Flags und der Claim-Name als Leiste oben. <a href="claims.html">Mehr</a></p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛡️</span><h3>Clan-Rang Ältester</h3><p>Neu zwischen Leiter und Mitglied. Den Clan-Tag über dem Kopf sehen nur noch Clan-Mitglieder. <a href="clans.html#c-raenge">Mehr</a></p></div>
         <div class="card"><span class="icon" aria-hidden="true">🏅</span><h3>Minigame-Titel</h3><p>1.000 gewertete Siege in einem Spiel = eigener Titel. <a href="minigames.html#mg-titel">Mehr</a></p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛏️</span><h3>Respawn am Spawn</h3><p>Nach dem Tod landest du immer am Spawn – außer du hast ein Bett oder einen Seelenanker gesetzt.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Clan-Name und -Tag sind nach der Gründung fest. Neue Clans sind weiß, die Farbe ändern Gründer mit Sub oder Premium. Die gemeinsame Clan-Spielzeit ist sichtbar (<code>/clan info</code>, <a href="ranglisten.html">Ranglisten</a>).</p></div>
         <div class="card"><span class="icon" aria-hidden="true">✍️</span><h3>Signierte Bücher</h3><p>Beim Signieren bekommt ein Buch automatisch Datum und Uhrzeit.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🥚</span><h3>Drachenei</h3><p>Das Ei bekommt, wer den Enderdrachen zuerst besiegt. Es ist unzerstörbar, nur der Besitzer kann es aufheben, und beim Platzieren wird der Chunk für ihn geclaimt.</p></div>
-        <div class="card"><span class="icon" aria-hidden="true">🗳️</span><h3>Voten</h3><p>Mit <code>/vote</code> für den Server abstimmen – 150 Justin Coins pro Vote-Seite alle 24 Stunden, dazu ein täglich wechselnder Tagesbonus. <a href="index.html#voten">Mehr</a></p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🥚</span><h3>Drachenei</h3><p>Das Ei bekommt, wer dem ersten Enderdrachen den letzten Treffer gibt. Es ist unzerstörbar, nur der Besitzer kann es aufheben oder aus Kisten nehmen, beim Tod bleibt es bei dir, und den Besitzer wechselt es nur über den Shop.</p></div>
+        <div class="card"><span class="icon" aria-hidden="true">🗳️</span><h3>Voten</h3><p>Mit <code>/vote</code> für den Server abstimmen – 150 Justin Coins pro Vote-Seite alle 24 Stunden, dazu ein täglich wechselnder Tagesbonus. <a href="belohnungen.html#voten">Mehr</a></p></div>
         <div class="card"><span class="icon" aria-hidden="true">🛠️</span><h3>Wartungsmodus</h3><p>Bei Updates gibt es einen eigenen Wartungsmodus: Dann kann nur das Team auf den Server.</p></div>
         <div class="card"><span class="icon" aria-hidden="true">📱</span><h3>Bedrock</h3><p>Auch für Bedrock (Handy, Konsole, Windows) – <a href="beitreten.html#bedrock">so geht’s</a>.</p></div>
       </div>
@@ -198,7 +198,8 @@
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
-            <li><a href="index.html#voten">Für den Server voten</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

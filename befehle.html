@@ -32,9 +32,9 @@
           <li><a href="regeln.html">Regeln</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
-          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="claims.html">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
           <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html" aria-current="page">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
-          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
         </ul>
       </nav>
     </div>
@@ -60,6 +60,7 @@
       <div class="callout info"><p>💬 <strong>Chat:</strong> Du kannst höchstens alle <strong><span data-info="chat.cooldown_sekunden" data-fmt="dauer">5 Sekunden</span></strong> eine Nachricht schreiben (Spam-Schutz). Bei <code>/spawn</code> musst du <span data-info="teleport.warmup_sekunden" data-fmt="dauer">5 Sekunden</span> stillstehen, danach gilt <span data-info="teleport.cooldown_sekunden" data-fmt="dauer">5 Minuten</span> Abklingzeit (Sub, Premium und Team: keine). Bei <code>/home</code> gilt für Subs 5 Sekunden Wartezeit und 5 Minuten Abklingzeit, Premium kommt sofort hin. Befehle mit <span class="badge purple">Sub/Premium</span> oder <span class="badge gold">Premium</span> gibt es nur mit diesem Rang – mehr auf <a href="raenge.html">Ränge &amp; Vorteile</a>.</p></div>
       <section class="cmd-group" id="allgemein" aria-labelledby="g-allgemein">
         <h2 id="g-allgemein">Allgemein &amp; Infos</h2>
+        <p class="muted small">Glücksräder und Voten ausführlich: <a href="belohnungen.html">Glücksräder &amp; Votes</a>.</p>
         <div class="cmd" data-keys="hilfe help tab"><div><code>/justin</code><span class="alias">auch: /hilfe, /befehle</span></div><p>Übersicht aller Befehle im Spiel. Mit der Tab-Taste siehst du alle Befehle, die du nutzen darfst.</p></div>
         <div class="cmd" data-keys="geburtstag event glückwunsch"><div><code>/gratulieren [Nachricht|top]</code></div><p>Gratulieren – nur während eines passenden Events (z. B. Geburtstag).</p></div>
         <div class="cmd" data-keys="stream twitch"><div><code>/justin live</code><span class="alias">auch: /live</span></div><p>Ist Justin gerade live? Mit klickbarem Link.</p></div>
@@ -105,7 +106,8 @@
       </section>
       <section class="cmd-group" id="claims" aria-labelledby="g-claims">
         <h2 id="g-claims">Claims &amp; Kistenschutz</h2>
-        <div class="cmd" data-keys="grundstück schutz chunk kaufen"><div><code>/claim chunk</code><span class="alias">auch: /claim kaufen</span></div><p>Kauf-Angebot für den Chunk, in dem du stehst: Fläche, Gesamtkosten, Strukturzuschlag (Bauwerke wie Dörfer machen ihn teurer) und deine Ersparnis mit Sub/Premium. Bestätigen mit dem Knopf in deiner Hotbar, im Chat oder mit /claim bestaetigen (30 Sekunden Zeit). Grundpreis 2.500 JC, Nether ×2, End ×3; Sub 5 % und Premium 10 % Rabatt. Maximal 30 Chunks, Sub 50, Premium 70. Claimen geht erst ab 250 Blöcken Abstand von 0/0 (alle Dimensionen), die End-Mitte (1.000 Blöcke um 0/0) ist nicht claimbar.</p></div>
+        <p class="muted small">Preise, Rollen, alle Flags und der Kistenschutz ausführlich: <a href="claims.html">Claims &amp; Kistenschutz</a>.</p>
+        <div class="cmd" data-keys="grundstück schutz chunk kaufen"><div><code>/claim chunk</code><span class="alias">auch: /claim kaufen</span></div><p>Kauf-Angebot für den Chunk, in dem du stehst: Fläche, Gesamtkosten, Strukturzuschlag (Bauwerke wie Dörfer machen ihn teurer) und deine Ersparnis mit Sub/Premium. Bestätigen mit dem Knopf in deiner Hotbar, im Chat oder mit /claim bestaetigen (30 Sekunden Zeit). Grundpreis 2.000 JC, Nether 4.000 JC, End 6.000 JC; Sub 5 % und Premium 10 % Rabatt. Maximal 30 Chunks, Sub 50, Premium 70. Claimen geht erst ab 250 Blöcken Abstand von 0/0 (alle Dimensionen).</p></div>
         <div class="cmd" data-keys="kaufen bestätigen"><div><code>/claim bestaetigen</code><span class="alias">auch: /claim ja</span></div><p>Das offene Kauf-Angebot annehmen (wie der grüne Knopf in der Hotbar).</p></div>
         <div class="cmd" data-keys="abbrechen"><div><code>/claim abbrechen</code><span class="alias">auch: /claim nein</span></div><p>Das offene Kauf-Angebot abbrechen (wie der rote Knopf).</p></div>
         <div class="cmd" data-keys="mitglieder rechte menü einstellungen"><div><code>/claim bearbeiten</code><span class="alias">auch: /claim mitglieder, /claim rechte</span></div><p>Menü für deinen Claim: Name, Rechte für „Alle anderen“ und Freunde, Mitglieder mit Stufe Besucher, Benutzen oder Bauen, und alle Flags. Geht auch auf Bedrock.</p></div>
@@ -132,6 +134,7 @@
       </section>
       <section class="cmd-group" id="freunde" aria-labelledby="g-freunde">
         <h2 id="g-freunde">Freunde</h2>
+        <p class="muted small">Was Freunde in deinen Kisten und Claims dürfen: <a href="claims.html#freunde">Freunde</a>.</p>
         <div class="cmd" data-keys="freunde menü rechte"><div><code>/freunde</code><span class="alias">auch: /freund, /friends, /friend</span></div><p>Freunde-Menü: Anfragen, Freundesliste (wer online ist), Freund hinzufügen und die pauschalen Rechte für Freunde in deinen Kisten und Claims. Geht auch auf Bedrock.</p></div>
         <div class="cmd" data-keys="anfrage hinzufügen einladen"><div><code>/freunde add &lt;Name&gt;</code><span class="alias">auch: /freunde &lt;Name&gt;</span></div><p>Freundschaftsanfrage schicken (auch an Offline-Spieler). Hat dir der andere schon eine geschickt, nimmst du sie damit an.</p></div>
         <div class="cmd" data-keys="annehmen akzeptieren"><div><code>/freunde annehmen [Name]</code></div><p>Anfrage annehmen. Ohne Name, wenn nur eine offen ist.</p></div>
@@ -238,7 +241,8 @@
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
-            <li><a href="index.html#voten">Für den Server voten</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>

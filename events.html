@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events – JustinZocktCommunity</title>
-  <meta name="description" content="Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn – mit Koordinaten –, Fest-Grüße, Event-Regeln und Minigames.">
+  <meta name="description" content="Events der JustinZocktCommunity: Event-NPC am Spawn, Saison-Events, tägliche Glücksräder und Votes, Event-Regeln und Minigames.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f0b0c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Events – JustinZocktCommunity">
-  <meta property="og:description" content="Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn – mit Koordinaten –, Fest-Grüße, Event-Regeln und Minigames.">
+  <meta property="og:description" content="Events der JustinZocktCommunity: Event-NPC am Spawn, Saison-Events, tägliche Glücksräder und Votes, Event-Regeln und Minigames.">
   <meta property="og:locale" content="de_DE">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff1f3d'/%3E%3Cpath d='M16 5 6 10.5 16 16l10-5.5z' fill='%23fff'/%3E%3Cpath d='M16 16v11L6 21.5v-11z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
@@ -32,9 +32,9 @@
           <li><a href="regeln.html">Regeln</a></li>
           <li><a href="raenge.html">Ränge</a></li>
           <li class="nav-premium-li"><a class="nav-premium" href="premium.html"><span aria-hidden="true">👑</span> Premium</a></li>
-          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html" aria-current="page">Events</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="shop.html">Shop</a></li></ul></li>
+          <li class="has-sub is-current"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-spielen">Spielen</button><ul class="sub" id="nav-spielen"><li><a href="skills.html">Skills</a></li><li><a href="erfolge.html">Erfolge</a></li><li><a href="minigames.html">Minigames</a></li><li><a href="events.html" aria-current="page">Events</a></li><li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li><li><a href="ranglisten.html">Ranglisten</a></li><li><a href="clans.html">Clans</a></li><li><a href="claims.html">Claims &amp; Kisten</a></li><li><a href="shop.html">Shop</a></li></ul></li>
           <li class="has-sub"><button class="sub-toggle" type="button" aria-expanded="false" aria-controls="nav-hilfe">Hilfe</button><ul class="sub" id="nav-hilfe"><li><a href="befehle.html">Befehle</a></li><li><a href="faq.html">FAQ</a></li><li><a href="mods.html">Mods</a></li><li><a href="verzauberungen.html">Verzauberungen</a></li><li><a href="team.html">Team &amp; Bewerbung</a></li></ul></li>
-          <li data-season="advent" hidden><a class="nav-advent" href="events.html#advent">🎄 Advent</a></li>
+          <li data-season="advent" hidden><a class="nav-advent" href="advent.html">🎄 Advent</a></li>
         </ul>
       </nav>
     </div>
@@ -43,94 +43,48 @@
     <div class="page-hero">
       <div class="page-head wrap">
         <span class="eyebrow">Events</span>
-        <h1>Events &amp; Adventskalender</h1>
-        <p class="lead">Am Spawn steht der NPC „Events“ – Rechtsklick zeigt dir die aktuellen Events mit Anleitung. Das große Event im Dezember: der Adventskalender mit 24 versteckten Geschenken am Weihnachts-Spawn.</p>
+        <h1>Events</h1>
+        <p class="lead">Am Spawn steht der NPC „Events“ – Rechtsklick zeigt dir die aktuellen Events mit Anleitung. Dazu kommen jeden Tag deine Glücksräder und Votes.</p>
       </div>
     </div>
     <div class="wrap">
-      <div class="callout info" data-season="advent-aus" hidden><p>🎄 <strong>Der Adventskalender ist gerade nicht aktiv.</strong> Er kommt jedes Jahr am 1. Dezember zurück – ab November siehst du hier schon die Vorschau.</p></div>
-      <noscript><p class="callout">Für den Adventskalender auf dieser Seite wird JavaScript benötigt. Die Verstecke stehen trotzdem in der Tabelle unten.</p></noscript>
+      <nav class="skill-nav jump-nav" aria-label="Auf dieser Seite"><a href="#event-npc">🎉 Event-NPC</a><a href="#saison">📅 Saison-Events</a><a href="#taeglich">🎡 Glücksräder &amp; Votes</a><a href="#event-regeln">📜 Event-Regeln</a><a href="#minigames">🎮 Minigames</a></nav>
 
-      <section class="advent-wrap" id="advent" data-season="advent" hidden aria-labelledby="h-advent">
-        <div class="snow" aria-hidden="true"></div>
-        <h2 id="h-advent">🎄 Adventskalender <span data-advent-year>2026</span></h2>
-        <p class="advent-status" id="advent-status" aria-live="polite">Kalender wird vorbereitet …</p>
-        <div class="kv">
-          <div><b>1.–24.12.<span data-advent-year>2026</span></b><span>jeweils 00:00 bis 23:59 Uhr (deutsche Zeit)</span></div>
-          <div><b>🎁 Geschenk suchen</b><span>am Weihnachts-Spawn liegt jeden Tag ein Geschenk mit der Zahl des Tages</span></div>
-          <div><b>1 Türchen pro Tag</b><span>nur das von heute – Verpasstes verfällt</span></div>
-          <div><b>Treue-Bonus</b><span>eine besondere Überraschung für alle 24 Türchen</span></div>
-          <div><b>4 Adventskerzen</b><span>an den Adventssonntagen – Rechtsklick = anzünden</span></div>
-        </div>
-        <p class="muted small">Hier auf der Website kannst du schon einmal reinschauen: Jede Karte lässt sich erst an ihrem Tag umdrehen und zeigt dann, wo das Geschenk liegt. Öffnen musst du das Geschenk im Spiel.</p>
-        <p class="advent-msg" id="advent-msg" aria-live="polite"></p>
-        <div class="advent" id="advent-grid"></div>
-        <script type="text/plain" id="advent-daten">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</script>
-
-        <h3 id="advent-orte">📍 Wo liegen die Geschenke?</h3>
-        <p>Alle 24 Geschenk-Köpfe liegen am <strong>Weihnachts-Spawn</strong>. Die Koordinaten sind <strong>X Y Z</strong> – auf Java siehst du deine Position mit <kbd>F3</kbd>, auf Bedrock schaltest du in den Welt-Einstellungen „Koordinaten anzeigen“ ein. Manche liegen offen, andere gut versteckt – ein paar erreichst du nur per Parkour.</p>
-        <div class="table-wrap" role="region" aria-label="Verstecke der Geschenke" tabindex="0"><table><thead><tr><th scope="col" class="num">Tag</th><th scope="col">Koordinaten (X Y Z)</th><th scope="col">Hinweis</th></tr></thead><tbody>
-<tr><td class="num"><strong>1</strong></td><td><code>2 63 7</code></td><td>Rotunde, neben dem Spawnpunkt</td></tr>
-<tr><td class="num"><strong>2</strong></td><td><code>13 63 -14</code></td><td>unter dem Tannenbaum im Nordosten</td></tr>
-<tr><td class="num"><strong>3</strong></td><td><code>18 63 13</code></td><td>unter dem Tannenbaum im Südosten</td></tr>
-<tr><td class="num"><strong>4</strong></td><td><code>-13 63 18</code></td><td>unter dem Tannenbaum im Südwesten</td></tr>
-<tr><td class="num"><strong>5</strong></td><td><code>-18 63 -13</code></td><td>unter dem Tannenbaum im Nordwesten</td></tr>
-<tr><td class="num"><strong>6</strong></td><td><code>6 65 -25</code></td><td>im Schlitten (Norden)</td></tr>
-<tr><td class="num"><strong>7</strong></td><td><code>8 63 16</code></td><td>hinter dem Schneemann im Südosten</td></tr>
-<tr><td class="num"><strong>8</strong></td><td><code>-8 63 -16</code></td><td>hinter dem Schneemann im Nordwesten</td></tr>
-<tr><td class="num"><strong>9</strong></td><td><code>-10 63 30</code></td><td>auf dem Eis am gefrorenen Wasserfall (Südwest)</td></tr>
-<tr><td class="num"><strong>10</strong></td><td><code>26 63 3</code></td><td>End-Schrein, hinter einer Purpursäule</td></tr>
-<tr><td class="num"><strong>11</strong></td><td><code>-23 63 0</code></td><td>hinter dem Nether-Portal</td></tr>
-<tr><td class="num"><strong>12</strong></td><td><code>5 63 34</code></td><td>am Brückenpfosten im Süden</td></tr>
-<tr><td class="num"><strong>13</strong></td><td><code>-28 64 28</code></td><td>im Südwest-Turm (geheime Tür zur Platzseite)</td></tr>
-<tr><td class="num"><strong>14</strong></td><td><code>16 67 -36</code></td><td>oben auf der Mauer im Nordosten (Eis-Parkour)</td></tr>
-<tr><td class="num"><strong>15</strong></td><td><code>-38 63 -5</code></td><td>Westtor, neben dem Banner</td></tr>
-<tr><td class="num"><strong>16</strong></td><td><code>34 63 -13</code></td><td>in der Schneewehe im Osten</td></tr>
-<tr><td class="num"><strong>17</strong></td><td><code>6 65 -17</code></td><td>auf Rudolphs Rücken</td></tr>
-<tr><td class="num"><strong>18</strong></td><td><code>12 63 -2</code></td><td>hinter einer Rotunden-Säule (Osten)</td></tr>
-<tr><td class="num"><strong>19</strong></td><td><code>-24 63 -11</code></td><td>hinter einer Laterne im Westen</td></tr>
-<tr><td class="num"><strong>20</strong></td><td><code>-4 64 -45</code></td><td>vor dem Nordtor an der Straßenlaterne</td></tr>
-<tr><td class="num"><strong>21</strong></td><td><code>32 63 -32</code></td><td>außerhalb der Mauer hinter dem Nordost-Turm</td></tr>
-<tr><td class="num"><strong>22</strong></td><td><code>11 65 -11</code></td><td>oben auf dem Geschenkeberg (Nordost)</td></tr>
-<tr><td class="num"><strong>23</strong></td><td><code>-8 63 13</code></td><td>im Iglu (Südwest)</td></tr>
-<tr><td class="num"><strong>24</strong></td><td><code>31 85 12</code></td><td>auf der schwebenden Insel im Osten (Eis-Spirale)</td></tr>
-</tbody></table></div>
-
-        <details>
-          <summary>So funktioniert der Kalender im Spiel</summary>
-          <div class="details-body">
-            <ul>
-              <li>Vom <strong>1. Dezember bis 1. Januar</strong> verwandelt sich der Spawn in den <strong>Weihnachts-Spawn</strong> mit Tannenbäumen, Schnee, Geschenken, Schlitten und Schneefall. Danach ist automatisch wieder der normale Spawn da.</li>
-              <li>Am Weihnachts-Spawn sind <strong>24 Geschenk-Köpfe</strong> mit den Zahlen 1–24 versteckt. Such das Geschenk mit der <strong>heutigen Zahl</strong> und klick es an (Rechts- oder Linksklick, auf Bedrock antippen oder schlagen). Das geht nur am jeweiligen Tag und einmal pro Spieler.</li>
-              <li>Der <strong>Event-NPC</strong> am Spawn und <code>/justin advent</code> (auch <code>/advent</code>) zeigen dir nur noch den Stand: wie viele Türchen du schon hast, die Anleitung, den Countdown und deine Adventskerzen. Türchen öffnen geht dort nicht mehr.</li>
-              <li>Pro Tag gibt es <strong>ein</strong> Türchen, nur das von <strong>heute</strong>. Verpasste Tage verfallen.</li>
-              <li>Geschenke kommen ins Inventar. Ist es voll, fällt der Rest vor deine Füße – <strong>nur du</strong> kannst es aufheben.</li>
-              <li><strong>Adventskerzen:</strong> An den Adventssonntagen steckt im Türchen zusätzlich eine rote Adventskerze (fällt der 1. Advent in den November, kommt die erste Kerze am 1.12.). Sie lässt sich <strong>nicht aufstellen</strong>. Ein <strong>Rechtsklick</strong> zündet sie an und gibt <strong>250 Justin Coins</strong> plus eine kleine Belohnung. Hast du <strong>alle 4 Kerzen</strong> angezündet, bekommst du den <strong>Adventskranz-Bonus</strong>: 3.000 Justin Coins und einen Verzauberten Goldenen Apfel. Jede Kerze brennt nur für ihren Besitzer.</li>
-              <li><strong>Türchen 24:</strong> Die Weihnachts-Spitzhacke hat dieses Jahr zusätzlich <strong>Telekinesis</strong>.</li>
-              <li>Beim Öffnen gibt es Titel, Sound und Schneeflocken, an besonderen Tagen Feuerwerk. Das Feuerwerk macht keinen Schaden.</li>
-              <li>Beim Joinen erinnert dich der Server an dein Türchen, um 0 Uhr bekommen alle Online-Spieler Bescheid.</li>
-            </ul>
-            <p class="muted small">Zum Vergleich: 1 Stunde aktiv spielen = <span data-info="coins_pro_stunde.spieler" data-fmt="num">500</span> JC, 1 Chunk-Claim = 2.500 JC.</p>
-          </div>
-        </details>
+      <section id="event-npc" aria-labelledby="h-event-npc">
+        <h2 id="h-event-npc">🎉 Aktuelle Events</h2>
+        <p>Der NPC <strong>„Events“</strong> am Spawn zeigt dir per Rechtsklick (Bedrock: antippen) alle laufenden und geplanten Events mit Anleitung. Im Spiel geht das auch mit <code>/events</code>. Neue Events kündigt das Team im Spiel und im <a href="https://discord.gg/uaaWsNEyZH" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (öffnet in neuem Tab)</span></a> an.</p>
       </section>
 
-      <h2 id="feiertage">🎉 Fest-Grüße</h2>
-      <p>Beim ersten Join des Tages begrüßt dich der Server zu besonderen Tagen: an den <strong>Adventssonntagen</strong> mit „Schönen 1./2./3./4. Advent!“, vom <strong>24. bis 26. Dezember</strong> mit „Frohe Weihnachten!“ und im neuen Jahr mit „Frohes Neues Jahr!“.</p>
+      <section id="saison" aria-labelledby="h-saison">
+        <h2 id="h-saison">📅 Saison-Events</h2>
+        <div class="grid">
+          <a class="card" href="advent.html" data-season="advent" hidden><span class="icon" aria-hidden="true">🎄</span><h3>Adventskalender</h3><p>Vom 1. bis 24. Dezember liegt am Weihnachts-Spawn jeden Tag ein Geschenk versteckt – mit Treue-Bonus und Adventskerzen.</p><span class="more">Zum Kalender <span aria-hidden="true">→</span></span></a>
+          <div class="card"><span class="icon" aria-hidden="true">✨</span><h3>Besondere Tage</h3><p>Zu besonderen Anlässen wie einem Geburtstag gibt es eigene Events – dann kannst du zum Beispiel mit <code>/gratulieren</code> mitmachen. Was gerade läuft, zeigt dir der Event-NPC.</p></div>
+        </div>
+      </section>
 
-      <h2 id="event-regeln">Event-Regeln</h2>
-      <ul>
-        <li><strong>Fehler nicht ausnutzen:</strong> Bugs in Events (z. B. doppelt abgeholte Belohnungen, Duplizieren) dürfen nicht ausgenutzt werden. Wer so etwas findet, meldet es per Ticket in <strong>#tickets</strong> – Melden wird belohnt (<a href="regeln.html#r10-1">Regel 10.1</a>).</li>
-        <li>Was durch einen ausgenutzten Fehler entstanden ist, wird entfernt. Je nach Schwere folgt eine Strafe bis hin zum Bann (<a href="regeln.html#r10-2">10.2</a>).</li>
-        <li><strong>Handeln erlaubt:</strong> Event-Gegenstände dürfen gehandelt werden – aber nie gegen Echtgeld (<a href="regeln.html#r10-7">10.7</a>, <a href="regeln.html#r7-2">7.2</a>).</li>
-        <li>Es gilt wie immer: ein Minecraft-Account pro Person, Zweitaccounts nur mit Erlaubnis des Teams (<a href="regeln.html#r1-4">1.4</a>).</li>
-      </ul>
+      <section id="taeglich" aria-labelledby="h-taeglich">
+        <h2 id="h-taeglich">🎡 Jeden Tag: Glücksräder &amp; Votes</h2>
+        <div class="grid-2">
+          <a class="card" href="belohnungen.html#rewards"><span class="icon" aria-hidden="true">🎡</span><h3>Tägliche Glücksräder</h3><p>Mit <code>/rewards</code> drehst du jeden Tag gratis dein Glücksrad – mit Coins bei jedem Dreh und Gewinnen bis Legendär. Subs und Premium bekommen ein Extra-Rad dazu.</p><span class="more">Zu den Glücksrädern <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="belohnungen.html#voten"><span class="icon" aria-hidden="true">🗳️</span><h3>Voten mit Tagesbonus</h3><p>Pro Vote-Seite alle 24 Stunden Coins, Erfahrungsfläschchen und ein Tagesbonus, der jeden Tag wechselt – dazu drei Vote-Erfolge.</p><span class="more">So votest du <span aria-hidden="true">→</span></span></a>
+        </div>
+      </section>
 
-      <h2 id="taeglich">🎡 Jeden Tag: Glücksräder &amp; Voten</h2>
-      <p>Auch außerhalb von Events lohnt sich jeder Tag: Mit <code>/rewards</code> drehst du dein tägliches Glücksrad, und mit <code>/vote</code> holst du dir die Vote-Belohnung mit Tagesbonus. Alles dazu auf der <a href="index.html#rewards">Startseite</a>.</p>
+      <section id="event-regeln" aria-labelledby="h-event-regeln">
+        <h2 id="h-event-regeln">📜 Event-Regeln</h2>
+        <ul>
+          <li><strong>Fehler nicht ausnutzen:</strong> Bugs in Events (z. B. doppelt abgeholte Belohnungen, Duplizieren) dürfen nicht ausgenutzt werden. Wer so etwas findet, meldet es per Ticket in <strong>#tickets</strong> – Melden wird belohnt (<a href="regeln.html#r10-1">Regel 10.1</a>).</li>
+          <li>Was durch einen ausgenutzten Fehler entstanden ist, wird entfernt. Je nach Schwere folgt eine Strafe bis hin zum Bann (<a href="regeln.html#r10-2">10.2</a>).</li>
+          <li><strong>Handeln erlaubt:</strong> Event-Gegenstände dürfen gehandelt werden – aber nie gegen Echtgeld (<a href="regeln.html#r10-7">10.7</a>, <a href="regeln.html#r7-2">7.2</a>).</li>
+          <li>Es gilt wie immer: ein Minecraft-Account pro Person, Zweitaccounts nur mit Erlaubnis des Teams (<a href="regeln.html#r1-4">1.4</a>).</li>
+        </ul>
+      </section>
 
-      <h2 id="minigames">🎮 Minigames</h2>
-      <p>Am Spawn steht auch der NPC „Minigames“ – Rechtsklick oder <code>/minigames join</code> bringt dich in die Minigame-Welt mit 26 Spielen. Alles dazu auf der Seite <a href="minigames.html">Minigames</a>.</p>
+      <section id="minigames" aria-labelledby="h-minigames">
+        <h2 id="h-minigames">🎮 Minigames</h2>
+        <p>Am Spawn steht auch der NPC „Minigames“ – Rechtsklick oder <code>/minigames join</code> bringt dich in die Minigame-Welt mit 26 Spielen. Alles dazu auf der Seite <a href="minigames.html">Minigames</a>.</p>
+      </section>
     </div>
   </main>
   <footer class="site-footer">
@@ -146,7 +100,8 @@
           <ul>
             <li><a href="beitreten.html">So kommst du auf den Server</a></li>
             <li><a href="beitreten.html#bedrock">Bedrock (Handy, Konsole, Windows)</a></li>
-            <li><a href="index.html#voten">Für den Server voten</a></li>
+            <li><a href="belohnungen.html">Glücksräder &amp; Votes</a></li>
+            <li><a href="claims.html">Claims, Kisten &amp; Freunde</a></li>
             <li><a href="regeln.html">Serverregeln</a></li>
             <li><a href="mods.html">Erlaubte &amp; verbotene Mods</a></li>
             <li><a href="raenge.html">Ränge &amp; Vorteile</a></li>
