@@ -415,12 +415,25 @@
     var RANK_MAX = 100;
     var rowCls = function (i) { return ' style="--i:' + Math.min(i - 3, 30) + '"'; };
     var hue = function (s) { var h = 0; s = String(s); for (var k = 0; k < s.length; k++) h = (h * 31 + s.charCodeAt(k)) % 100003; return Math.round(h * 137.508) % 360; };
-    var avatar = function (name) { var n = String(name || '?'); var ch = n.replace(/^\[[^\]]*\]\s*/, '').charAt(0).toUpperCase() || '?'; return '<span class="rank-ava" style="--h:' + hue(n) + '" aria-hidden="true">' + esc(ch) + '</span>'; };
+    // Spielerkopf (Java-Namen ueber mc-heads.net); Clans, Bedrock-Namen (mit Punkt) und Ladefehler: Anfangsbuchstabe
+    var MC_NAME = /^[A-Za-z0-9_]{2,16}$/;
+    var avatar = function (name) {
+      var n = String(name || '?'); var ch = n.replace(/^\[[^\]]*\]\s*/, '').charAt(0).toUpperCase() || '?';
+      var img = MC_NAME.test(n) ? '<img src="https://mc-heads.net/avatar/' + encodeURIComponent(n) + '/64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">' : '';
+      return '<span class="rank-ava' + (img ? ' has-head' : '') + '" style="--h:' + hue(n) + '" aria-hidden="true">' + esc(ch) + img + '</span>';
+    };
+    // Ganzer Skin fuers Podest (Top 3)
+    var skin = function (name) {
+      var n = String(name || '?');
+      if (!MC_NAME.test(n)) return avatar(n);
+      return '<span class="pod-skin" aria-hidden="true"><img src="https://mc-heads.net/body/' + encodeURIComponent(n) + '/160" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" '
+        + 'data-f="fail" onerror="this.parentNode.classList.add(this.dataset.f);this.remove()">' + avatar(n) + '</span>';
+    };
     // items: [{name, nameHtml, val, sub}]
     var podiumHtml = function (items) {
       if (!items.length) return '';
       return '<ol class="podium" aria-label="Die besten 3">' + items.slice(0, 3).map(function (it, i) {
-        return '<li class="p' + (i + 1) + '" data-name="' + esc(String(it.name).toLowerCase()) + '"><span class="pod-medal" aria-hidden="true">' + medal(i) + '</span>' + avatar(it.name) +
+        return '<li class="p' + (i + 1) + '" data-name="' + esc(String(it.name).toLowerCase()) + '"><span class="pod-medal" aria-hidden="true">' + medal(i) + '</span>' + skin(it.skinName || it.name) +
           '<strong class="pod-name">' + (it.nameHtml || esc(it.name)) + '</strong><span class="pod-val"><span class="sr-only">Platz ' + (i + 1) + ': </span>' + it.val + '</span>' + (it.sub ? '<span class="pod-sub">' + it.sub + '</span>' : '') + '</li>';
       }).join('') + '</ol>';
     };
@@ -466,10 +479,11 @@
         }, function (r) { return r.name; }, 'Für dieses Spiel gibt es noch keine Einträge.');
     };
     var clanTable = function (rows, label, fmt) {
-      return rankView(rows, function (c) { return { name: '[' + c.tag + '] ' + c.name, nameHtml: '<span class="pod-tag">[' + esc(c.tag) + ']</span> ' + esc(c.name), val: fmt(c), sub: num(c.mitglieder) + ' Mitglieder' }; },
-        [['Clan'], ['Mitglieder', true], [label, true]],
-        function (c) { return ['<td><strong>[' + esc(c.tag) + ']</strong> ' + esc(c.name) + '</td>', '<td class="num">' + num(c.mitglieder) + '</td>', '<td class="num">' + fmt(c) + '</td>']; },
-        function (c) { return c.tag + ' ' + c.name; }, 'Noch keine Clans – gründe den ersten mit <code>/clan gruenden</code>!');
+      // Gruender: Skin auf dem Podest, Kopf + Name in der Tabelle
+      return rankView(rows, function (c) { return { name: '[' + c.tag + '] ' + c.name, skinName: c.gruender || '', nameHtml: '<span class="pod-tag">[' + esc(c.tag) + ']</span> ' + esc(c.name), val: fmt(c), sub: (c.gruender ? 'Gründer: ' + esc(c.gruender) + ' · ' : '') + num(c.mitglieder) + ' Mitglieder' }; },
+        [['Clan'], ['Gründer'], ['Mitglieder', true], [label, true]],
+        function (c) { return ['<td><strong>[' + esc(c.tag) + ']</strong> ' + esc(c.name) + '</td>', '<td>' + (c.gruender ? avatar(c.gruender) + esc(c.gruender) : '–') + '</td>', '<td class="num">' + num(c.mitglieder) + '</td>', '<td class="num">' + fmt(c) + '</td>']; },
+        function (c) { return c.tag + ' ' + c.name + ' ' + (c.gruender || ''); }, 'Noch keine Clans – gründe den ersten mit <code>/clan gruenden</code>!');
     };
     // Suche in der gerade angezeigten Liste (Podest + Tabelle)
     rankOut.addEventListener('input', function (e) {
