@@ -433,7 +433,7 @@
     var podiumHtml = function (items) {
       if (!items.length) return '';
       return '<ol class="podium" aria-label="Die besten 3">' + items.slice(0, 3).map(function (it, i) {
-        return '<li class="p' + (i + 1) + '" data-name="' + esc(String(it.name).toLowerCase()) + '"><span class="pod-medal" aria-hidden="true">' + medal(i) + '</span>' + skin(it.skinName || it.name) +
+        return '<li class="p' + (i + 1) + '" data-rank="' + (i + 1) + '" data-name="' + esc(String(it.name).toLowerCase()) + '"><span class="pod-medal" aria-hidden="true">' + medal(i) + '</span>' + skin(it.skinName || it.name) +
           '<strong class="pod-name">' + (it.nameHtml || esc(it.name)) + '</strong><span class="pod-val"><span class="sr-only">Platz ' + (i + 1) + ': </span>' + it.val + '</span>' + (it.sub ? '<span class="pod-sub">' + it.sub + '</span>' : '') + '</li>';
       }).join('') + '</ol>';
     };
@@ -443,15 +443,17 @@
       if (!rows.length) return '<p class="muted">' + (emptyText || 'Noch keine Einträge.') + '</p>';
       var rest = rows.slice(3);
       var out = podiumHtml(rows.slice(0, 3).map(podItem));
+      // Suche gilt fuer Podest (Platz 1-3) und Tabelle; Name oder Platz-Nummer
+      out = '<div class="rank-tools"><label class="sr-only" for="rank-search">Spieler oder Platz in dieser Liste suchen</label><input id="rank-search" class="rank-search" type="search" placeholder="🔎 Name oder Platz suchen …" autocomplete="off">' +
+        '<span class="rank-count muted small" aria-live="polite">Platz 1–' + rows.length + '</span></div>' + out;
       if (rows.length > 3) {
-        out += '<div class="rank-tools"><label class="sr-only" for="rank-search">Spieler in dieser Liste suchen</label><input id="rank-search" class="rank-search" type="search" placeholder="🔎 Name suchen …" autocomplete="off">' +
-          '<span class="rank-count muted small" aria-live="polite">Platz 4–' + rows.length + '</span></div>';
         out += '<div class="table-wrap"><table class="rank-table"><thead><tr><th scope="col">Platz</th>' + heads.map(function (h) { return '<th scope="col"' + (h[1] ? ' class="num"' : '') + '>' + esc(h[0]) + '</th>'; }).join('') + '</tr></thead><tbody>' +
-          rest.map(function (r, k) { var i = k + 3; return '<tr' + rowCls(i) + ' data-name="' + esc(String(nameOf(r)).toLowerCase()) + '"><td><span class="rank-no">' + (i + 1) + '</span></td>' + cells(r, i).join('') + '</tr>'; }).join('') +
-          '</tbody></table></div><p class="muted small rank-none" hidden>Kein Treffer in dieser Liste.</p>';
+          rest.map(function (r, k) { var i = k + 3; return '<tr' + rowCls(i) + ' data-rank="' + (i + 1) + '" data-name="' + esc(String(nameOf(r)).toLowerCase()) + '"><td><span class="rank-no">' + (i + 1) + '</span></td>' + cells(r, i).join('') + '</tr>'; }).join('') +
+          '</tbody></table></div>';
       } else {
         out += '<p class="muted small">Noch keine weiteren Plätze – hier ist noch Platz für dich!</p>';
       }
+      out += '<p class="muted small rank-none" hidden>Kein Treffer in dieser Liste.</p>';
       return out;
     };
     var table = function (rows, label, fmt) {
@@ -488,9 +490,11 @@
     // Suche in der gerade angezeigten Liste (Podest + Tabelle)
     rankOut.addEventListener('input', function (e) {
       if (!e.target.classList || !e.target.classList.contains('rank-search')) return;
-      var q = e.target.value.trim().toLowerCase(), hits = 0;
-      $$('tbody tr[data-name]', rankOut).forEach(function (tr) { var on = !q || tr.getAttribute('data-name').indexOf(q) !== -1; tr.hidden = !on; if (on) hits++; });
-      $$('.podium li', rankOut).forEach(function (li) { li.classList.toggle('dim', !!q && li.getAttribute('data-name').indexOf(q) === -1); });
+      var q = e.target.value.trim().toLowerCase().replace(/^#|^platz\s*/, ''), hits = 0;
+      var isNum = /^\d+$/.test(q);
+      var match = function (el) { return !q || (isNum ? el.getAttribute('data-rank') === q : el.getAttribute('data-name').indexOf(q) !== -1); };
+      $$('tbody tr[data-name]', rankOut).forEach(function (tr) { var on = match(tr); tr.hidden = !on; if (on) hits++; });
+      $$('.podium li', rankOut).forEach(function (li) { var on = match(li); li.classList.toggle('dim', !on); li.classList.toggle('hit', !!q && on); if (on) hits++; });
       var none = $('.rank-none', rankOut); if (none) none.hidden = hits > 0;
     });
     var standEl = doc.getElementById('rank-stand');

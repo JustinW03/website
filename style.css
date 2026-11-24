@@ -733,10 +733,10 @@ mark { background: rgba(255, 209, 102, .3); color: #fff; border-radius: 3px; pad
 /* Spielerkoepfe und Skins in den Ranglisten */
 .rank-ava { position: relative; overflow: hidden; }
 .rank-ava.has-head img { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; object-fit: cover; }
-.pod-skin { display: grid; place-items: center; height: 7.5rem; }
-.pod-skin img { height: 100%; width: auto; image-rendering: pixelated; filter: drop-shadow(0 6px 10px rgba(0,0,0,.45)); }
+/* Top 3: ganzer Skin, so breit wie die Koepfe (2,8rem), Name bleibt darunter */
+.pod-skin { display: block; width: 2.8rem; margin: 0 auto; }
+.pod-skin img { display: block; width: 100%; height: auto; image-rendering: pixelated; filter: drop-shadow(0 4px 6px rgba(0,0,0,.45)); }
 .pod-skin .rank-ava { display: none; }
-.pod-skin.fail { height: auto; }
 .pod-skin.fail .rank-ava { display: inline-grid; }
-.podium .p1 .pod-skin { height: 9rem; }
-@media (max-width: 600px) { .pod-skin { height: 5.5rem; } .podium .p1 .pod-skin { height: 6.5rem; } }
+.podium li.hit { outline: 2px solid var(--accent, #ff1f3d); outline-offset: 2px; }
+@media (max-width: 600px) { .pod-skin { width: 2.2rem; } }
