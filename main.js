@@ -303,7 +303,7 @@
   setupSearch('admin-search', '#admin-cmds tbody tr', '#admin-cmds .admin-group', 'admin-count', 'admin-none');
 
   // ---------- Minigames: Liste + Filter ----------
-  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶'], ['reducto', '🂠'], ['grundbesitz', '🏠'], ['kartenblitz', '⚡'], ['stapelmeister', '📚'], ['werwolf', '🐺'], ['geheimwort', '🕵️'], ['oneblock', '🟫']];
+  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶'], ['reducto', '🂠'], ['zockerstadt', '🏙️'], ['kartenblitz', '⚡'], ['stapelmeister', '📚'], ['werwolf', '🐺'], ['geheimwort', '🕵️'], ['oneblock', '🟫']];
   var iconFor = function (name) { var n = String(name).toLowerCase(); for (var i = 0; i < ICONS.length; i++) if (n.indexOf(ICONS[i][0]) !== -1) return ICONS[i][1]; return '🎮'; };
   var mgList = doc.getElementById('mg-list');
   var mgFilter = 'alle';
