@@ -303,7 +303,7 @@
   setupSearch('admin-search', '#admin-cmds tbody tr', '#admin-cmds .admin-group', 'admin-count', 'admin-none');
 
   // ---------- Minigames: Liste + Filter ----------
-  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶']];
+  var ICONS = [['4 gewinnt', '🔴'], ['vier', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶'], ['reducto', '🂠'], ['grundbesitz', '🏠'], ['kartenblitz', '⚡'], ['stapelmeister', '📚'], ['werwolf', '🐺'], ['geheimwort', '🕵️'], ['oneblock', '🟫']];
   var iconFor = function (name) { var n = String(name).toLowerCase(); for (var i = 0; i < ICONS.length; i++) if (n.indexOf(ICONS[i][0]) !== -1) return ICONS[i][1]; return '🎮'; };
   var mgList = doc.getElementById('mg-list');
   var mgFilter = 'alle';
@@ -471,7 +471,23 @@
       if (TIME_GAMES.test(id + ' ' + (game.name || '')) && v > 0) return (v / 1000).toFixed(2).replace('.', ',') + ' s';
       return num(v);
     };
-    var gameTable = function (id, g) {
+    var gameTable = function (id, g, tafel) {
+      // Zusatz-Rangliste des Spiels (z. B. Kills, Höchstes Vermögen) – Werte kommen fertig formatiert vom Server
+      var tf = g && Array.isArray(g.tafeln) ? g.tafeln : [];
+      var pick = '';
+      if (tf.length) {
+        pick = '<div class="select"><label for="mg-tafel"><strong>Rangliste:</strong></label><select id="mg-tafel"><option value="">Siege &amp; Punkte</option>' +
+          tf.map(function (t, i) { return '<option value="' + i + '"' + (String(tafel) === String(i) ? ' selected' : '') + '>' + esc(t.titel || t.key) + '</option>'; }).join('') + '</select></div>';
+      }
+      if (tf.length && tafel !== undefined && tafel !== '' && tf[tafel]) {
+        var t = tf[tafel];
+        var html = table(t.eintraege || [], t.titel || t.key, function (v) { return esc(v); });
+        curTotal = null;
+        return pick + html;
+      }
+      return pick + gameTableMain(id, g);
+    };
+    var gameTableMain = function (id, g) {
       var e = (g && g.eintraege) || [];
       var best = !!(g && g.best);
       var heads = [['Spieler'], ['Siege', true], ['Spiele', true], ['Punkte', true]];
@@ -535,7 +551,13 @@
             '</select></div><div id="mg-out" aria-live="polite">' + gameTable(picked, spiele[picked]) + '</div>';
         }, function () {
           var sel = doc.getElementById('mg-pick');
-          if (sel) sel.addEventListener('change', function () { picked = sel.value; doc.getElementById('mg-out').innerHTML = gameTable(picked, spiele[picked]); });
+          var out = doc.getElementById('mg-out');
+          var bindTafel = function () {
+            var ts = doc.getElementById('mg-tafel');
+            if (ts) ts.addEventListener('change', function () { out.innerHTML = gameTable(picked, spiele[picked], ts.value); bindTafel(); });
+          };
+          bindTafel();
+          if (sel) sel.addEventListener('change', function () { picked = sel.value; out.innerHTML = gameTable(picked, spiele[picked]); bindTafel(); });
         }]);
       }
       lists.push(['🎮 Minigames', null, null, mgSubs]);

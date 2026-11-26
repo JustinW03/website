@@ -1,0 +1,693 @@
+[
+ {
+  "id": "start",
+  "frage": "Wie komme ich auf den Server?",
+  "antwort": "Über Discord, Twitch-Follow und einen Code – Schritt für Schritt auf Beitreten. Java: `play.justinzockt.de`, Bedrock: `bedrock.justinzockt.de` Port `15314`.",
+  "url": "https://justinzockt.de/faq.html#start",
+  "keywords": [
+   "komme",
+   "server",
+   "whitelist",
+   "gewhitelistet",
+   "whitelisted",
+   "freischalten",
+   "freigeschaltet",
+   "joinen",
+   "join",
+   "beitreten",
+   "ip",
+   "adresse",
+   "serveradresse",
+   "drauf",
+   "reinkommen",
+   "connecten",
+   "verbinden",
+   "code",
+   "mitspielen"
+  ]
+ },
+ {
+  "id": "serverstart",
+  "frage": "Wann startet der Server?",
+  "antwort": "Der Server startet am 27. November 2026 um 14 Uhr. Bis dahin läuft in der Serverliste der Countdown „Serverstart in …“. Danach zählt der Server die Tage: „Tag 1“, „Tag 2“ und so weiter.",
+  "url": "https://justinzockt.de/faq.html#serverstart",
+  "keywords": [
+   "startet",
+   "server",
+   "serverstart",
+   "start",
+   "eroeffnung",
+   "release",
+   "wann",
+   "tag"
+  ]
+ },
+ {
+  "id": "version",
+  "frage": "Welche Minecraft-Version brauche ich?",
+  "antwort": "Minecraft Java Edition, am besten die aktuelle Version (Versionen unter 1.21.5 werden abgewiesen). Auch für Bedrock (Handy, Konsole, Windows) – dort immer die neueste Version.",
+  "url": "https://justinzockt.de/faq.html#version",
+  "keywords": [
+   "minecraft",
+   "version",
+   "brauche",
+   "versionen",
+   "java",
+   "update",
+   "snapshot",
+   "1.21",
+   "veraltet",
+   "outdated"
+  ]
+ },
+ {
+  "id": "bedrock",
+  "frage": "Kann ich mit Handy, Konsole oder Windows-Bedrock spielen?",
+  "antwort": "Ja! Auch für Bedrock (Handy, Konsole, Windows). Adresse `bedrock.justinzockt.de`, Port `15314`. Auf Xbox, PlayStation und Switch geht das über BedrockConnect oder (Xbox) die App „MC Server Connector“ – Schritt für Schritt auf Beitreten → Bedrock. Menüs, Glücksräder und Minigames funktionieren auf Bedrock mit einfachem Antippen; Minigames spielst du direkt auf dem Spielfeld. Es ist immer nur ein Account freigeschaltet (Java oder Bedrock); ein Wechsel geht per Ticket, Items und Coins werden dabei nicht übertragen (Regel 11).",
+  "url": "https://justinzockt.de/faq.html#bedrock",
+  "keywords": [
+   "handy",
+   "konsole",
+   "windows",
+   "bedrock",
+   "spielen",
+   "smartphone",
+   "iphone",
+   "android",
+   "tablet",
+   "ipad",
+   "ps",
+   "ps4",
+   "ps5",
+   "playstation",
+   "xbox",
+   "switch",
+   "nintendo",
+   "pocket",
+   "pe",
+   "mobile",
+   "crossplay",
+   "port",
+   "bedrockconnect"
+  ]
+ },
+ {
+  "id": "coins",
+  "frage": "Was sind Justin Coins (JC)?",
+  "antwort": "Die Server-Währung. Du startest mit 5.000 JC und bekommst für jede Stunde aktiver Spielzeit Coins: Spieler 500 JC, Sub 600 JC, Premium 750 JC. Wer eine Weile nichts macht, ist AFK (Spieler nach 5 Min., Sub nach 6 Min., Premium nach 7:30 Min.) – dann zählt die Zeit nicht. Dazu kommen Coins bei jedem Skill-Level, bei jedem Dreh am Glücksrad (`/rewards`) und für jeden Vote. Mit `/balance` siehst du dein Guthaben, mit `/pay <Spieler> <Betrag>` schickst du Coins. JC haben keinen Echtgeld-Wert und dürfen nicht gegen Echtgeld gehandelt werden. Alle Rang-Vorteile: Ränge.",
+  "url": "https://justinzockt.de/faq.html#coins",
+  "keywords": [
+   "justin",
+   "coins",
+   "jc",
+   "rewards",
+   "balance",
+   "pay",
+   "coin",
+   "geld",
+   "waehrung",
+   "guthaben",
+   "verdienen",
+   "bezahlen",
+   "ueberweisen",
+   "money"
+  ]
+ },
+ {
+  "id": "rewards",
+  "frage": "Was ist /rewards?",
+  "antwort": "Mit `/rewards` (auch `/belohnungen`, `/gluecksrad`, `/daily`) öffnest du die täglichen Belohnungen. Jeder Spieler dreht jeden Tag gratis das Glücksrad – jeder Dreh gibt immer ein paar Coins und genau einen Gewinn. Twitch-Subs haben zusätzlich das Sub-Rad, Premium das Premium-Rad; wer beides ist, dreht alle 3. Neuer Tag ist um 0:00 Uhr. Die Gewinne haben fünf Stufen von Gewöhnlich bis Legendär. Im Menü kommst du auch direkt zum Voten. Alles dazu: Glücksräder & Votes.",
+  "url": "https://justinzockt.de/faq.html#rewards",
+  "keywords": [
+   "rewards",
+   "belohnungen",
+   "gluecksrad",
+   "daily",
+   "reward",
+   "belohnung",
+   "rad",
+   "taeglich",
+   "drehen",
+   "spin",
+   "gewinn"
+  ]
+ },
+ {
+  "id": "vote",
+  "frage": "Kann ich für den Server voten?",
+  "antwort": "Ja – mit `/vote` oder direkt auf der Serverliste. Pro Vote-Seite bekommst du alle 24 Stunden 150 Justin Coins und 5 Erfahrungsfläschchen plus einen Tagesbonus, der jeden Wochentag anders ist. Votest du offline, kommt die Belohnung beim nächsten Join. Für 1, 10 und 100 Votes gibt es Erfolge. Alles dazu: Glücksräder & Votes.",
+  "url": "https://justinzockt.de/faq.html#vote",
+  "keywords": [
+   "server",
+   "voten",
+   "vote",
+   "abstimmen",
+   "serverliste"
+  ]
+ },
+ {
+  "id": "claims",
+  "frage": "Wie schütze ich mein Gebiet?",
+  "antwort": "Mit `/claim chunk` bekommst du ein Kauf-Angebot für den Chunk (16 × 16, ganze Höhe), in dem du stehst – bestätigen mit dem grünen Knopf in der Hotbar oder `/claim bestaetigen`. Grundpreis 2.000 JC in der Oberwelt, im Nether das Doppelte, im End das Dreifache, dazu ggf. ein Strukturzuschlag. Maximal 30 Chunks als Spieler, 50 als Sub und 70 als Premium. Claimen geht erst ab 250 Blöcken Abstand von 0/0 (X oder Z) – in allen Dimensionen. In `/claim bearbeiten` stellst du Name, Mitglieder (Besucher, Benutzen, Bauen) und über 40 Flags ein. `/unclaim` gibt dir 50 % des Chunk-Preises zurück. Alles im Detail: Claims & Kistenschutz.",
+  "url": "https://justinzockt.de/faq.html#claims",
+  "keywords": [
+   "schuetze",
+   "gebiet",
+   "claim",
+   "unclaim",
+   "claimen",
+   "grundstueck",
+   "chunk",
+   "chunks",
+   "schuetzen",
+   "schutz",
+   "griefen",
+   "griefing",
+   "grief",
+   "trust",
+   "base"
+  ]
+ },
+ {
+  "id": "truhen",
+  "frage": "Sind meine Kisten geschützt?",
+  "antwort": "Ja: Kisten, Trichter, Öfen, Shulkerkisten und Fässer werden beim Platzieren automatisch gesichert – auch außerhalb von Claims. Alles andere (Spender, Braustände, Endertruhen, Truhenboote …) sicherst du von Hand mit `/lock`. Bearbeiten: Schleichen + Rechtsklick mit leerer Hand auf deine Kiste (Bedrock: Schleichen + Schlagen) oder `/lock bearbeiten` – dort gibt es Mitglieder mit „Nur reinlegen“ oder „Nur rausnehmen“, Name, Freunde, öffentlich und die Flags Trichter und Redstone. Du hast bis zu 128 Sicherungen als Spieler, 192 als Sub und 256 als Premium. Alles im Detail: Kistenschutz.",
+  "url": "https://justinzockt.de/faq.html#truhen",
+  "keywords": [
+   "kisten",
+   "geschuetzt",
+   "lock",
+   "truhe",
+   "truhen",
+   "kiste",
+   "abschliessen",
+   "sperren",
+   "shulker",
+   "fass",
+   "ofen",
+   "trichter",
+   "klauen",
+   "geklaut",
+   "dieb",
+   "diebe",
+   "sicher",
+   "gesichert",
+   "schliessen",
+   "aufbrechen"
+  ]
+ },
+ {
+  "id": "freunde",
+  "frage": "Wie funktionieren Freunde?",
+  "antwort": "Mit `/freunde add <Name>` schickst du eine Freundschaftsanfrage, der andere nimmt sie mit `/freunde annehmen` an (Java: Klick auf den Knopf im Chat, Bedrock: im Menü `/freunde`). Im Freunde-Menü stellst du mit einem Klick ein, was alle deine Freunde in deinen Kisten und Claims dürfen. Alles im Detail: Freunde.",
+  "url": "https://justinzockt.de/faq.html#freunde",
+  "keywords": [
+   "funktionieren",
+   "freunde",
+   "freund",
+   "friend",
+   "friends",
+   "anfrage",
+   "freundschaft",
+   "rechte",
+   "teilen"
+  ]
+ },
+ {
+  "id": "spawn",
+  "frage": "Was gibt es am Spawn?",
+  "antwort": "Der Spawn in Overworld und Nether ist komplett schadenfrei: kein PvP, keine Monster, keine Enderman. Dort kannst du nur Truhen (Truhe, Fallentruhe, Endertruhe, Fass) benutzen – Bauen, Türen, Knöpfe, Werkbänke, Rahmen, Tiere usw. sind gesperrt. Dort sind der Shop und die NPCs „Events“ und „Minigames“. Vom 1. Dezember bis 1. Januar wird er zum Weihnachts-Spawn mit dem Adventskalender. Oben wechselt die Bossbar zwischen Twitch, TikTok, YouTube, Discord und der Webseite. Speed und Sprungkraft am Spawn sind standardmäßig aus – mit `/spawneffekte <1|2|aus>` wählst du Stufe 1, Stufe 2 oder aus (nur am Spawn). Mit `/spawn` kommst du jederzeit zurück: 5 Sekunden stillstehen (nicht im Kampf), danach gilt 5 Minuten Abklingzeit. Sub, Premium und Team haben keine Abklingzeit.",
+  "url": "https://justinzockt.de/faq.html#spawn",
+  "keywords": [
+   "spawn",
+   "spawneffekte",
+   "npc",
+   "npcs",
+   "shop",
+   "speed",
+   "bossbar"
+  ]
+ },
+ {
+  "id": "schlafen",
+  "frage": "Wie viele müssen schlafen, damit es Tag wird?",
+  "antwort": "Es reicht, wenn 25 % der Spieler in der Oberwelt im Bett liegen.",
+  "url": "https://justinzockt.de/faq.html#schlafen",
+  "keywords": [
+   "schlafen",
+   "tag",
+   "bett",
+   "nacht",
+   "skippen"
+  ]
+ },
+ {
+  "id": "home",
+  "frage": "Wie viele Homes habe ich?",
+  "antwort": "Ohne Rang gibt es kein Home – dafür bringen dich `/spawn` und dein Bett zurück. Sub und Premium haben je ein Home: `/sethome` setzt es (nicht am Spawn), `/home` bringt dich hin. Subs stehen dafür 5 Sekunden still und haben danach 5 Minuten Abklingzeit, Premium kommt sofort hin – ohne Wartezeit und ohne Abklingzeit. Ränge",
+  "url": "https://justinzockt.de/faq.html#home",
+  "keywords": [
+   "homes",
+   "spawn",
+   "sethome",
+   "home",
+   "zuhause",
+   "heim"
+  ]
+ },
+ {
+  "id": "respawn",
+  "frage": "Wo spawne ich nach dem Tod?",
+  "antwort": "Immer am Spawn – außer du hast ein Bett oder einen Seelenanker gesetzt, dann dort.",
+  "url": "https://justinzockt.de/faq.html#respawn",
+  "keywords": [
+   "spawne",
+   "tod",
+   "respawn",
+   "respawnen",
+   "sterben",
+   "gestorben",
+   "tot"
+  ]
+ },
+ {
+  "id": "pvp",
+  "frage": "Wie funktioniert PvP?",
+  "antwort": "PvP ist am Anfang für dich aus. Mit `/pvp on` schaltest du es ein. Kämpfen geht nur, wenn beide Spieler PvP an haben. Nach einem Kampf kannst du 30 Sekunden lang nicht umschalten. Mit der Angel kann man keine Spieler heranziehen. Fallen stellen, um Spieler mit PvP-aus zu töten, ist verboten (Regel 3.3).",
+  "url": "https://justinzockt.de/faq.html#pvp",
+  "keywords": [
+   "funktioniert",
+   "pvp",
+   "kaempfen",
+   "kampf",
+   "toeten",
+   "angreifen"
+  ]
+ },
+ {
+  "id": "skills",
+  "frage": "Wie funktionieren die Skills?",
+  "antwort": "Einfach spielen: Mining, Woodcutting, Excavation, Farming, Fishing und Combat geben XP, und jedes Level gibt automatisch Coins und ein Upgrade. Über der Hotbar siehst du, wie viel XP du gerade sammelst. Gesetzte Blöcke, Bäume aus Setzlingen und Generator-Blöcke geben keine XP. Keine Punkte, nichts kaufen, keine Abklingzeiten. Menü: `/skill`. Alles auf Skills.",
+  "url": "https://justinzockt.de/faq.html#skills",
+  "keywords": [
+   "funktionieren",
+   "skills",
+   "skill",
+   "level",
+   "leveln",
+   "xp"
+  ]
+ },
+ {
+  "id": "mending",
+  "frage": "Wo bekomme ich Mending?",
+  "antwort": "Nicht bei Dorfbewohnern, nicht in Kisten, nicht beim normalen Angeln – nur über Skills (Excavation und Farming bei Level 75), Events, die Glücksräder (Stufe „Legendär“) und sehr seltene Bücher. Details auf Verzauberungen.",
+  "url": "https://justinzockt.de/faq.html#mending",
+  "keywords": [
+   "mending",
+   "reparatur",
+   "reparieren",
+   "villager",
+   "dorfbewohner"
+  ]
+ },
+ {
+  "id": "elytra",
+  "frage": "Wo finde ich eine Elytra?",
+  "antwort": "Im End, ganz oben im Sub-Glücksrad – oder als „Rentier-Flügel“ beim Treue-Bonus im Adventskalender. Jeder Elytra-Fund wird allen angesagt.",
+  "url": "https://justinzockt.de/faq.html#elytra",
+  "keywords": [
+   "elytra",
+   "elytren",
+   "fliegen",
+   "fluegel",
+   "flugel"
+  ]
+ },
+ {
+  "id": "welt",
+  "frage": "Wie groß ist die Welt? Wann öffnen Nether und End?",
+  "antwort": "Die Weltgrenze liegt bei 10.000 Blöcken in jede Richtung (Overworld, Nether und End). Das End öffnet am 9. Januar 2027 um 14 Uhr (der Termin kann sich noch ändern). Wann der Nether öffnet, bleibt geheim: ???. Beide öffnen automatisch mit Ankündigung, den Stand siehst du auf der Startseite. Im End ist die Grenze zuerst nur 125 Blöcke groß – erst wenn der erste Enderdrache besiegt ist, wächst sie langsam (1 Block pro Sekunde) auf 10.000. Der erste Enderdrache hat 100-fache Lebenspunkte; eine Leiste oben zeigt, wie viele er noch hat. Wer mindestens 2 % des Schadens macht, bekommt 10.000 Combat-XP.",
+  "url": "https://justinzockt.de/faq.html#welt",
+  "keywords": [
+   "gross",
+   "welt",
+   "oeffnen",
+   "nether",
+   "end",
+   "weltgrenze",
+   "border",
+   "worldborder",
+   "groesse",
+   "offen",
+   "drache",
+   "termin"
+  ]
+ },
+ {
+  "id": "drachenei",
+  "frage": "Wer bekommt das Drachenei?",
+  "antwort": "Wer dem ersten Enderdrachen den letzten Treffer gibt. Das Ei gehört dann fest dieser Person: Es ist unzerstörbar (kein Feuer, keine Lava, keine Explosion, kein Verschwinden), niemand sonst kann es aufheben – auch kein Admin – und beim Tod verlierst du es nicht. Lässt du es fallen, bleibt es leuchtend genau an der Stelle schweben (kein Wasser, kein Void). In Truhen, Fässern und der Endertruhe kann es nur der Besitzer herausnehmen, und ein Behälter oder Rahmen mit dem Ei lässt sich nicht abbauen. Platziert ist das Ei selbst gesichert wie eine Truhe – nur der Besitzer kann es einsammeln (Schleichen + Linksklick), auch Freunde nicht. Der Chunk wird dabei nicht geclaimt. Den Besitzer wechseln kann das Ei nur über den Shop – und bietet jemand es dort an, bekommen alle eine Nachricht.",
+  "url": "https://justinzockt.de/faq.html#drachenei",
+  "keywords": [
+   "bekommt",
+   "drachenei",
+   "drache",
+   "enderdrache",
+   "ei",
+   "dragon"
+  ]
+ },
+ {
+  "id": "gateways",
+  "frage": "Wann kann ich die End-Gateways benutzen?",
+  "antwort": "Nach dem ersten Enderdrachen sind die Gateways zu den äußeren End-Inseln noch 1 Stunde gesperrt. Über jedem Gateway zählt eine Anzeige herunter. Wer schneller zu den End-Städten will, baut sich rüber – oder wartet. Auch Enderperlen kommen in der Zeit nicht durch.",
+  "url": "https://justinzockt.de/faq.html#gateways",
+  "keywords": [
+   "end",
+   "gateways",
+   "benutzen",
+   "gateway",
+   "endcity",
+   "end-stadt",
+   "endstadt",
+   "aeussere inseln"
+  ]
+ },
+ {
+  "id": "spawner",
+  "frage": "Kann ich Spawner oder Loot-Truhen abbauen?",
+  "antwort": "Nein. Spawner, Trial-Spawner und Tresore sind unzerstörbar – auch durch Explosionen und Kolben. Loot-Truhen in Bauwerken kann man nicht abbauen und nichts hineinlegen; herausnehmen geht. Soll ein Spawner oder eine Loot-Truhe wirklich weg, erstelle ein Ticket in #tickets. Ein Spawner-Ei aus dem Premium-Glücksrad ändert einen normalen Spawner genau einmal.",
+  "url": "https://justinzockt.de/faq.html#spawner",
+  "keywords": [
+   "spawner",
+   "loot",
+   "truhen",
+   "abbauen",
+   "trialspawner",
+   "tresor",
+   "vault",
+   "loottruhe",
+   "zerstoeren",
+   "kaputt"
+  ]
+ },
+ {
+  "id": "zucht",
+  "frage": "Warum kann ich hier keine Tiere mehr züchten?",
+  "antwort": "Pro Chunk gibt es eine Zuchtgrenze für Dorfbewohner und Tiere, damit keine Lag-Farmen entstehen. Ist sie erreicht, steht „Keine Zucht mehr hier.“ – verteil deine Tiere einfach auf mehrere Chunks. Dorfbewohner, die von Zombies getötet werden, werden immer zu Zombie-Dorfbewohnern.",
+  "url": "https://justinzockt.de/faq.html#zucht",
+  "keywords": [
+   "tiere",
+   "mehr",
+   "zuechten",
+   "zucht",
+   "villager",
+   "dorfbewohner",
+   "farm",
+   "limit",
+   "grenze"
+  ]
+ },
+ {
+  "id": "buecher",
+  "frage": "Sieht man, wann ein Buch signiert wurde?",
+  "antwort": "Ja. Signierte Bücher bekommen automatisch Rang, Name, Datum und Uhrzeit der Signatur.",
+  "url": "https://justinzockt.de/faq.html#buecher",
+  "keywords": [
+   "sieht",
+   "buch",
+   "signiert",
+   "wurde"
+  ]
+ },
+ {
+  "id": "wartung",
+  "frage": "Ich komme nicht drauf – „Wartung“?",
+  "antwort": "Bei Updates schaltet das Team den eigenen Wartungsmodus ein. Dann können nur Teammitglieder joinen. Wie lange es dauert, steht im Discord.",
+  "url": "https://justinzockt.de/faq.html#wartung",
+  "keywords": [
+   "komme",
+   "drauf",
+   "wartung",
+   "joinen",
+   "join",
+   "rein",
+   "reinkommen",
+   "nicht drauf",
+   "wartungsmodus",
+   "maintenance",
+   "offline",
+   "down",
+   "erreichbar"
+  ]
+ },
+ {
+  "id": "amboss",
+  "frage": "Gibt es „Zu teuer“ am Amboss?",
+  "antwort": "Nein. Du zahlst einfach die hohen Level.",
+  "url": "https://justinzockt.de/faq.html#amboss",
+  "keywords": [
+   "teuer",
+   "amboss",
+   "anvil"
+  ]
+ },
+ {
+  "id": "mods",
+  "frage": "Welche Mods sind erlaubt?",
+  "antwort": "Alles steht auf der Seite Erlaubte & verbotene Mods. Kurz: Erlaubt sind z. B. Sodium, Lithium, Iris/OptiFine mit Shadern, Fabric API, Mod Menu, Distant Horizons, JEI/REI/EMI (ohne Cheat-Modus), Simple Voice Chat, Litematica (nur Anzeigen) und Minimaps ohne Radar und Höhlenanzeige. Verboten sind u. a. Hacked Clients (Wurst, Meteor, Aristois …), X-Ray, Freecam, Autoclicker, Killaura, Baritone und Seed-Cracker. Alles, was nicht in der Liste steht, ist verboten – im Zweifel vorher per Ticket in #tickets fragen.",
+  "url": "https://justinzockt.de/faq.html#mods",
+  "keywords": [
+   "mods",
+   "erlaubt",
+   "mod",
+   "verboten",
+   "shader",
+   "optifine",
+   "sodium",
+   "iris",
+   "minimap",
+   "texturepack",
+   "resourcepack",
+   "fabric",
+   "forge",
+   "xray",
+   "client",
+   "clients",
+   "litematica"
+  ]
+ },
+ {
+  "id": "anticheat",
+  "frage": "Was macht der Anticheat?",
+  "antwort": "Der Server prüft automatisch Client, Mods und Verhalten (Bewegung, Klickrate, Platziertempo, Reichweite). Bei Verstößen folgt ein automatischer Kick, dann Tempbann 1 Tag → 7 Tage → dauerhaft. Bekannte Cheat-Clients werden sofort gebannt. Xaero's Minimap und VoxelMap werden automatisch auf Fair-Play gestellt.",
+  "url": "https://justinzockt.de/faq.html#anticheat",
+  "keywords": [
+   "macht",
+   "anticheat",
+   "cheat",
+   "cheats",
+   "hack",
+   "hacks",
+   "gekickt",
+   "kick"
+  ]
+ },
+ {
+  "id": "voice",
+  "frage": "Gibt es Sprachchat?",
+  "antwort": "Der Server ist für die Mod Simple Voice Chat vorbereitet. Die Regeln gelten auch im Sprachchat, er wird nicht aufgezeichnet. Ob er gerade aktiv ist, erfährst du im Discord.",
+  "url": "https://justinzockt.de/faq.html#voice",
+  "keywords": [
+   "sprachchat",
+   "voice",
+   "vc",
+   "voicechat",
+   "sprechen",
+   "reden",
+   "mikro"
+  ]
+ },
+ {
+  "id": "report",
+  "frage": "Jemand hält sich nicht an die Regeln – was tun?",
+  "antwort": "Melde es per Ticket im Discord (#tickets → „Spieler melden“) mit Zeit, Koordinaten und beteiligten Spielern. Am besten mit Video – lass dafür ein Aufnahmeprogramm mit Replay-Puffer mitlaufen. Nervt dich jemand im Chat, hilft sofort `/ignore <Spieler>`.",
+  "url": "https://justinzockt.de/faq.html#report",
+  "keywords": [
+   "jemand",
+   "haelt",
+   "regeln",
+   "ignore",
+   "melden",
+   "report",
+   "reporten",
+   "regelbruch",
+   "cheater",
+   "hacker",
+   "beleidigt"
+  ]
+ },
+ {
+  "id": "bann",
+  "frage": "Ich wurde gebannt – was nun?",
+  "antwort": "Der Grund steht auf dem Bildschirm. Einen Entbannungsantrag stellst du im Discord (#tickets → „Entbannung“). Ein Antrag pro Bann, bitte ehrlich und sachlich.",
+  "url": "https://justinzockt.de/faq.html#bann",
+  "keywords": [
+   "wurde",
+   "gebannt",
+   "nun",
+   "bann",
+   "ban",
+   "banned",
+   "entbannen",
+   "entbannung",
+   "gesperrt"
+  ]
+ },
+ {
+  "id": "bewerben",
+  "frage": "Kann ich mich fürs Team bewerben?",
+  "antwort": "Ja! Bewerbungen laufen über den Discord-Kanal #tickets (Knopf „Bewerbung“) – zum Beispiel als Cutter, Builder, Dev, Supporter oder Mod. Mehr auf der Seite Team.",
+  "url": "https://justinzockt.de/faq.html#bewerben",
+  "keywords": [
+   "fuers",
+   "team",
+   "bewerben",
+   "bewerbung",
+   "supporter",
+   "moderator",
+   "builder"
+  ]
+ },
+ {
+  "id": "chat",
+  "frage": "Warum kann ich nicht schneller schreiben?",
+  "antwort": "Zum Schutz vor Spam kannst du im Chat höchstens alle 5 Sekunden eine Nachricht schreiben.",
+  "url": "https://justinzockt.de/faq.html#chat",
+  "keywords": [
+   "schneller",
+   "schreiben",
+   "chat",
+   "cooldown",
+   "spam",
+   "nachricht"
+  ]
+ },
+ {
+  "id": "twitchchat",
+  "frage": "Welche Befehle gibt es im Twitch-Chat?",
+  "antwort": "Im Stream von JustinZockt03 antwortet der eigene Bot zum Beispiel auf `!server`, `!premium`, `!discord`, `!socials`, `!uptime`, `!watchtime` und `!followage` – alle stehen auf Befehle → Twitch-Chat. Der Bot achtet auch auf Spam: Fremde Links, Großbuchstaben, Zeichen-Spam und Beleidigungen werden gelöscht, bei Wiederholung gibt es einen Timeout. Links darfst du posten, wenn ein Mod dir `!permit` gibt.",
+  "url": "https://justinzockt.de/faq.html#twitchchat",
+  "keywords": [
+   "befehle",
+   "twitch",
+   "chat"
+  ]
+ },
+ {
+  "id": "erfolge",
+  "frage": "Gibt es Erfolge?",
+  "antwort": "Ja! Im Fortschritte-Menü (Taste L) hat der Server einen eigenen Reiter „JustinZocktCommunity“ mit vielen Erfolgen – für Minigames, Tode, PvP-Kills, Spielzeit, Coins, Skills, Clans, den Adventskalender, seltene Funde, Claims, den Shop, Votes, Paychecks, AFK-Zeit, Angeln, Loot-Truhen, Full Dia und vieles mehr. Alle Erfolge auf der Seite Erfolge, die Rangliste nach Anzahl der Erfolge auf Ranglisten.",
+  "url": "https://justinzockt.de/faq.html#erfolge",
+  "keywords": [
+   "erfolge",
+   "erfolg",
+   "achievement",
+   "achievements",
+   "fortschritte",
+   "advancements"
+  ]
+ },
+ {
+  "id": "minigametitel",
+  "frage": "Gibt es Titel für Minigames?",
+  "antwort": "Ja: Wer in einem Minigame 1.000 gewertete Siege schafft, bekommt den Titel dieses Spiels (auswählen im Kompass unter „🏅 Titel“). Allein zählen nur erfolgreich beendete Runden ohne Verlassen; mit anderen gilt eine Mindestdauer, und verlässt ein Gegner nach mindestens 1 Minute, zählt der Sieg trotzdem. Mehr auf Minigames.",
+  "url": "https://justinzockt.de/faq.html#minigametitel",
+  "keywords": [
+   "titel",
+   "minigames",
+   "minigame",
+   "siege",
+   "gewinnen",
+   "title"
+  ]
+ },
+ {
+  "id": "clanraenge",
+  "frage": "Welche Ränge gibt es im Clan?",
+  "antwort": "Gründer > Leiter > Ältester > Mitglied. Älteste dürfen einladen und Mitglieder entfernen, Leiter zusätzlich Älteste entfernen und Mitglieder zum Ältesten befördern. Befördern und degradieren geht mit `/clan befoerdern <Spieler> [stufe]` und `/clan degradieren <Spieler> [stufe]`. Den Clan-Tag über dem Kopf sehen nur Mitglieder des eigenen Clans. Mehr auf Clans.",
+  "url": "https://justinzockt.de/faq.html#clanraenge",
+  "keywords": [
+   "raenge",
+   "clan",
+   "aeltester",
+   "leiter",
+   "gruender",
+   "befoerdern",
+   "degradieren",
+   "rang"
+  ]
+ },
+ {
+  "id": "sub",
+  "frage": "Was bringt ein Twitch-Sub oder Premium?",
+  "antwort": "Vorweg: Das Spielerlebnis ist für alle vollständig – Skills, Clans, Shop, Glücksrad, Minigames, Erfolge und Events gibt es für jeden. Sub und Premium sind ein kleines Dankeschön für Unterstützung. Twitch-Subs bekommen automatisch den Sub-Rang: 1 Home, keine Abklingzeit bei `/spawn`, 50 Claims mit 5 % Rabatt, eigene Clan-Farbe (als Gründer), `/ec`, `/craft`, mobilen Amboss, Steinsäge, Schleifstein und Webstuhl, das Sub-Glücksrad, 600 JC pro Stunde und erst nach 6 Min. AFK. Premium hat zusätzlich `/tpa`, ein Home ganz ohne Wartezeit und Abklingzeit, `/signieren`, `/invsort`, kostenloses farbiges Umbenennen im Amboss, `/shop` überall, eine größere Endertruhe, das Premium-Glücksrad, 70 Claims mit 10 % Rabatt, 750 JC pro Stunde und 7:30 Min. bis AFK. Beide Ränge haben außerdem etwas mehr Glück bei seltenen Funden. Alles im Vergleich: Ränge & Vorteile, Premium kaufen: Premium.",
+  "url": "https://justinzockt.de/faq.html#sub",
+  "keywords": [
+   "bringt",
+   "twitch",
+   "sub",
+   "premium",
+   "spawn",
+   "ec",
+   "craft",
+   "tpa",
+   "signieren",
+   "invsort",
+   "shop",
+   "subs",
+   "subscriber",
+   "abonnieren",
+   "vorteile",
+   "rang",
+   "raenge"
+  ]
+ },
+ {
+  "id": "premium",
+  "frage": "Wie bekomme ich Premium?",
+  "antwort": "Premium kaufst du online im Premium-Shop – alle Preise, Vorteile und der Ablauf stehen auf der Seite Premium kaufen. Im Spiel zeigen dir `/kaufen` und `/premium` den Link. Premium ist ein eigener Spieler-Rang: Auch das Team hat Premium nicht automatisch.",
+  "url": "https://justinzockt.de/faq.html#premium",
+  "keywords": [
+   "premium",
+   "kaufen",
+   "preis",
+   "kosten",
+   "kostet"
+  ]
+ },
+ {
+  "id": "geburtstag",
+  "frage": "Wie trage ich meinen Geburtstag ein?",
+  "antwort": "Im Discord-Kanal #geburtstage klickst du auf „🎂 Geburtstag eintragen“ und gibst Tag und Monat ein – oder du schreibst im Spiel `/geburtstag eintragen <Tag> <Monat>` (z. B. `/geburtstag eintragen 12 3`); dafür muss dein Discord mit Minecraft verbunden sein, das Ergebnis ist dasselbe. Ein Jahr oder dein Alter wird nicht gespeichert. Eintragen geht nur einmal; vertippt? Dann per Ticket in #tickets ändern lassen. An deinem Geburtstag gratuliert dir der Bot im Kanal (29. Februar: in Nicht-Schaltjahren am 28. Februar). Ist dein Discord mit Minecraft verknüpft, sehen alle Spieler beim Joinen deinen Geburtstag und können dir freiwillig ein Geschenk machen. Mit `/geburtstag` siehst du alle Geburtstage, mit `/geburtstag geschenke` öffnest du deine Geschenke – sie bleiben gespeichert, bis du sie abholst.",
+  "url": "https://justinzockt.de/faq.html#geburtstag",
+  "keywords": [
+   "trage",
+   "geburtstag"
+  ]
+ },
+ {
+  "id": "daten",
+  "frage": "Welche Daten werden gespeichert?",
+  "antwort": "Alles dazu auf der Seite Datenschutz. Kurz: Was für Whitelist, Schutz und Moderation nötig ist – auch Clan-Chat und private Nachrichten.",
+  "url": "https://justinzockt.de/faq.html#daten",
+  "keywords": [
+   "daten",
+   "gespeichert",
+   "datenschutz",
+   "dsgvo",
+   "privatsphaere"
+  ]
+ }
+]
