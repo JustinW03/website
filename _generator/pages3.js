@@ -41,14 +41,14 @@ const GAMES = [
   ['Geheimwort', '4–16', 'Neu! Team Rot gegen Blau: Der Hinweisgeber gibt ein Wort und eine Zahl, das Team deckt die passenden Karten auf – aber Vorsicht vor dem Attentäter. Teams frei wählen oder zufällig verteilen', false],
   ['Spleef', '2–8', 'Grab den anderen den Schnee unter den Füßen weg', true],
   ['TNT-Run', '2–8', 'Lauf! Der Boden verschwindet unter deinen Füßen', true],
-  ['Parkour', '1–8', 'Vier Strecken: Leicht, Mittel, Schwer, Extrem – Bestzeit je Stufe. Mit dem Auge (Slot 3) blendest du die anderen Spieler aus', true],
+  ['Parkour', '1–8', 'Neu: 4 Stufen mit je 10 Strecken, die sich frei nach oben schlängeln – jede Stufe höher (Ziel auf 21, 35, 53 und 75 Blöcken), von Checkpoint zu Checkpoint immer gleich schwer, ohne Zeitlimit. Beim Start fährt die Decke hoch. Bestzeit je Stufe und je Strecke, mit dem Auge (Slot 3) blendest du die anderen aus', true],
   ['Knockback-FFA', '2–8', 'Punkte für Runterschubsen und die Krone in der Mitte – 4 Maps zur Auswahl: Blumeninseln, Wolkentempel, Lavafestung, Pilzwald', true],
   ['Schneeballschlacht', '2–8', 'Punkte für jeden Treffer, Bonus fürs Ins-Wasser-Schubsen – 4 Maps: Eisschollen-See, Schneeburg, Gletscherspalten, Winterdorf', true],
   ['Bogen-Schießstand', '1–4', 'Triff die Ziele – je genauer, desto mehr Punkte. 4 Maps: Waldlichtung, Wüsten-Fort, Winterburg, Kirschgarten', true],
-  ['MLG-Wasser', '1–8', 'Alle fallen gleichzeitig – rette dich mit dem Wassereimer. Jede Runde 4 Blöcke höher (bis 100) – ab 32 Blöcken gibt es eine kurze Pause: Alle schauen von oben zu, wie sich die Decke öffnet, der Leuchtturm fährt durch das Loch nach oben und wächst danach mit. Nach dem Spiel schließt sich alles wieder. Scheitern alle gleichzeitig, ist es unentschieden', true],
+  ['MLG-Wasser', '1–8', 'Alle fallen gleichzeitig – rette dich mit dem Wassereimer. Jede Runde 4 Blöcke höher (ab 100 sogar 8) – ohne feste Grenze: bis zur Bauhöhe (rund 250 Blöcke) und dort endlos weiter, bis keiner mehr übrig ist (in der Rangliste zählt das als 250 ×2, ×3 …) – ab 32 Blöcken gibt es eine kurze Pause: Alle schauen von oben zu, wie sich die Decke öffnet, der Leuchtturm fährt durch das Loch nach oben und wächst danach mit. Nach dem Spiel schließt sich alles wieder. Scheitern alle gleichzeitig, ist es unentschieden', true],
   ['Speed-Crafting', '1–8', 'Hunderte Werkbank-Rezepte, alle Zutaten liegen bereit – Rangliste je Item', true],
   ['Eisbootrennen', '1–16', 'Eigene 500×500-Arena mit rund 2.400 Blöcken Strecke für bis zu 16 Fahrer, 1 bis 10 Runden: Tannenwald, Slalom, Strohballen-Schikane, Weihnachtsdorf, See mit Eisinseln, Eisschlucht, Kristallfeld, Eistunnel, Gabelung und Blaueis-Geraden. Wer feststeckt, kommt automatisch zurück auf die Strecke', true],
-  ['OneBlock-Fight', '2–8', 'Neu! Jeder auf seiner eigenen Insel über dem Nichts, in der Mitte ein Zufallsblock, der endlos zufällige Items gibt. Bauen, Brücken schlagen, kämpfen – wer fällt oder stirbt, ist raus. Der Letzte gewinnt', true],
+  ['OneBlock-Fight', '2–8', 'Neu! Jeder auf seiner eigenen Insel über dem Nichts, in der Mitte ein Zufallsblock, der endlos zufällige Items gibt. Craften, Items werfen, bauen, Brücken schlagen, kämpfen – wer fällt oder stirbt, ist raus. Der Letzte gewinnt', true],
 ];
 const ICONS = [['4 gewinnt', '🔴'], ['tic', '❌'], ['schiffe', '🚢'], ['memory', '🧠'], ['mensch', '🎲'], ['dame', '⚪'], ['schach', '♟️'], ['barricade', '🧱'], ['kniffel', '🎲'], ['galgen', '🪢'], ['schere', '✂️'], ['blackjack', '🃏'], ['mines', '💣'], ['wordle', '🔤'], ['2048', '🔢'], ['koffer', '🧳'], ['spleef', '❄️'], ['tnt', '🧨'], ['parkour', '🏃'], ['knockback', '🥊'], ['schneeball', '☃️'], ['bogen', '🏹'], ['mlg', '💧'], ['crafting', '🛠️'], ['eisboot', '🛶'], ['reducto', '🂠'], ['zockerstadt', '🏙️'], ['kartenblitz', '⚡'], ['stapelmeister', '📚'], ['werwolf', '🐺'], ['geheimwort', '🕵️'], ['oneblock', '🟫']];
 const iconFor = (name) => { const n = name.toLowerCase(); const hit = ICONS.find(([k]) => n.includes(k)); return hit ? hit[1] : '🎮'; };
@@ -83,7 +83,7 @@ const minigames = () => `${head('Minigames', 'Minigame-Welt', `Eine eigene Welt 
         <li><strong>Offener Raum:</strong> jeder darf beitreten.</li>
         <li><strong>Raum mit Passwort:</strong> nur wer das Passwort kennt – perfekt, wenn du mit einer bestimmten Person spielen willst.</li>
         <li><strong>„📣 Mitspieler suchen“</strong> postet einen Klick-Knopf in den Chat.</li>
-        <li>Viele Spiele haben Einstellungen, z. B. Runden (Eisbootrennen 1–10), Schwierigkeit (Minesweeper, Parkour) oder Modus und Brettgröße (Barricade).</li>
+        <li>Viele Spiele haben Einstellungen, z. B. Runden (Eisbootrennen 1–10), Schwierigkeit (Minesweeper, Parkour – dort auch die Strecke 1–10) oder Modus und Brettgröße (Barricade).</li>
         <li>Eisbootrennen hat eine einzige große Strecke für bis zu 16 Fahrer – dort gibt es keine Passwort-Räume.</li>
         <li>Wer 2 Minuten nicht zieht oder den Raum verlässt, verliert. Damit das nicht aus Versehen passiert, gibt es beim Verlassen eine <strong>Sicherheitsabfrage</strong>.</li>
         <li><strong>Erste Minute:</strong> Verlässt jemand ein Spiel, das noch keine Minute läuft, wird es <strong>ohne Wertung abgebrochen</strong> – niemand verliert, niemand gewinnt (so lassen sich keine Siege oder Erfolge erschleichen).</li>
