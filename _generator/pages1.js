@@ -14,10 +14,10 @@ const socials = () => `<div class="socials">${SOCIAL.map(([k, n, s, i]) => `<a c
 
 // ------------------------------------------------------------------ index
 const cube = (cls) => `<div class="cube ${cls}"><i></i><i></i><i></i><i></i><i></i><i></i></div>`;
-const MARQUEE = ['6 Skills bis Level 100', '32 Minigames', 'Java & Bedrock', 'Tägliche Glücksräder', 'Clans & Clan-Rangliste', 'Freunde', 'Spieler-Shop', 'Eigene Verzauberungen', 'Adventskalender', 'Claims & Kistenschutz', 'Fair Play & Anticheat', 'Twitch-Sub-Vorteile', 'Erfolge & Ranglisten'];
+const MARQUEE = ['6 Skills bis Level 100', '33 Minigames', 'Java & Bedrock', 'Tägliche Glücksräder', 'Clans & Clan-Rangliste', 'Freunde', 'Spieler-Shop', 'Eigene Verzauberungen', 'Adventskalender', 'Claims & Kistenschutz', 'Fair Play & Anticheat', 'Twitch-Sub-Vorteile', 'Erfolge & Ranglisten'];
 const marquee = () => `<div class="marquee" aria-hidden="true"><div class="marquee-track">${[0, 1].map((k) => `<div${k ? ' aria-hidden="true"' : ''} style="display:flex">${MARQUEE.map((m) => `<span>${esc(m)}</span>`).join('')}</div>`).join('')}</div></div>`;
 // Oeffentliche Termine (Nether bleibt geheim: nur "???")
-const END_OPEN = '9. Januar 2027 um 14 Uhr';
+const END_OPEN = '13. Januar 2027 um 14 Uhr';
 const SERVERSTART = '27. November 2026 um 14 Uhr';
 const portals = () => `<div class="portals">
           <article class="portal nether" data-portal="nether" aria-labelledby="pt-nether"><h3 id="pt-nether"><span aria-hidden="true">🔥</span> Nether <span class="portal-state closed">???</span></h3><p class="portal-text">Wann der Nether öffnet, bleibt ein Geheimnis: ??? – lass dich überraschen!</p><div class="countdown" hidden></div></article>
@@ -31,7 +31,7 @@ const index = () => `    <section class="hero">
         <div class="hero-text">
           <span class="eyebrow">Minecraft Java &amp; Bedrock · Community-Server</span>
           <h1><span class="line">Willkommen in der</span> <span class="line grad-text">JustinZocktCommunity</span></h1>
-          <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, 32 Minigames, Events und ein Team, das aufpasst. <strong>Auch für Bedrock (Handy, Konsole, Windows).</strong></p>
+          <p class="lead">Der Survival-Server von Streamer JustinZockt03: faire Regeln, Skills mit Belohnungen bei jedem Level, Clans, Spieler-Shop, 33 Minigames, Events und ein Team, das aufpasst. <strong>Auch für Bedrock (Handy, Konsole, Windows).</strong></p>
           <div class="ip-box">
             <span class="label">Server-Adresse</span>
             <span class="ip" id="server-ip">${IP}</span>
@@ -104,7 +104,7 @@ const index = () => `    <section class="hero">
         <h2 id="h-features">Was dich erwartet</h2>
         <div class="grid">
           <a class="card" href="skills.html"><span class="icon" aria-hidden="true">📈</span><h3>6 Skills bis Level 100</h3><p>Mining, Woodcutting, Excavation, Farming, Fishing und Combat – jedes Level bringt Coins und ein Upgrade, dazu gibt es Items und Titel.</p><span class="more">Zu den Skills <span aria-hidden="true">→</span></span></a>
-          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>32 Minigames</h3><p>Von 4 Gewinnt und Schach bis Reducto und Eisbootrennen – jedes Spiel mit eigenem Raum, echten Spielfeldern und Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
+          <a class="card" href="minigames.html"><span class="icon" aria-hidden="true">🎮</span><h3>33 Minigames</h3><p>Von 4 Gewinnt und Schach bis Reducto und Eisbootrennen – jedes Spiel mit eigenem Raum, echten Spielfeldern und Statistik.</p><span class="more">Zu den Minigames <span aria-hidden="true">→</span></span></a>
           <a class="card" href="raenge.html"><span class="icon" aria-hidden="true">💎</span><h3>Ränge: Sub &amp; Premium</h3><p>Alle spielen das volle Spiel. Twitch-Subs bekommen automatisch ein paar Extras wie ein Home, ${c('/ec')}, ${c('/craft')} und mobile Arbeitsblöcke. Premium bringt noch etwas mehr – z. B. ${c('/tpa')} und ein Home ohne Wartezeit.</p><span class="more">Alle Ränge im Vergleich <span aria-hidden="true">→</span></span></a>
           <a class="card" href="verzauberungen.html"><span class="icon" aria-hidden="true">📕</span><h3>Eigene Verzauberungen</h3><p>Soulbound, Telekinesis und Timber I–III. Mending gibt es nur über Skills, Events, die Glücksräder und seltene Funde.</p><span class="more">Zu den Verzauberungen <span aria-hidden="true">→</span></span></a>
           <a class="card" href="clans.html"><span class="icon" aria-hidden="true">🛡️</span><h3>Clans</h3><p>Gründe deinen Clan mit eigenem Tag und Farbe, nutze den Clan-Chat und kämpf dich in der Clan-Rangliste nach oben.</p><span class="more">Zu den Clans <span aria-hidden="true">→</span></span></a>
@@ -391,6 +391,7 @@ const clans = () => {
     ['/clan degradieren <Spieler> [aeltester|mitglied]', 'Eine Stufe tiefer: Leiter → Ältester (nur Gründer), Ältester → Mitglied (Gründer oder Leiter).', 'Gründer, Leiter'],
     ['/clan uebertragen <Spieler>', 'Gründerrolle abgeben (mit Sicherheitsabfrage). Der alte Gründer wird Leiter.', 'Gründer'],
     ['/clan farbe <Farbe>', 'Farbe des Clan-Tags ändern (Standard: weiß): benannte Farbe oder #RRGGBB (Sub/Premium), Farbverlauf #RRGGBB:#RRGGBB (nur Premium). Siehe Farbwähler unten.', 'Gründer (Sub/Premium)'],
+    ['/clan endertruhe', 'Gemeinsame Clan-Endertruhe (3 Reihen) für alle Mitglieder – ab 10 Mitgliedern. Fällt der Clan unter 10, bleibt der Inhalt erhalten, man kann dann nur noch herausnehmen. Beim Auflösen bekommt der Gründer den Inhalt.', 'alle Mitglieder (ab 10)'],
     ['/clan aufloesen', 'Clan auflösen (mit Bestätigung, nicht rückgängig zu machen).', 'Gründer'],
   ];
   return `${head('Gemeinsam stark', 'Clans', 'Gründe mit deinen Freunden einen Clan: eigener Tag im Chat, Clan-Chat, gemeinsame Spielzeit und eine Rangliste, in der ihr euch mit anderen Clans messt.')}

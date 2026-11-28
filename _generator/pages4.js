@@ -118,6 +118,7 @@ const FLAGS_UMWELT = [
   ['dorfbewohner', 'Dorfbewohner farmen', 'Bauern-Dorfbewohner ernten und pflanzen', true],
   ['trampeln', 'Ackerboden zertrampeln', 'Ackerboden wird zu Erde (auch durch dich selbst)', false],
   ['monster', 'Monster spawnen', 'Monster spawnen natürlich im Claim', true],
+  ['monster-angriff', 'Monster greifen an', 'Monster greifen Spieler im Claim an (aus: Monster sind hier friedlich und machen keinen Schaden; Wither und Enderdrache bleiben gefährlich)', true],
   ['gras', 'Gras-/Myzel-Ausbreitung', 'Gras, Myzel und Nezel breiten sich aus', true],
   ['ranken', 'Ranken & Tropfstein', 'Ranken, Höhlenranken, Seetang und Tropfstein wachsen', true],
   ['sculk', 'Sculk-Ausbreitung', 'Sculk breitet sich aus', true],
@@ -258,7 +259,8 @@ const claims = () => `${head('Dein Gebiet', 'Claims, Kistenschutz &amp; Freunde'
           <li><strong>Freunde:</strong> Stufe für alle deine Freunde – „Standard“ nimmt die Einstellung aus ${c('/freunde')}.</li>
           <li><strong>Öffentlich:</strong> Jeder darf reinlegen und rausnehmen. Abbauen darf trotzdem nur der Besitzer.</li>
           <li><strong>Name:</strong> Gib der Kiste einen Namen (bis 32 Zeichen).</li>
-          <li><strong>Flags:</strong> <em>Trichter erlauben</em> (Trichter dürfen Items herausziehen und hineinfüllen – aus: nur deine eigenen gesicherten Trichter) und <em>Redstone</em> (Spender und Werfer dürfen per Redstone auswerfen). Beide sind am Anfang an.</li>
+          <li><strong>Flags:</strong> <em>Trichter erlauben</em> (Trichter dürfen Items herausziehen und hineinfüllen – aus: nur deine eigenen gesicherten Trichter), <em>Fremde Trichter</em> (am Anfang <strong>aus</strong>: Trichter von anderen Spielern holen nichts heraus – nur deine, die von Spielern mit ${c('/trust')} und Trichter in deinem Claim) und <em>Redstone</em> (Spender und Werfer dürfen per Redstone auswerfen).</li>
+          <li><strong>Doppeltruhen</strong> sind <strong>eine</strong> Sicherung: Stellst du eine Truhe an deine gesicherte Truhe, wird die zweite Hälfte damit verknüpft und zählt nicht extra – auch wenn dein Limit voll ist.</li>
           <li><strong>Sicherung entfernen:</strong> zweimal klicken – der Block bleibt stehen, ist dann aber ungesichert.</li>
         </ul>
         <div class="grid">

@@ -171,7 +171,7 @@
  {
   "id": "truhen",
   "frage": "Sind meine Kisten geschützt?",
-  "antwort": "Ja: Kisten, Trichter, Öfen, Shulkerkisten und Fässer werden beim Platzieren automatisch gesichert – auch außerhalb von Claims. Alles andere (Spender, Braustände, Endertruhen, Truhenboote …) sicherst du von Hand mit `/lock`. Bearbeiten: Schleichen + Rechtsklick mit leerer Hand auf deine Kiste (Bedrock: Schleichen + Schlagen) oder `/lock bearbeiten` – dort gibt es Mitglieder mit „Nur reinlegen“ oder „Nur rausnehmen“, Name, Freunde, öffentlich und die Flags Trichter und Redstone. Du hast bis zu 128 Sicherungen als Spieler, 192 als Sub und 256 als Premium. Alles im Detail: Kistenschutz.",
+  "antwort": "Ja: Kisten, Trichter, Öfen, Shulkerkisten und Fässer werden beim Platzieren automatisch gesichert – auch außerhalb von Claims. Alles andere (Spender, Braustände, Endertruhen, Truhenboote …) sicherst du von Hand mit `/lock`. Bearbeiten: Schleichen + Rechtsklick mit leerer Hand auf deine Kiste (Bedrock: Schleichen + Schlagen) oder `/lock bearbeiten` – dort gibt es Mitglieder mit „Nur reinlegen“ oder „Nur rausnehmen“, Name, Freunde, öffentlich und die Flags Trichter, Fremde Trichter und Redstone. Fremde Trichter holen standardmäßig nichts aus deinen Kisten. Eine Doppeltruhe zählt als eine Sicherung. Du hast bis zu 128 Sicherungen als Spieler, 192 als Sub und 256 als Premium. Alles im Detail: Kistenschutz.",
   "url": "https://justinzockt.de/faq.html#truhen",
   "keywords": [
    "kisten",
@@ -327,7 +327,7 @@
  {
   "id": "welt",
   "frage": "Wie groß ist die Welt? Wann öffnen Nether und End?",
-  "antwort": "Die Weltgrenze liegt bei 10.000 Blöcken in jede Richtung (Overworld, Nether und End). Das End öffnet am 9. Januar 2027 um 14 Uhr (der Termin kann sich noch ändern). Wann der Nether öffnet, bleibt geheim: ???. Beide öffnen automatisch mit Ankündigung, den Stand siehst du auf der Startseite. Im End ist die Grenze zuerst nur 125 Blöcke groß – erst wenn der erste Enderdrache besiegt ist, wächst sie langsam (1 Block pro Sekunde) auf 10.000. Der erste Enderdrache hat 100-fache Lebenspunkte; eine Leiste oben zeigt, wie viele er noch hat. Wer mindestens 2 % des Schadens macht, bekommt 10.000 Combat-XP.",
+  "antwort": "Die Weltgrenze liegt bei 10.000 Blöcken in jede Richtung (Overworld, Nether und End). Das End öffnet am 13. Januar 2027 um 14 Uhr (der Termin kann sich noch ändern). Wann der Nether öffnet, bleibt geheim: ???. Beide öffnen automatisch mit Ankündigung, den Stand siehst du auf der Startseite. Im End ist die Grenze zuerst nur 125 Blöcke groß – erst wenn der erste Enderdrache besiegt ist, wächst sie langsam (1 Block pro Sekunde) auf 10.000. Der erste Enderdrache hat 100-fache Lebenspunkte; eine Leiste oben zeigt, wie viele er noch hat. Wer mindestens 2 % des Schadens macht, bekommt 10.000 Combat-XP.",
   "url": "https://justinzockt.de/faq.html#welt",
   "keywords": [
    "gross",
@@ -670,7 +670,7 @@
  {
   "id": "geburtstag",
   "frage": "Wie trage ich meinen Geburtstag ein?",
-  "antwort": "Im Discord-Kanal #geburtstage klickst du auf „🎂 Geburtstag eintragen“ und gibst Tag und Monat ein – oder du schreibst im Spiel `/geburtstag eintragen <Tag> <Monat>` (z. B. `/geburtstag eintragen 12 3`); dafür muss dein Discord mit Minecraft verbunden sein, das Ergebnis ist dasselbe. Ein Jahr oder dein Alter wird nicht gespeichert. Eintragen geht nur einmal; vertippt? Dann per Ticket in #tickets ändern lassen. An deinem Geburtstag gratuliert dir der Bot im Kanal (29. Februar: in Nicht-Schaltjahren am 28. Februar). Ist dein Discord mit Minecraft verknüpft, sehen alle Spieler beim Joinen deinen Geburtstag und können dir freiwillig ein Geschenk machen. Mit `/geburtstag` siehst du alle Geburtstage, mit `/geburtstag geschenke` öffnest du deine Geschenke – sie bleiben gespeichert, bis du sie abholst.",
+  "antwort": "Am einfachsten: Schreib dein Datum in den Discord-Kanal #geburtstage, z. B. 12.03. oder 12. März – der Bot trägt es ein und antwortet dir. Genauso gehen dort der Knopf „🎂 Geburtstag eintragen“ und der Discord-Befehl /geburtstag. Im Spiel schreibst du `/geburtstag eintragen <Tag> <Monat>` (z. B. `/geburtstag eintragen 12 3`) – das klappt auch ohne verbundenes Discord; verbindest du es später, wird der Eintrag übernommen. Im Kanal darf jeder schreiben, also auch gratulieren. Ein Jahr oder dein Alter wird nicht gespeichert. Eintragen geht nur einmal; vertippt? Dann per Ticket in #tickets ändern lassen. An deinem Geburtstag gratuliert dir der Bot im Kanal (29. Februar: in Nicht-Schaltjahren am 28. Februar). Ist dein Discord mit Minecraft verknüpft, sehen alle Spieler beim Joinen deinen Geburtstag und können dir freiwillig ein Geschenk machen. Mit `/geburtstag` siehst du alle Geburtstage, mit `/geburtstag geschenke` öffnest du deine Geschenke – sie bleiben gespeichert, bis du sie abholst.",
   "url": "https://justinzockt.de/faq.html#geburtstag",
   "keywords": [
    "trage",
